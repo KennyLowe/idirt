@@ -1,0 +1,12 @@
+ArchWizard Commands
+-------------------------------------------------------------------------------
+Utility Commands	              |	Communication Commands (Awiz=3)
+FROB	SYSLOG	ABULL	SYSTEM        |	AWIZ	NOAWIZ
+NOPUNT	PZAP	LEVFORCE	      |
+-------------------------------------------------------------------------------
+FakeQuit lets you use more options then a Wizard. See FAKEQUIT list.
+You may change other player's PFLAGS with the PFLAG command.
+You may alias players.
+-------------------------------------------------------------------------------
+Type HELP <command> for detailed help on a command.
+

@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+#########################################################################
+# iDIRT System Log Cleaner						#
+# 1995, Illusion							#
+#########################################################################
+# This script exports information about deaths, typos, and bugs to	#
+# separate file and then optionally will make a backup of the syslog,	#
+# removing the old one.							#
+#########################################################################
+
+if [ ! -f ../data/syslog ]; then
+	echo "MUD system log file does not exist."
+	exit 1
+fi
+
+# Extract the information we want.
+#
+grep ' slain ' ../data/syslog >> ../data/LOGS/Deaths
+grep 'TYPO' ../data/syslog >> ../data/LOGS/Typos
+grep 'BUG' ../data/syslog >> ../data/LOGS/Bugs
+
+# If the '-b' option was present, backup the syslog, removing the old one.
+#
+if [ "$1" = "-b" ]; then
+	mv syslog syslog.old
+fi

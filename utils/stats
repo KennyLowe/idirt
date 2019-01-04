@@ -1,0 +1,48 @@
+#!/bin/sh
+#
+# Print a table showing how many players are at each level.
+#
+# Read the first argument, or Dump's default player-file if none is given.
+# Arguments are passed to Dump, so Dump options can be used, for
+# instance "stats -d5" will only count the players that have been on at
+# least once the last 5 days.
+#
+# -Nicknack
+
+if [ ! -f ../bin/Dump ]; then
+	echo "Cannot find the Dump executable. Perhaps you haven't compiled it yet."
+	exit 0
+fi
+
+../bin/Dump $* | awk '
+
+             BEGIN         { sort = "sort -n"
+
+			     Wizard = 12; ArchWiz = 10000; God = 90000
+
+                             name[1] = "Novice"; name[2] = "Adventurer"
+                             name[3] = "Hero";   name[4] = "Warrior"
+			     name[5] = "Champion"; name[6] = "Conjurer"
+                             name[7] = "Magician"; name[8] = "Enchanter"
+                             name[9] = "Sorceror"; name[10] = "Warlock"
+                             name[11] = "Legend"; name[Wizard] = "Wizard"
+                             name[ArchWiz] = "ArchWiz"; name[God] = "God"
+                           }
+
+                           { ++players; }
+             $3 < Wizard   { ++n[$3]; next }
+             $3 < ArchWiz  { ++n[Wizard]; next }
+             $3 < God      { ++n[ArchWiz]; next }
+                           { ++n[God] }
+
+             END           { print "Level      Name     #\n" \
+				   "------------------------"
+
+                             for (i in name)
+	 			 printf( "%5d  %10s  %d\n", i, name[i], n[i]) \
+				 | sort
+
+			     close(sort);
+                             print "\nTotal: " players 
+                           }'
+

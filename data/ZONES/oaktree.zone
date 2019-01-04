@@ -1,0 +1,446 @@
+#include "undef.h"
+#include "cflags.h"
+
+%mobiles
+
+Name		= viola
+Location	= entrance
+Pflags		{NoSummon NoSteal}
+Sflags		{Female}
+Speed           = 0
+Strength	= 200
+Damage		= 13
+Aggression      = 0
+Armor		 = 0
+Description	= "
+A beautiful, ghostly little girl stands here with a disdainful air."
+End             = viola
+
+Name		= cosimo
+Location	= olive3
+Pflags		{ NoSummon }
+Mflags 		{ NoGrab GrabHostile NoSteal}
+Strength	= 80
+Damage		= 20
+Aggression      = 0
+Armor		= 0
+Speed           = 0
+Description	= "
+A small boy in gaiters and tricorn brandishes his rapier at you."
+End             = cosimo
+
+Name		= vixen
+PName		= "The Vixen"
+Location	= den
+Pflags		{NoSummon}
+Sflags		{Female}
+Speed           = 0
+Strength	= 80
+Damage		= 10
+Aggression      = 50
+Armor		= 0
+Description	= "
+A sly and curvaceous vixen snarls at you from the corner."
+End             = vixen
+
+Name		= ottimo
+Location	= limbo@limbo
+Armor		 = 0
+Strength      	= 40
+Damage		= 10
+Aggression      = 0
+Pflags		{NoSummon}
+Description	= "
+A small dachshund is here, panting hard and sniffing about for a fox."
+End             = ottimo
+
+%objects
+
+Name      = rapier
+AltName   = sword
+Location  = WIELDED_BY:cosimo
+Oflags    {Weapon}
+Damage    = 15
+BValue    = 150
+Size      = 10
+Weight    = 8
+Desc[0]   = "A small, fearfully sharp rapier lies here."
+End       = rapier
+
+Name      = fan
+Location  = IN_ROOM:Ilex
+BValue    = 50
+Size      = 3
+Weight    = 1
+Desc[0]   = "A lady's fan has been forgotten here."
+Examine   = '
+It has a faint scent of violets, and an inscription reading:
+"To my beloved Viola -- From her Cosimo."'
+End       = fan
+
+Name      = whistle
+AltName   = silver
+Location  = IN_ROOM:walnut
+Oflags    {Destroyed}
+BValue    = 200
+Size      = 2
+Weight    = 1
+Desc[0]   = "A silver whistle has been dropped here."
+Examine   = `
+The whistle is shaped like a dog's head and bears the engraving:
+"Ottimo Massimo"`
+End       = whistle
+
+Name      = encyclopedia
+AltName   = book
+Location  = IN_ROOM:Olive3
+BValue    = 800
+Size      = 100
+Weight    = 60
+Desc[0]   = "An encyclopedia in many volumes has been stacked here."
+Examine   = "
+This is an extremely rare and valuable first edition of Diderot's Encyclopedia.
+The covers are slightly stained and bear the streaks of snails, but you should
+still get a hefty price for it."
+End       = encyclopedia
+
+Name      = treatise
+AltName   = book
+Location  = IN_ROOM:olive3
+BValue    = 60
+Size      = 5
+Weight    = 5
+Desc[0]   = "A strange political treatise has been left here."
+Examine   = '
+It is a very fine work, which could have been a useful guide to any government,
+describing the imaginary Republic of Arborea.  It is entitled "A Project for
+the Constitution of an Ideal State in the Trees, with a Declaration of the
+Rights of Men, Women, Children, Domestic and Wild Animals, including Birds,
+Fishes, and Insects."'
+End       = treatise
+
+Name      = MarbleBust
+Pname     = bust
+AltName   = marble
+Location  = IN_ROOM:mansion
+Oflags    {GetFlips}
+State     = 1
+MaxState  = 1
+BValue    = 500
+Size      = 30
+Weight    = 30
+Desc[0]   = "A bust of fine Italian marble has been placed here."
+Desc[1]   = "
+Precariously balanced on the banister is a bust of fine Italian marble."
+Examine   = "It appears to be the bust of Cacciaguerra Piovasco the Crusader."
+End       = MarbleBust
+
+Name      = BustBroken
+Pname     = bust
+AltName   = broken
+Location  = IN_ROOM:mansion
+Oflags    {Destroyed NoGet}
+Desc[0]    = "
+On the floor near the staircase is a valuable bust, in smithereens."
+Examine   = "Some klutz has broken this once fine piece of sculpture."
+End       = BustBroken
+
+Name      = toast
+AltName   = food
+Location  = IN_ROOM:bedroom
+Oflags    {Food}
+BValue    = 10
+Size      = 2
+Weight    = 2
+Desc[0]   = "There is a slice of pate toast here."
+Examine   = "It is a really exquisite pate toast made of rats' livers."
+End       = toast
+
+Name     = tart
+AltName   = food
+Location  = IN_ROOM:bedroom
+Oflags    {Food}
+BValue    = 10
+Size      = 2
+Weight    = 2
+Desc[0]   = "There is a dainty tart here."
+Examine   = "
+Grasshoppers' claws, crisp and sectioned, are laid on an open tart in a mosaic
+pattern."
+End       = tart
+
+Name      = cakes
+AltName   = food
+Location  = IN_ROOM:bedroom
+Oflags    {Food}
+BValue    = 10
+Size      = 2
+Weight    = 2
+Desc[0]   = "There are several little cakes here."
+Examine   = "
+These are pigs' tails baked in little cakes and dusted with sugar."
+End       = cakes
+
+Name      = soup
+AltName   = food
+Location  = IN_ROOM:bedroom
+Oflags    {Food}
+BValue    = 10
+Size      = 2
+Weight    = 2
+Desc[0]   = "There is some pale green soup here, in a tiny china cup."
+Examine   = "
+It is a delicious smelling caterpillar consomme.  Something is glittering at
+the bottom of the cup."
+End       = soup
+
+Name      = CupChina
+Pname     = cup
+AltName   = china
+Location  = IN_ROOM:limbo@limbo
+Oflags    {Destroyed}
+BValue    = 60
+Size      = 2
+Weight    = 2
+Desc[0]   = "A china cup from a doll's tea set has been discarded here."
+End       = CupChina
+
+Name      = CupDiamond
+Pname     = diamond
+AltName   = small
+Location  = IN_ROOM:limbo@limbo
+Oflags    {Destroyed}
+BValue    = 300
+Size      = 4
+Weight    = 2
+Desc[0]   = "A small diamond glitters nearby."
+End       = CupDiamond
+
+Name      = Window_landing
+Pname     = window
+Location  = IN_ROOM:landing
+Oflags    {Openable NoGet}
+Linked    = Window_ilex
+State     = 1
+MaxState  = 1
+Desc[0]   = "
+Through the open window you can see the undulating leaves of an ilex."
+Desc[1]   = "
+Through the closed window you can see the undulating leaves of an ilex."
+End       = Window_landing
+
+Name      = Window_ilex
+Pname     = window
+Location  = IN_ROOM:ilex
+Oflags    {Openable NoGet}
+Linked    = Window_landing
+State     = 1
+MaxState  = 1
+Desc[0]   = "An open window to the north allows entrance to the mansion."
+Desc[1]   = "There is a closed window to the north."
+End       = Window_ilex
+
+Name      = TopFoxhole
+Pname     = foxhole
+AltName   = hole
+Location  = IN_ROOM:grove
+Oflags    {NoGet}
+Linked    = HoleFox
+State     = 1
+MaxState  = 1
+Desc[0]    = "At the foot of the oak tree a foxhole leads down."
+End       = TopFoxhole
+
+Name      = HoleFox
+Pname     = hole
+AltName   = fox
+Location  = IN_ROOM:hole
+Oflags    {NoGet}
+Linked    = TopFoxhole
+State     = 1
+MaxState  = 1
+Desc[0]   = "Light shines down from a hole above you."
+Desc[1]   = "
+Someone has sealed the entrance with dirt and rocks.  You are trapped!"
+End       = HoleFox
+
+Name      = boarskin
+AltName   = skin
+Location  = IN_ROOM:walnut
+Oflags    {NoGet}
+End       = boarskin
+
+%locations
+
+Grove s:Valley@Blizzard u:Tree1 d:^TopFoxHole;
+lflags{Outdoors}
+Oak Grove^
+   Deep in the oak grove, you find yourself surrounded by silent trees in a
+field of frost-covered grass.  Two stone lions crouch before you, flanking an
+immense oak with heavy, low branches.  A lush valley extends to the south.
+^
+Tree1 u:Tree2 d:Grove;
+lflags{Outdoors}
+Oak Tree^
+   You are sitting comfortably in the fork of a big branch.  The branches are
+spread out high over your head.  The sun shines through the leaves, so that you
+must shade your eyes with your hand to look up.
+^
+Tree2 n:Elm d:Tree1;
+lflags{Outdoors}
+Oak Tree^
+   You are high up, near the crest of the oak tree.  You can see the branches
+of an elm tree to the north, almost touching the oak.  Farther away, the tops
+of the trees thin out into little terraced fields propped by stone walls, and
+groves dark with olive trees and walnuts.  In the distance is the sea where a
+boat is idly sailing.
+^
+Elm n:Fig e:Mulberry s:Tree2 w:Walnut;
+lflags{Outdoors}
+Elm Tree^
+   You are in an elm tree, high above the ground.  This is not an easy tree to
+move about on as the branches grow upwards, slender and thickly covered,
+leaving little foothold.  To the north you can see the twisted shape of a fig
+tree, to your west is a knobby walnut, and to your east is a mulberry.  In the
+south are the oaks, haughty and detached.
+^
+Mulberry e:Magnolia w:Elm;
+lflags{Outdoors}
+Mulberry Tree^
+   Some branches of the mulberry tree reach and overhang a high fortress-like
+wall to your east.  Over the wall you can see a magnolia, from whose black
+branches spring pulpy white flowers and shiny dark leaves.
+^
+Magnolia e:Bedroom w:Mulberry d:Gardens;
+lflags{Outdoors}
+Magnolia Tree^
+   The branches, although they are slender and of soft wood, bear your weight,
+and the points of your shoes tear white wounds on the black bark.  You are
+enveloped in the fresh scent of leaves, turned this way and that by the wind,
+dull one moment and glittering the next.  Quite far below the lowest branch is
+a mysterious garden, and to the east, a half-hidden mansion.  One high window
+is quite near your tree.
+^
+Bedroom e:Landing w:Magnolia;
+lflags{}
+Mansion Bedroom^
+   This looks like a little girl's bedroom.  An arched doorway leads east.
+The room is beautifully furnished with curtains of white taffeta, a Persian
+carpet, and a tiny canopied bed with cushions of pale yellow damask.  Rosewood
+chairs surround a tiny silver table, with a doll's tea service set for two.
+^
+Landing s:^window_landing w:Bedroom d:mansion;
+lflags{}
+Mansion Landing^
+   You are standing in a great pool of colored light, cast by the stained glass
+of a vast coat of arms in a south-facing window, depicting an heraldic leopard.
+To your west is an arched doorwary.  A huge, curving marble staircase extends
+downwards into the mansion, past paintings and stern-looking busts.  You have
+an uncontrollable desire to slide down a banister.
+^
+Ilex n:^window_ilex;
+lflags{}
+Ilex Tree^
+   In the ilex, deep in the thickest press of leaves, you find a hanging
+pavilion with curtains flapping in the wind, shaded by a large, fringed
+parasol.  Stuck on the branches here and there are fluttering ribbons and
+scraps of lace.  Butterflies dart in pairs among the curtains.
+^
+Mansion w:Entrance u:Landing;
+lflags{}
+Mansion^
+   Here in the mansion, silver shines and lacquer glows, carved gilt chairs
+line the walls, sofas have legs like swans' necks and rest on lions' paws, and
+a great deal of dust spirals slowly through the air, lit by innumerable softly
+glowing candles. A marble staircase curves upwards, and you can see the gardens
+through a doorway to the west.
+^
+Gardens e:Entrance;
+lflags{Outdoors}
+Mansion Gardens^
+   In the gardens the branches spread out above you like the tentacles of
+extraordinary animals, and the plants on the ground open up stars of fretted
+leaves like the green skins of reptiles, and wave feathery yellow bamboos with
+a rustle like paper.  A white flight of stairs leads east to the mansion. Above
+you is a sweet-scented magnolia tree, but the lowest branch is too high for you
+to reach.
+^
+Entrance e:Mansion w:Gardens;
+lflags{}
+Mansion Entrance^
+   You are standing on a small white porch.  A white flight of stairs lead west
+to the gardens.  The mansion door is to your east.
+^
+Fig n:Olive s:Elm;
+lflags{Outdoors}
+Fig Tree^
+   You are in a fig tree, under the pavilion of leaves, watching the sun move
+slowly through the network of twigs and branches, smelling the scent of flowers
+budding in the stalks.  The fig tree seems to absorb you, permeate you with its
+gummy texture and the buzz of hornets, and you feel uneasy.  To the north is a
+small olive grove.
+^
+Olive e:Olive4 s:Fig w:Olive2;
+lflags{Outdoors}
+Olive Tree^
+   You find that the olive trees make comfortable and easy passages for you, in
+spite of the scarcity of thick branches.  The grove extends to the east and
+west.
+^
+Olive2 e:Olive s:Olive3;
+lflags{Outdoors}
+Olive Tree^
+   This tree is hung all over with scrawled pieces of paper and bits of
+cardboard with maxims from Seneca and Shaftesbury, and with various objects:
+clusters of feathers, church candles, crowns of leaves, women's corsets,
+pistols, scales, tied to each other in a certain order, the significance of
+which has been lost.  The olive grove continues to the east.
+^
+Olive3 n:Olive2;
+lflags{Outdoors}
+Olive Tree^
+   In this tree there is a kind of hanging bookcase, sheltered somewhat from
+the rains.  The olive grove continues to the north.
+^
+Olive4 w:Olive;
+lflags{Outdoors}
+Olive Tree^
+   This tree juts out from a cliff, and through the leaves and branches you
+find the sea there facing you, calm and limpid and vast as the sky. The horizon
+opens wide and high and the sea-blue is stretched bare, without a sail. You can
+almost count the far-off ripples of the waves.  Only a very light rustle, like
+a sigh, runs over the pebbles on the beach.
+^
+Walnut e:Elm;
+lflags{Outdoors}
+Walnut Tree^
+   You are in an old and stately nut tree.  At the fork of the trunk is a
+hollow, formed from an old ax wound.  A soft boarskin is stretched across the
+hollow, making a cosy refuge in the shade of the dark green foliage.  In a deep
+incision in the bark, now so old and deformed that it no longer seems the work
+of human hands, is carved in big letters: Cosimo, Viola, and beneath: Ottimo
+Massimo.
+^
+Hole s:Burrow u:^HoleFox d:Burrow;
+lflags{}
+Fox Hole^
+   You have crawled into a damp, narrow fox hole.  The roots of the giant oak
+are all around you.  The burrow continues to the south, but the fox smell is
+stronger there.
+^
+Burrow n:Hole s:Den u:Burrow d:Den;
+lflags{Dark}
+Fox Burrow^
+   You are crawling around on your hands and knees in a cramped north-south fox
+burrow.  The stench of fox permeates the burrow and gets even stronger towards
+the south.  The air to the north is somewhat fresher.
+^
+Den n:Burrow u:Burrow;
+lflags{Dark}
+Fox Den^
+   You are wedged into a reeking fox den.  Strangely enough, the vixen has
+built her den adjoining a huge natural cavern that extends deep into the earth,
+much farther than your feeble flame can penetrate.  It looks like it might go
+all the way to China!  You could jump in, but you would fall a long way....
+There is a blinking construction sign here.
+^

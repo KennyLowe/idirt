@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+#########################################################################
+# iDIRT Backup Creator							#
+# 1995, Illusion							#
+#########################################################################
+# This backs up the important files to the iDiRT system, in case you	#
+# want to fiddle around with the code. The archive name is created	#
+# based on the Julian date, and the current minute. This is to ensure	#
+* that no files are overwritten.					#
+#########################################################################
+
+echo 'iDiRT Source Backup Script 1.00'
+echo ' '
+
+unalias mv
+cwd=`pwd`
+cd ..
+date=`date +%j.%M`
+tarname='backup.'$date'.tar'
+idxname='INDEX.'$date
+gzname=$tarname'.gz'
+
+echo -n 'Creating Archive File...'
+tar -cf $tarname src/*.c include/*.h data/verbs.src
+
+echo -n 'Creating Index File...'
+echo '-----------------------------------------------------------------------' > $idxname
+echo 'iDiRT Source Backup Archive Index' >> $idxname
+echo -n 'Archive Created: ' >> $idxname
+date >> $idxname
+echo '-----------------------------------------------------------------------' >> $idxname
+tar -tvf $tarname >> $idxname
+
+echo -n 'Compressing...'
+gzip $tarname
+
+cd $cwd
+mv ../$gzname ./BACKUP
+mv ../$idxname ./BACKUP
+
+echo 'Done!'

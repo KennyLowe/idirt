@@ -1,0 +1,5 @@
+* Replaced handle_packet() with copy from Stormclouds, does not suffer
+  from buffer overflows.
+* Altered Makefile to include -l flags in the generator build. Needed for
+  crypt() support on glibc2.1 Linux installs.
+

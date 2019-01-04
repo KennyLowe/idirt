@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+#########################################################################
+# iDIRT UAF_RAND File Convertor Script					#
+# 1995, Illusion							#
+#########################################################################
+# Makes a backup copy of the uaf_rand file as uaf_rand.OLD and then	#
+# runs the convert program to change the uaf_rand file.			#
+#########################################################################
+
+if [ ! -f convert ]; then
+	echo "Cannot find the convert executable. Perhaps you haven't compiled it yet."
+	exit 1
+fi
+
+cp ../data/uaf_rand ../data/uaf_rand.OLD
+convert < ../data/uaf_rand > /tmp/uaf
+mv /tmp/uaf ../data/uaf_rand

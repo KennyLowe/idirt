@@ -1,0 +1,22 @@
+Wizard Commands
+-------------------------------------------------------------------------------
+Utility Commands			      |	Communication Commands (Wiz=1)
+RESET	CFR	WAR	PEACE	FAKEQUIT      |	ECHO	ECHOTO	ECHOALL	LEVECHO
+GOTO	IN/AT	ATVIS	SEEEXT	SETSTART      |	WIZ	NOWIZ	NOWISH	NOSHOUT
+CHANGE	QUIET	NOSLAIN	ALOOF	START/STOP    |--------------------------------
+ALIAS	WBULL	FREAQ	PUNT	SIC           |	Creation Commands
+SET	MFLAGS	PFLAGS 	LFLAGS	MASK	      |	STORE	LOAD	MAXSTATE
+ZAP	BURN	TOUT	EXORCISE 	      |	CLONE	LINK	DESTRUCT
+-------------------------------------------------------------------------------
+Spell Commands				      |	Travel Messages
+LIT	POSE	BANG	FORCE	FORCEALL      |	REVIEW	SAVESET	SETIN	SETOUT
+CURE	MUTE	DEAFEN	BLIND	CRIPPLE	      |	SETMIN	SETMOUT	SETVIN	SETVOUT
+SUMMON	TRANS	HEAL	HEALALL	RESURRECT     |	SETQIN	SETQOUT	SETSIT	SETSTND
+VIS	INVIS	SAVEALL	SHALL		      |	SETSUM	SETSIN	SETSOUT	PROMPT
+-------------------------------------------------------------------------------
+Informational Commands			      |	Weather Control (WEATHER type) 
+STAT	MSTAT	FOLLIST	TTY	MWHO	      |	CLEAR	RAIN	SHOWERS	
+GLOBAL	ACCT	MOBILES	OBJECTS	TREASURE      |	HAILING	SNOW	DRIZZLE	
+SHOW	FIND	WHERE	ZONES	LOCATIONS     |	STORMY	BLIZZARD	
+-------------------------------------------------------------------------------
+Type HELP <command> for detailed help on a command.

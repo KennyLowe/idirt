@@ -1,0 +1,24 @@
+#!/bin/sh
+#########################################################################
+# iDiRT Documentation Viewer						#
+# 1996, Illusion							#
+#									#
+# Usage: viewer [docname].man						#
+# (NOTE: Do NOT attach the .man extension)				#
+#########################################################################
+
+if [ -z $1 ]; then
+	echo 'iDiRT Document Viewer'
+	echo '1996, Illusion'
+	echo ' '
+	echo 'Usage: viewer [docname].man'
+	exit
+fi
+
+if [ -f $1.man ]; then
+	echo 'Loading '$1'.man, Please Wait...'
+	groff -Tascii -man $1.man | col | less -s
+else
+	echo 'Cannot find file: ' $1'.man'
+fi
+

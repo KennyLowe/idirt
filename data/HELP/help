@@ -1,0 +1,1637 @@
+[A]ABULL
+[A]Shows bulletins for ArchWizards.
+[A]^
+[X]ACCT [zone]
+[X]Gives system accounting for the MUD or for a specified zone.
+[X]^
+ACTIONS [action]
+Without arguments, lists various actions you can perform, such as HUG,
+KISS, CUDDLE, etc.  You should check this list periodically, as new
+actions are constantly being added. 
+
+If followed by an action, show the various texts that that action will
+display if you envoke it.
+^
+[V]ADVISOR [msg]  OR  4 [msg]
+[V]Send message to all Advisors.
+[V]^
+AID [player]
+Lets you heal yourself or another player.
+^
+[PAliasMob & !PAliasPlayers]ALIAS [mobile]
+[PAliasMob & !PAliasPlayers]Puts you in control of the mobile specified.
+[!PAliasMob & PAliasPlayers]ALIAS [player]
+[!PAliasMob & PAliasPlayers]Puts you in control of the specified player.
+[PAliasMob & PAliasPlayers]ALIAS [player/mobile]
+[PAliasMob & PAliasPlayers]Puts you in control of the specified player or mobile.
+[PAliasMob | PAliasplayers]Type QUIT to return to your own body.
+[PAliasMob | PAliasplayers]^
+[X]ALOOF
+[X]For those moments when you don't wish to be disturbed by mortals'
+[X]actions.  Prevents HUG, KISS, SLAP, etc. from being used on you.
+[X]Type ALOOF again to disable this.
+[X]^
+ANON [msg]
+Lets you send a messsage to the MUD anonymously.
+ 
+See NOANON.
+^
+ARMOR [player]
+Casts the Armor spell at a player. This spell gives the player more armor 
+for a while.
+^
+[PGoto]AT [room/player/mobile/object] [command]
+[PGoto]Executes "command" as if you were with the specified player/object/room.
+[PGoto]
+[PGoto]Example: "at tom say Boo!" says 'Boo' in whatever room Tom is in.
+[PGoto]See also ROOM, OBJECT and MOBILE.
+[PGoto]^
+[X]ATVIS [level] [command]
+[X]Do a command at the specified visibility level and return to your
+[X]original visibility level.
+[X]^
+ATTACK [victim] [WITH <weapon>]
+Your opportunity to beat mobiles and other players to death.  Use the
+"WITH [weapon]" option to select a weapon different from the one
+currently wielded.  See also MOBILE
+^
+AUTOEXIT
+Toggles automatically seeing the exits from a room when you look in it.
+^
+AWAY [reason]
+Toggles your away flag that lets people on the MUD know that you aren't
+at your keyboard. You may also give a reason for being away if you choose.
+^
+[A]AWIZ [msg]  OR  3 [msg]
+[A]Send message to all Arch-Wizards.
+[A]^
+[LMagician]BANG
+[LMagician]Makes a crash of thunder that all can hear.
+[LMagician]^
+[PBan]BANHOST [host]
+[PBan]Bans a host from logging into the MUD.
+[PBan]^
+[PBan]BANLOGIN [host]
+[PBan]Bans a host from doing a users/who check at login.
+[PBan]^
+[PBan]BANUSER [user]
+[PBan]Bans a user from logging into the MUD.
+[PBan]^
+BECOME [user]
+Quit the game and reenter as "user".
+^
+BEEP [player]
+Attempt to get a players attention by sending them beeps.
+^
+BHANDS [mobile]
+Casts the Burning Hands spell at a mobile.
+^
+BLIND [player]
+Take away a players vision.
+
+SEE CURE.
+^
+BLOW [item]
+Blows into an item. This works with horns.
+^
+BLUR [player]
+Casts the Blur spell at a player. The Blur spell makes the person seem to 
+fade in and out of view making it harder to attack them.
+^
+[PReboot]BRESET
+[PReboot]Toggles the MUD for reboot upon the next reset.
+[PReboot]^
+BREAK  [object]
+Your opportunity to beat mobiles and other players to death.  Use the
+"WITH [weapon]" option to select a weapon different from the one
+currently wielded.  See also MOBILE
+^
+BRIEF
+Display only short descriptions or rooms.  Acts as a toggle.  Typing BRIEF
+again will return you to normal descriptions.
+^
+BUG [msg]
+Report a bug to the game administrator. Please give as much information
+as possible. For longer messages/suggestions please MAIL the Gods.
+^
+BULL
+Contains information about game policy, new commands, upcoming
+events, etc.
+^
+[PBurn]BURN [player|mobile]
+[PBurn]A punishment command that lets you send a player to Hell, setting
+[PBurn]their level to 1, score to 0, and cleaning out their Pflags. You
+[PBurn]can also BURN a mobile, it simply sends them to Hell.
+[PBurn]
+[PBurn]NOTE: Use this command wisely, if you are caught using it incorrectly
+[PBurn]against players, you could lose the command.
+[PBurn]^
+BUSY
+Toggles your busy flag that lets you ignore people below your level.
+^
+[X]CFR [message]
+[X]Call For Reset command. Useful if you are asked to reset the game.
+[X]^
+CHANGE [See below. You may use abbreviations as long as they are unique]
+CHANGE SEX [player]   		                Changes players sex.
+CHANGE DESCRIPTION			        See HELP DESCRIPTION
+[PTitleEdit]CHANGE TITLE [player/mobile] [new-title]        See HELP TITLE.
+[!D]CHANGE PASSWORD                                 Change your password.
+[D]CHANGE PASSWORD [player]                        Change password on a player.
+[X]CHANGE NAME [old-name] [new-name]               Change a mobile/player name.
+[X PChLevel PFrob]CHANGE LEVEL [player] [new level]		Change level of player.
+[X PChLevel !PFrob]CHANGE LEVEL [me] [new level]
+[PHeal !PChMobData]CHANGE STRENGTH [player] [new strength]         Change players strength.
+[PHeal PChMobData]CHANGE STRENGTH [player/mobile] [new strength]
+[!PHeal PChMobData]CHANGE STRENGTH [mobile] [new strength]    Change mob's str.
+[PHeal]CHANGE MAGIC [player] [new magic]               Change players magic points.
+[X PChScore !PFrob]CHANGE SCORE [me] [new score]
+[X PChScore PFrob]CHANGE SCORE [player] [new score]
+[X !A PChMobData]CHANGE DAMAGE [me/mobile] [new damage]
+[X !A !PChMobData]CHANGE DAMAGE [me] [new damage]
+[A PChMobData]CHANGE DAMAGE [player/mobile] [new damage]
+[A !PChMobData]CHANGE DAMAGE [player] [new damage]
+[X]   The damage determines how hard a player/mobile hits when/if it hits.
+[X !A PChMobData]CHANGE ARMOR [me/mobile] [new value]
+[X !A !PChMobData]CHANGE ARMOR [me] [new value]
+[A PChMobData]CHANGE ARMOR [player/mobile] [new value]
+[PChMobData]CHANGE SPEED [mobile] [new speed]    The average number of moves per minute.
+[PChMobData]CHANGE AGGRESSION [moblile] [new value]
+[PChMobData]   Changes the chance of a mobile attacking a player in the same room.
+[X]CHANGE VIS [player/mobile] [vis-level]
+[X]   Changes a mobile or player's visibility level. See help VISIBILITY
+[LNovice]^
+CHANNEL [player] [channel]
+Changes a players channel. To change your own channel use CHANNEL ME [channel].
+The channel is used for the GCHAT communication system.
+
+See GCHAT.
+^
+CLASS
+Not a command.  A class is a type of object.  The following classes
+are defined:
+
+	all	 = everything
+	clothing = anything that can be worn (including shields)
+	containers = anything you can put other objects in
+	food	 = anything edible
+	keys	 = anything used as a key
+	weapons	 = all weapons (you may be surprised)
+
+In addition, modifiers and adjectives are allowed in all commands which deal
+with objects.  For example: Suppose there are three robes in the room...
+
+	There is a black robe here.
+	There is a scarlet robe here.
+	There is a green robe here.
+
+If you want the scarlet robe, you could either say "get scarlet",
+or "get robe2" (see also OBJECT)
+^
+CLEAR
+Clears the screen.
+^
+[X]CLONE [location/mobile/object] [optional new name]
+[X]Create a copy of an existing location, mobile or object.
+[X]Examples:
+[X]"clone puff The Big Red Dragon"
+[X]   &+W*OR*&*
+[X]"clone home2 My New Home"
+[X](In case a new mobile name contains spaces, its name in the game will be
+[X] whatever word comes after the last space).
+[X]
+[X]The intended way of creating your unique room, mobile or object, is to
+[X]clone something close to what you want, and then use the SET and CHANGE
+[X]commands to forge it to exactly match your needs.
+[X]
+[X]All new creations will normally be destructed at RESET unless you have
+[X]the power, by invoking the STORE command, to mark it as non-temporary.
+[X]
+[X]See also DESTRUCT, STORE, RESET       (and ROOM, MOBILE, OBJECT)
+[X]^
+CLOSE [item]
+Closes an item.  Usually used on containers and doors.
+^
+CLS
+Clear your screen.
+^
+[G]CODING
+[G]Toggle the coding flag to show that you are away coding.
+[G]^
+COLOR
+Enables ANSI color or monochrome. To use ANSI color you must have an ANSI 
+compatable terminal, such as an IBM PC.
+
+See COLORCODES
+^
+COLORCODES [TOPIC, NOT A COMMAND]
+&+w Colorcodes allow you to insert color in your title, says, tells, etc.
+&+W   & +[color]   &+w: Set foreground color.
+&+W   & -[color]   &+w: Set background color.
+&+W   & =[fg][bg]  &+w: Set both foreground and background colors.
+&+W   & *          &+w: Reset color to standard settting.
+&+w [Note: There can't be a space between the '&' and the code (+, -, =, *)]
+&+w 
+&+W Code    Color                    Code    Color   
+&+b ---------------------------------------------------------------------
+&+w l       &=lWBlack&+w                    &+wL       &+LGray
+&+w b       &+bBlue                     &+wB       &+BLight Blue 
+&+w g       &+gGreen                    &+wG       &+GLight Green
+&+w c       &+cCyan                     &+wC       &+CLight Cyan
+&+w r       &+rRed                      &+wR       &+RPink
+&+w m       &+mMagenta                  &+wM       &+MLight Magenta
+&+w y       &+yBrown                    &+wY       &+YYellow
+&+w w       &+wLight Gray               &+wW       &+WWhite
+&+b ---------------------------------------------------------------------
+&+W Examples: &+w&?bCHello  When ? is a '=' will display '&=bCHello&+w'
+&+w           &+w&?MHiya    When ? is a '+' will display '&+MHiya&+w'
+&+w           &+w&?GHi      When ? is a '-' will display '&-GHi&+w'
+^
+COMPARE [obj1] [obj2]
+This lets you compare two items of either a weapon or armor type to see 
+which is more powerful.
+^
+CONVERSE [player]
+Enter conversation mode with another player. Once you are in converse 
+mode your prompt will change to '[CONV: player] ' to remind you that you 
+are in conversation mode. To run a MUD command inside of converse mode type 
+'!command'. To exit converse mode type '**'.
+^
+COUPLES
+Show who has been mudmarried, and when.
+^
+CREDITS
+Gives credit where credit is do.  Shows authors and major contributors.
+^
+[D]CRASH
+[D]Shuts down the iDiRT server and kills the process.
+[D]^
+CRIPPLE [player]
+Cripples a player. It can be cured with the cure spell.
+^
+CTIME
+Shows the current climate time, with the MUD month, day, time, season and 
+weather.
+^
+CURE [player]
+Cures all ailments of a player.  (Blind, deaf, dumb, crippled, ...)
+^
+DAMAGE [player]
+Casts the Damage spell at a player. This spell increases the player's 
+damage for a while.
+^
+DEAFEN [player]
+Take away a players hearing.
+^
+[D]DELETE [player]
+[D]Totally deletes a player from the system's datafiles.
+[D]This means: password, travel-messages, name/score et.c.
+[D]^
+[X]DESTRUCT [location/mobile/object]
+[X]Destruct (remove from the game) something that was created with CLONE.
+[X]
+[X]In the case of mobiles, "Exorcise" will also destruct it.
+[X]If a temporary mobile dies, it will be destructed automaticly.
+[X]^
+DESCRIPTION  (Or CHANGE DESCRIPTION)
+Make a description of yourself for others to see when they EXAMINE you.
+[X]
+[X]Or DESCRIPTION MOBILE [mobile]
+[X]   Make a description for an in-game created mobile.
+[X]
+[X]Or DESCRIPTION OBJECT [object]
+[X]   Make a description for an in-game created object.
+[X]
+[X]Or DESCRIPTION LOCATION [location]
+[X]   Make a description of an in-game created room.
+[X]
+[X]Or DESCRIPTION PLAYER [player]
+[X]   Make a description for a player other then yourself.
+[LNovice]^
+DOWN
+Moves you down.
+^
+DIG [object]
+Dig a hole with [object].
+^
+DRINK [item]
+Drink something.
+^
+DROP [item/class]
+Drops an item or all items of the specified class.  See OBJECT and CLASS.
+^
+EAT [item]
+Eat food to regain strength.
+^
+EAST
+Moves you east.
+^
+[PEcho]ECHO [msg]
+[PEcho]Similar to EMOTE, but without your name attached.
+[PEcho]Example: echo The chair bites you.
+[PEcho]^
+[PRaw]ECHOALL [msg]
+[PRaw]Same as ECHO, but to all users.
+[PRaw]^
+[PEcho]ECHOTO [user] [msg]
+[PEcho]Same as ECHO, but to specified user.
+[PEcho]^
+[PEFlagEdit]EFLAGS [player] [flag] [true/false]
+[PEFlagEdit]Lets you view/edit a players eflags.
+[PEFlagEdit]
+[PEFlagEdit]Available Eflags:
+[PEFlagEdit]  FireBall, FearFireBall, ImmFireBall, Missile, FearMissile,
+[PEFlagEdit]  ImmMissile, Frost, FearFrost, ImmFrost, Shock, FearShock,
+[PEFlagEdit]  ImmShock, Aid, VTouch, ImmVTouch, Light, Damage, Armor,
+[PEFlagEdit]  BHands, FearBHands, ImmBHands, Blur, IceStorm, FearIceStorm,
+[PEFlagEdit]  ImmIceStorm
+[PEflagEdit]^
+[PEmote]EMOTE [msg]
+[PEmote]Perform non-standard action in front of all in room.
+[PEmote]Example: "emote turns into a duck." Can be abbreviated with : or ;
+[PEmote]^
+[PEmote]EMOTETO [user] [msg]
+[PEmote]Same as EMOTE, but to a specific person.
+[PEmote]^
+EMPTY [item]
+Empties the contents of a container onto the floor.
+^
+EXAMINE [item/player]
+Examines something or someone.
+^
+EXITS
+List all obvious exits.
+
+[PGoto]EXITS [location]               Lists the exits from [location].
+[PRoomEdit]EXITS [location] [direction] [new location]
+[PRoomEdit]                               will change the exit in the given
+[PRoomEdit]            direction in the given room to the [new location].
+[PRoomEdit]            Directions are North, South etc. and may be abbreviated.
+[PRoomEdit]
+[PRoomEdit]If no [location] is given, your current location is assumed.
+[PRoomEdit]If no [new location] is given, the [direction] exit will be cleared.
+[PRoomEdit]
+[PRoomEdit]Examples: EXITS s start1       will change the southern exit in your
+[PRoomEdit]                               current location to start1.
+[PRoomEdit]          EXITS home1 west home2
+[PRoomEdit]                     will change the western exit in home1 to home2.
+[PRoomEdit]          EXITS home1 up       will remove the 'up' exit from home1.
+[PRoomEdit]          EXITS u              ditto, for your current location.
+[PGoto|PRoomEdit]See also ROOM
+[PGoto|PRoomEdit]^
+[PExorcise]EXORCISE [player]
+[PExorcise]Kick someone off the game without killing them.
+[PExorcise]^
+EXTINGUISH [item]
+Blow out a torch, turn off a lamp, etc.
+^
+[X]FAKEQUIT
+[X]Lets you fake quitting the game. It sends the usual quit message to 
+[X]the MUD and then sets your visibility level to the highest setting.
+[R]
+[R]You can also specify a type of FAKEQUIT, type FAKEQUIT LIST to 
+[R]get a listing.
+[X]^
+FINGER [player]
+Checks to see when a user was last on-line and checks their mailbox if 
+they have the finger flag set true. To check another user specify their 
+name after FINGER. To change your finger status, type FINGER without a 
+parameter.
+[G]
+[G]AVATAR+'s:
+[G]You may finger a player even if they do not have the finger flag set true.
+^
+[X]FIND [string]
+[X]Searches location names, object names, mobile names, and player names for
+[X]the string you specify. Unlike WHERE, this command does substring searching.
+[X]^
+FIREBALL [mobile]
+Cast a fireball at a mobile.
+^
+FLEE  or  FLEE [direction]
+Escapes from a  fight.  Please note  that fleeing  causes you to  drop
+anything that's not being worn or wielded.  You  also  lose 3% of your
+score, but it's better than losing 50% through death by combat.
+Without [direction], FLEE will move you through a random exit.
+^
+[G]FLIST [player]
+[G]Lets you view the people that the specified player is forgetting.
+[G]^
+FLUSH [object]
+Flush an object. This would probably be used on a toilet.
+^
+FOLLOW [player]
+Follows a player.  See LOSE.
+^
+[X]FOLLIST
+[X]Give a listing of players that are currently using follow.
+[X]^
+[X]FORCE [player] [action]
+[X]Lets you force a player to do a command or action.
+[X]^
+[X]FORCEALL
+[X]Lets you force all players that are below your level to do a command
+[X]or action.
+[X]^
+FORGET [player]
+Lets you forget or remember a player. Typing FORGET by itself lets you see who
+you are currently forgetting.
+^
+[X]FREAQ [player]
+[X]Lets you turn a player or yourself into a FreaQ. The FreaQ command changes
+[X]the players' title and makes the USTAT and WHO commands show that their
+[X]level is FreaQ.
+[X]^ 
+[PFrob PChLevel PChScore]FROB [user]
+[PFrob PChLevel PChScore]Changes a users level/score/strength.
+[PFrob PChLevel PChScore]^
+FROST [mobile]
+Cast a frost spell on a mobile.
+^
+GCHAT [msg] or [ [msg]
+Talks on the global chat line. Typing GCHAT by itself shows your current channel
+and the people on your channel.
+
+See CHANNEL.
+^
+GET [item/class] [FROM [item]]
+Gets an item or items from a room or from a container.  See also OBJECT, CLASS
+Example: GET FOOD FROM SACK = take all food from the sack
+^
+GIVE [item] TO [player]
+Gives something to another player/mobile (the word TO is optional)
+
+See also MOBILE and OBJECT
+^
+GLOBAL
+Show the current settings of Max.Users, the weather etc...
+^
+GOSSIP [msg]
+Lets you spread some gossip on the MUD. This line is showed to all players
+that are not marked as NoGossip.
+
+See NOGOSSIP.
+^
+[PGoto]GOTO [room/player/object]
+[PGoto]Teleport to the room, player or object specified.
+[PGoto]Example: "goto start2" or "goto pillowcase" or "goto 244" or "goto puff"
+[PGoto]
+[PGoto]Goto with no argument brings you to your 'home' if one is defined.
+[PGoto]Otherwise you will be brought to Start1 or Start2 Randomly.
+[PGoto]
+[PGoto]See also ROOM, MOBILE, OBJECT
+[PGoto]^
+[V]GOD [msg]  OR  5 [msg]
+[V]Send message to all Gods.
+[V]^
+[PHeal]HEAL [player/mobile]
+[PHeal]Heals all damage to a player or mobile.
+[PHeal]
+[PHeal]See also MOBILE
+[PHeal]^
+[PHeal]HEALALL
+[PHeal]Lets you heal all players on the MUD at once.
+[PHeal]
+[PHeal]See HEAL.
+[PHeal]^
+HEARBACK
+Lets you see what you have said.
+^
+HELP  or  HELP [player]  or  HELP [verb]
+With no arguments, HELP gives a brief list of  available commands.  If
+a verb is given, detailed help will be shown.   (But  you already know
+that or you wouldn't be reading this. :-)
+
+Use HELP [player] to assist someone else with things that require more
+than one person.  Pushing a heavy statue, for instance.
+^
+HIT [victim/object] [WITH <weapon>]
+Your opportunity to beat mobiles and other players to death.  Use the
+"WITH [weapon]" option to select a weapon different from the one
+currently wielded.  See also MOBILE
+^
+[G]IDLE
+[G]Allows you to pretend to be idle to users on the MUD.
+[G]^
+[PGoto]IN [room] [command]
+[PGoto]Executes "command" as if you were in specified room.  See ROOM and AT.
+[PGoto]
+[PGoto]Example: "in bliz84 drop sword" drops the sword at BLIZZARD 84
+[PGoto]^
+INFO [topic]
+Get information on a topic. Without topic, give a list of possible topics.
+^
+INVENTORY
+List the items you carry.
+^
+[X]INVIS [invis level]
+[X]Become invisible.
+[X]Without any visibility level given, it will set your visibility as high
+[X]as possible, otherwise set it to the level given.
+[X]
+[X]See also VIS, CHANGE VIS, and VISIBILITY
+[X]^
+JUDGE [player/mobile]
+Lets you check out how much damage a mobile or player has taken. You may
+only judge a player in tournament mode.
+^
+JUMP
+Be careful where you jump, lest you fall.
+^
+KILL [victim] [WITH <weapon>]
+Your opportunity to beat mobiles and other players to death.  Use the
+"WITH [weapon]" option to select a weapon different from the one
+currently wielded.  See also MOBILE
+^
+KLOCK
+Locks the keyboard with your login password.
+^
+LANG [language]
+Selects your default speaking langauge. Type language by itself to
+get a listing of the languages that you can speak and your current
+default.
+
+See Also: LSAY
+^
+LANGUAGE
+Languages give you a different way to communicate with other players
+and in the future, even mobiles. You can learn different languages
+by completing quests on the MUD. The following table shows which
+quest gives you which language.
+
+Elven Forest	: Xara		Fiery Kings Hall : Sorca
+Sorcerors Tower	: Hyeel		Mana		 : Alouth
+Find Excalibur	: Draken	SunDisc		 : Xizart
+Find Grail	: Ravashem
+
+Subtopics:
+    LSAY LANG
+^
+LOOK
+Long description of room with contents and inhabitants.
+^
+LEVELS
+List of levels and how many points are required for each.
+^
+[PEcho]LEVECHO [level] [msg]
+[PEcho]Sends an echoall to all players above the set level.
+[PEcho]^
+[A]LEVFORCE [level][-] [command]
+[A]If a '-' is ommitted from the end of the level, forces all players at
+[A]the level given and above. If the '-' is given, forces all players at
+[A]the level given and below. Note that is a higher player has on NoForce
+[A]that they won't be forced.
+[A]
+[A]  Examples: levforce 3000 shout Coolness!
+[A]            levforce 12- jump
+[A]^
+[!PRoomEdit X]LFLAGS [location]
+[!PRoomEdit X]Displays the Location-flags at [location] or your location if 
+[!PRoomEdit X]no argument is given.
+[PRoomEdit]LFLAGS [location] [lflag] [true/false]
+[PRoomEdit]or CHANGE LFLAGS ....
+[PRoomEdit]Shows or sets flags for a location.
+[PRoomEdit]Examples:
+[PRoomEdit]LFLAGS start1 Death True
+[PRoomEdit]LFLAGS start2 Death True
+[PRoomEdit](my favorite method of doing WIZLOCK :-) )
+[PRoomEdit]
+[PRoomEdit]Some L-flags are:
+[PRoomEdit]Death, Peaceful, NoMagic, Party, Private, OnePerson, OnWater,
+[PRoomEdit]Outdoors, NoMobiles
+[PRoomEdit | X]^
+LIGHT [item]
+Lights something.  You must already have a burning object or be near a
+fire to do so.
+^
+[PClone]LINK [object1] [object2]
+[PClone]Links two objects together, such as doors.
+[PClone]
+[PClone]  link door1 door2
+[PClone]^
+[X]LIT
+[!X]LIT [player]
+[X]Lets you light yourself so that you can light up a dark room.
+[!X]Casts the light spell at yourself or at another player to light them
+[!X]so that they can light up a dark room. To light yourself, cast the
+[!X]spell at yourself.
+^
+[X]LOAD [player-name]
+[X]If not followed by any argument, it means your own zone.
+[X]This command loads a zone stored with the STORE command from its saved
+[X]state on disk and into the game.
+[X](or parts of it, if some of the items are allready in the game.)
+[X]
+[X]It leaves everything that's not temporary (remember that anything you
+[X]have created after the last invocation of STORE is only temporary)
+[X]in their reset-state.
+[X]A LOAD is normally done automaticly if your zone is not allready in the
+[X]game when you enter.
+[X]^
+[X]LOCATIONS
+[X]Lists the zones on the MUD with the number of locations in each.
+[X]^
+LOCK [item]
+Locks an item.  Usually used on doors.
+^
+[PCanLog]LOG [msg]
+[PCanLog]Places a message into the system logs.
+[PCanLog]^
+LOSE
+Stop following someone.
+^
+LSAY [language] [text]
+Say something in a specific language that you know how to speak. This is
+here to make life easier if you just want to say something quickly in
+another language and don't feel like switching your language back and forth.
+^
+MAGIC
+There are several spells available to you, each of which require mana points.
+Some spells require more mana points then others, it depends upon the type
+of spell. 
+
+Subtopics:
+    MANA, SPELLS
+^
+MAIL [user]
+Places you in the iDIRT mailer. You can send mail to a player by placing
+their name on the command line. For help inside of the mailer, type '?'.
+^
+MANA
+Mana points is the system that lets you cast spells on this MUD. Your 
+maximum amount of mana points that you have available is raised everytime
+that you raise a level, much like your health. Also, like health, you 
+regain the mana points that you have used while you are not fighting and
+sitting regains the mana points faster.
+
+Related Topics:
+    MAGIC, SPELLS
+^
+[!PPflagEdit]MASK [me]
+[PPflagEdit]MASK [player] [privilege] [true/false]
+[PPflagEdit | !PPflagEdit]Show player's mask, i.e. which flags he or she is allowed to change
+[PPflagEdit | !PPflagEdit]via the PFLAGS command.
+^
+[PClone]MAXSTATE [object] [0-3]
+[PClone]Sets a new maxstate for an object.
+[PClone]
+[PClone]  maxstate sword 1
+[PClone]^
+[X !PMflagEdit]MFLAGS [mobile]
+[X !PMflagEdit]Show the Mobile-Flags (which determine the mobiles behaviour) 
+[X !PMflagEdit]for [mobile]
+[PMflagEdit]MFLAGS [mobile] [flag] [new value]
+[PMflagEdit]Show or set the Mobile-flags (which determine the mobiles 
+[PMflagEdit]behaviour) for the specified mobile. New value is True or False.
+[PMflagEdit]Examples:
+[PMflagEdit]Mflags Wraith
+[PMflagEdit]Mflags Flame CanFireball True
+[PMflagEdit]Some Mflags are:
+[PMflagEdit]CanFireball, CanMissile, CanShock, CanFrost, PickStuff, 
+[PMflagEdit]NegFireball, NegMissile, NegShock, NegFrost, DrainScr,
+[PMflagEdit]Thief, NoSteal, QFood, Cross, NoHeat, Blind,
+[PMflagEdit]BarNorth, BarEast, BarSouth, BarWest, BarUp, BarDown  [-- Bars your way...
+[PMflagEdit]StealWeapon, StealWorn  [- if Thief, may also steal weapons or armor.
+[X | PMflagEdit]See also MOBILE
+[X | PMflagEdit]^
+MISSILE [mobile]
+Cast a magic missile on a mobile.
+^
+MOBILE
+[!X]Not a command.
+
+If a command expects a mobile as argument, it may be given as either one of:
+1) [mobile-name]
+2) [mobile-name][number-in-room-with-that-name]
+
+Example, if there are 5 orcs in a room, and you want to kill the 2nd, you
+could say "kill orc2".  "kill orc1" and "kill orc" means the 1st orc.
+
+[X]3) [number]
+[X]
+[X]This is the unique mobile-ID number that shows up on the WHERE command.
+[X]Examples:  "at 1512 kiss 1512", "heal 1611", "give biscuit to 1779"
+[X]^
+[X]MOBILES [zone]
+[X]Without arguments, Shows all the permanent (non wizard made) mobiles
+[X]and their locations.
+[X]If a zone name is present, show the mobiles in that zone.
+[X | !X]^
+MONOCHROME
+Disables color.  See COLOR.
+^
+MOVE [item]
+Move an item.
+^
+[X]MSTAT
+[X]Shows the status of the online mortals.
+[X]^
+[X]MWHO [zone]
+[X]Lists active (not dead or kicked off) mobiles for the given zone.
+[X]If no [zone] is present, look at all the mobiles in the game.
+[X]^
+MUTE [player]
+Strikes a player mute. Can be cured with cure.
+^
+NEWSTYLE
+Toggles newstyle output which cuts down on scroll.
+^
+[X]NFLAGS [player|mobile] [nflag] [true|false]
+[X]Lets you view and edit the nflags of players and mobiles. The following
+[X]nflags are available:
+[X]
+[X] English, Xara, Hyeel, Draken, Ravashem, Sorca, Alouth, Xizart, and Ramar.
+[X]^
+NOANON
+Lets you turn on and off the anon line.
+
+See ANON.
+^
+[G]NOBEEP
+[G]Allows you to turn off all beeps from the MUD.
+[G]^
+NOBLINK
+Toggles the viewing of blinking characters.
+^
+NOFIGHT
+Toggles seeing others fighting in a room.
+^
+NOFLAG
+Toggles the viewing of the flags in WHO and WHON.
+^
+NOGOSSIP
+Lets you turn on and off the gossip line.
+
+See GOSSIP.
+^
+NOINV
+Toggles the viewing of others inventory when you look around a room.
+^
+NOPUFF
+Lets you ignore all of the messages that Puff puts out.
+^
+[MNoPunt]NOPUNT
+[MNoPunt]Toggles your NoPunt pflag, making it so you can or can't be punted.
+[MNoPunt]^
+NORTH
+Moves you north.
+^
+[X]NOSHOUT [player]
+[X]For those of you with headaches.  When this is on you won't hear any noisy
+[X]mortals. :-)  Type NOSHOUT again to hear shouts again.
+[X]When you do NOSHOUT [player] to a mortal player you will make him or her
+[X]unable to shout.
+[X]^
+[X]NOSLAIN
+[X]Toggle the viewing of slain messages.
+[X]^
+NOWET
+Toggles watching the skies for weather.
+^
+[X]NOWIZ
+[X]Prevents you from hearing WIZ-messages. Type NOWIZ once more to turn
+[X]them on again. (See also help WIZ)
+[X]^
+[X]NOWISH [player]
+[X]Toggle the listening of wishes. You can also strike a mortal unable to wish.
+[X]^
+OBJECT
+Not a command.
+You can specify an object to a command in several ways:
+1) [object-name]
+2) [object-name][number-in-sequence-with-that-name]
+
+Example: If there are several rings in a room, "get ring3" would get the 3rd.
+         "get ring" or "get ring1" would get the 1st.
+
+         If you have 2 cakes in a sack, "get cake2 from sack" would get the 2nd
+[X]3) [number]
+[X]
+[X]This is the number that shows up on the WHERE command.
+[X]Examples: "give 244 to Elmo", "show 315"
+[X]
+[X]4) [alternate-name]
+[X]Some objects have 2 names. Ex: Icy dagger is both "icy" and "dagger".
+[X | !X]^
+[X]OBJECTS [zone]
+[X]Gives a listing of objects on the MUD or in the specified zone.
+[X]^
+[X]OFLAGS  (Help on Object Flags, not a command)
+[X]   Object Flags determine in many ways how the object will behave.
+[X]
+[X]   Weapon: The object is a weapon.    Armor: The object can protect you.
+[X]   Lit:    The object is lit.         Food:  You can eat/drink it.
+[X]   Key:    You can open doors w/it.   NoGet: It's scenery, can't be taken.
+[X]   Container: Can contain objects.    Destroyed: Used (mortals can't see it)
+[X]
+[X]   PushToggle: If you push/move it, its state flips from 0 -] 1 or 1 -] 0.
+[X]   Pushable: If you push/move it, its state is set to 0 (once and for all)
+[X]   GetFlips: If you get it, its state is set to 0 (once and for all)
+[X]
+[X]   The last 3, and the object's states, are used to get different
+[X]   descriptions according to what has been done with it. Good examples
+[X]   you can study are for instance the apple and the excalibur.
+[X]^
+OPEN [item]
+Opens an item.  Usually used on containers and doors.
+^
+[D]OPENGAME
+[D]Reopens the game after a shutdown.
+[D]^
+OPTIONS
+View your current game options.
+^
+PAGER [lines]
+Configures the number of lines to be displayed before the pager pauses.
+If you wish to disable the pager, enter PAGER 0.
+^
+[PPeace]PEACE
+[PPeace]Prevents fighting and stops current fights.  See WAR.
+[PPeace]^
+[!PPflagEdit]PFLAGS [ME] [privilege] [true/false].
+[!PPflagEdit]or CHANGE PFLAGS [ME] [privilege] [true/false].
+[PPflagEdit]PFLAGS [player] [privilege] [True/False]
+[PPflagEdit]or CHANGE PFLAGS [player] [privilege] [True/False]
+Set/check player's privileges.  If the third argument is missing (True/False)
+the current status of that privilege will be shown.  A TRUE in the third
+argument means "turn pflag on", FALSE means  "turn pflag off".  Privilege
+is one of those names that shows up when you do:
+>MASK ME (see the help on that command).
+
+Example:
+
+PFLAGS kantele nozap false
+PFLAGS me zap true
+zap kantele
+[!Y]
+[!Y]  Available pflags:
+[MNoExorcise]NoExorcise:                       Protects you from being exorcised.
+[MNoSnoop]NoSnoop:                          Protects you from being snooped on.
+[MNoHassle]NoHassle:                         Protects you from being attacked.
+[MNoAlias]NoAlias:                         Protects you from being aliased into.
+[MNoZap]NoZap:                            Protects you from being zapped.
+[MNoSummon]NoSummon:                         Protects you from being summoned.
+[MNoTrace]NoTrace:                          Protects you from being traced.
+[MNoSteal]NoSteal:                          Protects you from being robbed.
+[MNoMagic]NoMagic:                          Protects you from being blinded et.c.
+[MNoForce]NoForce:                          Protects you from being forced.
+[MFrob & MChScore & MChLevel]\
+Frob and ChScore and ChLevel:     You may use the frob command.
+[MChScore & MFrob]ChScore and Frob:                 You may change score.
+[MChScore & !MFrob]ChScore:                          You may change your own score.
+[MChLevel & MFrob]\
+ChLevel and Frob:                 You may change other people's level.
+[MChMobData]\
+ChMobData:                        You may change strength, damage and aggression
+[MChMobData]                                  of mobiles.
+[MPflagEdit]PflagEdit:                        You may change other people's pflags.
+[MMaskEdit]MaskEdit:                         You may do anything you want oh mighty god.
+[MRoomEdit]RoomEdit:                         You may change lflags and exits on locations.
+[MMflagEdit]MFlagEdit:                        You may change mflags of mobiles.
+[MObjectEdit]ObjectEdit:                       You may change oflags of objects.
+[MTitleEdit]TitleEdit:                        You may change title and setins permanently.
+[MUAFInfo]UAFInfo:                          Stats, frob, pflags, et.c work on people who
+[MUAFInfo]                                are not in the game at the moment.
+[MExorcise]Exorcise:                         You may exorcise players from the game.
+[MReset]Reset:                            You may reset the game at will.
+[MSnoop]Snoop:                            You may snoop on players.
+[MHeal]Heal:                             You may heal players.
+[MAliasMob]AliasMob:                         You may alias mobiles.
+[MAliasMob]AliasPlayers:                     You may alias other players.
+[MRaw]Raw:                              You may use RAW and ECHOALL commands.
+[MEmote]Emote:                            You may use EMOTE and EMOTETO commands.
+[MEcho]Echo:                             You may use ECHO and ECHOTO commands.
+[MObjectEdit]ObjectEdit:                       You may set an object's state.
+[MZap]Zap:                              You may zap other players....
+[MResurrect]Resurrect:                        You may RESSURECT things...
+[MShowUsers]ShowUsers:                        Account name or host name shows up...
+[MStats]Stats:                            You may use STATS and SHOW commands.
+[MGoto]Goto:                             You may use GOTO and IN/AT...
+[MSummonObj]SummonObj:                        You may summon objects...
+[MWeather]Weather:                          You may change the weather at will...
+[MLock]Lock:                             You may WIZLOCK the game.
+[MWreckDoors]WreckDoors:                       You may wreck the doors.
+[MPeace]Peace:                            You may use PEACE and WAR commands.
+[MSyslog]Syslog:                           You may use the SYSLOG command.
+[MStartInvis]\
+StartInvis:                       You will enter the game with your saved visibility level.
+[MTrace]Trace:                            You may trace players and items.
+
+Important: You can only use names that shows up on MASK ME command.
+[!PPflagEdit]You may only do MASK ME.
+^
+PLAY [item]
+Plays a musical instrument.
+^
+[G]PLOC [location]
+[G]Relocate a player without them knowing.
+[G]^
+PN
+Display the current pronoun values.  Valid pronouns are ME, IT, HIM, HER,
+and THEM (THEM is the last character mentioned, regardless of sex).
+^
+POLICY [policy]
+View system policies. Type POLICY alone to get the policy list. To
+view a policy, use POLICY [policy].
+^
+[X]POSE [fireball | hamster | sizzle | gestures | crackle]
+[X]Or: POSE [1 | 2 | 3 | 4 | 5]
+[!X & LMagician]POSE
+[X]Abbreviations may be used as long as they are unique, example: POSE f
+[LMagician]^
+PRAY
+Pray to the gods.  Perhaps they'll listen.  Use WISH when you have
+something particular in mind.
+^
+PRESS [item]
+Perform the requested action on an object.
+^
+PRIVS 
+Lets you see your priviledges.
+^
+[D]PROBATION [player]
+[D]Takes a player on/off of probation. When a wizard+ is on probation
+[D]they lose certain pflags until taken off of probation.
+[D]^
+PROMPT [text]
+Changes your prompt.
+
+You can put the following codes in your prompt:
+
+ %h : Health Points
+ %l : Level (Numbered)
+ %c : Score
+ %m : Mana
+ %n : Name
+
+[X]Use the SAVESET command if you want to save it.
+^
+[R]PROPHET [msg]  OR  2 [msg]
+[R]Send message to all Prophets.
+[R]^
+PULL [item]
+Perform the requested action on an object.
+^
+[PPunt]PUNT [player] [location/object/mobile/player]
+[PPunt]Punts a player around the MUD. If you choose you may punt a player
+[PPunt]to a specific location/object/mobile/player.
+[PPunt]^
+[PPuntAll]PUNTALL 
+[PPuntAll]Punts everyone around the world.
+[PPuntAll]^
+PUSH [item]
+Pushes an item.
+^
+PUT [item] IN [item]
+Puts an item in another item.        See also OBJECT
+^
+[PPZap]PZAP [player]
+[PPZap]Lets you pretend-zap a player. It is identical to zap, except it doesn't delete
+[PPZap]the player.
+[PPZap]^
+[!X]QUESTS
+[X]QUESTS [player] [questname] [true/false]
+[X]If followed by only one argument,
+Show which quests are completed and which are not. All quests must be
+completed before a player can be promoted to Wizard/Witch.
+[X]If there is more then one argument, set or clear the quest named by the
+[X]second argument. True = mark quest completed, False = mark quest undone.
+[X!A]You have only enough power to change quests on yourself.
+Information on the quests can be gotten by typing "INFO quests".
+^
+QDONE
+Shows the quests that have been completed since the last reset.
+^
+[X]QUIET
+[X]Prevents you from seeing messages in brackets [].
+[X]Type QUIET again to turn messages back on.
+[X]^
+QUIT
+Exits the game, saving your character automatically.  All your belong-
+ings will be left where you quit, and should you re-enter the game you
+will be carrying nothing and  be at the  Temple Of Paradise or Village Church.
+IMPORTANT:  Do NOT hang up before quitting!
+	    Otherwise your score WILL NOT be updated!
+
+[PAliasMob | PAliasPlayers]If you're aliased, QUIT just returns you to your body.  See ALIAS.
+^
+[PRaw]RAW [msg]
+[PRaw]Sends a RAW message with your name in the brackets.
+[PRaw]^
+[PReboot]REBOOT
+[PReboot]Reboots the MUD.
+[PReboot]
+[PReboot]See UPDATE
+[PReboot]^
+[G]RELOADACT
+[G]Reloads the actions file.
+[G]^
+REMOVE [item]
+Remove something you've worn.
+^
+[PResurrect]RESURRECT [object/mobile]
+[PResurrect]Recreates a destroyed object and brings it to your location, or
+[PResurrect]resets a mobiles strength and level, if it was dead, it will
+[PResurrect]also be brought to your location.
+[PResurrect]^
+[PReset]RESET
+[PReset]Resets all locations, mobiles and objects in the game.
+[PReset]
+[PReset & X]RESET [zone-name]  resets the given zone only.
+[PReset & X]
+[PReset & X]When a non-permanent zone (one created in the game by a wizard) is
+[PReset & X]reset, everything that has been created (CLONEd) since the last
+[PReset & X]invocation of the STORE command will be destroyed.
+[PReset & X]
+[PReset & X]   If the Wizard that owns the zone has not been on for a certain
+[PReset & X]period of time (currently 3 days), even his STOREd creations will
+[PReset & X]go away, but they will reappear the next time he enters the game.
+[PReset & X]
+[PReset & X]   After a RESET [stored wiz-zone] has been issued, the number of
+[PReset & X]items successfully reset will be displayed. This just means that 
+[PReset & X]those not successfully reset were supposed to have been placed
+[PReset & X]somewhere (in a room, carried by someone) that was not currently
+[PReset & X]LOADed into the game.
+[PReset & X]                          See also ZONE, LOAD and STORE.
+[PReset]^
+[X]REVIEW [player]
+[X]Shows current settings of SETIN, SETOUT, SET... If no player is 
+[X]specified, your own travel-messages and prompt will be shown.
+[X]^
+RING [item]
+Ring an item. This may work on a bell.
+^
+ROLL [item]
+Roll an item around.
+^
+[PGoto]ROOM
+[PGoto]Room names consist of a zone name (BLIZZARD, VALLEY, etc.) followed by
+[PGoto]a room number.  For example, to teleport to the Temple of Paradise you
+[PGoto]would say "GOTO START1".
+[PGoto]Zone names may be abbreviated. Example:
+[PGoto]BLIZZARD84 could be abbreviated BLI84, or even B84.
+[PGoto]
+[PGoto]See also ZONES.
+[PGoto]^
+SAY [msg] or "[msg] or '[msg]
+Says something to everyone  else in the room.  Assuming   they haven't
+been deafened.   You may abbreviate this to  a double quote  or single
+quote followed immediately by a message.
+
+Example: "Hi folks!  What's up?
+^
+"[msg]
+Says something to everyone else in the room.  Assuming they haven't
+been deafened.
+
+Example: "Hi folks!  What's up?
+^
+'[msg]
+Says something to everyone else in the room.  Assuming they haven't
+been deafened.
+
+Example: 'Hi folks!  What's up?
+^
+SAVE
+Saves character's current score and status.  The things you carry and
+wear are not saved.  Remember: Save early, save often.
+^
+[X]SAVEALL
+[X]Save all players on the MUD.
+[X]^
+[X]SAVESET
+[X]Saves all your setin/out messages and prompt.
+[X]^
+SAYTO [player]
+Directs a say to a player. The other people in the room will see the 
+message like a say, except it will be shown that you were directing it
+towards the player named.
+^
+SCORE
+Display your score, strength, and level.
+[X]You may also do SCORE [player] to check the score of other players.
+^
+[X]SEEEXT
+[X]Toggles the viewing of extended messages.
+[X]^
+[G]SEEIDLE
+[G]Allows you to see the real idle times of players with the IDLE flag 
+[G]turned on.
+[G]^
+[PSocket]SEESOCKET
+[PSocket]Toggles the viewing of socket messages.
+[PSocket]^
+[PObjectEdit]SET [object] [property] [new value]
+[PObjectEdit]Sets properties on a object.
+[PObjectEdit]These properties expect a number as its new value:
+[PObjectEdit]
+[PObjectEdit]       BaseValue, Size, Visibility, Damage, Armor, State
+[PObjectEdit]
+[PObjectEdit]These properties expect a line of text as its new value:
+[PObjectEdit]
+[PObjectEdit]       Desc0, Desc1, Desc2, Desc3, Name, AltName
+[PObjectEdit]
+[PObjectEdit]       (Descriptions for states 0-3, name and alternative name)
+[PObjectEdit]
+[PObjectEdit]These properties expect a truth-value (On/Off or True/False):
+[PObjectEdit]
+[PObjectEdit]       Weapon,    Container, Lit,   GetFlips,  Key,    Extinguish
+[PObjectEdit]       Lightable, Wearable,  Armor, NoGet,     Pushable,
+[PObjectEdit]       Lockable,  Openable,  Food,  Destroyed, PushToggle,
+[PObjectEdit]
+[PObjectEdit]All properties may be abbreviated so long as they are unique.
+[PObjectEdit]See also SHOW, OFLAGS, VISIBILITY for more info.
+[PObjectEdit]^
+[X]SETIN [msg]
+[X]Sets message printed when entering a room.  See REVIEW.
+[X]Put %n anywhere in the string to represent your name.
+[X]^
+[X]SETMIN [msg]
+[X]Sets message when teleporting into a room.  See REVIEW.
+[X]Put %n somewhere in the string to represent your name.
+[X]^
+[X]SETMOUT [msg]
+[X]Sets message when teleporting out of a room.  See REVIEW.
+[X]Put %n somewhere in the string to represent your name.
+[X]^
+[X]SETOUT [msg]
+[X]Sets message printed when exiting a room. If you want the direction you left
+[X]from to be printed, put %d somewhere in your string. %n is your name which
+[X]must go somewhere in the string too.
+[X]
+[X]Example:
+[X]SETOUT %n says 'To the %d, men!' and wanders off in the wrong direction.
+[X]^
+[X]SETSIN
+[X]The message to others in a room when you summon a player. The code for
+[X]the victim is %v and %n for your name.
+[X]^
+[X]SETSIT
+[X]The message when you are sitting in a room.
+[X]^
+[X]SETSOUT
+[X]The message to others in a room where a player was when you summon them.
+[X]The code for the victim in %v and %n for your name.
+[X]^
+[X !PUaf]SETSTART [location]
+[X]Puts you in [location] when you enter the game, or go whenever you 
+[X]type 'GOTO' without any arguments.
+[X PUaf]SETSTART [player] [location]
+[X PUaf]Sets home for player, to location. Your home is where you enter
+[X PUaf]the game. If no playername is given, you are assumed to be it.
+[X]If no location is given, your current home will be erased.
+[X]Example: "Setstart home14"   will put you in home14 upon game entry.
+[X PUaf]Example: "Setstart Shoikana home14"  sets her home to home14.
+[X]Example: "Setstart" erases your home (50/50 chance betw. the church/temple)
+[X PUaf]"Setstart Shoikana" does the same for her.
+[X]^
+[X]SETSTND
+[X]The message when you are standing in a room.
+[X]^
+[X]SETSUM
+[X]The message to a player when you summon them.
+[X]^
+[PSetTime]SETTIME [hour] [minute]
+[PSetTime]Sets the climate time to a specified hour and minute.
+[PSetTime]^
+[X]SETVIN [msg]
+[X]Sets message when becoming visible.  See REVIEW.
+[X]Put %n somewhere in the string to represent your name.
+[X]^
+[X]SETVOUT [msg]
+[X]Sets message when becoming invisible.  See REVIEW.
+[X]Put %n somewhere in the string to represent your name.
+[X]^
+[X]SETQIN [msg]
+[X]Sets the message when entering the game.  See REVIEW.
+[X]Put %n somewhere in the string to represent your name.
+[X]SETQOUT [msg]
+[X]Sets message when quitting the game.  See REVIEW.
+[X]Put %n somewhere in the string to represent your name.
+[X]^
+[PSFlagEdit]SFLAGS [player] [flag] [true/false]
+[PSFlagEdit]Lets you view/edit a player's sflags.
+[PSFlagEdit]^
+[X]SHALL
+[X]Does a HEALALL then a SAVEALL.
+[X]
+[X]See HEALALL, SAVEALL.
+[X]^
+SHOCK [mobile]
+Cast an electric shock on a mobile.
+^
+SHOUT [msg]
+Shout a message to all players, normally used for uttering those nasty
+death threats to  the person  who killed you for  the fourteenth  time
+this week.
+
+Example: "shout You're dead meat, Noid!"
+^
+[PStats]SHOW [item]
+[PStats]Gives detailed information about an item.  Meanings of information
+[PStats]shown are as follows:
+[PStats]
+[PStats]State:          Current state of object (open, closed, full, charged..)
+[PStats]Max State:      The maximum state number.
+[PStats]Base Value:     The maximum value this object can have.
+[PStats]                Actual value is: MIN(#players, 9) / 9 * Base Value
+[PStats]Damage:         If this is a weapon, how much damage does it do.
+[PStats]                Total damage = random(0, 8 + weapon-damage) if player,
+[PStats]                If a mobile has it: random(0, mob-dam + 1/2 * weap-dam)
+[PStats]Armor Class:    If this is armor, with what percentage does it reduce
+[PStats]                your opponents chance to hit you ? (starting at 57%)
+[PStats]Size:           How much space does item take up in pack.
+[PStats]                If it's a container, how much it can contain.
+[PStats]Properties:     Wearable, weapon, edible, NoGet, etc. (See help OFLAGS)
+[PStats]Descriptions:   One-line descriptions for each state.
+[PStats]^
+[D]SHUTDOWN [message]
+[D]God command. Kicks everyone off and disables logins. If followed by
+[D]a message, it will display that message to everyone who tries to enter.
+[D]^
+SIT
+Sit  down and rest.   When  resting, you regain strength-points at a
+faster rate than normal.  However,  you can't move  while sitting.  To
+stand up again, type STAND.
+^
+[X]SIC [mobile] [player]
+[X]Lets you sic a mobile on a player. The mobile will appear where the
+[X]player is and will start attacking the player.
+[X]^
+[PSignal]SIGNAL [signal]
+[PSignal]Lets you send a signal to the MUD daemon. SIGNAL list gives a list
+[PSignal]of the signals that you may use.
+[PSignal]^
+[G]SILENT
+[G]Toggles silent entry into the MUD.
+[G]^
+[PSnoop]SNOOP [user]
+[PSnoop]Anything that goes to the user's screen  will be seen by  you.
+[PSnoop]Please try not to spy on people.  It's impolite. You can not snoop
+[PSnoop]on two people at once. Wizards can't snoop on mortals in "private"
+[PSnoop]rooms.
+[PSnoop]^
+[PSocket]SOCKET [player|descriptor] [view|kill|write] [txt]
+[PSocket]Allows the viewing, killing, or the direct writing to a descriptor. There
+[PSocket]are 4 uses for this command in all. 
+[PSocket]
+[PSocket]The first use is the SOCKET command without any parameters that will give 
+[PSocket]a list of the sockets and the player that is using it, their idle time, 
+[PSocket]login time, and hostname. 
+[PSocket]
+[PSocket]The second use is to view a socket. You must specify either the name of
+[PSocket]a user using the socket, or the descriptor number of that socket then
+[PSocket]a parameter of view. This will display information about that socket.
+[PSocket]
+[PSocket]The third use is to kill a socket that you specify. It has the same basic
+[PSocket]usage that the view command does.
+[PSocket]
+[PSocket]The fouth use is to write text to a socket directly. It has the basic usage
+[PSocket]that the view and kill command does, however you can then specify text after
+[PSocket]the 'write' parameter to send text to the socket.
+[PSocket]^
+SOUTH
+Moves you south.
+^
+SPELLS
+This command gives you a listing of the spells that you can use along with
+their mana requirement, the chance to cast, and the type of spell that it is.
+
+Related Topics:
+    MANA, MAGIC
+^
+STAND
+Stand up after sitting or being pushed over.  See SIT and PUSH.
+^
+[X]START
+[X]Start mobiles.  See STOP.
+[X]^
+[X]STATS
+[X]Lists various information (strength, idle time, time on et.c.)
+[X]for the visible players that are on.   See also WHO and USERS.
+[X]
+[X]  &+W*OR* &+wyou can use stats with an option...
+[X]
+[X]STATS [player/mobile]
+[X]Lists detailed information about a player or mobile.
+[X]^
+STEAL [item] FROM [player]
+For all those moments when some other player or mobile has something
+you fancy -- just don't get caught at it!
+
+Example: "steal diamond from tom"       See also OBJECT and MOBILE
+^
+[X]STOP
+[X]Stop mobiles.  See START.
+[X]^
+[X]STORE [player-name]
+[X]If not followed by any argument, it means yourself.
+[X]This command creates a zone for you, its name will be your characters name.
+[X]It is not intended for making zones for mortals to adventure in,
+[X]but it lets you build your own personal stuff with much more fun and ease
+[X]then the traditional way of bugging your God do it for you.
+[X]The STORE command does the following:
+[X]
+[X]- Marks all mobiles/locations/objects you have created (with CLONE) as non-
+[X]  temporary, so that they will be reset on a reset instead of destructed.
+[X]
+[X]- Sets their reset-values to the exact state the mobiles/locations/objects
+[X]  are in when the STORE command is issued. Your zone will be reset on every
+[X]  reset to the exact state it was in, the last time you did a STORE.
+[X]
+[X]- Saves everything on disk, so that you may LOAD your zone at a later time.
+[X]  Your zone will remain in the the game even after you quit,
+[X]  but will go away if you don't come back within a certain period of time,
+[X]  (currently 3 days). It will in any case be loaded again automatically the
+[X]  next time you enter the game.     See also LOAD, CLONE, DESTRUCT, RESET
+[X]^
+[X!PSummonObj]SUMMON [player/mobile]
+[XPsummonObj]SUMMON [player/mobile/item]
+[!XPSummonObj]SUMMON [player/item]
+[!X!PSummonObj]SUMMON [player]
+[!X!PSummonObj]Summons a player to your location.
+[!X]For non-Wizards, this has the unpleasant effect of the player beeing
+[!X]summoned dropping everything that's not worn or wielded, so most players
+[!X]regard this as a hostile action. 
+[PSummonObj]You may also summon objects, either by name or object-number.
+[X]You can specify several items or players to summon in the same command,
+[X]example:   AT death1 SUMMON kantele boddiker steinar
+
+See also MOBILE
+^
+[PWeather]SUN
+Clears weather.
+^
+[PSyslog]SYSLOG [#lines | text | *]
+[PSyslog]Displays the selected part of the system log-file. If the argument is a 
+[PSyslog]number, that number of lines from the end of the file is shown. If * the
+[PSyslog]whole file is shown. If an arbitrary text, only the lines that contain that
+[PSyslog]text is shown. If no argument, only the last days happenings is shown.
+[PSyslog]Here are some examples:
+[PSyslog]>syslog bug       Shows all bug-messages.
+[PSyslog]>syslog slain     Who has died ?
+[PSyslog]>syslog May 17    What happened then? (obs: 6 characters...May 1st is May  1)
+[PSyslog]>syslog 10        What happened the last few minutes ?
+[PSyslog]>syslog Nicknack  What has he been up to ?
+[PSyslog]>syslog           What has happened today ?
+[PSyslog]The text (search-string) can consist of any characters including blanks.
+[PSyslog]^
+[A & PRaw]SYSTEM [msg]
+[A & PRaw]Sends a SYSTEM message.
+[A & PRaw]^
+TAKE [item/class] [FROM [item]]
+Same as GET, see help GET
+^
+TELL [player] [msg]    or    [player] [msg]
+Allows you to tell a player something.  Although you really ought only
+to be able to tell something to someone in the same room, we found the
+game as a whole works better with TELL  as it is.  Similary, you could
+argue that WHO is unrealistic,  but the results   of its  absence  are
+simply many "Who's playing?" shouts.
+
+Example: "george How are you doing?"             See also MOBILE
+^
+TIE [item]
+Tie an item. This may work on ropes.
+^
+TIME
+Display current time, time since last reset,
+and time remaining to closing time (if applicable).
+^
+[PGoto]TIPTOE [room|player|item]
+[PGoto]Identical to GOTO, but doesn't tell anyone you've left or arrived.
+[PGoto]Example: "tiptoe home1"
+^
+[PTitleEdit !PClone]TITLE [player] [New title]
+[PTitleEdit PClone]TITLE [player/mobile] [New title]
+[!X PTitleEdit !PClone]Changes title on a player.
+[!X PTitleEdit PClone]Changes title on a player or on an in-game created mobile. [PTitleEdit] [PTitleEdit]Player title:
+[!X PTitleEdit]A %s must go somewhere in a player's new title to represent the
+[!X PTitleEdit]name. If no new title is given, the players current title will be 
+[!X PTitleEdit]displayed.
+[X PTitleEdit]Player title:
+[X PTitleEdit]You are not required to enter a %s in your title being a Wizard.
+[X PTitleEdit]You can change anybodys title if their level is below yours.
+[X PTitleEdit]
+[X PTitleEdit](In this context, a 'level' is Mortal - Wiz - ArchWiz etc...)
+[PTitleEdit]
+[PTitleEdit PClone]Mobile title:
+A mobile's title is the text that describes it when you type
+'look' or enter its room. The '%s' has no meaning here. You
+can only change title on in-game created mobiles and only on
+your own, or those who belong to someone with a level lower
+then yours. (See above for the meaning of 'level' here.)
+^
+TOGGLES 
+The following toggles are available to you:
+
+  AWAY            BUSY
+  NEWSTYLE        HEARBACK
+  BRIEF           NOWET
+  NOBEEP          NOINV
+  NOFLAG          NOFIGHT
+  NOPUFF          NOBLINK
+
+You can get information on each of the toggles by typing HELP <TOGGLE>
+Example: HELP NOBEEP
+^
+TOUCH [item]
+Perform the requested action on an object.
+^
+[A]TOURNAMENT [prize]
+[A]Toggles tournament mode on the MUD. Players can only attack each other
+[A]in a tournament mode. To start tournament mode there must be at least
+[A]two mortals on-line and a prize for the winner must be specified after
+[A]the tournament command. Once a tournament has started the MUD will reset
+[A]the game, kick off all of the mobiles, and place the mortals at one of
+[A]the start locations. The MUD will terminate the tournament once there is
+[A]only one mortal left alive, or it may be terminated by typing TOURNAMENT
+[A]during a tournament.
+[A]
+[A]See "INFO tournament" to get more information on tournaments.
+[A]^
+[PTout]TOUT [player]
+[PTout]Lets you time-out a player.
+[PTout]^
+[X]TRACE [user/mobile/item]
+[X]Keeps you notified of target's  location at  all times.  Type TRACE by
+[X]itself to turn it off. You can not trace two targets at the same time.
+[X]^
+TRANSLOCATE [user/mobile/item]
+This command is now obsolete, see HELP SUMMON.
+^
+[X]TREASURE
+[X]Lists the available treasures on the MUD.
+[X]^
+[PShowUser]TTY [user]
+[PShowUser]View the hostnames that players are using. You can also specify a user
+[PShowUser]on the command line.
+[PShowUser]^
+[PTextRaw]TXTRAW [one word text] [msg]
+[PTextRaw]Sends a RAW message with specified text inside of the brackets.
+[PTextRaw]^
+TURN [item]
+Perform the requested action on an object.
+^
+TYPO [msg]
+Report a typo to the  game  administrator.  This command automatically
+reports your name and current location.  If the typo  doesn't refer to
+your current room, please tell me where it is.
+^
+[D]UBULL
+[D]Shows bulletins for DemiGods and Gods.
+[D]^
+UNLOCK [item]
+Unlocks an item.  Usually used on doors.
+^
+UNTIE [item]
+Unties an item. This may work on ropes.
+^ 
+[PReboot]UPDATE
+[PReboot]Updates the MUD. An update saves where players, objects and mobiles are
+[PReboot]and then reboots the game restoring the world back to its original state.
+[PReboot]^
+UP
+Moves you up.
+^
+UPTIME
+Shows the amount of time that the MUD daemon has been running and the
+number of reboots, resets, and the number of crashes.
+^
+USE [item]
+Lets you use an item. This might work for a toilet.
+^
+USERS
+A shortened form of the WHO list.  For Wizards it shows where everyone
+is.  Not very useful for mortals.
+^
+VALUE [arguments]
+VALUE                  -] Gives the total Point Value of all your belongings.
+
+VALUE item1 item2 ...  -] Gives the current Point Value of the item or items.
+
+VALUE class            -] Lists all the items in your inventory of the
+                          specified class (see HELP CLASS) and their
+                          Point Values, followed by their total value.
+
+                          Most usefull example: VALUE all
+^
+VERSION
+Shows the current version number, machine type, and link number.
+^
+[X]VIS
+[X]Become visible to all.  See CHANGE VIS, and VISIBILITY
+[X]^
+[X]VISIBILITY  (Not a command)
+[X]   Visibility-level is the current visibility of a player/mobile/object.
+[X]   0 means visible to all.  Any other number means that anyone with a
+[X]   level lower than that number can't see the player/mobile/object.
+[X]
+[X]   (There is currently no support for invisible objects)
+[X]
+[X]See also CHANGE VIS, and VIS and INVIS
+[X]^
+[PViewCom]VIEWCOM
+[PViewCom]Lets you view the input handlers of the players that are on the MUD.
+[PViewCom]^
+VTOUCH [mobile]
+The spell of vampiric touch, it lets you touch a mobile and steal their
+lifeforce to gain experience points.
+^
+[PPeace]WAR
+[PPeace]Allows fighting in AberMUD.  See PEACE.
+[PPeace]^
+[X]WBULL
+[X]Shows bulletins for Wizards.
+[X]^
+WEAR [item]
+Wear something. 
+^
+WEARALL
+Wears everything that you can in your inventory and tells you what you 
+put on.
+^
+[PWeather]WEATHER [type]
+[PWeather]Changes the weather to a specified type. The types are:
+[PWeather]
+[PWeather]    CLEAR     : Make the weather nice and clear.
+[PWeather]    RAIN      : Make it rain.
+[PWeather]    SHOWERS   : Make it shower.
+[PWeather]    HAILING   : Make it hail.
+[PWeather]    SNOW      : Make it snow.
+[PWeather]    DRIZZLE   : Make it drizzle.
+[PWeather]    STORMY    : Make it stormy.
+[PWeather]    BLIZZARD  : Make it blizzard.
+[PWeather]^
+WEST
+Moves you west.
+^
+WHERE [object/player/mobile]
+Finds an object/player/mobile that you specify. 
+^
+WHO
+Show the players on the game, of course certain more powerful beings may
+not wish to show up on the list.
+^
+WHON
+Identical to the WHO command except it gives player names instead of their level.
+^
+WIELD [weapon]
+Select something as your weapon, for when those nasty people decide to
+brain you.
+^
+WISH [msg]
+Sends a message to any wizards currently on.  Please  try to solve the
+problem yourself first.  It  is not wise  to meddle  in the affairs of
+wizards, for they get soggy and hard to light. :-)
+^
+[X]WIZ
+[X]Wizard command.  Sends message to all wizards. (See also NOWIZ).
+[X]^
+WIZLIST [level/player]
+Shows the players that have reached power on the MUD. You may also give
+a players name to check for or a level to see who is at a certain level.
+^
+[!PLock]WIZLOCK
+[!PLock]Shows if there is any lock on the system at the moment.
+[!PLock]I.e. if the game is restricted to players of a specified level.
+[PLock]WIZLOCK [level/OFF/UNLOCK]
+[PLock]With no argument, WIZLOCK displays current lock status.
+[PLock]With the argument OFF or UNLOCK, WIZLOCK will attempt to turn off
+[PLock]WIZLOCK. other arguments makes WIZLOCK attempt to lock the game
+[PLock]for the specified level.
+[PLock]   WIZLOCK Hero         Allows only heros and higher access to the game.
+[PLock]   WIZLOCK Apprentice   Allows only Apprentice-Wizards and higher
+[PLock]                        players access to the game.
+[PLock]   WIZLOCK Wizard       Allows only 'true' wizards and up access.
+[PLock]   WIZLOCK 403          Allows Wizards at or above level 403
+[PLock]                        access to the game.
+[PLock]   WIZLOCK God          Only Gods have access to the game.
+[PLock]                 Numbers can be used instead of level-names also, ex:
+[PLock]   WIZLOCK 7            Locks the game for all below Magician.
+[PLock]WIZLOCK will fail to lock the game if the current lock is higher than
+[PLock]You have ability to unlock. Abbreviations can be used as long as
+[PLock]the level-name is still unique.
+[PLock !PLock]^
+[G]WLOAD
+[G]Shows the work load of the system the MUD is being ran on as well as
+[G]the iDIRT daemon stats.
+[G]^
+[PZap]ZAP [player]
+[PZap]Wizard command. It utterly annihilates a mortal-character, or one with
+[PZap]a lower wizard-level then yourself, or one with your wizard-level 
+[PZap]which is not protected with the "NoZap" P-flag.
+[PZap](A wizard-level here is for instance wizard, arch-wizard or god.)
+[PZap]Otherwise, it sends a lightning bolt at your victim.
+[PZap]Example: Zap kantele
+[PZap]^
+[X]ZONES
+[X]List of zones with the number of locations, objects and mobiles in each.
+[X]^
+!
+Repeat last command.
+Repeat last command.
+Repeat last command.
+Repeat last co... BANG!
+Thank you.
+^

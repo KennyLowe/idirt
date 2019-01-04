@@ -1,0 +1,1126 @@
+/* Playhouse Zone
+ * by Shail (rcmuise@nexus.interealm.com)
+ *
+ * The author of this zone requires that you ask permission before
+ * using this zone in another MUD.
+ */
+
+#include "undef.h"
+#include "cflags.h"
+
+%zone:playhouse
+
+%mobiles
+
+Name		= Darla
+Sflags		{ Female }
+Location	= house2
+Strength	= 70
+Damage		= 4
+Armor		= 0
+Speed		= 0
+Aggression	= 20
+Description	= "Darla is here waiting to chat."
+End		= Darla
+
+Name		= Kara
+Sflags		{ Female }
+Location	= yard1
+Strength	= 68
+Damage		= 5
+Armor		= 0
+Speed		= 4
+Aggression	= 20
+Description	= "Kara is here screaming for her mommy."
+End		= Kara
+
+Name		= Cody
+Location	= house10
+Strength	= 70
+Damage		= 5
+Armor		= 0
+Speed		= 0
+Aggression	= 20
+Description	= "Cody is here munching happily on a graham cracker."
+End		= Cody
+
+Name		= Tony
+Location	= house21
+Strength	= 75
+Damage		= 5
+Armor		= 0
+Speed		= 0
+Aggression	= 20
+Description	= "Tony is here, and he stinks from a dirty diaper."
+End		= Tony
+
+Name		= Maggie
+Sflags		{ Female }
+Location	= house22
+Strength	= 40
+Damage		= 2
+Armor		= 0
+Speed		= 0
+Aggression	= 20
+Description	= "Maggie is here sucking on a shiny pacifier."
+End		= Maggie
+
+Name		= Brat
+Location	= yard3
+Strength	= 100
+Damage		= 8
+Armor		= 0
+Speed		= 4
+Aggression	= 80
+Description	= "Brat is here, well, being a brat."
+End		= Brat
+
+Name		= Bully
+Location	= yard2
+Strength	= 100
+Damage		= 8
+Armor		= 0
+Speed		= 0
+Aggression	= 90
+Description	= "Bully is here throwing sand at you."
+End		= Bully
+
+Name		= Biff
+Location	= house9
+Strength	= 120
+Damage		= 12
+Armor		= 0
+Speed		= 0
+Aggression	= 90
+Description	= "Biff is here making out with Buffy."
+End		= Biff
+
+Name		= Buffy
+Sflags		{ Female }
+Location	= house9
+Strength	= 120
+Damage		= 12
+Armor		= 0
+Speed		= 0
+Aggression	= 90
+Description	= "Buffy is here making out with Biff."
+End		= Buffy
+
+Name		= Prissy
+Sflags		{ Female }
+Location	= house20
+Strength	= 60
+Damage		= 5
+Armor		= 0
+Speed		= 0
+Aggression	= 20
+Description	= "Prissy is here acting like a little princess."
+End		= Prissy
+
+Name		= Mikey
+Location	= house20
+Strength	= 60
+Damage		= 5
+Armor		= 0
+Speed		= 0
+Aggression	= 20
+Description	= "Mikey is here acting like a little devil."
+End		= Mikey
+
+Name		= Peter
+Location	= house8
+Strength	= 60
+Damage		= 5
+Armor		= 0
+Speed		= 5
+Aggression	= 15
+Description	= "Peter is here trying to look innocent about something."
+End		= Peter
+
+Name		= Angel
+Sflags		{ Female }
+Location	= house1
+Strength	= 60
+Damage		= 5
+Armor		= 0
+Speed		= 0
+Aggression	= 60
+Description	= "Everyone's little Angel is here."
+End		= Angel
+
+Name		= Grandie
+Location	= house12
+Strength	= 70
+Damage		= 8
+Armor		= 0
+Speed		= 0
+Aggression	= 0
+Description	= "Grandie is here, and he wants to grow up to be just like Grandar!"
+End		= Grandie
+
+Name		= Sweetie
+Sflags		{ Female }
+Location	= house12
+Strength	= 70
+Damage		= 8
+Armor		= 0
+Speed		= 0
+Aggression	= 0
+Description	= "Sweetie is here, and she wants to grow up to be just like Sweetums."
+End		= Sweetie
+
+Name		= Tot
+Location	= house3
+Strength	= 60
+Damage		= 5
+Armor		= 0
+Speed		= 0
+Aggression	= 20
+Description	= "A little Tot is here waving his rattle at you."
+End		= Tot
+
+Name		= Andrea
+Sflags		{ Female }
+Location	= house16
+Strength	= 60
+Damage		= 5
+Armor		= 0
+Speed		= 0
+Aggression	= 20
+Description	= "Baby Andrea is here chewing on a teething ring."
+End		= Andrea
+
+Name		= John
+Location	= house6
+Strength	= 70
+Damage		= 8
+Armor		= 0
+Speed		= 8
+Aggression	= 90
+Description	= "Little boy John is here, and he has to GO!"
+End		= John
+
+Name		= Nellie
+Sflags		{ Female }
+Location	= house17
+Strength	= 60
+Damage		= 5
+Armor		= 0
+Speed		= 0
+Aggression	= 60
+Description	= "Baby Nellie is here in a puddle, whimpering."
+Examine		= "I think she had an accident."
+End		= Nellie
+
+Name		= Nanny
+Sflags		{ Female }
+Location	= house15
+Strength	= 150
+Damage		= 12
+Armor		= 0
+Speed		= 0
+Aggression	= 40
+Description	= "The Nanny is here watching the babies."
+End		= Nanny
+
+Name		= Snotty
+Pflags		{ NoHassle }
+Mflags		{ BarUp }
+Location	= house25
+Strength	= 60
+Damage		= 5
+Armor		= 0
+Speed		= 0
+Aggression	= 0
+Description	= "Snotty is here, and his nose looks like it needs to be wiped."
+End		= Snotty
+
+Name		= Chester
+Location	= house5
+Strength	= 70
+Damage		= 6
+Armor		= 0
+Speed		= 0
+Aggression	= 20
+Description	= "Chester is here boasting about how he 'knows-it-all.'"
+End		= Chester
+
+Name		= Patrick
+Location	= house11
+Strength	= 70
+Damage		= 8
+Armor		= 0
+Speed		= 0
+Aggression	= 60
+Description	= "Patrick is here bossing you around."
+End		= Patrick
+
+Name		= Jack
+Location	= house19
+Strength	= 140
+Damage		= 14
+Armor		= 0
+Speed		= 0
+Aggression	= 95
+Description	= "A Jack in the Box is here, and he looks mean."
+End		= Jack
+
+Name		= Soldier
+Location	= house26
+Strength	= 140
+Damage		= 14
+Armor		= 10
+Speed		= 0
+Aggression	= 95
+Description	= "A toy Soldier is here yelling out orders."
+End		= Soldier
+
+Name		= Teddy
+Location	= house27
+Strength	= 140
+Damage		= 14
+Armor		= 10
+Speed		= 0
+Aggression	= 95
+Description	= "A big Teddy bear is here looking for someone to bearhug."
+End		= Teddy
+
+Name		= Robot
+Location	= house28
+Strength	= 140
+Damage		= 14
+Armor		= 10
+Speed		= 0
+Aggression	= 95
+Description	= "A toy Robot is here clinking around."
+End		= Robot
+
+Name		= Dinosaur
+Location	= house26
+Strength	= 140
+Damage		= 14
+Armor		= 10
+Speed		= 0
+Aggression	= 95
+Description	= "A toy Dinosaur, T. Rex, is here looking for a snack."
+End		= Dinosaur
+
+Name		= Elephant
+Location	= house27
+Strength	= 140
+Damage		= 14
+Armor		= 10
+Speed		= 0
+Aggression	= 95
+Description	= "A toy Elephant is here stomping around."
+End		= Elephant
+
+Name		= Stretch
+Pname		= "Stretch Armstrong"
+Location	= house28
+Strength	= 140
+Damage		= 14
+Armor		= 10
+Speed		= 0
+Aggression	= 95
+Description	= "Stretch Armstrong is here waiting to reach out and touch someone."
+End		= Stretch
+
+Name		= Coatrack
+Pname		= "Coat Rack"
+Location	= house28
+Strength	= 140
+Damage		= 14
+Armor		= 10
+Speed		= 0
+Aggression	= 95
+Description	= "A Coat Rack is here, waiting to attack."
+End		= Coatrack
+
+
+%objects
+
+Name		= puddle
+Location	= IN_ROOM:house17
+Oflags		{ Container NoGet }
+Size		= 1
+Desc[0]		= "A yellow puddle covers the center of the floor."
+Examine		= "Something could be in the puddle."
+End		= puddle
+
+Name		= pinkyring
+AltName		= ring
+Location	= IN_CONTAINER:puddle
+Oflags		{ Wearable GetFlips }
+State		= 1
+MaxState	= 1
+Size		= 1
+BValue		= 100
+Desc[0]		= "A small child's pinkyring has been lost here."
+Desc[1]		= "A ring floats in the puddle."
+Examine		= "It's a keen little pinkyring with a bright red birthstone."
+End		= pinkyring
+
+Name		= dresser
+Location	= IN_ROOM:house7
+Oflags		{ NoGet }
+Desc[0]		= "A fine oak dresser sits here with a loose drawer."
+End		= dresser
+
+Name		= drawer
+Location	= IN_ROOM:house7
+Oflags		{ Openable NoGet Container }
+State		= 1
+MaxState	= 1
+Size		= 1
+Desc[0]		= "The dresser drawer is open."
+Desc[1]		= "The dresser drawer is closed."
+Examine		= "The drawer looks like it could be opened and closed."
+End		= drawer
+
+Name		= key
+Location	= IN_CONTAINER:drawer
+Oflags		{ Key GetFlips }
+State		= 1
+MaxState	= 1
+Size		= 1
+BValue		= 10
+Desc[0]		= "A shiny key has been dropped here."
+Desc[1]		= "A shiny key lies on the bottom of the drawer."
+End		= key
+
+Name		= refridgerator
+AltName		= fridge
+Location	= IN_ROOM:house10
+Oflags		{ Openable Container NoGet }
+State		= 1
+MaxState	= 1
+Size		= 15
+Desc[0]		= "The large refridgerator door has been left open."
+Desc[1]		= "The large refridgerator door is closed."
+Examine		= "
+Wow! It's the Frigidaire 5000 complete with an ice maker and chilled
+water dispenser. It even has a childproof door, with a lock and all.
+But, this silly lock seems to be broken"
+End		= refridgerator
+
+Name		= jar
+Location	= IN_CONTAINER:refridgerator
+Oflags		{ Container Openable }
+State		= 1
+MaxState	= 1
+Size		= 4
+BValue		= 10
+Desc[0]		= "A baby food jar has been left behind here."
+Desc[1]		= "A baby food jar rests on a shelf."
+Examine		= "A keen little jar with a Gerber label on it."
+End		= jar
+
+Name		= babyfood
+AltName		= food
+Location	= IN_CONTAINER:jar
+Oflags		{ Food }
+Size		= 4
+BValue		= 5
+Desc[0]		= "A pile of strained turkey baby food has been left here."
+Examine		= "Well.. it IS edible.. ..yeah.. ..looks nummy.."
+End		= babyfood
+
+Name		= milk
+Location	= IN_CONTAINER:refridgerator
+Oflags		{ Food GetFlips }
+State		= 1
+MaxState	= 1
+Size		= 2
+BValue		= 5
+Desc[0]		= "A bottle of milk is waiting here."
+Desc[1]		= "A cold bottle of milk rests on the shelf."
+Examine		= "Nummy! Baby milk! Fresh from mommie! (Just Kidding!)"
+End		= milk
+
+Name		= coke
+Location	= IN_CONTAINER:refridgerator
+Oflags		{ GetFlips Food }
+State		= 1
+MaxState	= 1
+Size		= 1
+BValue		= 5
+Desc[0]		= "A can of Coke (yes the cola!) has been left here."
+Desc[1]		= "An ice-cold can of Coca-Cola Classic rests on the shelf."
+Examine		= "Remember: Coke is it! (TM)"
+End		= coke
+
+Name		= mountaindew
+AltName		= dew
+Location	= IN_CONTAINER:refridgerator
+Oflags		{ GetFlips Food }
+State		= 1
+MaxState	= 1
+Size		= 1
+BValue		= 5
+Desc[0]		= "A can of Mountain Dew has been left here."
+Desc[1]		= "An ice-cold can of Mountain Dew rests on the shelf."
+Examine		= "Remember: Just Dew It!"
+End		= mountaindew
+
+Name		= pepsi
+Location	= IN_CONTAINER:refridgerator
+Oflags		{ GetFlips Food }
+State		= 1
+MaxState	= 1
+Size		= 1
+BValue		= 5
+Desc[0]		= "A can of Pepsi has been left here."
+Desc[1]		= "An ice-cold can of Pepsi rests on the shelf."
+Examine		= "Remember: It is the choice of a new generation!"
+End		= pepsi
+
+Name		= budweiser
+AltName		= bud
+Location	= IN_CONTAINER:refridgerator
+Oflags		{ GetFlips Food }
+State		= 1
+MaxState	= 1
+Size		= 1
+BValue		= 15
+Desc[0]		= "A can of Budweiser has been left by the frogs here."
+Desc[1]		= "An ice-cold can of Budweiser rests on the shelf."
+Examine		= "Bud-why-zer.. (Must be at least 21!)"
+End		= budweiser
+
+Name		= playpen
+Location	= IN_ROOM:house22
+Oflags		{ NoGet }
+Desc[0]		= "A playpen sets here."
+Examine		= "Wow! Choo-Choo trains and teddy bears are in it!"
+End		= playpen
+
+Name		= plasticsack
+AltName		= sack
+Location	= IN_ROOM:house10
+Oflags		{ GetFlips Container }
+State		= 1
+MaxState	= 1
+Size		= 6
+BValue		= 10
+Desc[0]		= "A small plastic sack has been discarded here."
+Desc[1]		= "A plastic sack has been left on the counter."
+Examine		= "Seems to have a strange 'S' logo on the side.."
+End		= plasticsack
+
+Name		= dirtydiaper
+AltName		= diaper
+Location	= WORN_BY:Tony
+Oflags		{ Wearable }
+Size		= 2
+BValue		= 60
+Desc[0]		= "A rather dirty diaper has been left here. A strange odor eminates from it."
+Examine		= "Dear God, this stinks. Maybe it'll keep enemies away?"
+End		= dirtydiaper
+
+Name		= pillow
+Location	= WIELDED_BY:Grandie
+Oflags		{ Weapon }
+Size		= 2
+Damage		= 10
+BValue		= 110
+Desc[0]		= "A deadly looking baby pillow rests here."
+Examine		= "Hrmm, good for whopping perhaps?"
+End		= pillow
+
+Name		= blankie
+Location	= CARRIED_BY:Sweetie
+Size		= 3
+BValue		= 150
+Desc[0]		= "Sweetie's precious blankie has been dropped here."
+Examine		= "It's a cute little blankie."
+End		= blankie
+
+Name		= teethingring
+AltName		= teether
+Location	= CARRIED_BY:Andrea
+Size		= 1
+BValue		= 80
+Desc[0]		= "A teething ring has been dropped here. It's still cold."
+Examine		= "It's blue! And it's cold! Go figure!"
+End		= teethingring
+
+Name		= tiara
+Location	= WORN_BY:Prissy
+Oflags		{ Wearable Armor }
+Size		= 2
+Armor		= 5
+BValue		= 100
+Desc[0]		= "A shiny tiara has been dropped here."
+Examine		= "It's really shiny!"
+End		= tiara
+
+Name		= pitchfork
+Location	= WIELDED_BY:Mikey
+Oflags		{ Weapon }
+Size		= 3
+Damage		= 8
+BValue		= 90
+Desc[0]		= "A killer looking plastic pitchfork has been dropped here."
+Examine		= "It's red! And wow, that's mighty hard plastic!"
+End		= pitchfork
+
+Name		= pacifier
+AltName		= nuk
+Location	= CARRIED_BY:Maggie
+Size		= 2
+BValue		= 170
+Desc[0]		= "A solid &+Ygold &*pacifier has been left here."
+Examine		= "Wow! That's real &+YGOLD&+W!!&*"
+End		= pacifier
+
+Name		= cracker
+Location	= CARRIED_BY:Cody
+Oflags		{ Food }
+Size		= 1
+BValue		= 5
+Desc[0]		= "A nummy looking graham cracker has been left here."
+End		= cracker
+
+Name		= condom
+AltName		= rubber
+Location	= WORN_BY:Biff
+Oflags		{ Wearable Armor }
+Size		= 1
+Armor		= 2
+BValue		= 150
+Desc[0]		= "A latex condom has been discarded here."
+Examine		= "It's a genuine Trojan! And it looks protective! Jkenneth endorses these!"
+End		= condom
+
+Name		= toy
+Location	= WIELDED_BY:Buffy
+Oflags		{ Weapon }
+Size		= 4
+Damage		= 6
+BValue		= 150
+Desc[0]		= "A 'toy' has been discarded here."
+Examine		= "Neat little 'toy' it hums when you press a switch. Looks pretty deadly though."
+End		= toy
+
+Name		= babydoll
+AltName		= doll
+Location	= CARRIED_BY:Angel
+Oflags		{ Lightable }
+Size		= 3
+BValue		= 60
+Desc[0]		= "A cute little baby doll has been lost here."
+Examine		= "It's a Cabbage Patch Doll!"
+End		= babydoll
+
+Name		= halo
+Location	= WORN_BY:Peter
+Oflags		{ Wearable Armor Lit }
+Size		= 2
+Armor		= 5
+BValue		= 120
+Desc[0]		= "A tarnished glowing halo is floating here."
+Examine		= "Looks a little tarnished, but still shines."
+End		= halo
+
+Name		= gun
+Location	= WIELDED_BY:Soldier
+Oflags		{ Weapon }
+Size		= 3
+Damage		= 5
+BValue		= 20
+Desc[0]		= "A toy soldier's gun has been left here."
+Examine		= "It would shoot, but it's out of bullets."
+End		= gun
+
+Name		= piano
+Location	= IN_ROOM:house28
+Size		= 3
+BValue		= 120
+Desc[0]		= "A golden minature piano has been left here."
+Examine		= "Wow! It even plays music!"
+End		= piano
+
+Name		= backpack
+Oflags		{ Container GetFlips }
+Location	= IN_ROOM:yard5
+Size		= 10
+BValue		= 50
+State		= 1
+MaxState	= 1
+Desc[0]		= "A child's backpack has been left here."
+Desc[1]		= "A child's backpack rests against the fence."
+Examine		= "It's a rather roomy backpack."
+End		= backpack
+
+Name		= rattle
+Oflags		{ Weapon }
+Location	= WIELDED_BY:Tot
+Size		= 3
+Damage		= 5
+BValue		= 60
+Desc[0]		= "A baby rattle has been left here."
+Examine		= "Makes a real neat rattle."
+End		= rattle
+
+Name		= basket
+Oflags		{ Container GetFlips }
+Location	= IN_ROOM:yard7
+Size		= 8
+BValue		= 30
+State		= 1
+MaxState	= 1
+Desc[0]		= "A little picnic basket has been left here."
+Desc[1]		= "A picnic basket rests on the grass."
+End		= basket
+
+Name		= hotwheel
+AltName		= car
+Location	= IN_ROOM:yard2
+Size		= 1
+BValue		= 30
+Desc[0]		= "A cool little hot wheels car has been left here."
+Examine		= "It's a hot-red Porsche! And the doors really open!"
+End		= hotwheel
+
+Name		= toilet
+Location	= IN_ROOM:house4
+Oflags		{ NoGet }
+State		= 0
+MaxState	= 1
+Examine		= "It is the Porcelain God. You know, you can use it."
+End		= toilet
+
+Name		= toiletlid
+AltName		= lid
+Location	= IN_ROOM:house4
+Oflags		{ NoGet Openable }
+State		= 1
+MaxState	= 1
+Examine		= "It's a typical toilet lid, you can open and close it."
+End		= toiletlid
+
+Name		= sink
+Location	= IN_ROOM:house13
+Oflags		{ NoGet }
+Examine		= "It is a really neat sink."
+End		= sink
+
+Name		= sinkhandle
+AltName		= handle
+Location	= IN_ROOM:house13
+Oflags		{ PushToggle NoGet }
+State		= 1
+MaxState	= 1
+Desc[0]		= "The sink handle has been turned on."
+Desc[1]		= "The sink handle is turned off."
+Examine		= "Yep, it's a sink handle and you can turn it."
+End		= sinkhandle
+
+Name            = closetindoor
+AltName         = door
+Pname           = Door
+Linked          = closetoutdoor
+Location        = IN_ROOM:house25
+Oflags          { NoGet Openable }
+State           = 2
+MaxState        = 2
+Desc[0]         = "The closet door is open."
+Desc[1]         = "The closet door is closed."
+Desc[2]         = "The closet door is locked."
+End             = closetindoor
+
+Name            = closetoutdoor
+AltName         = door
+Pname           = Door
+Linked          = closetindoor
+Location        = IN_ROOM:house24
+Oflags          { NoGet Openable }
+State           = 2
+MaxState        = 2
+Desc[0]         = "The closet door is open."
+Desc[1]         = "The closet door is closed."
+Desc[2]         = "The closet door is locked."
+End             = closetoutdoor
+
+Name            = house28door
+AltName         = door
+Pname           = Door
+Linked          = house27wdoor
+Location        = IN_ROOM:house28
+Oflags          { NoGet Openable }
+State           = 2
+MaxState        = 2
+Desc[0]         = "The door is open."
+Desc[1]         = "The door is closed."
+Desc[2]         = "The door is locked."
+End             = house28door
+
+Name            = house27wdoor
+AltName         = door
+Pname           = Door
+Linked          = house28door
+Location        = IN_ROOM:house27
+Oflags          { NoGet Openable }
+State           = 2
+MaxState        = 2
+Desc[0]         = "The door is open."
+Desc[1]         = "The door is closed."
+Desc[2]         = "The door is locked."
+End             = house27wdoor
+
+Name            = house27edoor
+AltName         = door
+Pname           = Door
+Linked          = house26door
+Location        = IN_ROOM:house27
+Oflags          { NoGet Openable }
+State           = 2
+MaxState        = 2
+Desc[0]         = "The door is open."
+Desc[1]         = "The door is closed."
+Desc[2]         = "The door is locked."
+End             = house27edoor
+
+Name            = house26door
+AltName         = door
+Pname           = Door
+Linked          = house27edoor
+Location        = IN_ROOM:house26
+Oflags          { NoGet Openable }
+State           = 2
+MaxState        = 2
+Desc[0]         = "The door is open."
+Desc[1]         = "The door is closed."
+Desc[2]         = "The door is locked."
+End             = house26door
+
+%locations
+
+house1 e:house2 w:Road3@village;
+lflags { NoMobiles }
+Foyer^
+  The glass windows next to the huge oak door let in a good amount of 
+light that allows the ferns hung in front of them to flourish. You look
+down and smile as you wipe your feet off on the welcome mat (manors!).
+The coatrack to the left of the door has several children's jackets 
+hanging from it along with an adult one. The house is to the east or
+you can leave to the west.
+^
+house2 n:house5 e:house3 s:house8 w:house1 u:house11;
+lflags { }
+Main Room^
+  You drag your feet along the plush rug until you feel your feet goosh
+into someone's accident. You wipe off your shoe on a dry part of the
+carpet and continue on your way. There are exits in all directions and
+a staircase leads up to the second floor.
+^
+house3 n:house6 e:house10 s:house9 w:house2;
+lflags { }
+Nap Room^
+  There are little matpads scattered around the room with huge pillows 
+set at the head of each of them. A thin, but warm looking blanket also 
+covers the soft matpads. There is a clock on the wall for the children
+to stare at to pray that their naptime goes by quickly so that they can
+go back outside and play. This room actually makes you long for a nice
+relaxing nap. There are exits in all directions.
+^
+house4 e:house5;
+lflags { }
+Bathroom^
+  Ahhhhh, the ever needed Bathroom. The floor is black and white 
+linolium. The walls are covered with pretty flowered wall paper. The 
+sink has a bottle of pump hand soap sitting next to it. Pretty &+Yyellow 
+flowers&* sit in a vase while the sun shines in from the windows. The 
+curtains are made of &+Yyellow cloth&* and has beautiful &+Wwhite&* lace on the
+edges. The bathroom just wouldn't be a bathroom without a &+Ctoilet&*. The 
+toilet is made of fine porcelain. The only exit from this room is back east.
+^
+house5 e:house6 s:house2 w:house4;
+lflags { }
+Hallway^
+  This is a hallway, it has white walls covered with a red tinge that most
+likely came from a wonderful child with a wonderful &+Rred&* crayon. There
+is a bathroom to the west. A playroom to the east and the main room is to 
+the south.
+^
+house6 s:house3 w:house5;
+lflags { }
+Playroom^
+  I suppose this room was designed for rainy days when children couldn't 
+go out. There are various toys littering the floor. Children run 
+screaming from room to room throughout the house. You see a room to the 
+south. There is also a room to the west.
+^
+house7 e:house8;
+lflags { }
+Changing Room^
+  Hrrrrrmmmmmmm, Do you really need to have this room described to you? 
+There is a little baby changing table folded up against one wall. There 
+seems to be a bucket full of lemony smelling soapy water sitting on the 
+floor next to the changing table. On shelves rest clean &+Wwhite&* diapers 
+folded neatly and stacked in stacks. Clean baby outfits are folded up and 
+stacked on other shelves. The exit to this room is east into the sitting 
+room.
+^
+house8 n:house2 e:house9 w:house7;
+lflags { }
+Sitting Room^
+  There is a HUGE couch sitting against one wall. A chair has been placed 
+in an ideal position for chating with anyone sitting on the couch. There 
+is another chair positioned opposite the first so that it makes a cosy 
+little area for sitting a talking. There is writing on the wall in 
+&+Rred&* crayon. You wonder who could have done such a thing. Upon closer 
+examination you notice the letter &+R'P' &*and a letter &+R'E' &*written in a little 
+childs barely discernable handwriting. The exits are west, east and north.
+^
+house9 n:house3 w:house8;
+lflags { }
+Quiet Room^
+  This is the room the children are sent to for punishment. There are 
+little chairs positioned all throughout the room. You figure a child must be 
+sent here and made to sit here till quiet time is up. How could someone 
+possibly make a child sitdown for that long of a time you ponder. Up on 
+the wall is a very long piece of wood that resembles a pingpong paddle 
+only bigger. Wrote on the board it says &=lw'Board of Education' &*in bold black 
+letters. Now you know how the children are kept sitting down. The exits 
+lead north and west
+^
+house10 e:yard1 w:house3;
+lflags { NoMobiles }
+Kitchen^
+  The walls are clean and spotless. Everything seems to &B&+Wsparkle &*and 
+shine. There is a refridgerator over in the corner. All of the appliances 
+and pots and pans are all out of the children's reach. The cupboards all 
+have child proofing items hooked on them.
+^
+house11 e:house12 s:house14 w:house17 d:house2;
+lflags { }
+Upstairs Landing^
+  This is the second floor landing. There are stairs leading down to the 
+first floor. Rooms branch off in various directions from here. To the 
+west is a hallway. To the south is a three-way hallway. Of course to the 
+east is Grandie and Sweetie's room.
+^
+house12 s:house13 w:house11;
+lflags { }
+Grandie and Sweetie's Room^
+  This is Grandie and Sweetie's room as the title says. There are model 
+planes hanging from the ceiling and a few dollies laying around. There is 
+a Sega system sitting in a place of honor on a shelf. I wonder who likes 
+that so much that it gets such a special place for just it and it's 
+cartridges? There is a computer running over in the corner on a desk put 
+there just for it. The keys are rather worn -- someone must use it alot. 
+There are two exits leading from this room, one leading west to the landing 
+and one leading south to the washroom. The curtains hanging from the rooms 
+only window flaps in the breeze.
+^
+house13 n:house12 w:house14;
+lflags { }
+Washroom^
+  Well according to housing regulations a house this big must have at least 
+two bathrooms. So this is another bathroom just has a spiffed up name for it. 
+There is a plaque on the wall saying &+C'Please wash your hands before leaving.'
+And on that note, you look at the fine porcelain sink before you.
+^
+house14 n:house11 e:house13 w:house15;
+lflags { }
+Hallway^
+  This hallway leads in several different directions. Hanging on the 
+walls are various pictures of children and adults alike. You think it is 
+pretty safe to wander around up here. The hallway leads north, west and east.
+^
+house15 e:house14 w:house16;
+lflags { }
+Master Bedroom^
+  You are in the master bedroom of this house. A large, luxurious bed
+takes up the northern wall along with the nightstands that are to the 
+left and right of it. There is a large fireplace set into the southern
+wall with several pictures placed on top of the mantle. There is also
+a small fish tank on top of the mantle and a beautiful Beta fish swims
+around showing off his glourious floating fins. To the east is a baby 
+room or you can leave to the west.
+^
+house16 e:house15;
+lflags { }
+Baby Room^
+  This room looks designed with a purpose in mind, and that was to be 
+used by a baby. There are spit-up rags cleaned and folded on shelves along 
+with blankets and various other baby items. You look closer and see a 
+beautiful little dress waiting for a child here. You know whoever ends up 
+with this room is going to be one lucky little baby. The only exit from
+this room is to the east back into the master bedroom.
+^
+house17 e:house11 w:house18;
+lflags { }
+Hallway^
+  You are inside of a hallway. A few pictures hang from the walls and a
+single light on the ceiling casts enough light to let you see. There are
+blue markings on the wall, and you wonder what angel could have done this.
+The hallway continues to the west and the landing is to the east.
+^
+house18 n:house19 e:house17;
+lflags { }
+Hallway^
+  You are inside of a hallway. There are yet more pictures hanging from
+the walls and pretty blue markings on the wall. To the north is a toyroom
+or you can go back to the east.
+^
+house19 n:house20 s:house18;
+lflags { }
+Toy Room^
+  This is a rather nice toyroom with all the coolest toys available on
+the market. These people must keep Toys 'R Us in business! This room 
+truly does make you long to be a child again. Before you devulge in 
+this fantasy, however, you think it best to leave.
+^
+house20 e:house21 s:house19;
+lflags { }
+Costume Room^
+  This room looks to be designed souly to hold the various costumes the 
+children use on the holiday Halloween. Hanging in rows after rows are 
+various costumes of all sorts. From the all important &+RDevil &*outfit, to 
+the &+Wwedding gown&*. All made in childrens sizes, some cute, some ugly, some 
+small, some fat. It makes you wish that you were a child again just so that 
+you could put one on. The pathway leads to the east and south from here.
+^
+house21 e:house22 w:house20;
+lflags { }
+Bedroom^
+  This is a small bedroom with a bunkbed set built into the north wall. 
+A dresser lines the south wall and a large clock that resembles a cat
+hangs above it. To the east is a playpen or you can leave to the west.
+^
+house22 s:house23 w:house21;
+lflags { }
+Playpen^
+  This is a rather messy playpen! Whoever owns this room really keeps it
+a mess! You can't stand to be in this pigsty of a playpen much longer!
+You can go back to the bedroom to the west or to the closet to the south.
+^
+house23 n:house22 e:house24;
+lflags { }
+Hallway to the Closet^
+  This is a hallway much like the other hallways in the house. It's white,
+has blue markings, has some pictures hanging on the wall. Extremely boring.
+You can go north into the playpen or to the east to continue your way to 
+the closet.
+^
+house24 n:^closetoutdoor w:house23;
+lflags { }
+On Your Way to the Closet^
+  You were told this way lead you to the children's closet. Children are 
+running around bumping into you and everyone else. Upon the walls are 
+more pictures of kids who have been here before. There is writing on the 
+wall in crayon. You are sure whoever did this has been punished appropriately.
+Your journey into what you are sure must resemble a madhouse on the bad days 
+continues north into a closet. It also leads west into the house.
+^
+house25 s:^closetindoor u:house26;
+lflags { }
+Kids Closet^
+  At first look this appears to be a simple kids closet. Yet upon closer 
+look you see there is a way up to the attic here. There are clothes 
+blocking you from seeing too much in this messy place. It is definately 
+owned by a child. All of the clutter proves it.
+^
+house26 w:^house26door d:house25;
+lflags { Dark }
+Child's Nightmare: The Attic^
+  What could possibly be going through your head to venture up into the 
+attic? It is cold and dreary up here and very little light is up here. 
+You hear scratching yet see nothing that causes it. There are boxes upon 
+boxes of junk cluttering the rooms up here. Where could all of this stuff 
+come from? The attic continues to the west, or you can return to the house 
+by going down.
+^
+house27 e:^house27edoor w:^house27wdoor;
+lflags { Dark }
+Child's Nightmare: Middle of the Attic^
+  This is TERRIBLE!! Reminding you of what you used to think of the attic 
+when you were barely knee-high to a grasshopper. The rooms have a very 
+ominous quality to them. The hair on the nape of your neck stands on end 
+just thinking there is still more left to look at. The attic continues to 
+the west and east from here.
+^
+house28 e:^house28door;
+lflags { }
+Child's Nightmare: End of the Attic^
+  There is a little round window letting in just enough light for you to 
+see your way arround here. This somehow reminds you of what you always 
+thought the attic would be like when you were a little kid. Aren't you 
+happy you conqured your fear? The attic leads to the east.
+^
+yard1 n:yard4 e:yard2 s:yard7 w:house10;
+lflags { Outdoors }
+Middle of the Yard^
+  You stand in the middle of what looks to be a bustling little playground. 
+Kids run from one toy to another. To the west is the entrance to the house 
+kitchen. To the east you see a pretty sandbox. To the north you notice kids 
+playing on a swingset. To the south there is a children's picnic area.
+^
+yard2 n:yard5 s:yard8 w:yard1;
+lflags { Outdoors }
+Sandbox^
+  You stand in the middle of what appears to be a sandbox. The sand is a 
+beautiful &+Wwhite&* color. Teeter-totters are to the north. To the south 
+is where the kids are playing on all the ridable toys. West leads you 
+back into the middle of the playground.
+^
+yard3 e:yard4;
+lflags { Outdoors }
+Jungle Gym^
+  You see before you what appears to be an incomplete dome. Made of pipes 
+and metal discs it looks stable enough to hold a hundred kids. It must be 
+fun to climb because kids are all over it, swinging from the pipes and 
+jumping from the sides of it. To the east are the swings.
+^
+yard4 e:yard5 s:yard1 w:yard3;
+lflags { Outdoors }
+Swings^
+  Here we have a huge set of swings. The a-frame pipes are painted 
+&+Rred&* and &+Wwhite&* like a &+Rc&+Wa&+Rn&+Wd&+Ry &+Wc&+Ra&+Wn&+Re&*. The swing seats are &+Bblue&* 
+and the empty ones are swaying gently in the breeze. There are even a few 
+baby seats that are &+Ggreen&* in color. The north is blocked off by a 
+chainlink fence that surrounds the entire yard keeping the children in. To
+the west is the jungle gym. To the east is the teeter-totters. To the south
+is the middle of the yard. 
+^
+yard5 s:yard2 w:yard4;
+lflags { Outdoors }
+Teeter-Totters^
+  This is where the teeter-totters reside in the playyard. The teeter-
+totters are painted a bright &+Ylemon-yellow&*. They remind you of all the 
+fun you used to have on these contraptions when you were just a wee one. 
+The chainlink fence blocks your passage to the north and east. To the south 
+you can go play in the sandbox. Of course you could always decide to go 
+to the west and play on the swings.
+^
+yard6 e:yard7;
+lflags { Outdoors }
+Outdoor Playpen^
+  This is a nice large playpen with a fine layer of sand covering most of
+the grass within the plastic mesh walls. You look down to see that the 
+ground is littered with toy fire engines, toy ambulances, hot wheel cars,
+transformers, and many other favorite children's toys. To the east is the 
+children's picnic area.
+^
+yard7 n:yard1 e:yard8 w:yard6;
+lflags { Outdoors }
+Kiddy Picnic Table^
+  It looks to be a mini-picnic table. You get a picture of the seven 
+dwarfs gone to dinner in your head. (If you can actually picture this 
+you're certifiable!) The table looks perfect for the children to sit at
+and have a tea party or something at. The yard continues to the west into 
+the playpen area. To the north is the middle of the yard. To the east is 
+where the kids ride on the kiddy bikes, tricycles and things.
+^
+yard8 n:yard2 w:yard7;
+lflags { Outdoors }
+Kiddy Motors^
+  This is the area set aside souly for the ridable toys to be played on. 
+Children here are riding on three wheelers and tricycles and even a 
+little bitty bike made just for their size. The chainlink fence blocks 
+your exit to the east and to the south. To the north is the sandbox and 
+west is the picnic area.
+^

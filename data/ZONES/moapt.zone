@@ -1,0 +1,251 @@
+#include "undef.h"
+#include "cflags.h"
+#include "exits.h"
+
+%mobiles
+%objects
+
+Name			= hottub
+Altname	         	= tub
+State			= 0        
+Max State		= 0
+Armor 			= 0
+Damage	        	= 0       
+BValue		        = 10
+Size			= 30              
+Weight			= 5
+Location		= IN_ROOM:moses3@moapt
+Desc[0]  		= " A big luxurious hottub is here to help you relax."  
+Oflags			{Noget}
+End			= hottub
+
+Name			= red
+Altname		        = towel
+State			= 1        
+Max State		= 1
+Damage		        = 20      
+Armor			= 0          
+BValue		        = 600
+Size			= 20
+Weight			= 5
+Location		= IN_ROOM:moses6@moapt
+Desc[0]	                = "A red towel lies discarded in a lump."
+Desc[1]		        = "A red towel is here folded nicely." 
+Oflags			{GetFlips}  
+End			= red
+
+Name			= blue
+Altname		        = towel
+State			= 1        
+Max State		= 1
+Damage   		= 20      
+Armor			= 0          
+BValue	         	= 600
+Size			= 20
+Weight			= 5
+Location		= IN_ROOM:moses6@moapt
+Desc[0]   		= "A blue towel lies discarded in a lump."
+Desc[1]	        	= "A blue towel is here folded nicely." 
+Oflags			{GetFlips} 
+End			= blue
+
+Name			= green
+Altname 		= towel
+State			= 1        
+Max State		= 1
+Damage	        	= 20      
+Armor			= 0          
+BValue	        	= 600
+Size			= 20
+Weight			= 5
+Location		= IN_ROOM:moses6@moapt
+Desc[0]  		= "A green towel lies discarded in a lump."
+Desc[1]	        	= "A green towel is here folded nicely." 
+Oflags			{GetFlips} 
+End			= green
+
+Name			= yellow
+Altname	        	= towel
+State			= 1        
+Max State		= 1
+Damage		        = 20      
+Armor			= 0          
+BValue  		= 600
+Size			= 20
+Weight			= 5
+Location		= IN_ROOM:moses6@moapt
+Desc[0]		        = "A yellow towel lies discarded in a lump."
+Desc[1]	        	= "A yellow towel is here folded nicely." 
+Oflags			{GetFlips} 
+End			= yellow
+
+Name			= purple
+Altname	        	= towel
+State			= 1        
+Max State		= 1
+Damage	        	= 20      
+Armor			= 0          
+BValue		        = 600
+Size			= 20
+Weight			= 5
+Location		= IN_ROOM:moses12@moapt
+Desc[0]	        	= "A purple towel lies discarded in a lump."
+Desc[1]		        = "A purple towel is here folded nicely." 
+Oflags			{GetFlips}  
+End			= purple
+
+Name			= peach
+Altname		        = towel
+State			= 1        
+Max State		= 1
+Damage		        = 20      
+Armor			= 0          
+BValue		        = 600
+Size			= 20
+Weight			= 5
+Location		= IN_ROOM:moses12@moapt
+Desc[0] 		= "A peach towel lies discarded in a lump."
+Desc[1] 		= "A peach towel is here folded nicely." 
+Oflags			{GetFlips} 
+End			= peach
+
+Name			= white
+Altname		        = towel
+State			= 1        
+Max State		= 1
+Damage		        = 20      
+Armor			= 0          
+BValue		        = 600
+Size			= 20
+Weight			= 5
+Location		= IN_ROOM:moses12@moapt
+Desc[0] 		= "A white towel lies discarded in a lump."
+Desc[1] 		= "A white towel is here folded nicely."
+Oflags			{GetFlips} 
+End			= white
+
+Name			= towel
+Altname		        = yellow
+State			= 1        
+Max State		= 1
+Damage		        = 20      
+Armor			= 0          
+BValue		        = 600
+Size			= 20
+Weight			= 5
+Location		= IN_ROOM:moses12@moapt
+Desc[0] 		= "A yellow towel lies discarded in a lump."
+Desc[1] 		= "A yellow towel is here folded nicely." 
+Oflags			{GetFlips} 
+End			= towel
+
+%locations
+
+moses1 n:moses2 s:moses3 w:moses7 u:moses10 d:moses9;
+/*moapt1*/
+lflags {private party peaceful}
+Moses' Hangout^
+     This room looks like it came from the Enterprise.  You see various
+pieces of equipment such as a replicator, a view screen with odd looking
+speakers next to them, and interesting looking panels.  The furniture 
+looks plush, you see two chairs and a couch in the middle. You notice a
+very modern looking stereo but don't see any remotes.  There's a rather
+large window looking out over the world.
+^
+moses2 s:moses1;
+/*moapt2*/
+lflags {private party peaceful}
+Moses' Bedroom^
+     You walk in and are amazed at this room.  All the furniture is of
+early American design.  The bed is very large and has a very warm looking
+comforter on it.  The dresser has a rather large mirror which makes you 
+curious about where it all came from.  You feel that every step you take
+moves you back to the time all this furniture was built.  It seems to be
+a rather peaceful room, for being a bedroom.
+^
+moses3 n:moses1 s:moses6 d:moses4;
+/*moapt3*/
+lflags {private party peaceful}
+Moses' Hot Tub Room^
+     This room is very nice, as it has a nice stereo system and a nice
+lighting system.  The room looks like it's good to relax in.  The floor
+is made of a material that prevents you from slipping after getting out
+of the hot tub.  You wonder if this is really how Moses lives.
+^
+moses4 d:moses5 u:moses3;
+/*moapt4*/
+lflags {private party peaceful}
+Inside the Hot Tub^
+     You sink into the water and ease the tensions of the days problems.
+The jets of water feel nice as they create the bubbles in the tub.  You
+appear to be able to go under the water.
+^
+moses5 u:moses4;
+/*moapt5*/
+lflags {private party peaceful}
+Underwater^
+     You are under the surface of the water in the tub.  You feel the 
+heat of the water surround you and the bubbles all around you.  You can
+see a lot though even through the bubbles.  You can see the jets around
+the inside of the tub.
+^
+moses6 n:moses3;
+/*moapt6*/
+lflags {private party peaceful}
+Towel Closet^
+     This room appears to be some sort of closet with towels in it.
+It doesn't appear to be used for anything else.
+^
+moses7 e:moses1 w:moses8;
+/*moapt7*/
+lflags {private party peaceful}
+A Cozy Room^
+     This room has a very strong cozy feeling.  You see something very 
+famliar, a fireplace and bearskin rug.  You see that the lights are set
+at a low level.  There is also an exit to a patio which was also changed.
+You also see a bar which has various bottles strewn across it.  You feel
+an air of romance here as you look around.
+^
+moses8 e:moses7;
+/*moapt8*/
+lflags {private party peaceful}
+Patio^
+     This looks almost like any other patio.  There's the normal patio
+furniture, two chairs and a table with an umbrella.  The view from here
+is very extraordinary.  You can see almost all the Mud from up here. 
+At night I'm sure you could see the stars above.  
+^
+moses9 u:moses1;
+/*moapt9*/
+lflags {private party peaceful}
+Moses' Private Room^
+     This room appears to be a very private place for Moses to go when
+he wants to be alone.  It's a small room with a chair, small television,
+and stereo.  There's not much room for much else in here.
+^
+moses10 d:moses1 n:moses11 w:moses12;
+/*moapt10*/
+lflags {private party peaceful}
+Moses' Bathroom^
+     This is Moses' Bathroom it looks as plush as the rest of the house.
+This room has everything a bathroom needs, toilet, sink and a very large
+shower.  The colors are soft but fitting for a bathroom.  The air smells
+fresh, almost like...Pine?  The lighting is relativly simple as there are
+only 2 lights that light the bathroom.
+^
+moses11 s:moses10;
+lflags {private party peaceful}
+Inside the Shower^     
+     You are standing inside the shower.  The shower head is one of those
+massaging type shower heads.  The shower looks very cozy but room enough
+for two.  There are various soaps of all scents, shapes and sizes.  You 
+get the feeling that this shower was designed to accomodate just about 
+anyone's tastes.
+^
+moses12 e:moses10;
+/*moapt12*/
+lflags {private party peaceful}
+Towel Closet^
+     This room appears to be some sort of closet with towels in it.
+It doesn't appear to be used for anything else.
+^

@@ -1,0 +1,95 @@
+.TH aberd 6 "3 June 1996" "iDIRT 1.82.00" "iDIRT Information Manual"
+.SH NAME
+aberd \- iDIRT MUD Daemon
+.SH SYNOPSIS
+.B aberd
+[
+.BI \-p 
+port
+]
+[
+.BI \-d 
+path
+]
+[
+.BI \-n 
+#
+]
+[
+.BI \-fkcvVohH
+]
+.SH DESCRIPTION
+.B aberd
+is the iDIRT MUD daemon that runs the MUD system. It handles
+all user logins via an IP port on your system. The MUD daemon
+is loaded into memory through a daemonizing technique that 
+allows it to attach to an IP port. 
+
+.SH OPTIONS
+.TP
+.B \-p port
+An alternate port to run the iDIRT daemon on.
+.TP
+.B \-d path
+An alternate path to the data files directory.
+.TP
+.B \-n #
+Maximum numbers of users to allow on the MUD (default 32).
+.TP
+.B \-f
+Run the iDIRT daemon in the foreground.
+.TP
+.B \-k
+Automatically kill any other iDIRT daemons that are running.
+.TP
+.B \-c
+Automatically clear the system logs.
+.TP
+.B \-v
+Display version.
+.TP
+.B \-V
+Display extended version information.
+.TP
+.B \-o
+Automatically open the MUD upon bootup.
+.TP
+.B \-h
+iDIRT daemon usage.
+.TP
+.B \-H
+iDIRT daemon usage with help screen.
+
+.SH "SEE ALSO"
+.BR idirt (9)
+
+.SH FILES
+.TP
+.B idirt/bin/restart
+iDIRT daemon restart script.
+
+.SH BUGS
+As with any AberMUD style system, this MUD has been known
+to seg fault before on various systems. So always remember,
+.B gdb
+is your friend.
+
+.SH AUTHORS
+.I AberMUD IV:
+Richard Acott, Alan Cox, Jim Finnis, Brian Preble, Anarchy, 
+Rich Salz, and numerous others.
+.LP
+.I DIRT:
+Alf and Nicknack
+.LP
+.I iDIRT:
+Illusion (Shawn Hill)
+
+.SH THANKS TO
+Sithel, Moses, Wesly, Joad, and the various other Illusionary Realms
+users that made it all worth while to code and to attempt to debug.
+Special thanks to the AberMUD IV and DIRT authors for creating such
+a great gaming system. 
+.LP
+And of course, Guile, for all of his great advice: "If it doesn't 
+work man, comment it out.."

@@ -1,0 +1,19 @@
+iDiRT Language System
+1995, 1996 by Illusion (shill@nyx.net, aberadm@phreebyrd.com)
+	      Concept by Moses (moses@phreebyrd.com)
+-------------------------------------------------------------------------------
+The iDiRT language system may not be ported to another MUD software without
+the permission of Illusion and Moses. Contact them for permission before you
+decide to start porting the language system to your MUD.
+
+To add a new language to the iDiRT Language System you must first have a new
+quest installed. The language system is based on the quest system completely.
+After you have added the quest to the MUD, edit the nflags.h and nflagnames.h
+files like you edited the quests.h and questnames.h files.
+
+Remember that the maximum number of languages allowed is currently 32, just
+like the maximum number of quests.
+
+If you have any further questions, please address them to Illusion.
+-------------------------------------------------------------------------------
+

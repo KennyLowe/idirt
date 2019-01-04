@@ -1,0 +1,101 @@
+#!/bin/sh
+#########################################################################
+# MakeDep 2.00								#
+# 1995, 1996 Illusion							#
+#########################################################################
+# This script detects the machine and OS type using the detect program	#
+# and then generates the dependencies for the Makefile.			#
+#########################################################################
+
+# Setup Variables
+#
+TEMP=/tmp/MAKEDEP		# Temporary File Location
+MAKE=Makefile			# Makefile Name
+HDRFILE=../include/MACHINE.H	# OS/Arch Header File Location
+CC=gcc				# Compiler (Default is gcc)
+
+# First, Detect the machine type.
+#
+echo -n 'Detecting Machine Type...'
+OS=`uname -s`
+FULLOS=`uname -sr`
+MACH=`uname -m`
+OSTYPE=
+MTYPE=
+
+# Get the OS type
+if [ $OS = "Linux" ]; then
+	OSTYPE=_LINUX_
+fi
+if [ $OS = "SunOS" ]; then
+	OSTYPE=_SUNOS_
+fi
+if [ $OS = "NetBSD" ]; then
+	OSTYPE=_NETBSD_
+fi
+if [ $OS = "BSD" ]; then
+	OSTYPE=_BSD_
+fi
+if [ -z $OSTYPE ]; then
+	OSTYPE=_UNKNOWN_OS_
+fi
+
+# Get the machine type
+if [ $MACH = "i386" ]; then
+	MTYPE=_I386_
+fi
+if [ $MACH = "i486" ]; then
+	MTYPE=_I486_
+fi
+if [ $MACH = "i586" ]; then
+	MTYPE=_I586_
+fi
+if [ $MACH = "sun4m" ]; then
+	MTYPE=_SUN_
+fi
+if [ $MACH = "mac68k" ]; then
+	MTYPE=_MAC68K_
+fi
+if [ -z $MTYPE ]; then
+	MTYPE=_UNKNOWN_ARCH_
+fi
+
+# Create the MACHINE.H file
+#
+echo "#ifndef _MACHINE_H" > $HDRFILE
+echo "#define _MACHINE_H" >> $HDRFILE
+echo >> $HDRFILE
+echo "#define	"$MTYPE >> $HDRFILE
+echo "#define	"$OSTYPE >> $HDRFILE
+echo >> $HDRFILE
+echo "#define	_ARCH_	\""$MACH"\"" >> $HDRFILE
+echo "#define	_OS_	\""$FULLOS"\"" >> $HDRFILE
+echo >> $HDRFILE
+echo "#endif" >> $HDRFILE
+
+# Clean up any old messes, make a backup, and start the new Makefile
+#
+touch ../include/locations.h
+touch ../include/mobiles.h
+touch ../include/objects.h
+touch ../include/verbs.h
+
+rm -f $TEMP
+cp $MAKE $MAKE.old
+sed -e '/Do not delete this line, the makedep program/,$d' < $MAKE >> $TEMP
+echo '# Do not delete this line, the makedep program requires it. #' >> $TEMP
+echo '# Last Updated: '`date`'                 #' >> $TEMP
+echo '#############################################################' >> $TEMP
+echo >> $TEMP
+echo '# Dependencies for the MUD source code' >> $TEMP
+echo '#' >> $TEMP
+
+# Make the dependencies
+#
+echo -n 'Creating Dependencies...'
+$CC -pipe -E -MM -I../include *.c >> $TEMP 2>/dev/null
+echo 'Done'
+
+# Clean up our mess
+#
+mv $TEMP $MAKE

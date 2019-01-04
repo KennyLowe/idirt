@@ -1,0 +1,121 @@
+.TH iDIRT 6 "3 June 1996" "iDIRT 1.82.00" "iDIRT Information Manual"
+.SH NAME
+iDIRT - AberMUD/DIRT Style MUD System
+
+.SH DESCRIPTION
+iDIRT is an AberMUD/DIRT style MUD system with a complete
+combat system and world for players to explore. The MUD is
+originally coded to handle 32 players but can easily handle
+more if wanted. 
+.LP
+The iDIRT world is set into a fantasy world that mixes a style 
+of knights and dragons with a touch of mystical creatures such 
+as elves and dwarves. If this type of world does not suit you,
+simply add in your own style of zones and do what you will.
+.LP
+Please remember that iDIRT can be almost anything that you want
+it to be. Anything from a large multi-user gaming system for
+players to enjoy, to a large multi-user chat system that will
+allow people to get to know each other. The MUD is very versitile
+in that respect and will always be. 
+.LP
+NOTE: The code currently does not support player killing unless
+placed into tournament mode, however even this can be changed.
+
+.SH IDEA OF THE GAME
+The idea of the game is very simple for players -- gain a set 
+amount of points to become a Wizard. Once a player has reached 
+Wizardhood many more commands are available for them which wil
+be covered later in this document.
+.LP
+There are a couple of different ways for players to gain points
+in this game. They can search for treasure and dump it into one
+of the two sacrificial pits, or kill mobiles. Once the player has
+reached the required number of points to be an Apprentice Wizard
+they must be made a full Wizard by a power.
+.LP
+However, the game system is not all that easy and fun. There are
+deathrooms and the mobiles can kill you. If a player dies in a 
+deathroom they simply lose all of their items and can reenter the
+game at the starting locations again. If a player is killed by a 
+mobile however, they lose a percentage of their score. This makes
+reaching Wizardhood a bit more difficult. For dying is easy, staying
+alive is the hard part.
+
+.SH Installation
+To install the system you must go through a few very simple steps
+and hope that the MUD will compile on your machine. The reason that
+you get to hope that it will compile is in case iDIRT hasn't been 
+ported to your machine and operating system yet.
+
+.SS 1. Changing the Configuration
+Now it is time to change a few of the configurable options of iDIRT. The
+first file you will be editing is
+.I idirt/include/config.h.
+This file contains the main config options for iDIRT. Descriptions of
+all of the options is provided in the header file.
+.LP
+Next you may want to look at
+.I idirt/include/logconfig.h
+to see what you want and do not want to log into the MUD system logs. 
+Like the main configuration header file, descriptions of each option
+is given inside of the file.
+
+.SS 2. Compiling
+You have now reached the fun and mysterious part of installing iDIRT.
+Now that you have configured and made the Makefile you get to try to 
+compile iDIRT. Enter the
+.I idirt/src
+directory and run the make utility and see what happens. If this is
+the first installation of iDiRT, it will run
+.I makedep
+to generate the MACHINE.H file and to get dependencies for the source
+files. Note that if you move the MUD to another machine you
+.B must
+remove the
+.I idirt/include/MACHINE.H
+file. If all goes well, the MUD will compile and place itself and it's
+utilities into the
+.I idirt/bin
+directory. If not, you will get a few errors that you should bring
+to Illusion's attention along with your machine and operating system
+type so that he can see if he can help you fix the bugs.
+
+.SS 3. Testing the MUD and Creating Your Character
+If the MUD compiled nicely and is where it should be you can now load
+the MUD and login. Go to the
+.I idirt/bin
+directory and run the iDIRT daemon, 
+.I aberd
+, and then telnet to the port that you gave it to connect to in the
+.I idirt/include/config.h
+file. You can then login and create the character name that you put in
+.I idirt/include/config.h.
+When you are logged in you will be a Master User. You should then type
+.B help
+and start to get familiar with the commands. To shutdown the MUD use the
+.B crash
+command.
+
+.SH "SEE ALSO"
+.BR aberd (6)
+
+.SH AUTHORS
+.I AberMUD IV:
+Richard Acott, Alan Cox, Jim Finnis, Brian Preble, Anarchy, 
+Rich Salz, and numerous others.
+.LP
+.I DIRT:
+Alf and Nicknack
+.LP
+.I iDIRT:
+Illusion (Shawn Hill)
+
+.SH THANKS TO
+Sithel, Moses, Wesly, Joad, and the various other Illusionary Realms
+users that made it all worth while to code and to attempt to debug.
+Special thanks to the AberMUD IV and DIRT authors for creating such
+a great gaming system. 
+.LP
+And of course, Guile, for all of his great advice: "If it doesn't 
+work man, comment it out.."

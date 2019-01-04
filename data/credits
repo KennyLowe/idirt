@@ -1,0 +1,17 @@
+&+B------------------------------------------------------------------------------
+&+WiDiRT Version @V
+&+W1994-1996 by Illusion (shill@nyx.net)
+&+w
+&+wDerived from DIRT 3.1.2
+&+w1990, 1993 by Alf Salte (Alf) and G. Sorseth (Nicknack)
+&+B------------------------------------------------------------------------------
+&+w
+&+WSpecial thanks to the following people:
+&+w  Stargazer, for all the debugging help and bug fix ideas.
+&+w  Sithel, for all the extra help and encouragment that he gave me.
+&+w  Joad, for keeping me in line while coding.
+&+w  Moses, for giving me those outrageous coding ideas and for debug help.
+&+w  /* Guile, the "comment it out" man. */
+&+w
+&+w  And of course, all of the players that kept bugging me to keep going on
+&+w  with the code.

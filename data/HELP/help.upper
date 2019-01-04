@@ -1,0 +1,13 @@
+God/Master User Commands
+-------------------------------------------------------------------------------
+Utility Commands		      |	Reboot Commands
+PUNTALL	SETTIME	SYSLOG	LOG   	      |	REBOOT	UPDATE	BRESET	RELOADACT
+SILENT	VIEWCOM	SNOOP	WLOAD	      |----------------------------------------
+SIGNAL	CODING	SEEIDLE	FLIST	      |	Ban Commands
+PLOC	SOCKET	SEESOCKET	      |	BANHOST	BANUSER	BANLOGIN
+-------------------------------------------------------------------------------
+Flag Manipluation Commands	      |	Communication Commands (Upper=6)
+PFLAGS	MASK	EFLAGS	NFLAGS	      |	TXTRAW	UPPER	NOUPPER
+-------------------------------------------------------------------------------
+Type HELP <command> for detailed help on a command.
+

@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Movement Commands		      |	Combat Commands
+N E W S U D	FOLLOW	LOSE	JUMP  | KILL	WIELD	FLEE	JUDGE
+STAND	SIT	LOOK	EXITS	      |
+-------------------------------------------------------------------------------
+Item Manipulation		      |	Informational Commands
+FLUSH	USE	LOCK	UNLOCK	RING  | VALUE	TIME	UPTIME	CTIME	POLICY	
+OPEN	CLOSE	INVEN	TIE	UNTIE |	BULL	QDONE	USERS	WHO	WHON
+DIG	GIVE	COMPARE	WEARALL	GET   |	LEVELS	COUPLES	WIZLIST	INFO	QUESTS
+DROP	EAT	STEAL	EXAMINE	PUT   |	CREDITS	VERSION	
+BLOW	PUSH	PULL	EMPTY	ROLL  |
+WEAR	REMOVE	LIGHT	EXTINGUISH    |
+-------------------------------------------------------------------------------
+Communication Commands		      |	Utilities
+TELL	SAY	SAYTO	SHOUT	      |	!	SCORE	SPELLS	OPTIONS	PAGER
+LSAY	LANG	GCHAT	CHANNEL	      |	FINGER	BEEP	CLEAR	DESC	QUIT
+WISH	EMOTE	EMOTETO	CONVERSE      |	SAVE	PROMPT	TITLE	BECOME	PN
+FORGET	GOSSIP/NOGOSSIP	ANON/NOANON   |	ACTIONS	BUG	TYPO	PRIVS
+-------------------------------------------------------------------------------
+Topics				      |	For detailed help on a command, type
+MAGIC	TOGGLES	LANGUAGE	      | HELP <topic>.
+-------------------------------------------------------------------------------

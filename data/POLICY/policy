@@ -1,0 +1,12 @@
+&+WPolicies
+&+b--------
+Type POLICY [policy] to read a policy:
+
+  * ads       : What we think of advertising for other MUDs on this MUD.
+  * harass    : Harassment will not be tolerated.
+  * clone     : Cloning &+W(Wizards, READ THIS)&*
+  * cheat     : What is considered cheating (Wizards and mortals)
+  * lagdeath  : Our policy on the deadly LagMonster.
+  * cut       : Cutting connections
+  * frob      : The frobbing policy
+  * healing   : The healing policy

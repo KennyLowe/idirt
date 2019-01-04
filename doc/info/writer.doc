@@ -1,0 +1,64 @@
+/*
+ * MUD writer
+ * 
+ * Note that the mud writer is reentrant, you may start one writer
+ * while another is active, the writer will save the previous writer's 
+ * state prompt et.c the writer tries to save all info about the previous
+ * input handler, cprompt is also saved.
+ * 
+ * This means that for example while doing 'mail xyzzy' in mud
+ * you may do '*mail zyxxy' inside there, to mail another person.
+ * by typing '**' you will then terminate the last mail and you will
+ * get back to the previous mail and yet another ** will terminate your
+ * mail to xyzzy and get you back to whereever you were when you did
+ * mail xyzzy.
+ * 
+ * Also note that it is not an editor, you may write text and the text
+ * can replace old text or may be appended to old text, but you don't have
+ * the old text available while inside the writer.
+ * 
+ * The MUD writer is used like this:
+ * 
+ * Example: A simple mail writer for the MUD.
+ */
+
+void
+mailcom (void)
+{
+  if (brkword () != -1) {	/* send mail */
+    start_writer ("Write your mail, terminate with '**'",
+		  "MAIL>",
+		  wordbuf,	/* The name who we want to send mail to */
+		  strlen (wordbuf) + 1,		/* length of argument */
+		  mail_handler,
+		  WR_CMD | '*',	/* allow commands */
+		  500);		/* Max 500 lines */
+
+    return;
+  } else {			/* read mail */
+    read_mail ();
+  }
+}
+
+void
+mail_handler (void *w, void *ad, int adlen)
+{
+  FILE *f;
+  char b[100];
+  char a[100];
+
+  strcpy (b, "MAIL/");
+  strcpy (a, ad);		/* save the address, wgets will destroy ad */
+  strcat (b, a);
+  if ((f = fopen (b, "a")) == NULL) {
+    progerror (b);
+    terminate_writer (w);
+    return;
+  } else {
+    while (wgets (b, sizeof (b), w) != NULL) {
+      fputs (b, f);
+    }
+    /* notify the person he has mail */
+    notify_mail (a);		/* can't use ad here as it is destroyed by wgets */
+  }
+}

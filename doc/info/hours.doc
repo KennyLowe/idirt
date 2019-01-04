@@ -1,0 +1,38 @@
+Hours File Configuration
+1996 by Illusion (shill@nyx.net, aberadm@phreebyrd.com)
+-------------------------------------------------------------------------------
+The file 'data/hours' controls the opening and closing hours of your MUD if
+you chose to run your MUD during specific hours. If you don't wish to do so
+then you have no need to read this file, or have the 'data/hours' file present.
+
+The hours file contains a listing of times that tells the MUD when it should
+allow users. If this file is either empty or does not exist at all the MUD
+will completely ignore it and the MUD will always be open to users.
+
+The usage for the hours file is fairly simple:
+
+	DayName HH:MM -> DayName HH:MM
+	(Note that HH:MM is in 24-hour style time. 4:00pm = 16:00)
+
+An example (Friday 5:00pm -> Monday 5:00am):
+
+	Friday 17:00 -> Monday 5:00
+
+The above example means that the MUD is open to users between Friday 5:00pm
+and Monday 5:00am. You may also specify multiple lines in the hours file.
+
+	Monday 18:00 -> Tuesday 5:00
+	Tuesday 18:00 -> Wednesday 5:00
+	Wednesday 18:00 -> Thursday 5:00
+	Thursday 18:00 -> Friday 5:00
+	Friday 18:00 -> Monday 5:00
+
+You may also abbreviate the names of days according to the following table:
+
+	Sunday		Sun		Monday		Mon
+	Tuesday		Tue		Wednesday	Wed
+	Thursday	Thu		Friday		Fri
+	Saturday	Sat
+
+Note that players will be notified 15 and 5 minutes before the game is to
+shutdown.

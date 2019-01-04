@@ -1,0 +1,1091 @@
+This log shows all of the changes that Illusion has made to 
+iDiRT over the course of the different versions.
+
+                      ** VERSION 00.00.01 (Alpha) **
+[December 29, 1994]
+
+* Color parser added (by ErIC)
+
+* Wrote an exit handler to handle all system crashes.
+
+* mobile.c : whocom() has been changed
+
+* mobile.c : usercom() has been changed
+
+* mobile.c : ustats() has been changed
+
+* mobile.c : wlevel() has been changed for new levels
+
+* mudtypes.h : eflags added
+
+* wizard.c : added in a wizard line handler
+
+* include/levels.h : added new levels
+
+* include/sflags.h : added new sflags
+
+[January 3, 1995]
+
+* Added new setins: setsit, setstand, setsum, setsumin, 
+  setsumout.
+
+* Added in new power levels
+
+* Fixed up invis/vis
+
+* Installed iDiRT Mailer
+ 
+[January 4, 1995]
+
+* NewStyle added
+
+* Fixed up the exit handler
+
+* Fixed emote bug
+
+* Aliased players can't attack people/mobiles (fixed a bug that would occur)
+
+[January 5, 1995]
+
+* HearBack added
+
+* Dumped the hardcoded welcome screen, edit 'data/title' to change it
+
+* NoWish (for Wizards, and Wizards can give it to users to keep them quiet)
+
+* Advisor and Upper Wizard line added
+
+* NoAWiz, NoAdvisor, NoGod, and NoUpper commands added (like NoWiz)
+
+* NoSlain written (Wizards don't see slain messages)
+
+* Idle command written (Demi+'s can act idle)
+
+* Punt command written
+
+* WLoad command written (shows system load)
+
+* System command added, Raw has been changed to show name
+
+* Users will now see their idle time if the first command entered is 
+  'ustat', 'users', or 'hosts'
+
+* Wrote player/mobile abbreviations
+
+* Wrote hosts command (show hosts, will be dumping hosts from users)
+
+* Added a command to display time in a HH:MM:SS format at all times
+  (sec_to_ddhhmmss) (note: will display days as well -- DD:HH:MM:SS)
+
+[January 6, 1995]
+
+* Added sflagscom and eflagscom
+
+[January 12, 1995]
+
+* Wrote 64-bit lflags. This was pretty fun because I tried this once 
+  before but failed miserably. This time I figured out how pflags 
+  worked first before trying it again, and this time it worked.
+
+* Prompt codes written:
+    %h : Health
+    %c : Score
+    %l : Level (Number)
+    %n : Name
+
+[January 13, 1995 (Friday)]
+
+* Wrote a function called make_rank() that produces new output in the 
+  score command. make_rank() displays to the user their name and level 
+  instead of their title.
+
+* Finally made the new setins part of the game (they were just configurable 
+  before)
+
+* Now if a person is in a fight and if they have the '%h' code in their 
+  prompt to display health, their health will not be told to them when they 
+  are hit during a fight.
+
+[January 14, 1995]
+
+* Players now see the host they last logged in from.
+
+* Using a magic point based system for using spells.
+
+* Wrote a chat line with 100000 channels.
+
+* Wrote forget code.
+
+* Now stores the number of mobiles a player has killed and the number of 
+  time that the player has died. Now the players can get a ratio of number 
+  of mobiles they have killed and the number of times they have died.
+
+* Wrote an autosaver.
+
+* Wrote a new function to handle messages to users based on their level 
+  and a persons visibility level.
+
+[January 15, 1995]
+
+* Changed the cosmetics on wizlist.
+
+* Changed the cosmetics on usercom(), ustats(), and hostcom().
+
+* Changed loseme() (in mobile.c) to tell Wizards if a player has lost link.
+
+[January 18, 1995]
+
+* Started to work on a Link Loss saver for players
+
+[January 19, 1995]
+
+* Finished the Link Loss saver for players. First off, this is nothing 
+  like the one that Northern Lights uses, I do not even bother with keeping 
+  sockets open and all that good stuff. I just store the players last 
+  location to the user file and place all their items in a new room that I 
+  have created with a user id placed on the item. For full details, look 
+  at the code.
+
+[January 20, 1995]
+
+* Wrote 64-bit sflags.
+
+* Wrote away, silent entry, noinventory, nofight, noslain, gossip line, 
+  anon line, saveall, shall macro (healall, saveall).
+
+* Wrote healfight and autoheal sflags. Players are no longer allowed to 
+  be healed during a fight unless they have the HealFight sflag (or the 
+  person healing is an Avatar or above). The AutoHeal sflag will heal 
+  players right after a fight.
+
+[January 21, 1995]
+
+* Fixed actions so that text can be passed.
+
+* Wrote lit, wizards can light themselves so players can see.
+
+* Wrote Chat, a talk utility that lets people select a channel (Channel) 
+  and talk on it. This allows multiple users to talk on the same line, 
+  like they were all in the same room.
+
+* Wrote a socket handler (file descriptors)
+
+[January 25, 1995]
+
+* Wrote wizecho
+
+[January 26, 1995]
+
+* Changed the cosmetics of the bootstrap loader
+
+[January 27, 1995]
+
+* Wrote socket messages for people with the Socket eflag.
+
+* Changed stat [showplayer()] to show eflags if the person using stat has 
+  the eflagedit pflag and the number of times died and number of mobiles 
+  killed.
+
+* Score [scorecom()] now shows the number of times player has died, and 
+  how many mobiles they have killed.
+
+* Wrote locationscom() to use the locations command instead of locations 
+  calling zonescom().
+
+[January 28, 1995 - February 24, 1995]
+
+* Worked more on socket messages.
+
+* Added in reboot code (by Kender, fixed by Illusion)
+
+* Added in acct (by Thrace)
+
+* Wrote an Oracle interface
+
+* Changed ustats
+
+* Upgraded socketcom() 
+
+* Upgraded puntcom()
+
+* Added in more messages for Wizards.
+
+                               ** VERSION 1.10 **
+
+[March 1, 1995]
+
+* Wrote mstat (mortal stats)
+
+* Changed acct to accept a zone name as a parameter, added in more 
+  functionality to the acct command as well.
+
+* Made objectscom() to replace dircom() (objects command)
+
+[March 2, 1995]
+
+* FINGER command written, it lets players check to see when another player 
+  was last on if the player finger'd has the FINGER sflag turned on.
+
+* QDONE command written, shows what quests have been done since the last
+  reset.
+
+[March 5, 1995]
+
+* NOSAVECUT command written, it allows users to choose to save connection 
+  if they have cut their connection.
+
+[March 17, 1995]
+
+* Sithel let me have his FIND command that searched for locations from a 
+  partial string. I enhanced the command completely to check for players, 
+  mobiles, objects, and location names and changed the output completely 
+  as well.
+
+[March 27, 1995]
+
+* Changed the reboot command considerably and started to Alpha test a 
+  crash->reboot handler.
+
+* Wrote a LOSTLOC command for Gods+ to clear out the lost location 
+  variable for users.
+
+                             ** VERSION 1.10.01 **
+
+[March 29, 1995]
+
+* Wrote the CLEAR command to clear the screen.
+
+* Changed the bulletin command completely to allow each different power 
+  level (including mortal) to be able to view their own page.
+
+[April 1, 1995]
+
+* Finished the VIEWCOM command to allow a person to view the input 
+  handlers of players on the MUD.
+
+* Wrote the SEEEXT command to toggle the SEEEXTENDED sflag. This allows a 
+  Wizard+ to turn on/off extended messages from the MUD. These messages are 
+  basically who is echo/echoall/etc'ing, punt'ing, and other miscellaneous 
+  messages.
+
+[April 2, 1995]
+
+* Fixed the follow command.
+
+* Wrote the TEXTRAW command. This is a RAW utility that allows a Avatar+ 
+  to place text inside of the brackets and display a message (like the 
+  SYSTEM and RAW command).
+
+* Wrote SEEIDLE command so that Uppers could see the real idle times of 
+  players with the IDLE flag on.
+
+* Wrote BEEP command so that players can beep each other.
+
+* Wrote NOBEEP for Uppers so that they can disable all beeps from the MUD.
+
+[April 3, 1995]
+
+* Wrote the CONVERSE command so players can save time while saying things 
+  to each other.
+
+[April 5, 1995]
+
+* Wrote the FOLLIST command so that Wizards+ can see who is following who.
+
+[April 8, 1995]
+
+* Wrote a PZAP command (idea from Moses). This command is just like the 
+  ZAP command except it does not delete the player that you PZAP.
+
+                             ** VERSION 1.20.01 **
+
+[April 23, 1995]
+
+* Added a new color code that makes text blink.
+
+* Wrote a prompt for Wizards that will let them choose their invisibility
+  level before they enter the game.
+
+* Wrote 'WHON' which is just like the who command except it displays the
+  player name instead of level.
+
+* Once again changed the outputs of the usercom() and ustats().
+
+[April 24, 1995]
+
+* Added in more messages, and changed the colors for some messages.
+
+* Cleaned up s_socket.c and fixed a compiler warning on the #define for
+  NULL.
+
+* Fixed a bug in the prompt with the change that converse mode makes
+  to the prompt.
+
+* VIEWCOM now displays idle times.
+
+[April 25, 1995]
+
+* Wrote a pager for info files and will soon be expanding it to help 
+  files and various other parts of the MUD.
+
+* Wrote a PAGER command for users so that they can adjust the pager
+  to the number of lines that they desire or 0 lines to turn it off.
+
+[April 28, 1995]
+
+* Improved the debug() function in the exit handler to output the
+  time into a correct string. The old code I wrote was very messy
+  and at times created strange output.
+
+* Many improvements to the mailer, see /src/mail.c for a listing.
+
+* Made changes to mstatcom().
+
+* Added more color to usercom() and ustats().
+
+[May 2, 1995]
+
+* Improved the USERS and WHO commands available during the login
+  process.
+
+* Made change accept a parameter of MAGIC to change magic points.
+
+* Players can now be logged if the site owner places their name
+  in the 'data/logged' file. The logs are created in the 'data/LOGS/'
+  directory. The filename will be the players name. Only certain 
+  commands are logged and the login and logout times.
+
+[May 3, 1995]
+
+* Improved the AWAY command.
+
+* Made the BUSY flag available for player to toggle.
+
+                             ** VERSION 1.30.00 **
+
+[May 20, 1995]
+
+* Made all header files #if'd.
+
+* Changed USERCOM yet again.
+
+* Removed the Lost Location code for the time being.
+
+* Moved all header files (except 'config.h', 'kernel.h', 
+  'VERSION.H', 'MACHINE.H' and 'OS.H') to the 'include/' 
+  directory.
+
+* Changed the SHUTDOWN and CRASH procedures.
+
+[May 23, 1995]
+
+* Started to work on manual pages for the iDiRT system.
+
+                             ** VERSION 1.50.00 **
+
+(Note: Version 1.50.00 is a rewrite of the 1.30.00 code, and only new changes
+       to the code have been logged here.)
+
+[June 1, 1995]
+
+* Rewrite of the iDiRT code has begun.
+
+[June 12, 1995]
+
+* Indent'd all of the iDiRT code.
+
+[July 10, 1995]
+
+* Wrote the BURN command.
+
+[July 20, 1995]
+
+* The FIND command has been changed. It now gives the number ID for the
+  player/mobile/object/location found.
+
+* Wrote a function to check rooms to see if players can enter them based
+  from the player level lflags.
+
+* Wrote the FAKEQUIT command that will also let players use socket 
+  messages for the basis of their exit from the game.
+
+[July 21, 1995]
+
+* Wrote the OPTIONS command to let users check their options.
+
+* Wrote NOWET so that players don't have to see weather.
+
+[July 22, 1995]
+
+* Fixed a bug in lflags that was causing temperature and light
+  lflags to mess up. Also rewrote all lflag defines.
+
+* Installed the wimpy code (not sure if it works yet though).
+
+* Wrote the KLOCK command so that players can lock their keyboard
+  and walk away.
+
+                             ** VERSION 1.60.00 **
+
+[August 1, 1995]
+
+* A file called 'hosts' can now be created in the data directory
+  to alias hostnames. An example file is provided.
+
+[August 2, 1995]
+
+* Added the UPDATE system from Hykin and fixed a few major bugs in it.
+
+                               ** VERSION 1.65 **
+
+[August 4, 1995]
+
+* Wrote the CFR (Call for Reset) command.
+
+[August 8, 1995]
+
+* Added in IDENT support. The Ident support that iDiRT uses is through
+  libident (version 0.17a), you will most likely need this library to 
+  get IDENT to work correctly. You'll also have to uncomment the line
+  in Makefile that links in the Ident library and in config.h, you'll
+  have to go to the #define USE_IDENT and uncomment it.
+
+[August 10, 1995]
+
+* Wrote the PLOC command to let Gods put a user in a room without the
+  user knowing it.
+
+* Wrote the POLICY command to view policies instead of having to use
+  INFO.
+
+[August 11, 1995]
+
+* Fixed objects so that if they are invis, they are really invis.
+
+* Changed the socket message system for Ident support.
+
+* Fixed little bugs in showplayer()
+
+* Changed finger a bit.
+
+[August 14, 1995]
+
+* Fixed crash bugs that were in socketcom()
+
+[August 15, 1995]
+
+* Changed tiptoe so that Gods will see when a player has used it.
+
+* Fixed punt so that people could be punted into death rooms.
+
+* Burn now removes pflags and mask.
+
+* Wrote a is_conn variable for players to help out with socketcom()
+  and viewcom(). This variable shows that a socket is being used
+  for a connection.
+
+* Wrote the SIC command that lets wizards sic mobiles on players.
+
+[August 16, 1995]
+
+* Updated PFILTER for the extra levels and for Eflag checking. The
+  following may be filtered in the help file:
+
+	U : Master User
+	G : God
+	D : Avatar (Demi-God)
+	V : Advisor
+	A : ArchWizard
+	R : Prophet
+	W : Full Wizard (Non Emeriti)
+	X : Apprentice - Emeriti
+
+	L : Level Checking
+	P : PFlag Checking
+	M : Mask Checking
+	E : EFlag Checking
+	! : Negative Return
+
+* Placed all the new commands into the help file.
+
+* Wrote ATVIS, that lets Wizards do a command at a vis level.
+
+* Made MACHINE.H and OS.H able to autodetect your machine and OS type.
+
+[August 23, 1995]
+
+* getuaf() now returns an error if a NULL value is passed to it.
+
+* Clone mobile seems to work fine now that getuaf() has been fixed.
+
+* Changed the output of clone mobile and clone object.
+
+* Fixed the enter vis code so that the motd doesn't display twice.
+
+[August 28, 1995]
+
+* Wrote a function to handle special codes for the MUD. So far it
+  only displays the version number and has a clear screen code, but
+  it will be expanded in the near future.
+
+[August 29, 1995]
+
+* Wrote NOORACLE. This takes you off of the user list that Oracle can see
+  and does not allow Oracle to send you tell messages.
+
+[August 30, 1995]
+
+* Fixed a crash bug in the special code handler.
+
+* Updated the HELP file some more.
+
+* Replaced all of the help screens.
+  (From Moses)
+
+                               ** VERSION 1.67 **
+
+[August 31, 1995]
+
+* Changed the PFLAG structure to handle up to 96 flags.
+
+[September 5, 1995]
+
+* Fixed major bugs in the socketcom() function.
+
+* Updated the new_player() function to set the player's level
+  to 1 in case they choose to use the who/users command at the
+  login prompt.
+
+[September 7, 1995]
+
+* Wrote maxstatecom() to set the MaxState value of an object.
+
+* Wrote linkcom() to link two objects together (not a command yet).
+
+* Changed setcom() so that SET AC can be used to set a new armor
+  value for an object without getting the Armor oflag confused.
+
+* You can ban hosts from using the USERS/WHO command at login. Simply
+  add the host to the data/banned_login file. This file works the same
+  as banned_hosts.
+
+[September 15, 1995]
+
+* Removed the allup() function.
+
+* Wrote the strip_char() function to strip a single character from a string.
+
+* Fixed a crash bug in NOWISH.
+
+                               ** VERSION 1.68 **
+
+[September 21, 1995]
+
+* Changed the way the MUD handles banned hosts and the banned login system.
+  It now uses variables in the user record instead of adding characters into
+  the hostname. Those users with the ability to see socket activity will see
+  the messages stating if the incoming host is banned in any way.
+
+[September 28, 1995]
+
+* Changed showplayer() to show the level name in the level field with the 
+  level number.
+
+[October 7, 1995]
+
+* The SYSLOG command is now paged.
+
+[October 11, 1995]
+
+* The WIZLIST command is now paged.
+
+* Changed the SeeExtended Change messages to only show to people that can 
+  see the players that are doing the change command.
+
+[October 12, 1995]
+
+* Made a macro called 'is_aliased' to make coding a little easier.
+
+* WHOCOM and WHONCOM will now display an asterick if a player is aliased 
+  instead of the large "[Out of His/Her Head]" message.
+
+[October 19, 1995]
+
+* Started to work on a climate system to enhance the weather system.
+
+[October 25, 1995]
+
+* Removed the EFLAGS and moved all the ones that were used to PFLAGS.
+
+* Not really important, but reindent'd the code to something more my style.
+
+[November 1, 1995]
+
+* Wrote a program called DETECT to autodetect the machine arch and operating
+  system type and create MACHINE.H based from it. When you compile the MUD
+  on your machine, it will compile DETECT. If you ever move the MUD to 
+  another machine, I suggest touching 'detect.c'.
+
+  NOTE: See the November 30, 1995 (1st Comment) Entry!
+
+[November 15, 1995]
+
+* Changed the function that gets the idle time to update correctly while in
+  a handler other then get_command.
+
+* Changed the deathroom messages a little, depending where the person dies.
+
+                               ** VERSION 1.70 **
+
+[November 30, 1995]
+
+* Created a new Makefile and wrote a script to autogenerate the dependencies.
+  A note about this new script, you no longer need to mess with the DETECT
+  program, this script compiles it and runs it automatically.
+
+* Made a check to make sure that a Wizard cannot set the damage, strength or
+  mana number too high or low.
+
+* Changed the AUTOHEAL function to also replenish mana points.
+
+[December 13, 1995]
+
+* Wrote the Oracle utilities (OTELL, OUSERS, OADDR, OHELP).
+
+[December 28, 1995]
+
+* Wrote in game banning for users, hosts, and who/user checking at login.
+
+* Started working on a Puff that can heal, say, shout, tell, and do actions.
+
+[December 29, 1995]
+
+* Finished the Puff code mentioned on December 28.
+
+* Made Puff unclonable.
+ 
+[January 4, 1996]
+
+* Fixed a bug that told people the name of the person that summoned them,
+  even if the person was invisible.
+
+[January 8, 1996]
+
+* Rewrote the handle_packet code. Hopefully it will help with some of the
+  various telnet bugs that the MUD seems to have. NOTE: Causes errors with
+  TinyFugue's autologin scripts. Code removed.
+
+* MUD commands are now allowed while a player is writing mail by entering
+  !<command> on a blank line.
+
+[January 10, 1996]
+
+* Added a NoPuff command for those people who don't like what has been done
+  to her.
+
+                               ** VERSION 1.80 **
+
+[January 29, 1996]
+
+* Finished the new spells system for the MUD. This system takes full 
+  advantage over the mana system that was made when iDiRT was created.
+  The original DIRT spells have been implemented, and improved and a
+  few new spells have been installed as well. EFLAGS are once again in
+  the system, this time for spells.
+
+* Rewrote the forget system. Players will now only be able to ignore tells.
+  Players are now alloted 10 players to forget, and will only be able to
+  forget those users that are online.
+
+[January 30, 1996]
+
+* Rewrote most of the reboot handler. The output file is now in a binary
+  format to make the reboot system run alot smoother and to make updating
+  the output file much easier.
+
+* Rewrote converse mode so that it's available again.
+
+* Cleaned up the player record a little bit.
+
+* Rewrote the help pages, and got all of the commands (that I know of)
+  inside of the help database.
+
+* Decided to include the Beta packet handler with the MUD in a seperate
+  file under the src/utils/ directory as packet.c.
+
+[January 31, 1996]
+
+* Added in Dual Port code from Vita (by ErIC), modified it a little for
+  iDiRT to use 2 different handle_packet's.
+
+* Wrote puntall.
+
+[February 2, 1996]
+
+* Cloned mobiles will no longer give points to a player if a player kills
+  one, and players will not lose points if the mobile was a clone.
+
+[February 3, 1996]
+
+* Fixed TYPO and WISH.
+
+[February 8, 1996]
+
+* Added in a new packet handler from Hastur, this should hopefully fix
+  most, if not all of the telnet bugs that iDiRT has.
+
+* Removed the Dual Port code from the MUD.
+
+[February 10, 1996]
+
+* Finished fixing all -Wall warnings (Linux gcc 2.5.8, no optimization)
+
+[February 20, 1996]
+
+* Wrote the duration spell handler. This allows certain spells to last a 
+  set number of minutes.
+
+[February 24, 1996]
+
+* Wrote a zone (ruins) to allow players to get magic spells.
+
+* Fixed a few various bugs.
+
+* Added in comparecom() from a very early version of iDiRT. The function 
+  was lost during the rewrite of the pre-1.30 code.
+
+* Wrote a wearall command.
+
+[February 28, 1996]
+
+* Got rid of the database.c stuff and cleaned up condition.c.
+
+[March 2, 1996]
+
+* Rewrote the update code from scratch. The update code that I have 
+  written is much more stable then the one written by Hykin. Object errors 
+  should cease to exist now.
+
+[March 3, 1996]
+
+* Rewrote the syslog command completely. It no longer forks a process to 
+  view the file that made syslog viewing quite slow. I wrote my own 
+  internal text search engine and it seems to work quite well. I even wrote 
+  in color highlighting for certain logs.
+
+[April 16, 1996]
+
+* Removed the `messages' datafile and bootstrap loader for it.
+
+[April 18, 1996]
+
+* The MUD now keeps track of the number of times that it has been linked.
+
+[April 21, 1996]
+
+* Fixed a bug in showplayer that dealt with the home location and cloned
+  locations.
+
+* Wrote a function to create a ratio for the number of times that a player
+  has killed a mobile versus been killed.
+
+* Wrote a function named `wearspecials()' to handle the specials for
+  wearcom. Both `wearcom()' and `wearall()' call this function to check 
+  for any specials involving an object being worn.
+
+[April 23, 1996]
+
+* Changed `viewcom()' so that anyone with the permission to run it may 
+  see the last command of any player at the same level or below them. If
+  the player is below their level, it will say that the last command is
+  "Unavailable."
+
+[April 25, 1996]
+
+* Moved the version command into ver.c along with the need for LINKCOUNT.H.
+  This should speed up compile time because ver.c is alot smaller then the
+  parse.c source file.
+
+* Moved the commands from wizard.c to god.c that were only for Gods.
+
+[April 26, 1996]
+
+* Fixed a crash bug in parse.c. It seems that the if() statement that
+  checked for converse mode had a bug in it. When a player was aliasing
+  a mobile it would crash upon the first command. This was due to a need
+  to use the real_mynum variable, not mynum in the if() statement.
+
+[May 2, 1996]
+
+* A message can be given for the away command.
+
+* Who/Whoncom will now autowrap the status messages after the title.
+
+[May 3, 1996]
+
+* Wrote zopen and zclose to handle compressed files.
+
+* Did some cosmetic changes (yet again) to mkdata.c (generate).
+
+* Wrote sayto. This command allows a person to direct a say.
+
+[May 10, 1996]
+
+* Combined who/whon into one function.
+
+* Removed asmortal, seeing that nobody ever used this and it's useless.
+
+[May 11, 1996]
+
+* Started to rewrite the iDiRT Mailer from scratch. It will include a better
+  input handler system, message forwarding, and a few more goodies.
+
+[May 17, 1996]
+
+* Finished the iDiRT Mailer 2.00. It took a little time because I ended up
+  rewriting it twice. The new mailer has many features that makes it much
+  easier to use, compared to the older mailer. Not all of the bugs have
+  been worked out of it though. Hopefully there aren't many, and hopefully
+  they won't cause crashes if there are any bugs.
+
+* Moved the functions from commands.c that deal with communication into
+  comm.c.
+
+[May 18, 1996]
+
+* Fixed a crash bug in tellcom(). It seems that a return is needed after
+  the call to error().
+
+* Wrote reboot_actions() to allow Gods to reload the actions file while
+  the MUD is running so that a reboot/update doesn't have to be called.
+
+* Moved the functions that deal with player/mobile stats into acct.c.
+
+[May 23, 1996]
+
+* Moved the functions that are like actions from commands.c into actions.c.
+
+* Wrote levforcecom. 
+
+[May 26, 1996]
+
+* Changed how the Armor and Damage spells handle themselves. Instead of
+  changing the player's damage/armor, the functions player_damage() and
+  player_armor() check to see if a player is using one of the spells and
+  accordingly adds onto their damage/armor.
+
+[May 29, 1996]
+
+* Fixed a crashbug in givecom(). It seems that there were more error()
+  bugs like the one that was fixed in tellcom().
+
+* Rewrote the tracecom() that originally came with the MUD and wrote in
+  a trace handler to track objects/players/mobiles.
+
+[May 30, 1996]
+
+* Ripped out the Oracle utilities.
+
+* Wrote JUDGE to check out your enemy.
+
+* Implemented IFLAGS to handle flags for objects that will help in 
+  casting spells.
+
+[May 31, 1996]
+
+* Made the code (once again) compile clean with a -Wall (Linux gcc 2.5.8,
+  no optimizations).
+
+[June 1, 1996]
+
+* Made FROB a command that cannot be used from within the mailer. Also made
+  FROB illegal to use as a force.
+
+[June 2, 1996]
+
+* Removed exec.c from the source code along with all calls to error(). The
+  only function remaining in exec.c, do_tables(), has been moved to parse.c.
+
+[June 3, 1996]
+
+* Made the crash handler make sure that the player mailfiles get closed
+  and flushed correctly. It also aborts any mail that a player is sending.
+
+[June 6, 1996]
+
+* Generate now reads a different configuration file with an all new syntax.
+  Look at generate.conf in the data directory for an explanation of this
+  file. The file that lists the zones still exists in its original place
+  but has also been changed. That file now only contains the names of the
+  zones. It has also been renamed from "files" to "Zonelist".
+
+[June 7, 1996]
+
+* Made the name of the MUD configurable so that certain texts don't have
+  to be searched out and changed. Also made the prompt definable. These
+  defines are in config.h.
+
+[June 8, 1996]
+
+* Update now stores a mobile's score which is part of certain quests and
+  other assorted specials.
+
+* Wrote com_handler() to handle all of the comlines (except anon/shout). 
+  This replaces the wiz_handler() function. Also moved nolinecom() from
+  wizard.c to comm.c.
+
+  Usage for com_handler():
+
+	com_handler (char *format, char *linename, int lvl, int flg);
+	com_handler ("&+Y[1] %n: &*%t", "&+YWizard", LVL_WIZARD, SFL_NOWIZ);
+
+  *format	= The text to send; %n=Sender's Name, %t=Text Entered by Sender.
+		"&+Y[1] %n: &*%t"
+
+  *linename	= The offical name of the communication line.
+		"&+YWizard"
+
+  lvl		= The minimum level a player must be to hear the comline.
+		LVL_WIZARD
+
+  flg		= The SFLAG that lets a player ignore this comline.
+		SFL_NOWIZ
+
+* Fixed a minor bug in update. It was looking at the number of zones, mobiles
+  and objects including cloned objects, instead of just permenant ones. This
+  has been fixed.
+
+[June 9, 1996]
+
+* Made NOCATCH a define to have the MUD not execute an AutoUpdate when a 
+  crash occurs.
+
+* Removed all of the calib_player() and calibme() calls from the code and
+  replaced them with two calls to the functions. calib_player() is now only
+  called during an interrupt to make sure that a player gets their level
+  updated. calibme() is now only called during the loseme() function when
+  a player is losing connection.
+
+[June 10, 1996]
+
+* Placed the #include for global.h in utils.c, and removed it from mud.c.
+  (This is a note for those people that upgrade iDiRT without using the
+  patches.)
+
+* Zones and locations now alphabetize the zonenames.
+
+[June 12, 1996]
+
+* Viewcom now has a message if it can't find the input_handler.
+
+[June 13, 1996]
+
+* Eating now replenishes both mana and health.
+
+[June 15, 1996]
+
+* Fixed a minor bug in com_handler() that didn't let messages get to aliased
+  mobiles.
+
+* Modified send_g_msg() a little. It no longer has to loop through all of
+  the mobiles on the MUD to see if they are aliased. When a player uses the 
+  alias command it stores the number of the mobile/player that they are
+  aliasing in cur_player->aliasto. This number is then used to reference
+  the cloned mobile to send a message.
+
+* Removed the MODE_COLOR flag from sendsys.c and removed it from the
+  remaning function calls that used it.
+
+[June 24, 1996]
+
+* Fixed a bug that wasn't loading wizard zones after a reboot/update.
+
+* The mudlog now calls on the local machine time, rather than using the
+  global_clock variable from the MUD to get the current time.
+
+[July 1, 1996]
+
+* Last healall time and time until next healall is now displayed in time.
+
+[July 9, 1996]
+
+* Wrote a check_files() function to check bulletins.
+
+* Snoop now outputs different text to let the person that is using snoop
+  know the input and output that the person being snooped is entering and
+  receiving.
+
+[July 10, 1996]
+
+* Completely revamped the colorlog routines. Wrote a new function called
+  strtlookup(). This function is like tlookup, except it uses strstr()
+  and returns the position of the beginning and end of the string that
+  you are searching for.
+
+* If COMPACT_LOG is defined then the syslog command doesn't log the name
+  of the day to save space.
+
+* The MUD will now catch a couple of ways that players cheat. If a mortal
+  tries to pit a cloned object it will take away the value of the object
+  divided by 2 from his/her score (or set their score to 0 if the object
+  would give them a negative score). If a mortal tries to use a cloned
+  weapon in a fight, it will remove it from them and log a message.
+
+* The IDLE_WIZARD #define was removed completely now that I rewrote (and
+  once again added) code to kick out idle players. Wizards that are idle
+  for the IDLE_MAX limit plus one hour will be kicked off.
+
+[July 11, 1996]
+
+* Made the monitor system complete. Players that are listed in the monitor
+  file will have all of their input logged to 'data/LOGS/playername'.
+
+* If a player checks a title of another using title <player> it will no
+  longer send out the message stating that the person changed the player's
+  title.
+
+* The TTY command no longer displays a user's idle time. It now shows the
+  time they connected in the following format: MonthName DayNumber HH:MM:SS.
+
+* Fixed a bug in TTY and SOCKET that let players check on mobiles.
+
+* Wrote a function called usesocketcom(). This is called by typing 'usock'.
+  This function provides a player with the Socket PFlag the ability to see
+  how many sockets the MUD has allocated and which of the allocated sockets
+  are in use.
+
+* The check_title() function has been removed from change.c.
+
+[July 17, 1996]
+
+* Wrote a function called xfree() that is called by the macro FREE(). All
+  calls to free() have been changed to FREE().
+
+* The unveil command will now only let the defined MASTERUSER unveil to the
+  Master User level.
+
+[August 1, 1996]
+
+* Revamped the ZOPEN system. It now will autocompress when generate runs
+  using the compression program that is picked in generate.conf.
+
+* Fixed a small bug in tellcom() dealing with SoundProof rooms.
+
+[August 6, 1996]
+
+* A new administrative command, NORUN, has been created. This command places
+  the runners inside of limbo3, and any players that enter the game that are
+  less then Wizard into limbo3. Once this has been toggled back, the players
+  will be placed back at a random start location (start1 or start2).
+
+* Made LOG_SNOOP a configurable option.
+
+[August 12, 1996]
+
+* OFlags have been changed to 96 allowable bits. IFlags have been moved
+  to OFlags, under the definition of OMFL_NAME. This is to distinguish
+  the difference between Magical Object flags, and regular Object flags.
+
+* Cleaned up some of the SFlag handling in change.c and frob.c. Changed the
+  call to xtstbit (p.p_sflags.l) to tst_bit (&p.p_sflags). This follows the
+  correct 64-bit handling syntax and looks cleaner.

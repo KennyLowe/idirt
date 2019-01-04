@@ -1,0 +1,15 @@
+Avatar Commands (God=5)
+-------------------------------------------------------------------------------
+UBULL       : Read the Avatar/God bulletins.
+GOD         : Talk on the God line.
+NOGOD       : Turn off the God line.
+IDLE        : Pretend to be idle.
+DELETE      : Delete a player from the system.
+SFLAGS      : View/Edit a player's sflags.
+OPENGAME    : Open the game for players.
+SHUTDOWN    : Shutdown the game.
+CRASH       : Crash the iDiRT server.
+PROBATION   : Place a player under probation.
+-------------------------------------------------------------------------------
+Type HELP <command> for detailed help on a command.
+

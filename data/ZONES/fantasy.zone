@@ -1,0 +1,1164 @@
+/* Fantasy Zone
+ * by Illusion
+ */
+
+#include "undef.h"
+#include "cflags.h"
+
+%zone:fantasy
+
+%mobiles
+Name		= squirrel
+Pname		= "Squirrel"
+Location	= forest2
+Strength	= 30
+Damage		= 8
+Armor		= 0
+Aggression	= 10
+Speed		= 10
+Description	= "A curious little squirrel is here looking around."
+End		= squirrel
+
+Name		= muckman
+Pname		= "Muckman"
+Location	= swamp3
+Strength	= 120
+Damage		= 10
+Armor		= 0
+Aggression	= 90
+Speed		= 2
+Description	= "An angry looking muckman is here, dripping with his own mud."
+End		= muckman
+
+Name		= snake
+Pname		= "Snake"
+Location	= swamp5
+Strength	= 70
+Damage		= 10
+Armor		= 0
+Aggression	= 70
+Description	= "A rather large snake is here hissing at you."
+Speed		= 5
+End		= snake
+
+Name		= crow
+Pname		= "Crow"
+Location	= dforest4
+Strength	= 60
+Damage		= 8
+Armor		= 0
+Aggression	= 40
+Speed		= 8
+Description	= "A black crow is perched on a nearby tree."
+End		= crow
+
+Name		= wolf
+Pname		= "Wolf"
+Location	= dforest9
+Strength	= 100
+Damage		= 10
+Armor		= 0
+Aggression	= 70
+Speed		= 4
+Description	= "A large mean looking wolf is here."
+End		= wolf
+
+Name		= dwarf
+Pname		= "Dwarf"
+Location	= dcave7
+Strength	= 120
+Damage		= 8
+Armor		= 0
+Aggression	= 80
+Speed		= 5
+Description	= "A crazed dwarf is here swinging his axe around."
+End		= dwarf
+
+Name		= bat
+Pname		= "Bat"
+Location	= dcave11
+Strength	= 60
+Damage		= 8
+Armor		= 0
+Aggression	= 80
+Speed		= 4
+Description	= "A large black bat hovers above you."
+End		= bat
+
+Name		= goldminer
+Pname		= "Miner"
+Location	= mountain13
+Pflags		{ NoSteal }
+Strength	= 100
+Damage		= 10
+Armor		= 0
+Aggression	= 100
+Speed		= 0
+Description	= "An old miner is here digging away with a gleam in his eye for gold."
+End		= goldminer
+
+Name		= miner
+Pname		= "Miner"
+Location	= mountain9
+Strength	= 100
+Damage		= 8
+Armor		= 0
+Aggression	= 40
+Speed		= 2
+Description	= "A dwarven miner is here chipping away at the rocks."
+End		= miner
+
+Name		= shopkeeperone
+Pname		= "Shopkeeper"
+Location	= ForestShop
+Pflags		{ NoSteal NoHassle }
+Strength	= 100
+Damage		= 0
+Armor		= 0
+Aggression	= 0
+Speed		= 0
+Description	= "An old elven shopkeeper stands at his counter eager to serve you."
+End		= shopkeeperone
+
+Name		= shopkeepertwo
+Pname		= "Shopkeeper"
+Location	= DForestShop
+Pflags		{ NoSteal NoHassle }
+Strength	= 100
+Damage		= 0
+Armor		= 0
+Aggression	= 0
+Speed		= 0
+Description	= "An old dwarven shopkeeper stands at his counter eager to serve you."
+End		= shopkeepertwo
+
+Name		= silvermonster
+Pname		= "Snake Creature"
+Location	= dcave16
+Strength	= 380
+Damage		= 15
+Armor		= 10
+Aggression	= 100
+Speed		= 0
+Description	= "An ancient snake creature stands here hissing at you."
+End		= silvermonster
+
+Name		= guard
+Pname		= "Guard"
+Location	= castle3
+Mflags		{ BarNorth }
+Strength	= 150
+Damage		= 14
+Armor		= 10
+Aggression	= 0
+Speed		= 0
+Description	= "A castle guard stands here, not letting you pass to the north."
+End		= guard
+
+Name		= julius
+Pname		= "Julius"
+Location	= castle8
+Pflags		{ NoSteal }
+Eflags		{ Fireball Missile }
+Strength	= 400
+Damage		= 12
+Armor		= 10
+Aggression	= 10
+Speed		= 0
+Description	= "Lord Glaive's magician Julius is here studying various spells."
+End		= julius
+
+Name		= glaive
+Pname		= "Lord Glaive"
+Location	= tree2
+Pflags		{ NoSteal }
+Strength	= 500
+Damage		= 15
+Armor		= 15
+Aggression	= 10
+Speed		= 0
+Description	= "Lord Glaive is standing here with his sword at his side."
+End		= glaive
+
+%objects
+Name		= dwarfaxe
+AltName		= axe
+Pname		= Axe
+Location	= WIELDED_BY:dwarf
+Oflags		{ Weapon }
+State		= 0
+MaxState	= 0
+BValue		= 280
+Damage		= 12
+Size		= 10
+Weight		= 10
+Desc[0]		= "A large battleaxe has been left here."
+Examine		= "A mighty weapon, sure to strike fear into your enemies!"
+End		= dwarfaxe
+
+Name		= dwarfarmor
+AltName		= armor
+Pname		= Armor
+Location	= WORN_BY:dwarf
+Oflags		{ Armor Wearable }
+State		= 1
+MaxState	= 1
+BValue		= 400
+Armor		= 18
+Size		= 60
+Weight		= 60
+Desc[0]		= "A full suit of armor has been left on the ground."
+Examine		= "It looks to have been used before, but still looks protective."
+End		= dwarfarmor
+
+Name		= guardsword
+AltName		= sword
+Pname		= Sword
+Location	= WIELDED_BY:guard
+Oflags		{ Weapon }
+State		= 0
+MaxState	= 0
+BValue		= 200
+Damage		= 20
+Size		= 10
+Weight		= 10
+Desc[0]		= "A longsword has been dropped here."
+End		= guardsword
+
+Name		= guardarmor
+AltName		= armor
+Pname		= Armor
+Location	= WORN_BY:guard
+Oflags		{ Armor Wearable }
+State		= 0
+MaxState	= 0
+BValue		= 300
+Armor		= 18
+Size		= 8
+Weight		= 8
+Desc[0]		= "A suit of armor has been left here."
+End		= guardarmor
+
+Name		= glaivesword
+AltName		= sword
+Pname		= Sword
+Location	= WIELDED_BY:glaive
+Oflags		{ Weapon }
+State		= 0
+MaxState	= 0
+BValue		= 300
+Damage		= 25
+Size		= 10
+Weight		= 10
+Desc[0]		= "Lord Glaive's longsword has been dropped here."
+End		= glaivesword
+
+Name		= glaivearmor
+AltName		= armor
+Pname		= Armor
+Location	= WORN_BY:glaive
+Oflags		{ Armor Wearable }
+State		= 0
+MaxState	= 0
+BValue		= 300
+Armor		= 20
+Size		= 8
+Weight		= 8
+Desc[0]		= "Lord Glaive's suit of armor has been left here."
+End		= glaivearmor
+
+Name		= minerpick
+AltName		= pick
+Pname		= Pick
+Location	= WIELDED_BY:goldminer
+Oflags		{ Weapon }
+State		= 0
+MaxState	= 0
+BValue		= 100
+Damage		= 12
+Size		= 10
+Weight		= 10
+Desc[0]		= "A pickaxe has been dropped here."
+End		= minerpick
+
+Name		= pick
+Pname		= Pick
+Location	= WIELDED_BY:miner
+Oflags		{ Weapon }
+State		= 0
+MaxState	= 0
+BValue		= 90
+Damage		= 10
+Size		= 10
+Weight		= 10
+Desc[0]		= "A miner's pick has been left here."
+End		= pick
+
+Name		= stonesword
+Pname		= stonesword
+Location	= IN_ROOM:dcave14
+Oflags		{ NoGet }
+State		= 0
+MaxState	= 0
+Size		= 0
+Desc[0]		= "A massive stone block rests in the middle of the room."
+End		= stonesword
+
+Name		= swordinstone
+AltName		= sword
+Pname		= Sword
+Location	= IN_ROOM:dcave14
+Oflags		{ GetFlips Weapon }
+State		= 1
+MaxState	= 1
+BValue		= 400
+Damage		= 20
+Size		= 20
+Weight		= 20
+Desc[0]		= "A finely crafted greatsword rests on the ground."
+Desc[1]		= "A mighty greatsword sticks out of the stone."
+Examine		= "It is a finely crafted greatsword with ancient dwarven writing on the hilt."
+End		= swordinstone
+
+Name		= goldnugget
+AltName		= gold
+Pname		= Gold
+Location	= CARRIED_BY:miner
+State		= 0
+MaxState	= 0
+BValue		= 100
+Size		= 2
+Weight		= 2
+Desc[0]		= "A large gold nugget rests on the ground nearby."
+Examine		= "A real 24 karet hunk of gold, probably good for trading."
+End		= goldnugget
+
+Name		= goldsword
+AltName		= sword
+Pname		= Sword
+Location	= IN_ROOM:ForestShop
+Oflags		{ Weapon }
+State		= 1
+MaxState	= 1
+BValue		= 400
+Damage		= 18
+Size		= 18
+Weight		= 18
+Desc[0]		= "A finely crafted golden sword lays on the ground."
+Desc[1]		= "A finely crafted golden sword rests behind the counter."
+Examine		= "A fine golden sword that looks to be very powerful."
+End		= goldsword
+
+Name		= silver
+Pname		= Silver
+Location	= IN_ROOM:dcave17
+State		= 0
+MaxState	= 0
+BValue		= 300
+Size		= 3
+Weight		= 2
+Desc[0]		= "A bag full of silver has been left on the ground."
+Examine		= "A large bag with a good amount of silver in it."
+End		= silver
+
+Name		= ruby
+Pname		= Ruby
+Location	= IN_ROOM:dcave17
+State		= 0
+MaxState	= 0
+BValue		= 200
+Size		= 1
+Weight		= 1
+Desc[0]		= "A large red ruby lays on the ground."
+Examine		= "A fine ruby, sure to please the Gods."
+End		= ruby
+
+Name		= diamond
+Pname		= Diamond
+Location	= IN_ROOM:dcave17
+State		= 0
+MaxState	= 0
+BValue		= 200
+Size		= 1
+Weight		= 1
+Desc[0]		= "A gleaming diamond rests of the ground for the taking."
+Examine		= "A very beautiful diamond."
+End		= diamond
+
+Name		= shield
+Pname		= Shield
+Location	= IN_ROOM:dcave17
+Oflags		{ Armor Wearable }
+State		= 0
+MaxState	= 0
+Armor		= 8
+BValue		= 150
+Size		= 5
+Weight		= 5
+Desc[0]		= "A finely polished shield lays on the ground."
+End		= shield
+
+Name		= gauntlets
+Pname		= Gauntlets
+Location	= IN_ROOM:dcave17
+Oflags		{ Armor Wearable }
+State		= 0
+MaxState	= 0
+Armor		= 10
+BValue		= 200
+Size		= 4
+Weight		= 4
+Desc[0]		= "A set of gauntlets have been left on the ground."
+Examine		= "A very protective looking set of gauntlets."
+End		= gauntlets
+
+Name		= bag
+Pname		= Bag
+Location	= IN_ROOM:dcave17
+Oflags		{ GetFlips Container }
+State		= 0
+MaxState	= 0
+BValue		= 100
+Size		= 30
+Weight		= 25
+Desc[0]		= "A nice sized bag rests on the ground."
+Desc[1]		= "A nice sized bag rests in the corner."
+End		= bag
+
+Name		= silversword
+AltName		= sword
+Pname		= Sword
+Location	= IN_ROOM:DForestShop
+Oflags		{ Weapon }
+State		= 1
+MaxState	= 1
+BValue		= 500
+Damage		= 25
+Size		= 20
+Weight		= 20
+Desc[0]		= "A beautiful silver greatsword lies on the ground."
+Desc[1]		= "A beautiful silver greatsword rests behind the counter."
+Examine		= "A very finely crafted silver greatsword with an ancient inscription on it."
+End		= silversword
+
+Name		= silverarmor
+AltName		= armor
+Pname		= Armor
+Location	= IN_ROOM:DForestShop
+Oflags		{ Armor Wearable }
+State		= 1
+MaxState	= 1
+BValue		= 500
+Armor		= 20
+Size		= 60
+Weight		= 60
+Desc[0]		= "A full suit of silver armor rests on the ground."
+Desc[1]		= "A full suit of silver armor rests behind the counter."
+Examine		= "A full suit of shiny silver armor that looks extremely protectful."
+End		= silverarmor
+
+Name		= branch
+AltName		= stick
+Pname		= Branch
+Location	= IN_ROOM:dcave1
+Oflags		{ Lightable }
+State		= 0
+MaxState	= 0
+BValue		= 40
+Size		= 1
+Weight		= 1
+Desc[0]		= "A nice sized branch rests on the ground."
+End		= branch
+
+Name		= mana
+Pname		= Mana
+Location	= WORN_BY:glaive
+Oflags		{ Wearable RegenHealth RegenMana }
+State		= 0
+MaxState	= 0
+BValue		= 600
+Size		= 2
+Weight		= 2
+Desc[0]		= "The pendant of mana has been left here on the ground."
+Examine		= "
+The pendant is attached to a necklace. As you feel the pendant in your 
+hand, you feel a magical force."
+End		= mana
+
+Name		= leafshield
+AltName		= shield
+Pname		= Shield
+Location	= IN_ROOM:tree1
+Oflags		{ Wearable Armor }
+State		= 0
+MaxState	= 0
+Armor		= 10
+BValue		= 200
+Size		= 5
+Weight		= 5
+Desc[0]		= "A large leaf from the mana tree has fell to the ground."
+Examine		= "A leaf from the tree of mana, looks quite protective."
+End		= leafshield
+
+Name		= dcavefire
+AltName		= torch
+Pname		= Fire
+Location	= IN_ROOM:dcave2
+Oflags		{ NoGet Lit }
+State		= 0
+MaxState	= 0
+Desc[0]		= "A small torch hangs on the cave wall."
+Examine		= "It is fastened securely to the wall."
+End		= dcavefire
+
+Name		= treeforest
+AltName		= tree
+Pname		= Tree
+Linked		= treecave
+Location	= IN_ROOM:dforest14
+Oflags		{ Pushable NoGet }
+State		= 1
+MaxState	= 1
+Desc[0]		= "A fallen tree reveals an entrance to a cave."
+Examine		= "An old rotten tree, looks like it could be easily pushed over."
+End		= treeforest
+
+Name		= treecave
+AltName		= tree
+Pname		= Tree
+Linked		= treeforest
+Location	= IN_ROOM:dcave1
+Oflags		{ NoGet }
+State		= 1
+MaxState	= 1
+End		= treecave
+
+Name		= cavewallin
+AltName		= wall
+Pname		= Wall
+Linked		= cavewallout
+Location	= IN_ROOM:dcave17
+Oflags		{ NoGet }
+State		= 1
+MaxState	= 1
+Desc[0]		= "A collapsed wall gives an exit to the east."
+End		= cavewallin
+
+Name		= cavewallout
+AltName		= wall
+Pname		= Wall
+Linked		= cavewallin
+Location	= IN_ROOM:dcave16
+Oflags		{ NoGet }
+State		= 1
+MaxState	= 1
+Desc[0]		= "A collapsed wall gives an exit to the west."
+End		= cavewallout
+
+%locations
+start e:forest1 w:shady@blizzard;
+lflags { Outdoors NoMobiles }
+Forest Clearing^
+  You are standing in a clearing in a forest. All around the clearing 
+there are trees that stand as tall as giants, this must be a very old 
+forest. To the north you see a large waterfall that seems to go up for 
+miles and miles and you stare at it in awe. The clearing becomes smaller 
+and turns into a very large path to the east.
+^
+forest1 w:start e:forest2;
+lflags { Outdoors }
+Old Forest^
+  As you look up you notice that the trees seem to almost touch the sky. 
+The path that you are walking on is covered with pine needles and pine 
+cones of various sizes and sorts. The path continues to the east and 
+there is a clearing to the west.
+^
+forest2 w:forest1 n:mountain1 e:forest3;
+lflags { Outdoors }
+Aside the River in the Forest^
+  You are next to a river that you figure runs from the waterfall that 
+you saw back in a clearing. The trees here are a little shorter than 
+the other ones that you have seen. There is a bridge that goes over the 
+river that leads up to some mountains to the north and to the east the 
+forest continues.
+^
+forest3 w:forest2 e:forest4;
+lflags { Outdoors }
+Old Forest^
+  You are once again in the forest with trees that seem to have been 
+growing for centuries. The sound of chipmunks running on the branches of 
+the trees seems to sooth you a little bit and you look down the path and 
+notice a small pond up ahead.
+^
+forest4 w:forest3 n:forestshop e:swamp1;
+lflags { Outdoors NoMobiles }
+Small Pond in Forest^
+  There is a large clearing in the forest here with a small pond in the 
+middle of it. The pond is a beautiful shade of blue and you can see 
+little fish swimming around in it. To the north is a small shop and to 
+the east is what looks to be the beginning of a swamp.
+^
+forestshop s:forest4;
+lflags { NoMobiles Peaceful }
+Small Shop^
+  This is a small shop with assorted weapons hanging on the walls behind 
+the large desk that the shopkeep is sitting at. The shopkeep smiles at 
+you and gestures for you to sit down and rest.
+^
+mountain1 s:forest2 n:mountain2;
+lflags { Outdoors NoMobiles }
+Head of Mountain Path^
+  Looking ahead you notice that the mountains that this path goes through 
+are pretty impressive. They seem to just continue onward and upward forever.
+The path continues to the north and the forest is to the south.
+^
+mountain2 s:mountain1 u:mountain3;
+lflags { Outdoors }
+Mountain Path^
+  The mountain path is climbing quite quickly and you stop to catch your 
+breath before deciding to go onward. Against a cliff face to the north 
+there are a few vines that look to be a few inches thick which would give
+plenty of support for a body to climb up them. 
+^
+mountain3 d:mountain2 u:mountain4;
+lflags { Outdoors }
+Vines leading up the mountain^
+  You are climbing up a large set of vines that leads up the side of the 
+mountain. The vines continue to the north and to the south is a path.
+^
+mountain4 u:mountain5 d:mountain3 e:mountain6;
+lflags { Outdoors }
+Ledge^
+  You are standing on a ledge that leads to the east of here. You look at 
+the mountain wall and notice some more vines leading to the north but 
+they don't look quite as supportive as the ones that you just climbed up 
+with.
+^
+mountain5;
+lflags { Outdoors Death }
+Vines leading up the mountain^
+  You grab ahold of the vines and start to climb up them. About halfway 
+up the vine starts to rip and tear, you try to climb down as fast as you 
+can but it's too late..the vine rips and you plummet hundreds of feet to 
+the ground smashing your head against a large rock...
+^
+mountain6 w:mountain4 e:mountain7;
+lflags { Outdoors }
+Mountain Path^
+  You are on a small mountain path that is only a few feet wide as you 
+look down the side of the mountain you feel a little sick to your stomach.
+The path winds to the east and goes back to a ledge to the west.
+^
+mountain7 w:mountain6 e:mountain8;
+lflags { Outdoors }
+In front of Cave^
+  The path here leads right into a cave that looks to be lit by something 
+from inside.
+^
+mountain8 w:mountain7 n:mountain9;
+lflags { NoMobiles }
+Cave Entrance^
+  You are at the cave entrance that is lit by several torches that have 
+been stuck into the walls. The cave leads to the north.
+^
+mountain9 s:mountain8 e:mountain11 w:mountain10;
+lflags { }
+Mountain Cave^
+  You are inside of the cave now and it is a little dark in here but you 
+can still see fairly well. To the east the cave continues and to the west
+there is a rather dark mine shaft, you can't see where it leads to..
+^
+mountain10;
+lflags { Death }
+Mine Shaft^
+  You walk into the mine shaft and start to fall..you land in a pool of 
+water and knock your head on the bottom and are knocked out..you drown..
+^
+mountain11 w:mountain9 e:mmaze1;
+lflags { }
+Mountain Cave^
+  The cave is a little bit lighter here and to the east the passage looks 
+to start twisting and turning alot.
+^
+mountain12 w:mmaze7 e:mountain13;
+lflags { }
+Mountain Cave^
+  The cave is a little bit lighter here and to the west the passage looks 
+to start twisting and turning alot.
+^
+mountain13 w:mountain12;
+lflags { }
+End of Mountain Cave^
+  The cave looks to end here. There are shovels and picks laying around 
+that the miners must use to chip away the rock to search for gold.
+^
+mmaze1 n:mmaze2 e:mmaze5 s:mmaze3 w:mountain11;
+lflags { Maze }
+Lost in Mountain Cave^
+  The cave twists and turns here and you cannot tell which direction you 
+last came from. You can see a lighter area to the west of here.
+^
+mmaze2 n:mmaze3 e:mmaze4 s:mmaze4 w:mmaze2;
+lflags { Maze }
+Lost in Mountain Cave^
+  The cave twists and turns here and you cannot tell which direction you 
+last came from.
+^
+mmaze3 n:mmaze8 e:mmaze2 s:mmaze3 w:mmaze4;
+lflags { Maze }
+Lost in Mountain Cave^
+  The cave twists and turns here and you cannot tell which direction you 
+last came from.
+^
+mmaze4 n:mmaze1 e:mmaze2 s:mmaze3 w:mmaze6;
+lflags { Maze }
+Lost in Mountain Cave^
+  The cave twists and turns here and you cannot tell which direction you 
+last came from.
+^
+mmaze5 n:mmaze1 e:mmaze5 s:mmaze4 w:mmaze5;
+lflags { Maze }
+Lost in Mountain Cave^
+  The cave twists and turns here and you cannot tell which direction you 
+last came from.
+^
+mmaze6 n:mmaze3 e:mmaze7 s:mmaze7 w:mmaze6;
+lflags { Maze }
+Lost in Mountain Cave^
+  The cave twists and turns here and you cannot tell which direction you 
+last came from.
+^
+mmaze7 n:mmaze6 e:mountain12; s:mmaze5 w:mmaze2;
+lflags { Maze }
+Lost in Mountain Cave^
+  The cave twists and turns here and you cannot tell which direction you 
+last came from. You see a lighter area to the east of here.
+^
+mmaze8 n:mmaze7 e:mmaze5 s:mmaze2 w:mmaze6;
+lflags { Maze }
+Lost in Mountain Cave^
+  The cave twists and turns here and you cannot tell which direction you 
+last came from.
+^
+swamp1 w:forest4 e:swamp2;
+lflags { Outdoors NoMobiles }
+Swampy Forest Path^
+  The forest seems to mix into a swamp here. The swamp looks to extend to 
+the east.
+^
+swamp2 w:swamp1 s:swamp3;
+lflags { Outdoors }
+Swampy Path^
+  You are now inside of a swamp area. The air has a foul odor to it and 
+you start to feel a little sick as you look down at the mud around your 
+feet. The path looks to head to the south from here.
+^
+swamp3 n:swamp2 s:swamp4;
+lflags { Outdoors }
+Swamp^
+  The path that you thought you were walking on seems to have 
+disappeared. You are starting to get a little sick of this swamp as you 
+pick up your feet and look at the sludge on the bottom of your shoes.
+^
+swamp4 n:swamp3 s:swamp5;
+lflags { Outdoors }
+Murky Swamp^
+  The swamp here is a little more murky than the other swampy areas that 
+you have seen so far. The mud is very cold here and you start to feel 
+like this swamp will never end.
+^
+swamp5 n:swamp4 s:swamp6;
+lflags { Outdoors }
+Murkier Swamp^
+  The swamp is still getting murkier and even colder as you trudge 
+onward. Your legs are half frozen now and you are starting to lose all 
+hope of ever making it out of this swamp.
+^
+swamp6 n:swamp5 s:swamp7;
+lflags { Outdoors }
+Less Murky Swamp^
+  The swamp is looking a little murky here. You feel a little bit better 
+as you look to the south and notice that the swamp is coming to an end.
+^
+swamp7 n:swamp6 s:dforest1;
+lflags { Outdoors }
+End of Swamp^
+  You smile happily and sigh a breath of relief as you realize that you 
+have reached the end of the swamp. To the south you can see a forest 
+which makes you feel even better.
+^
+dforest1 n:swamp7 w:dforest2;
+lflags { Outdoors NoMobiles }
+Beginning of Dwarven Forest^
+  A sign here tells you that you are entering the Dwarven Forest. You 
+know that the dwarfs are a nice bunch of people, but the monsters lurking 
+in their ancient forest are not. 
+^
+dforest2 e:dforest1 w:dforest3;
+lflags { Outdoors }
+Beginning of Path^
+  You are on what looks to be the beginning of a path that winds through 
+the vast forest ahead of you. You are surrounded by a huge forest that 
+seems to never end.
+^
+dforest3 w:dforest4 e:dforest2;
+lflags { Outdoors }
+Path^
+  You are on a path that leads through the dwarven forest. You marvel at 
+the beauty of this ancient forest and look up towards the clear blue sky.
+^
+dforest4 n:dforestshop e:dforest3 w:dforest5;
+lflags { Outdoors }
+In Front of a Shop^
+  To the north of here is a little shop that has a sign that shows that 
+it is a weapons and armor shop. Perhaps you can get a good deal on a new 
+sword in here.
+^
+dforestshop s:dforest4;
+lflags { NoMobiles Peaceful }
+Dwarf Shop^
+  This is a fine shop full of many powerful looking weapons and strong 
+armor. The shopkeep is busy polishing up silver weapons and silver armor 
+as he looks up at you and fixes his hair. He greets you and welcomes you 
+to his shop.
+^
+dforest5 e:dforest4 u:dforest6 w:dforest7;
+lflags { Outdoors }
+Fork in Path^
+  The path looks to fork into two different directions here. You can stay 
+on the path through the Dwarven Forest, or you can hike up to the Cave of 
+Gaia.
+^
+dforest6 n:gaia1 d:dforest5;
+lflags { Outdoors }
+In front of the Gaia Cave^
+  As you stand in front of this cave you notice that the cave entrance 
+looks alot like a face of somesort. There are tiny holes for eyes and a 
+large hole for a mouth. You notice that the "mouth" has some silver on 
+it.
+^
+dforest7 e:dforest5 w:dforest8;
+lflags { Outdoors }
+Forest Path^
+  The path is partially covered with leaves that are falling from the 
+branches of the trees above you. The sound of the leaves rustling from 
+the wind is very soothing to you and you sigh happily.
+^
+dforest8 e:dforest7 n:dforest9;
+lflags { Outdoors }
+Shady Path^
+  The trees have blocked out the sun here making it a little shadier than 
+the other parts of the forest. A cool breeze blows through your hair 
+sending a small chill down your neck.
+^
+dforest9 n:dforest10 s:dforest8;
+lflags { Outdoors NoMobiles }
+End of the Path^
+  The path seems to end here and the dwarven forest continues onward. You 
+look into the forest and see the rustling of animals of various shapes 
+and sizes. You know that the dwarven forest is a place that is full of 
+danger and evil monsters. You also know that the forest is a place full 
+of mystery and many treasures lie within it.
+^
+dforest10 s:dforest9 w:dforest11;
+lflags { Outdoors }
+Inside of the Dwarven Forest^
+  The dwarven forest seems to be a lot darker than the other parts that 
+you have been through so far. You can not hear the sounds of birds 
+chirping here and you feel a little uneasy because of it.
+^
+dforest11 e:dforest10 w:dforest12;
+lflags { Outdoors }
+Dwarven Forest^
+  As you go further into the forest you being to feel a little more 
+uneasy about being here. You have a feeling that there are things looking 
+at you but when you turn around there is nothing there.
+^
+dforest12 n:dforest13 e:dforest11 w:dforest15;
+lflags { Outdoors }
+Southeast corner of a circular path^
+  The path seems to be in the shape of a circle through here. The path 
+curves to the north and to the west. The trees here are very dense and 
+you figure that they are at least a few hundred years old.
+^
+dforest13 w:dforest14 s:dforest12;
+lflags { Outdoors }
+Northeast corner of a circular path^
+  The path seems to be in the shape of a circle through here. The path 
+curves to the west and to the south. The trees here look very healthy and 
+green.
+^
+dforest14 e:dforest13 s:dforest15 w:^treeforest;
+lflags { Outdoors }
+Northwest corner of a circular path^
+  The path seems to be in the shape of a circle through here. The path 
+curves to the south and to the east. The trees here look very weak and 
+brittle. 
+^
+dforest15 n:dforest14 e:dforest12;
+lflags { Outdoors }
+Southwest corner of a circular path^
+  The path seems to be in the shape of a circle through here. The path 
+curves to the east and the north. The trees look very ancient and 
+admirable and you just start to wonder how old they could be.
+^
+dforest16 s:gaia5 w:dforest17;
+lflags { Outdoors }
+Dwarven Forest^
+  You have reached the other side of the dwarven forest on the other
+side of the Gaia cave. A small path leads to the west and the entrance
+to the Gaia cave is to the south. Looking to the north you see the top
+of the waterfall that you saw from the clearing earlier.
+^
+dforest17 w:dforest18 e:dforest16;
+lflags { Outdoors }
+Further into the Forest^
+  The forest seems to have a large clearing up ahead to the west. You
+can still see the waterfall to the north, and you see some sort of 
+large tree at the top of the waterfall.
+^
+dforest18 w:airship1 e:dforest17;
+lflags { Outdoors }
+Large Clearing^
+  You are standing in a large clearing. To the west is what looks like
+an airship of some sort. The waterfall and the tree at the top of it
+are much clearer now, and you realize that the tree is the Tree of Mana,
+the source of life for the world.
+^
+dcave1 e:^treecave w:dcave2;
+lflags { Outdoors }
+In front of the Dwarf Mine^
+  You are in front of what looks to be an old abandoned mine. This area 
+looks to be long forgotten as well, there are overgrown shrubs and bushes 
+that are partially covering the entrance to the cave.
+^
+dcave2 e:dcave1 n:dcave3;
+lflags { NoMobiles }
+Entrance to Dwarf Mine^
+  Once inside of the mine you realize that your first impression was 
+probably correct, this mine has been long forgotten. A thick layer of 
+dust covers the walls, the floor and the ceiling. The mine looks to lead 
+to the north, and the exit is to the east.
+^
+dcave3 n:dcave4 s:dcave2;
+lflags { Dark }
+Dwarf Mine^
+  The mine has gotten a little darker now that you are past the entrance. 
+It is a little colder too and you shiver slightly and look around. You 
+can see that the mine leads onward to the north and you can see the 
+entrance to the south.
+^
+dcave4 s:dcave3 w:dcave5;
+lflags { Dark }
+Turn in the Dwarf Mine^
+  The mine has not gotten much colder, but it sure is getting a little 
+bit darker. Looking around you see that the mine turns to the west.
+^
+dcave5 e:dcave4 w:dcave6;
+lflags { Dark }
+Dwarf Mine^
+  A cold chill blows in from the tunnel in front of you and you clench 
+your teeth to stop them from chattering from the cold. Looking at the 
+walls you notice that there may be some minerals still left here for the 
+taking. The passage continues to the west.
+^
+dcave6 e:dcave5 s:dcave7;
+lflags { Dark }
+Another turn in the mine^
+  You can no longer see any kind of light coming from the way you came 
+and it is still getting colder in here. You look around for an exit and 
+find one to the south.
+^
+dcave7 n:dcave6 w:dcave8;
+lflags { Dark }
+Yet another turn in the mine^
+  While shining around your light you notice that the walls seem to 
+sparkle a little bit. Looking around you find an exit to the west.
+^
+dcave8 e:dcave7 s:dcave9;
+lflags { Dark }
+And another turn in the mine^
+  You are hit by a smell of rotting meat as you enter this corridor and 
+you being to feel a little sick to your stomach. You figure that some 
+worker just left some food down here long ago and it has been rotting 
+ever sense. The passage leads to the south.
+^
+dcave9 n:dcave8 s:dcave10;
+lflags { Dark }
+Mine gets a little smaller^
+  The mine seems to get a little bit smaller here and you begin to feel 
+claustrophobia set in. You look down the passage way and see that it 
+turns up ahead.
+^
+dcave10 n:dcave9 e:dcave11;
+lflags { Dark }
+Turn in the mine^
+  Looking around this mine is beginning to make you feel uneasy and you 
+don't know how much longer you can stand being in here. You can see that 
+the passage turns to the east.
+^
+dcave11 e:dcave12 s:dcave15 w:dcave10;
+lflags { Dark }
+A fork in the passage^
+  The passage looks to lead in three different directions here. The 
+passage leads to the east, to the south, and back to the west.
+^
+dcave12 e:dcave13 w:dcave11;
+lflags { Dark }
+Eastern Passageway^
+  This passageway is a little bit warmer than the passages that you have 
+been in already, this makes you feel a little bit better. The passage 
+continues to the east.
+^
+dcave13 s:dcave14 w:dcave12;
+lflags { Dark }
+Turn in the passageway^
+  The passageway turns to the south here. You can see some sort of light 
+coming from the end of the passage.
+^
+dcave14 n:dcave13;
+lflags { }
+End of Passageway^
+  This room is warm and bright and you start to feel a sense of good 
+enter your soul. Upon the walls are pictures of what looks like an evil 
+being that destroyed part of the dwarven empire. It shows a great fight 
+between the monster and a dwarf with a sword.
+^
+dcave15 n:dcave11 d:dcave16;
+lflags { Dark }
+Southern Passageway^
+  A cold blast of air jets from the chamber below you and you turn your 
+head from the freezing jet of air. The blast of air also brought up a 
+horrible stench of rotting meat and you start to choke a little. You can 
+turn back and go north or go downward.
+^
+dcave16 n:dcave15 w:^cavewallout;
+lflags { Dark }
+Lower Passage^
+  Now you see where the stench was coming from, there are rotting bodies 
+all over the floor and the walls have blood stains on them.
+^
+dcave17 e:^cavewallin;
+lflags { Dark }
+Treasure Room^
+  Now you see what the monster was guarding all this time, a treasure 
+room filled with many assorted treasures and wonders. You also see dead 
+bodies laying around, people that have tried to get to this room before but 
+have failed in their quest for riches.
+^
+gaia1 s:dforest6 n:gaia2;
+lflags { Dark NoMobiles }
+Entrance to Gaia Cave^
+  The Gaia cave is a very strange place, you can feel that something is 
+alive in here yet you do not see anything moving.
+^
+gaia2 s:gaia1 w:gaia3;
+lflags { Dark }
+Entering the Gaia Cave^
+  You swear that something is alive in this cave, you just can't figure 
+out what it is.
+^
+gaia3 e:gaia2 w:gaia4;
+lflags { Dark }
+Past the Entrance^
+  It is beginning to get a bit darker in the cave as you go furthur into 
+the cave. You still have this feeling that something is watching you in 
+here, you just can't figure out what it is.
+^
+gaia4 n:gaia5 e:gaia3;
+lflags { Dark }
+Towards the Exit^
+  Looking to the north you can see the end of the Gaia cave. You still have
+an uneasy feeling of something watching you though.
+^
+gaia5 n:dforest16 s:gaia4;
+lflags { Dark NoMobiles }
+End of the Gaia Cave^
+  You have reached the end of the Gaia cave, looking out of the cave you
+notice that the dwarven forest must cover the entire area around the cave.
+^
+airship1 e:dforest18;
+lflags { Outdoors NoMobiles }
+On The Airship..^
+  You are onboard of a mighty airship..
+^
+airship2 w:castle1;
+lflags { Outdoors NoMobiles }
+On The Airship..^
+  You are onboard of a mighty airship..
+^
+castle1 e:airship2 n:castle2;
+lflags { Outdoors }
+In Front of Castle Glaive^
+  You are standing in front of a monsterous looking castle that seems to
+reach up to the sky. The black walls block out most of the sunlight 
+allowing only a few rays on sunlight to strike against the ground 
+revealing large bushes that climb the sides of the castle walls. The 
+drawbridge leading into the castle is open allowing you to see inside
+of the dimly lit entrance.
+^
+castle2 n:castle3 s:castle1;
+lflags { }
+Entrance to Castle Glaive^
+  The inside of Castle Glaive is just as illumating as the outside is.
+Dark statues are set along the walls and you can make out shadows of
+figures lurking in the dark corners.
+^
+castle3 n:castle4 s:castle2;
+lflags { }
+Main Hallway^
+  You are in the main hallway of Castle Glaive. You look to the north
+to see what is furthur up ahead but the dim lighting prevents you
+from doing so.
+^
+castle4 s:castle3 e:castle5;
+lflags { }
+Main Hallway^
+  The hallway is very dim and you can only make out the direction
+the hall goes, which is to the east.
+^
+castle5 e:castle6 w:castle4;
+lflags { }
+Eastern Hallway^
+  There is a bit of light coming from the hallway to the east of 
+here that helps to illuminate this hallway. You see blocked off 
+doors to the north and south in the hallway and realize that there 
+is no way to go through them and decide to head to the east instead.
+^
+castle6 n:castle7 w:castle5;
+lflags { }
+Eastern Hallway^
+  This looks to the be the end of the eastern hallway as it branches
+to the north.
+^
+castle7 n:castle8 s:castle6;
+lflags { }
+Northern Hallway^
+  Looking at the walls you see writings of the Tree of Mana, the 
+very lifeforce of this world. There is a room to the north with 
+an eerie light burning in it and you can see a dark figure moving
+around.
+^
+castle8 s:castle7;
+lflags { }
+The Magician's Room^
+  This is the room of Julius, the magician to Lord Glaive. Looking
+at the walls you see more writings of the Tree of Mana and many
+scriptures that you can not even read. The room is slightly cluttered 
+with various papers and books and you wonder what Julius could be up to.
+^
+tree1 n:tree2;
+lflags { FastHeal FastMana }
+The Path to the Tree of Mana^
+  You look to the north and see the mighty Tree of Mana. You can feel
+it's magical energy even from this distance and begin to feel your
+very lifeforce be returned to you.
+^
+tree2 s:tree1;
+lflags { FastHeal FastMana }
+The Tree of Mana^
+  You are standing before the mighty Tree of Mana. It's great branches
+loom up towards the sky as it takes in the sun's warm rays and passes
+the life of the sun back onto the land. Large green leaves that have 
+fallen from the tree partially cover the ground.
+^

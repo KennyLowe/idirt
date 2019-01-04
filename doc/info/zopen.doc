@@ -1,0 +1,32 @@
+Zopen Utilities
+1996 by Illusion (shill@nyx.net, aberadm@phreebyrd.com)
+-------------------------------------------------------------------------------
+NOTICE! This code may be unstable! Use at your OWN risk.
+
+The files that are used by the MUD for the world may be compressed using
+the compress or gzip utilities. If you wish to do this you must first edit
+the configuration file (include/config.h) and make sure that USE_ZOPEN is
+defined.
+
+You must then run gzip (or compress) on the files that you wish to be 
+compressed. The following files may be compressed:
+
+	data/actions
+	data/hours
+	data/levels
+	data/locations
+	data/mobiles
+	data/objects
+	data/pflags
+	data/verbs
+	data/zones
+
+If you do compress any of the preceding files, be sure to edit the 
+bootstrap file and change the filename that each part of the bootstrap
+is looking for. For instance, if you gzip the 'locations' file, you need
+to replace:
+
+	L:locations		-with-		L:locations.gz
+
+As this code is found to be completely stable it will be spread to other
+files, such as zones, help files, info files, policy files, and more.

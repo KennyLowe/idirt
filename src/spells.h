@@ -1,0 +1,368 @@
+#ifndef _SPELLS_H
+#define _SPELLS_H
+
+#include "eflags.h"
+#include "oflags.h"
+
+/* Types for send_magic_msg() */
+#define	CASTER	0		/* Message is to caster			*/
+#define	VICTIM	1		/* Message is to room (others)		*/
+#define	ROOM	2		/* Message is to victim			*/
+#define TOCAST	3
+#define TOVIC	4
+#define	TOROOM	5
+
+/* Spell Types */
+#define HEAL    0               /* Heal type spell			*/
+#define ATTACK  1               /* Attack type spell			*/
+#define SPECIAL 2               /* Special spell			*/
+
+#define NOFLAG  -1              /* No flag assigned to the spell	*/
+
+/* Spell Structure */
+struct SPELL {
+  int verb;			/* The parser verb			*/
+  char verbname[10];		/* The parser verbname			*/
+  char name[20];		/* Name of spell			*/
+  int chance;			/* Chance to cast spell			*/
+  int type;			/* Type of spell			*/
+  int flag;			/* EFlag needed to cast spell		*/
+  int fear_flag;		/* Quad damage to victim		*/
+  int immune_flag;		/* No damage to victim			*/
+  int obj_flag;			/* IFLAG to check			*/
+  int mana;			/* Amount of mana required to cast	*/
+  int damage;			/* Amount of damage (or heal)		*/
+  int duration;			/* Spell len in min (0=None, Special)	*/
+
+  char *spell_msg;		/* Msg to caster when spell is casted	*/
+  char *to_room;		/* Msg to people in the room upon cast	*/
+  char *spell_msg_vic;		/* Msg to victim when spell is cast	*/
+  char *to_victim;		/* Msg to the victim			*/
+  char *to_victimi;		/* Msg to the victim if immune		*/
+  char *to_victimm;		/* Msg to the victim if a miss		*/
+  char *to_caster;		/* Msg to caster when victim is hit	*/
+  char *to_casteri;		/* Msg to caster if victim is immune	*/
+  char *to_casterm;		/* Msg to caster if a miss		*/
+  char *to_others;		/* Msg to others when victim is hit	*/
+  char *to_othersi;		/* Msg to others if victim is immune	*/
+  char *to_othersm;		/* Msg to others is a miss		*/
+};
+
+struct SPELL spell_table[] =
+{
+  {VERB_FIREBALL,
+   "Fireball",
+   "Fireball",
+   10,
+   ATTACK,
+   EFL_FIREBALL,
+   EFL_F_FIREBALL,
+   EFL_I_FIREBALL,
+   OMFL_FIREBALL,
+   4,
+   10,
+   0,
+   "You cast a fireball at %v.\n",
+   "%c casts a fireball at %v.\n",
+   "%c casts a fireball at you.\n",
+   "You are struck by the fireball!\n",
+   "You wave your hands and the fireball fades away.\n",
+   "The fireball skims past you!\n",
+   "The fireball hits %v.\n",
+   "%v is immune to the fireball!\n",
+   "The fireball misses %v!\n",
+   "%v is hit by the fireball!\n",
+   "%v waves away the fireball.\n",
+   "The fireball skims past %v!\n"
+  },
+
+  {VERB_FROST,
+   "Frost",
+   "Icy Frost",
+   10,
+   ATTACK,
+   EFL_FROST,
+   EFL_F_FROST,
+   EFL_I_FROST,
+   OMFL_FROST,
+   4,
+   10,
+   0,
+   "You fire an icy ray at %v.\n",
+   "%c fires an icy ray at %v.\n",
+   "%c casts an icy ray at you.\n",
+   "The icy ray hits you, freezing you to the bone!\n",
+   "You heat up your body to repel the icy ray.\n",
+   "The icy ray flies past you!\n",
+   "The icy ray freezes %v.\n",
+   "%v is immune to the icy ray!\n",
+   "The icy ray misses %v!\n",
+   "%v is hit by the icy ray!\n",
+   "%v repels the icy ray!\n",
+   "The icy ray flies past %v!\n"
+  },
+
+  {VERB_MISSILE,
+   "Missile",
+   "Magic Missile",
+   15,
+   ATTACK,
+   EFL_MISSILE,
+   EFL_F_MISSILE,
+   EFL_I_MISSILE,
+   OMFL_MISSILE,
+   6,
+   15,
+   0,
+   "You cast a magic missile at %v.\n",
+   "%c casts a magic missile at %v.\n",
+   "%c casts a magic missile at you.\n",
+   "The magic missile hits you with a large explosion.\n",
+   "You raise a magic shield and the missile is deflected.\n",
+   "The magic missile zooms past you!\n",
+   "The magic missile explodes against %v.\n",
+   "%v deflects the magic missile!\n",
+   "The magic missile zooms by %v!\n",
+   "%v is struck by the magic missile!\n",
+   "%v deflects the magic missile.\n",
+   "The magic missile zooms past %v!\n"
+  },
+
+  {VERB_SHOCK,
+   "Shock",
+   "Shocking Hands",
+   13,
+   ATTACK,
+   EFL_SHOCK,
+   EFL_F_SHOCK,
+   EFL_I_SHOCK,
+   OMFL_SHOCK,
+   5,
+   12,
+   0,
+   "You reach for %v as your hands start to spark.\n",
+   "%c reaches for %v with shocking hands.\n",
+   "%c reaches for you with shocking hands.\n",
+   "You feel the electric current running through your body.\n",
+   "You absorb the shock.\n",
+   "You dodge to one side!\n",
+   "%v shakes violently as you grab him!\n",
+   "%v absorbs the shock!\n",
+   "%v dodges you!\n",
+   "%v is shocked violently!\n",
+   "%v absorbs the shock.\n",
+   "%v dodges!\n"
+  },
+
+  {VERB_AID,
+   "Aid",
+   "Replenish Health",
+   15,
+   HEAL,
+   EFL_AID,
+   NOFLAG,
+   NOFLAG,
+   OMFL_AID,
+   10,
+   10,
+   0,
+   "You chant a spell, attempting to heal %v.\n",
+   "%c chants a spell to heal %v.\n",
+   "%c is chanting a spell to heal you.\n",
+   "You feel stronger!\n",
+   "You don't feel any stronger.\n",
+   "You don't feel any stronger.\n",
+   "%v feels stronger as they regain health!\n",
+   "%v does not regain any health!\n",
+   "%v does not regain any health!\n",
+   "%v regains health!\n",
+   "%v does not regain any health!\n",
+   "%v does not regain any health!\n",
+  },
+
+  {VERB_VTOUCH,
+   "VTouch",
+   "Vampiric Touch",
+   12,
+   SPECIAL,
+   EFL_VTOUCH,
+   NOFLAG,
+   EFL_I_VTOUCH,
+   OMFL_VTOUCH,
+   10,
+   5,
+   0,
+   "You reach for %v, trying to suck the life from them.\n",
+   "%c is trying to suck the life out of %v!\n",
+   "%c is trying to suck the life out of you!\n",
+   "You feel weaker!\n",
+   "You sneer at %c, their spell cannot affect you.\n",
+   "%c tries to grab you, but you dodge in time!\n",
+   "You suck the life from %v!\n",
+   "%v is not affected!\n",
+   "%v dodges out of the way!\n",
+   "%v begins to weaken as %c drains their life.\n",
+   "%v is immune to %c's touch!\n",
+   "%v jumps out of %c's way!\n",
+  },
+
+  {VERB_LIT,
+   "Lit",
+   "Light",
+   50,
+   SPECIAL,
+   EFL_LIGHT,
+   NOFLAG,
+   NOFLAG,
+   OMFL_LIGHT,
+   5,
+   0,
+   5,
+   "You chant a spell to light %v.\n",
+   "%c chants a spell to light %v.\n",
+   "%c is chanting a spell to light you.\n",
+   "You become lit!\n",
+   "You don't even start to glow.\n",
+   "You don't even start to glow.\n",
+   "%v becomes lit! Casting a bright light around the area.\n",
+   "%v doesn't even start to glow.\n",
+   "%v doesn't even start to glow.\n",
+   "%v becomes lit! Casting a bright light around the area.\n",
+   "%v doesn't even start to glow.\n",
+   "%v doesn't even start to glow.\n",
+  },
+
+  {VERB_DAMAGE,
+   "Damage",
+   "Increase Damage",
+   10,
+   SPECIAL,
+   EFL_DAMAGE,
+   NOFLAG,
+   NOFLAG,
+   OMFL_DAMAGE,
+   15,
+   0,
+   5,
+   "You close your eyes and chant for strength for %v.\n",
+   "%c chants for strength for %v.\n",
+   "%c is chanting a spell to give you strength.\n",
+   "You become stronger!\n",
+   "You don't feel any stronger.\n",
+   "You don't feel any stronger.\n",
+   "%v becomes stronger! They look able to cut anyone in two!\n",
+   "%v doesn't look any stronger.\n",
+   "%v doesn't look any stronger.\n",
+   "%v becomes stronger! They look able to cut anyone in two!\n",
+   "%v doesn't look any stronger.\n",
+   "%v doesn't look any stronger.\n",
+  },
+
+  {VERB_ARMOR,
+   "Armor",
+   "Increase Armor",
+   12,
+   SPECIAL,
+   EFL_ARMOR,
+   NOFLAG,
+   NOFLAG,
+   OMFL_ARMOR,
+   15,
+   0,
+   5,
+   "You close your eyes and chant for more protection for %v.\n",
+   "%c chants for more protection for %v.\n",
+   "%c is chanting a spell to give you more protection.\n",
+   "You feel more protected!\n",
+   "You don't feel much more protected.\n",
+   "You don't feel much more protected.\n",
+   "%v becomes more protected!\n",
+   "%v doesn't look much more protected.\n",
+   "%v doesn't look much more protected.\n",
+   "%v becomes more protected!\n",
+   "%v doesn't look much more protected.\n",
+   "%v doesn't look much more protected.\n",
+  },
+
+  {VERB_BHANDS,
+   "BHands",
+   "Burning Hands",
+   6,
+   ATTACK,
+   EFL_BHANDS,
+   EFL_F_BHANDS,
+   EFL_I_BHANDS,
+   OMFL_BHANDS,
+   2,
+   8,
+   0,
+   "Flames jet from your fingertips towards %v.\n",
+   "Flames jet from %c's fingertips towards %v.\n",
+   "Flames jet from %c's fingertips towards you!\n",
+   "The searing flames burn you!\n",
+   "You chant a spell and the flames are extinguished.\n",
+   "You jump out of the way just in time!\n",
+   "You hit %v with the searing flames.\n",
+   "%v is immune to the flames!\n",
+   "%v jumps out of the way just in time!\n",
+   "%v is hit with the searing flames.\n",
+   "%v is immune to the flames!\n",
+   "%v jumps out of the way just in time!\n",
+  },
+
+  {VERB_BLUR,
+   "Blur",
+   "Blur",
+   25,
+   SPECIAL,
+   EFL_BLUR,
+   NOFLAG,
+   NOFLAG,
+   OMFL_BLUR,
+   12,
+   0,
+   5,
+   "You chant a spell to make %v blurry.\n",
+   "%c chants to make %v blurry.\n",
+   "%c is chanting a spell to make you blurry.\n",
+   "You start to fade and look blurry!\n",
+   "You don't look any different.\n",
+   "You don't look any different.\n",
+   "%v becomes blurry and harder to see!\n",
+   "%v doesn't look any different.\n",
+   "%v doesn't look any different.\n",
+   "%v becomes blurry and harder to see!\n",
+   "%v doesn't look any different.\n",
+   "%v doesn't look any different.\n",
+  },
+
+  {VERB_ICESTORM,
+   "Icestorm",
+   "Ice Storm",
+   18,
+   ATTACK,
+   EFL_ICESTORM,
+   EFL_F_ICESTORM,
+   EFL_I_ICESTORM,
+   OMFL_ICESTORM,
+   7,
+   16,
+   0,
+   "Flames jet from your fingertips towards %v.\n",
+   "Flames jet from %c's fingertips towards %v.\n",
+   "Flames jet from %c's fingertips towards you!\n",
+   "The searing flames burn you!\n",
+   "You chant a spell and the flames are extinguished.\n",
+   "You jump out of the way just in time!\n",
+   "You hit %v with the searing flames.\n",
+   "%v is immune to the flames!\n",
+   "%v jumps out of the way just in time!\n",
+   "%v is hit with the searing flames.\n",
+   "%v is immune to the flames!\n",
+   "%v jumps out of the way just in time!\n",
+  },
+
+  {-1}
+};
+
+#endif

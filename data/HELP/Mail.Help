@@ -1,0 +1,14 @@
+&+Ci&+WDiRT Mailer Help
+&+c-------------------------------------------------------------------------------
+&+W<number>       &+b: &*Reads the specified message number.
+&+WH              &+b: &*Displays the messages in your mailbox in header format.
+&+WM <plr>        &+b: &*Mails the specified player.
+&+WR <num>        &+b: &*Replies to the specified message number.
+&+WF <num> <plr>  &+b: &*Forwards the specified message number to the specified player.
+&+WD <num>        &+b: &*Deletes the specified message number.
+&+WU <num>        &+b: &*Undeletes a specified message number.
+&+WV              &+b: &*Displays version information.
+&+W?              &+b: &*Displays this help file.
+&+W*<command>     &+b: &*Runs a MUD command.
+&+WQ              &+b: &*Quits the iDiRT Mailer.
+&+c-------------------------------------------------------------------------------

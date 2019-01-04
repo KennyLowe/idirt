@@ -1,0 +1,53 @@
+.TH utils 6 "3 June 1996" "iDIRT 1.82.00" "iDIRT Information Manual"
+.SH NAME
+utils - iDIRT Binary and Script Utilities
+
+.SH DESCRIPTION
+The following files are utilities for the iDIRT MUD system.
+
+.TP
+.B idirt/bin/Dump
+A program that dumps information from the
+.B uaf_rand
+file into readable output for other utilties.
+.TP
+.B idirt/utils/backup
+A script to backup the source code into the
+.I idirt/utils/BACKUP/
+directory. Run this utility if you plan on editing the code so that
+you have an original copy of the source code readily available.
+.TP
+.B idirt/utils/conv
+A script to run the
+.B convert
+program.
+.TP
+.B idirt/utils/convert
+A program that converts the
+.B uaf_rand
+file.
+.TP
+.B idirt/utils/fixlog
+A script that dumps information from the
+.B syslog
+file into seperate files.
+.TP
+.B idirt/bin/generate
+A program that generates the MUD world, the verbs files,
+and other data.
+.TP
+.B idirt/utils/makedep
+A script that the
+.B Makefile
+calls to get system information.
+.TP
+.B idirt/bin/pfilter
+The filter for help files and other external documents.
+.TP
+.B idirt/bin/restart
+Script to run the iDIRT daemon.
+.TP
+.B idirt/utils/slain
+Dumps information from the 
+.B syslog
+file listing all deaths.

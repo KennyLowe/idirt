@@ -1,0 +1,38 @@
+
+Comment:  Which P-flag and Mask-bits to set when a player changes status...
+Comment:  The higher levels inherit bits from lower.
+
+PflagApprentice:
+  Exorcise Zap Resurrect Stats Goto WreckDoors Reset
+  SummonObj Weather Lock Trace Peace NoHassle TitleEdit Emote;
+
+PflagWizard:
+  NoTrace NoSnoop NoZap NoSummon NoSteal NoMagic NoForce NoAlias MflagEdit
+  ObjectEdit Heal AliasMob StartInvis RoomEdit Clone Punt Timeout Load/Store 
+  Echo NoExorcise NoBurn Burn Sic ShowUsers;
+
+MaskWizard:
+  NoExorcise;
+
+PflagProphet:
+  Raw ChScore ChLevel;
+
+PflagArchWizard:
+  UAFInfo PflagEdit AliasPlayers Frob ChMobData Syslog PZap;
+
+MaskArchWizard:
+  NoPunt;
+
+PflagAvatar:
+  SflagEdit Shutdown Probation;
+
+PflagGod:
+  MaskEdit IgnoreNoAt NoPunt NoForget EflagEdit TextRaw Snoop SeeUser
+  NoSic CanLog FList NflagEdit ChatMod Socket NoTimeOut SeeIdle SeeSocket
+  ViewCom Ban Settime;
+
+MaskGod:
+  IgnoreNoAt;
+
+PflagMaster:
+  Reboot Signal;
