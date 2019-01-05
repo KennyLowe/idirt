@@ -6,11 +6,13 @@
 #include <stdio.h>
 #include <ctype.h>
 
-#include "../include/kernel.h"
+#include "kernel.h"
 
 #ifdef VARGS
 #include <stdarg.h>
 #endif
+
+#include <stdlib.h>
 
 #define get_oref(z,F) ((XOBJ *)get_ref('O',z,F))
 #define get_lref(z,F) get_ref('L', z, F)
@@ -1430,15 +1432,12 @@ obj_ok (XOBJ * O, XOBJ * F, char t)
   } else if (O->aux == F && t == IS_LINK) {
     return True;
   } else if (O->aux == F) {
-    log ('O', O, O->zone, "Recursive contents in object.");
     O->aux = BAD;
     return False;
   } else if (O->loc == NULL) {
-    log ('O', O, O->zone, "Location does not exist.");
     O->aux = BAD;
     return False;
   } else if (O->obj != -1) {
-    log ('O', O, O->zone, "O->obj == %d, should be -1");
     O->aux = BAD;
     return False;
   } else if (O->aux != UNKNOWN) {
@@ -1447,28 +1446,20 @@ obj_ok (XOBJ * O, XOBJ * F, char t)
   O->aux = F;
   if (O->cflag == IN_CONTAINER && !obj_ok ((XOBJ *) (O->loc), F, IS_CONTAINED)) {
     G = (XOBJ *) (O->loc);
-    log ('O', O, O->zone, "Container %s@%s[%s] is bad",
-	 G->name, G->zone->name, G->pname);
     O->aux = BAD;
     return False;
   }
   if ((L = O->linked) != NULL) {
     if (L == (XOBJ *) (-1)) {
-      log ('O', O, O->zone, "Linked object doesn't exist.");
       O->aux = BAD;
       return False;
     } else if (L == O) {
-      log ('O', O, O->zone, "Linked object to itself.");
       O->aux = BAD;
       return False;
     } else if (L->linked != O) {
-      log ('O', O, O->zone, "Linked object %s@%s[%s] isn't linked back.",
-	   L->name, L->zone->name, L->pname);
       O->aux = BAD;
       return False;
     } else if (L->aux == BAD) {
-      log ('O', O, O->zone, "Linked object %s@%s[%s] is bad.",
-	   L->name, L->zone->name, L->pname);
       O->aux = BAD;
       return False;
     } else if ((G = L->aux) != GOOD) {
@@ -1476,13 +1467,17 @@ obj_ok (XOBJ * O, XOBJ * F, char t)
 	G = L;
 
       if (!obj_ok (L, G, IS_LINK)) {
-	log ('O', O, O->zone, "Error with linked object %s@%s[%s].",
-	     L->name, L->zone->name, L->pname);
 	L->aux = BAD;
 	O->aux = BAD;
 	return False;
       }
     }
+    if ((L = O->linked) != NULL) {
+     if (L == (XOBJ *) (-1)) {
+      O->aux = BAD;
+      return False;
+     }
+    }    
     if (O->state == -1) {
       if ((O->state = L->state) == -1) {
 	O->state = L->state = 0;
@@ -1490,9 +1485,6 @@ obj_ok (XOBJ * O, XOBJ * F, char t)
     } else if (L->state == -1) {
       L->state = O->state;
     } else if (L->state != O->state) {
-      log ('O', O, O->zone,
-	   "Initial states on linked objects %s@%s[%s] are not the same.",
-	   L->name, L->zone->name, L->pname);
       L->aux = BAD;
       O->aux = BAD;
       return False;
@@ -1520,21 +1512,20 @@ obj_ok (XOBJ * O, XOBJ * F, char t)
     }
   }
   if (R == NULL) {
-    log ('O', O, O->zone, "Invalid location.");
     O->aux = BAD;
     return False;
   }
   if (obj_list == NULL) {
     obj_list_l = obj_list = O;
   } else {
-    obj_list_l->the_next = obj_list_l = O;
+        obj_list_l->the_next = O;
+        obj_list_l = O;
   }
 
   if (O->linked == NULL)
     ++num_unlinked;
   else if (O < O->linked)
     ++num_linked;
-
 
   O->aux = GOOD;
   return True;

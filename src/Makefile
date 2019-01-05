@@ -116,7 +116,7 @@ LinkCount:	MakeLinkCount
 	@$(ECHO) "#ifndef _LINKCOUNT_H" > $(HDIR)LINKCOUNT.H
 	@$(ECHO) "#define _LINKCOUNT_H" >> $(HDIR)LINKCOUNT.H
 	@$(ECHO) >> $(HDIR)LINKCOUNT.H
-	@$(ECHO) "#define LINKCOUNT\t`cat .LINKCOUNT`" >> $(HDIR)LINKCOUNT.H
+	@$(ECHO) "#define LINKCOUNT" >> $(HDIR)LINKCOUNT.H
 	@$(ECHO) >> $(HDIR)LINKCOUNT.H
 	@$(ECHO) "#endif"               >> $(HDIR)LINKCOUNT.H
 
@@ -224,7 +224,7 @@ strip:
 
 #############################################################
 # Do not delete this line, the makedep program requires it. #
-# Last Updated: Fri Jan 4 11:57:17 STD 2019                 #
+# Last Updated: Sat Jan 5 10:37:29 STD 2019                 #
 #############################################################
 
 # Dependencies for the MUD source code
@@ -318,13 +318,11 @@ main.o: main.c kernel.h VERSION.H MACHINE.H config.h logconfig.h levels.h \
  jmp.h mud.h log.h bootstrap.h sendsys.h mobile.h commands.h timing.h \
  exit.h s_socket.h locations.h pflags.h update.h climate.h reboot.h \
  objsys.h bprintf.h zones.h uaf.h fight.h rooms.h ver.h main.h
-mkdata.o: mkdata.c ../include/kernel.h ../include/VERSION.H \
- ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
- ../include/levels.h ../include/exits.h ../include/types.h \
- ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
- ../include/macros.h ../include/extern.h ../include/files.h cflags.h \
- mflagnames.h pflagnames.h sflagnames.h lflagnames.h oflagnames.h \
- nflagnames.h eflagnames.h exitnames.h lflags.h nflags.h
+mkdata.o: mkdata.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
+ levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
+ extern.h files.h cflags.h mflagnames.h pflagnames.h sflagnames.h \
+ lflagnames.h oflagnames.h nflagnames.h eflagnames.h exitnames.h lflags.h \
+ nflags.h
 mobile.o: mobile.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
  levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
  extern.h files.h locations.h commands.h wizlist.h sendsys.h objects.h \
