@@ -5,10 +5,10 @@
 
 # Directory Definitions
 #
-BIN	= /mnt/c/idirt-code/bin/
-DATA	= /mnt/c/idirt-code/data/
+BIN	= /mud/bin/
+DATA	= /mud/data/
 ZONE	= $(DATA)ZONES
-UTIL	= /mnt/c/idirt-code/utils/
+UTIL	= /mud/utils/
 
 # Target Executables
 #
