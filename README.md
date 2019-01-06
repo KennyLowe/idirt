@@ -9,9 +9,13 @@ Instructions to build the MUD:
 Clone the git repo.
 Ensure you have gcc and make installed.
 cd to /src
+
 make depend
+
 make
+
 cd ../bin
+
 ./aberd
 
 By default the MUD binds to port 6715, as is tradition. You can connect to it by telneting to your machine on this port.
