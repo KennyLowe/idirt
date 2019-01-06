@@ -99,10 +99,6 @@ dodirn (int vb)
     bprintf ("You can't go that way.\n");
     return -1;
   }
-  if (chkroom (newch, mynum) && !ltstflg (newch, LFL_MOVE)) {
-    bprintf ("A magical force prevents you from entering that room.\n");
-    return -1;
-  }
   if (ltstflg (newch, LFL_PRIVATE) || ltstflg (newch, LFL_ONE_PERSON)) {
     pc = 0;
     for (i = 0; i < max_players; i++)
