@@ -823,8 +823,10 @@ check_files (void)
   PERSONA p;
   char mailfile[100];
 
-  if (!getuaf (pname (mynum), &p))
+  Boolean uaf_valid = getuaf (pname (mynum), &p);
+  if (!uaf_valid)
     return;
+
   last_login = p.p_last_on;
   sprintf (mailfile, "%s/%s", MAIL_DIR, pname (mynum));
 
