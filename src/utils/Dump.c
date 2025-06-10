@@ -31,11 +31,11 @@
 #include <sys/types.h>
 #include <time.h>
 #include <errno.h>
-#include "../kernel.h"
-#include "../macros.h"
-#include "../sflags.h"
-#include "../pflags.h"
-#include "../pflagnames.h"
+#include "kernel.h"
+#include "macros.h"
+#include "sflags.h"
+#include "pflags.h"
+#include "pflagnames.h"
 
 extern int getopt (int argc, char **argv, char *optstr);
 extern int optind;

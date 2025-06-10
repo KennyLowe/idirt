@@ -1,0 +1,14 @@
+*.o
+bin/aberd
+bin/Dump
+src/.LINKCOUNT
+data/locations
+data/objects
+data/zones
+include/locations.h
+include/mobiles.h
+include/objects.h
+bin/generate
+bin/pfilter
+include/verbs.h
+src/.LINKED

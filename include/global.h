@@ -68,7 +68,6 @@ int	prep;
 
 int	stp;
 int	verbcode;
-time_t	next_event;     /* check mud.c */
 time_t	last_reset;     /* Last reset time */
 time_t	global_clock;
 time_t  last_startup;   /* Last startup time */
