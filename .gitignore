@@ -5,6 +5,7 @@ src/.LINKCOUNT
 data/locations
 data/objects
 data/zones
+data/uaf_rand
 include/locations.h
 include/mobiles.h
 include/objects.h
@@ -12,3 +13,6 @@ bin/generate
 bin/pfilter
 include/verbs.h
 src/.LINKED
+data/mkdata.log
+include/LINKCOUNT.H
+include/MACHINE.H
