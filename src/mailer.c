@@ -319,20 +319,24 @@ quit_mailer (void)
     return;
   }
   if ((cur_player->Mailer.output = fopen (cur_player->Mailer.outputname, "w")) == NULL) {
-    fclose (cur_player->Mailer.mailbox);
+    if (cur_player->Mailer.mailbox)
+      fclose (cur_player->Mailer.mailbox);
     bprintf ("Error making temporary file.\n");
     mudlog ("DEBUG: Error creating file (%s)", cur_player->Mailer.outputname);
   } else {
-    rewind (cur_player->Mailer.mailbox);
-    for (loop = 0; loop < cur_player->Mailer.lastmsg; loop++) {
-      cur_player->Mailer.buffer[0] = '\0';
-      while (cur_player->Mailer.buffer[0] != EOM_MARKER) {
-	fgets (cur_player->Mailer.buffer, 256, cur_player->Mailer.mailbox);
-	if (!msg_idx_delete (mynum, loop))
-	  fprintf (cur_player->Mailer.output, "%s", cur_player->Mailer.buffer);
+    if (cur_player->Mailer.mailbox)
+    {
+      rewind (cur_player->Mailer.mailbox);
+      for (loop = 0; loop < cur_player->Mailer.lastmsg; loop++) {
+        cur_player->Mailer.buffer[0] = '\0';
+        while (cur_player->Mailer.buffer[0] != EOM_MARKER) {
+  	fgets (cur_player->Mailer.buffer, 256, cur_player->Mailer.mailbox);
+	  if (!msg_idx_delete (mynum, loop))
+	    fprintf (cur_player->Mailer.output, "%s", cur_player->Mailer.buffer);
+        }
       }
+      fclose (cur_player->Mailer.mailbox);
     }
-    fclose (cur_player->Mailer.mailbox);
     fclose (cur_player->Mailer.output);
     rename (cur_player->Mailer.outputname, cur_player->Mailer.mailboxname);
   }
