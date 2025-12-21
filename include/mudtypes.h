@@ -1,6 +1,8 @@
 #ifndef _MUDTYPES_H
 #define _MUDTYPES_H
 
+#include <stdint.h>
+
 typedef	LongInt	 LFLAGS;
 typedef	DLongInt OFLAGS;
 typedef	DLongInt PFLAGS;
