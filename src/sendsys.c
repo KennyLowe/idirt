@@ -73,6 +73,7 @@ ___send_msg (int to,
  * DEST_ALL                    all players and mobiles.
  */
 
+#if 0
 static Boolean
 test_rcv (int player,		/* Who to send to */
 	  int mode,		/* Flags to control sending */
@@ -133,6 +134,7 @@ test_rcv (int player,		/* Who to send to */
   return b;
 
 }
+#endif
 
 /* Send general message.
  */

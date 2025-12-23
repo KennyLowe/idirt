@@ -9,6 +9,7 @@
 #include <unistd.h>
 #include <sys/file.h>
 #include <sys/types.h>
+#include <time.h>
 #include "kernel.h"
 #include <errno.h>
 #include <sys/stat.h>
@@ -698,7 +699,7 @@ new_connection (int m_socket)
   struct hostent *h;
   int plx;
   int fd;
-  int sin_len;
+  socklen_t sin_len;
   Boolean host_banned = False, host_b2 = False;
   Boolean user_banned = False, user_b2 = False;
   Boolean login_banned = False, login_b2 = False;

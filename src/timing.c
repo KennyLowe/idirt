@@ -102,12 +102,13 @@ later (struct tm *a, struct tm *b)
 
 /* Return True if the time t occurs after a and before b, (between a and b).
  */
+#if 0
 static Boolean
 between (struct tm *t, struct tm *a, struct tm *b)
 {
   return (later (a, b) ? !between (t, b, a) : later (t, a) && !later (t, b));
 }
-
+#endif
 
 /* Return the time difference between two events in seconds.
  */
