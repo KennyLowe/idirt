@@ -766,10 +766,10 @@ get_ref (char t, XZON * zo, FILE * F)
   return 0;
 }
 
-int
+long
 get_int (FILE * F)
 {
-  int i;
+  long i;
   int c;
   Boolean neg;
 
@@ -1890,7 +1890,7 @@ write_obj (XZON * ZON, int numz, int o, int l)
 }
 
 static char *
-c_ex (char *s, int x, int *Ex, Boolean * ex, Boolean neg)
+c_ex (char *s, int x, long *Ex, Boolean * ex, Boolean neg)
 {
   char c;
 
@@ -1952,11 +1952,11 @@ write_loc (XZON * ZON, int numz, int l)
   FILE *H;
   int z;
   int x;
-  int y = 0;
+  long y = 0;
   int i = -1;
   Boolean neg;
   Boolean ex[NEXITS];		/* True if in condition ^<exit> */
-  int Ex[NEXITS];		/* The calculated exit number.. */
+  long Ex[NEXITS];		/* The calculated exit number.. */
   XZON *Z;
   XLOC *L;
   XLOC *E;
@@ -1998,7 +1998,7 @@ write_loc (XZON * ZON, int numz, int l)
 	  y = DOOR + ((XOBJ *) L->exits[x])->obj;
 	  break;
 	case '#':
-	  y = (int) (L->exits[x]);
+	  y = (long) L->exits[x];
 	  break;
 	case ' ':
 	  y = -(L->exits[x]->loc);
@@ -2012,7 +2012,7 @@ write_loc (XZON * ZON, int numz, int l)
 	  xexit (1);
 	}
 	Ex[x] = y;
-	fprintf (F, " %d", y);
+	fprintf (F, " %ld", y);
       }
       fprintf (F, "\n0x%08lx:0x%08lx\n%s^\n", L->lflags.h, L->lflags.l, L->pname);
       s = L->description;

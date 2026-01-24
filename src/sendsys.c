@@ -196,7 +196,7 @@ send_g_msg (int destination,	/* Where to send to */
 char *
 check_send_msg (int plx, intptr_t a, char *t)
 {
-  struct _send_msg_box *b = (struct _send_msg_box *) a;
+  // struct _send_msg_box *b = (struct _send_msg_box *) a;
 
   //if (test_rcv (plx, b->mode, b->min, b->max, b->x1, b->x2, b->lang))
   //  return t;

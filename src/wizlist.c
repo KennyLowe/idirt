@@ -152,7 +152,7 @@ update_wizlist (char *name, int new_wlevel)
  * if invalid wizlevel, return -3; */
 
 int
-parse_wizlevel (char *s, int *low, int *high)
+parse_wizlevel (char *s, intptr_t *low, intptr_t *high)
 {
   int t, x;
   char *a;
@@ -192,8 +192,8 @@ parse_wizlevel (char *s, int *low, int *high)
   } else {
     for (p = wizlist; p != NULL && !EQ (s, p->name); p = p->next) ;
     if (p != NULL) {
-      *low = p->wlev;
-      *high = -1;
+      *low = (intptr_t) p;
+      *high = 0;
       return -2;
     }
     if ((x = tlookup (s, WizLevels)) < 0)
@@ -234,7 +234,7 @@ wizlistcom (void)
   char fn[100];
   int t;
   int x = -1;
-  int low, high;
+  intptr_t low, high;
   struct _w *p;
   Boolean h = False;
   int i, k = 0;
