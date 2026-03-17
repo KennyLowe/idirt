@@ -6,9 +6,7 @@
 #include <string.h>
 #include "levels.h"
 
-#ifdef VARGS
 #include <stdarg.h>
-#endif
 
 #include "timing.h"
 #include "log.h"

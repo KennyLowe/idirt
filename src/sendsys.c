@@ -12,9 +12,7 @@
 #include "commands.h"
 #include "log.h"
 
-#ifdef VARGS
 #include <stdarg.h>
-#endif
 
 struct _send_msg_box {
   int mode;
@@ -203,8 +201,6 @@ check_send_msg (int plx, intptr_t a, char *t)
   return NULL;
 }
 
-#ifdef VARGS
-
 void
 send_msg (int destination,	/* Where to send to */
 	  int mode,		/* Flags to control sending */
@@ -259,60 +255,6 @@ gsendf (int destination,
   va_end (pvar);
   send_g_msg (destination, func, arg, b);
 }
-
-#else
-
-void
-send_msg (int destination,	/* Where to send to */
-	  int mode,		/* Flags to control sending */
-	  int min,		/* Minimum level of recipient */
-	  int max,		/* Maximum level of recipient */
-	  int x1,		/* Do not send to him */
-	  int x2,		/* Nor to him */
-	  char *format,		/* Format with args -> text to send */
-	  int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8,
-	  int a9)
-{
-  struct _send_msg_box b;
-  char *bb;
-  char bf[2048];
-  char bf2[2048];
-
-  b.mode = mode;
-  b.min = min;
-  b.max = max;
-  b.x1 = x1;
-  b.x2 = x2;
-  b.lang = NFL_ENGLISH;
-  bb = format;
-  sprintf (bf, bb, a1, a2, a3, a4, a5, a6, a7, a8, a9);
-  send_g_msg (destination, check_send_msg, (intptr_t) &b, bf);
-}
-
-void
-sendf (int destination, char *format, int a1, int a2, int a3, int a4, int a5,
-       int a6, int a7, int a8, int a9)
-{
-  char b[2048];
-
-  sprintf (b, format, a1, a2, a3, a4, a5, a6, a7, a8, a9);
-  send_g_msg (destination, NULL, 0, b);
-}
-
-void
-gsendf (int destination,
-	char *func (int plx, intptr_t arg, char *text),
-	intptr_t arg,
-	char *format, int a1, int a2, int a3, int a4, int a5, int a6, int a7,
-	int a8, int a9)
-{
-  char b[2048];
-
-  sprintf (b, format, a1, a2, a3, a4, a5, a6, a7, a8, a9);
-  send_g_msg (destination, func, arg, b);
-}
-
-#endif
 
 /* Language Style send_msg
  * 1995, Illusion (Idea from Moses)
