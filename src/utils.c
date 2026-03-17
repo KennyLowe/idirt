@@ -1,4 +1,4 @@
-
+#include <crypt.h>
 #include <sys/time.h>
 #include <sys/stat.h>
 #include <unistd.h>
@@ -8,7 +8,6 @@
 #include "kernel.h"
 #include "global.h"
 #include "utils.h"
-#include "crypt.h"
 
 /************************************************************************
  * Functions to use with qsort().					*
