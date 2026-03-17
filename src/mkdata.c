@@ -248,7 +248,7 @@ xexit (int code)
   exit (code);
 }
 
-void log (char t, XOBJ * O, XZON * Z, char *f,...);
+void do_log (char t, XOBJ * O, XZON * Z, char *f,...);
 
 
 /*
@@ -948,7 +948,7 @@ read_mob (FILE * F, XZON * z, char *b, int bs)
       *t = 0;
       ungetc (c, F);
       if (strcasecmp (n, m->name) != 0) {
-	log ('M', (XOBJ *) m, z, "Wrong arg to end: %s.", n);
+	do_log ('M', (XOBJ *) m, z, "Wrong arg to end: %s.", n);
 	m->aux = BAD;
       }
       m = NULL;
@@ -1159,7 +1159,7 @@ read_obj (FILE * F, XZON * z, char *b, int bs)
       *t = 0;
       ungetc (c, F);
       if (strcasecmp (n, o->name) != 0) {
-	log ('O', o, z, "Wrong arg to end: %s.", n);
+	do_log ('O', o, z, "Wrong arg to end: %s.", n);
 	o->aux = BAD;
       }
       o = NULL;
@@ -1311,7 +1311,7 @@ read_loc (FILE * F, XZON * z, char *b, int bs)
 	xexit (1);
       }
       if (l->exit_types[k] != 0) {
-	log ('L', (XOBJ *) l, z,
+	do_log ('L', (XOBJ *) l, z,
 	     "Multiple defineds of exit %s.", Exits[k]);
       }
       for (c = getc (F); isspace (c); c = getc (F)) ;
@@ -1546,7 +1546,7 @@ clean_up (XZON * zon, int nz, int *mm, int *oo, int *lo, int *ll)
       continue;
     if (M->aux != DEFINED) {
       M->aux = BAD;
-      log ('M', (XOBJ *) M, M->zone, "Mobile isn't properly defined..");
+      do_log ('M', (XOBJ *) M, M->zone, "Mobile isn't properly defined..");
     } else {
       char *p = M->pname;
 
@@ -1560,13 +1560,13 @@ clean_up (XZON * zon, int nz, int *mm, int *oo, int *lo, int *ll)
       while (isalpha (*p) || *p == ' ')
 	p++;
       if (*p != '\0')
-	log ('M', (XOBJ *) M, M->zone,
+	do_log ('M', (XOBJ *) M, M->zone,
 	     "Mobile in-game name must consist of letters only.");
     }
   }
   for (L = locs, x = 0; x < num_l; L++, x++) {
     if (L->aux != DEFINED) {
-      log ('L', (XOBJ *) L, L->zone, "Location isn't properly defined..");
+      do_log ('L', (XOBJ *) L, L->zone, "Location isn't properly defined..");
       L->aux = BAD;
     } else {
       L->aux = UNKNOWN;
@@ -1577,7 +1577,7 @@ clean_up (XZON * zon, int nz, int *mm, int *oo, int *lo, int *ll)
     if (O->aux == BAD)
       continue;
     if (O->aux != DEFINED) {
-      log ('O', O, O->zone, "Object isn't properly defined..");
+      do_log ('O', O, O->zone, "Object isn't properly defined..");
       O->aux = BAD;
     } else {
       char *p = O->pname;
@@ -1588,7 +1588,7 @@ clean_up (XZON * zon, int nz, int *mm, int *oo, int *lo, int *ll)
       while (isalpha (*p) || *p == ' ')
 	p++;
       if (*p != '\0')
-	log ('O', O, O->zone,
+	do_log ('O', O, O->zone,
 	     "Object in-game name must consist of letters only.");
     }
   }
@@ -1637,14 +1637,14 @@ clean_up (XZON * zon, int nz, int *mm, int *oo, int *lo, int *ll)
       if ((F = O->aux) == BAD || F == GOOD)
 	continue;
       if (F == REFERRED || F == DEFINED) {
-	log ('O', O, O->zone, "Object isn't properly checked.");
+	do_log ('O', O, O->zone, "Object isn't properly checked.");
 	O->aux = BAD;
 	continue;
       }
       if (F == UNKNOWN)
 	F = O;
       if (!obj_ok (O, F, IS_CHECK)) {
-	log ('O', O, O->zone, "General error with object.");
+	do_log ('O', O, O->zone, "General error with object.");
 	O->aux = BAD;
       } else {
 	O->aux = GOOD;
@@ -1680,13 +1680,13 @@ clean_up (XZON * zon, int nz, int *mm, int *oo, int *lo, int *ll)
 	  break;
 	case 0:
 	  if (L->exits[k] != NULL) {
-	    log ('L', (XOBJ *) L, L->zone,
+	    do_log ('L', (XOBJ *) L, L->zone,
 		 "Garbage in exit %s, should be none.", Exits[k]);
 	    L->exits[k] = NULL;
 	  }
 	  break;
 	default:
-	  log ('L', (XOBJ *) L, L->zone,
+	  do_log ('L', (XOBJ *) L, L->zone,
 	       "Garbage in exit %s, exit type = %c[%03o]",
 	       Exits[k], L->exit_types[k], L->exit_types[k]);
 	  L->exits[k] = NULL;
@@ -1762,7 +1762,7 @@ write_mob (XZON * ZON, int numz, int m)
     fprintf (H, "#define MOBMAX_%s\t%d\n", zn, Z->mob + Z->n_mob);
     for (M = Z->mobs; M != NULL; M = M->next, i++) {
       if (M->aux != GOOD) {
-	log ('M', (XOBJ *) M, Z, "Mobile not found good.");
+	do_log ('M', (XOBJ *) M, Z, "Mobile not found good.");
 	continue;
       }
       xsetbit (M->nflags, NFL_ENGLISH);
@@ -1980,7 +1980,7 @@ write_loc (XZON * ZON, int numz, int l)
     fprintf (H, "#define LOCMAX_%s\t%d\n", zn, -(Z->loc + Z->n_loc));
     for (L = Z->locs; L != NULL; L = L->next, i--) {
       if (L->aux != GOOD) {
-	log ('L', (XOBJ *) L, Z, "Location not found good.");
+	do_log ('L', (XOBJ *) L, Z, "Location not found good.");
 	continue;
       }
       fprintf (F, "%d %d", /*L->loc, */ i, z);
@@ -2120,7 +2120,7 @@ make_data (int argc, char **argv)
 
 
 void
-log (char t, XOBJ * O, XZON * Z, char *f,...)
+do_log (char t, XOBJ * O, XZON * Z, char *f,...)
 {
   va_list pvar;
   char *n;
