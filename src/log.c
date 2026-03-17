@@ -36,7 +36,7 @@ open_logfile (char *logfile, Boolean clear_flag)
 }
 
 void
-close_logfile ()
+close_logfile (void)
 {
   fclose (stderr);
 }

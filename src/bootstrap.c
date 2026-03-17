@@ -710,7 +710,7 @@ boot_zones (FILE * f, char *fname)
 
 
 static char *
-id_counter_file ()
+id_counter_file (void)
 {
   return ID_COUNTER;
 }

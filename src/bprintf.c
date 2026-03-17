@@ -131,7 +131,7 @@ kiputs (char *s, FILE * file)
 }
 
 static void
-makebfr ()
+makebfr (void)
 {
   if ((bufptr = sysbuf = NEW (char, SYSBUFSIZE + BUFSIZ)) == NULL) {
     mudlog ("ERROR: Out of Memory");

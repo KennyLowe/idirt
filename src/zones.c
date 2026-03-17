@@ -368,7 +368,7 @@ zonescom (void)
 /* The LOCATIONS command
  */
 void
-locationscom ()
+locationscom (void)
 {
   char zonenames[num_const_zon][15];
   char wizzonenames[numzon - num_const_zon][15];

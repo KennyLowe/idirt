@@ -244,8 +244,7 @@ compress_file (char *name, char *file)
 }
 
 void
-xexit (code)
-     int code;
+xexit (int code)
 {
   printf ("\n\n");
   exit (code);

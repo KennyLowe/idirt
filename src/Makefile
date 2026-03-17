@@ -29,7 +29,7 @@ LDFLAGS	= -lcrypt
 DEFINES	= 
 DBFLAGS	= -g
 OPFLAGS	= -pipe -m64 -O3 -fcommon
-WFLAGS	= -Wall -Werror -Wno-error=unused-result -Wno-error=format-overflow -Wno-error=format -Wno-error=unused-but-set-variable  -Wno-error=builtin-declaration-mismatch -Wno-error=stringop-overflow -Wno-error=restrict -Wno-error=unused-variable
+WFLAGS	= -Wstrict-prototypes -Wold-style-definition -Wall -Werror -Wno-error=unused-result -Wno-error=format-overflow -Wno-error=format -Wno-error=unused-but-set-variable  -Wno-error=builtin-declaration-mismatch -Wno-error=stringop-overflow -Wno-error=restrict -Wno-error=unused-variable
 CFLAGS	= $(DEFINES) $(DBFLAGS) $(OPFLAGS) $(WFLAGS) -I$(HDIR)
 
 # Extra Defines

@@ -329,7 +329,7 @@ objectscom (void)
  * 1995 by Illusion
  */
 void
-mstatcom ()
+mstatcom (void)
 {
   int i, j = 0;
   char cond[50];

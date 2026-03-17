@@ -1848,7 +1848,7 @@ togglecom (int flg, char on[80], char off[80])
  * 1995 by Illusion
  */
 void
-qdonecom ()
+qdonecom (void)
 {
   int i;
 
@@ -2069,7 +2069,7 @@ klockcom (char *passwd)
  * has the better DP/AC.
  */
 void
-comparecom ()
+comparecom (void)
 {
   int a, b;			/* Objects */
   int adata, bdata, data;	/* DP/AC and compared data for object */

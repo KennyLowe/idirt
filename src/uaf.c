@@ -25,9 +25,7 @@
 #include "log.h"
 #include "parse.h"
 
-extern int errno;
 extern char *WizLevels[];
-time_t time (time_t * v);
 
 void
 pers2player (PERSONA * d, int plx)
