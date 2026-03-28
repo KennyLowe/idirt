@@ -150,7 +150,7 @@ next_time (struct tm *now)
 static Boolean
 ok_week_time (struct tm *t, char *d, char *fname, int lineno)
 {
-  static char *wdays[] =
+  static const char *wdays[] =
   {"Sunday", "Monday", "Tuesday", "Wednesday",
    "Thursday", "Friday", "Saturday", TABLE_END};
 
@@ -348,7 +348,7 @@ check_if_closed (time_t * now)
 /* Return a pointer to a string containing the a date, without the \n
  * supplied by ctime(3). If the argument is 0, use the current local time.
  */
-char *
+const char *
 time2ascii (time_t t)
 {
   char *str;
@@ -591,7 +591,7 @@ on_timer (void)
 void
 trace_handler (int plr)
 {
-  static char *Carry[] =
+  static const char *Carry[] =
   {
     "In Room", "In Container", "Carried By", "Worn By",
     "Wielded By", "Worn and Wielded By"

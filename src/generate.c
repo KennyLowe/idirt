@@ -28,7 +28,7 @@ crapup (char *p)
  * **  Open file for read/write or die trying
  */
 static FILE *
-Do_fopen (char *name, char *mode)
+Do_fopen (const char *name, const char *mode)
 {
   FILE *file;
 

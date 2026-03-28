@@ -36,7 +36,7 @@ static void change_name (void);
 static void change_wimpy (void);
 static void change_magic (void);
 
-static char *ChTable[] =
+static const char *ChTable[] =
 {
   "sex", "speed", "score", "strength", "level",
   "visibility", "damage", "pflags", "mask", "lflags",
@@ -1054,7 +1054,7 @@ change_desc (void)
 #define DESC_OBJ 2
 #define DESC_PLR 3
 
-  char *desc_type[] =
+  const char *desc_type[] =
   {"Location", "Mobile", "Object", "Player", TABLE_END};
 
 

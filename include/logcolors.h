@@ -1,7 +1,7 @@
 #ifndef _LOGCOLORS_H
 #define _LOGCOLORS_H
 
-char *LogTable[] = {
+const char *LogTable[] = {
 	"ERROR",	"SIGNAL",	"PERROR",	"PARSER",
 	"-----",	"DEBUG",	"SYSTEM",	"BOOTUP",
 	"UPDATE",	"REBOOT",	"UPGRADE",	"RESET",
@@ -17,7 +17,7 @@ char *LogTable[] = {
 	"CHEAT",	"MONITOR",	TABLE_END
 };
 
-char *LogColors[] = {
+const char *LogColors[] = {
 	"&=Wr",		"&=Wr",		"&=Wr",		"&=Wr",
 	"&=Wr",		"&=lr",		"&=cl",		"&=cl",
 	"&=Cl",		"&=Cl",		"&=Cl",		"&=ml",

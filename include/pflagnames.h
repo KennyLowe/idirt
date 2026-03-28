@@ -4,7 +4,7 @@
 /*
 ** Pflag names
 */
-char *Pflags[] = {
+const char *Pflags[] = {
 
  	/* Protective: */
 	"NoExorcise",	"NoSnoop",	"NoHassle",	"NoAlias",

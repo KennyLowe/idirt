@@ -111,7 +111,7 @@ static char *build_action (char *a);
 #define EXT_O            0x4000	/* %o ok? */
 #define EXT_M            0x8000	/* %m ok? */
 
-static char *ext_msg_names[] =
+static const char *ext_msg_names[] =
 {"all", "me", "target", "sender", "others",
  TABLE_END};
 
@@ -124,7 +124,7 @@ static int mused;
 static int ext_lino;
 static int ext_flags;
 
-static char *s_ext[] =
+static const char *s_ext[] =
 {"Flowers", "Pet", "Pray", "Rose",
  "Tickle", "Wave", "Wipe", TABLE_END};
 
@@ -496,7 +496,7 @@ dump_act_vb (char *s)
 }
 
 int
-boot_extern (FILE * f, char *fname)
+boot_extern (FILE * f, const char *fname)
 {
   char buff[256];
   char *verb;
@@ -648,7 +648,7 @@ boot_extern (FILE * f, char *fname)
 static char *
 ext_copy (char *b, char *m)
 {
-  char *p;
+  const char *p;
   char v[50];
 
   if (m == NULL || m == EXT_ERROR) {
@@ -671,10 +671,10 @@ ext_copy (char *b, char *m)
 	 ((struct _ext_msg2 *) m)->male_txt);
     break;
   case EXT_TNAM:
-    sprintf (p, "\001p%s\003", pname (pl1));
+    sprintf (v, "\001p%s\003", pname (pl1));
     break;
   case EXT_ANAM:
-    sprintf (p, "\001p%s\003", pname (mynum));
+    sprintf (v, "\001p%s\003", pname (mynum));
     break;
   case EXT_THIM:
     p = psex (pl1) ? "her" : "him";
@@ -922,7 +922,7 @@ lisextern (void)
   char line[80], fn[255];
   int i = -1;
   int j = 0;
-  char **t;
+  const char **t;
   EXTERN_CMD_REC *v;
 
   if (brkword () != -1) {
@@ -1095,11 +1095,11 @@ wavecom (void)
 void
 rosecom (void)
 {
-  static char *ColorTable[] =
+  static const char *ColorTable[] =
   {
     "black", "blue", "red", "pink", "yellow", "white", TABLE_END
   };
-  static char *Colors[] =
+  static const char *Colors[] =
   {
     "&+L", "&+b", "&+r", "&+R", "&+Y", "&+W"
   };

@@ -41,7 +41,7 @@ void	levelscom(void);
 void	promptcom(void);
 void	followcom(void);
 void	losecom(void);
-void	togglecom(int flg, char on[80], char off[80]);
+void	togglecom(int flg, const char *on, const char *off);
 void	qdonecom(void);
 void	beepcom(void);
 void	togglefinger(void);

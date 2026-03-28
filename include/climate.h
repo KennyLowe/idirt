@@ -16,8 +16,8 @@ void	adjust_weather(weather_type new);
 void	set_weather(weather_type new);
 void	show_weather(void);
 void	change_weather(void);
-char	*weather_desc(weather_type type);
-char	*climate_desc(weather_type type);
+const char	*weather_desc(weather_type type);
+const char	*climate_desc(weather_type type);
 
 void	move_time(void);
 void	which_season(void);
@@ -26,7 +26,7 @@ void	settimecom(void);
 void	climate_split_time(int time, int *min, int *hrs);
 Boolean	climate_day(void);
 char	*climate_time (void);
-char	*season_name(season_type type);
+const char	*season_name(season_type type);
 void	climatetime(void);
 
 #endif

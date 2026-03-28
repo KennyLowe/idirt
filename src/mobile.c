@@ -208,7 +208,7 @@ void
 consid_move (int mon)
 {
   /* Speech for Mindy */
-  static char *mindy[] =
+  static const char *mindy[] =
   {
     "barks at you playfully.",
     "nibbles at her paw and then scratches her head.",
@@ -221,7 +221,7 @@ consid_move (int mon)
   };
 
   /* Speech for Farmer Willy */
-  static char *willy[] =
+  static const char *willy[] =
   {
     "Buy Windows 95! Save the mortgage on my house!",
     "I brought you the 640k limit! Don't ever forget that!",
@@ -232,7 +232,7 @@ consid_move (int mon)
   };
 
   /* Speech for Beavis */
-  static char *beavis[] =
+  static const char *beavis[] =
   {
     "Gwar! Gwar! Gwar!",
     "I am CORNHOLIO!",
@@ -249,7 +249,7 @@ consid_move (int mon)
   };
 
   /* Speech for Butthead */
-  static char *butthead[] =
+  static const char *butthead[] =
   {
     "Shut up bunghole!",
     "Come to Butthead..",
@@ -266,7 +266,7 @@ consid_move (int mon)
   };
 
   /* Speech for Emmy */
-  static char *emmy[] =
+  static const char *emmy[] =
   {
     "\001pEmmy\003 bounces around happily.",
     "\001pEmmy\003 giggles as she plays peek-a-boo with you!",
@@ -632,7 +632,7 @@ see_player (int pla, int plb)
 }
 
 
-char *
+const char *
 see_name (int pla, int plb)
 {
   return see_player (pla, plb) ? pname (plb) : "Someone";
@@ -964,12 +964,13 @@ make_rank (int player)
   return rank;
 }
 
-char *
-make_title (char *title, char *name)
+const char *
+make_title (const char *title, const char *name)
 {
   static char buffer[TITLE_LEN + 100];
 
-  char *p, *q, *r;
+  char *p;
+  const char *q, *r;
 
   for (p = buffer, q = title; *q != 0;) {
     if (*q != '%')
@@ -1005,9 +1006,6 @@ make_title (char *title, char *name)
 char *
 std_title (int level, Boolean sex)
 {
-  extern char *MLevels[];
-  extern char *FLevels[];
-
   static char buff[TITLE_LEN + 10];
   int wl = wlevel (level);
 
@@ -1072,7 +1070,7 @@ reset_mobile (int m)
 }
 
 void
-p_crapup (int player, char *str, int flags)
+p_crapup (int player, const char *str, int flags)
 {
   int m = real_mynum;
 
@@ -1086,7 +1084,7 @@ p_crapup (int player, char *str, int flags)
 }
 
 void
-crapup (char *str, int flags)
+crapup (const char *str, int flags)
 {
   if ((flags & CRAP_UNALIAS) != 0) {
     unalias (real_mynum);
@@ -1100,9 +1098,9 @@ crapup (char *str, int flags)
 }
 
 void
-xcrapup (char *str, Boolean save_flag)
+xcrapup (const char *str, Boolean save_flag)
 {
-  static char *dashes =
+  static const char *dashes =
   "-------------------------------------------------------------------------------";
 
   if (cur_player->aliased) {
@@ -1224,7 +1222,7 @@ loseme (Boolean save_flag)
   }
 }
 
-char *
+const char *
 lev2s (char *b, int lvl)
 {
   switch (lvl) {
@@ -1376,8 +1374,6 @@ chksitting (void)
 void
 calib_player (int pl)
 {
-  extern char *MLevels[];
-  extern char *FLevels[];
   int b;
 
   if (pl >= max_players || !players[pl].iamon || players[pl].aliased ||
@@ -2222,7 +2218,7 @@ set_msg (char *b, Boolean dir_ok, Boolean sum)
     bprintf ("Not changed, wrong format.\n");
 }
 
-char *
+const char *
 str_color (int plr)
 {
   if (plr < max_players)
@@ -2233,7 +2229,7 @@ str_color (int plr)
 	    pstr (plr) < 20 ? "&+R" : "&+Y");
 }
 
-char *
+const char *
 mag_color (int plr)
 {
   if (plr < max_players)

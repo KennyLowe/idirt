@@ -18,9 +18,6 @@
 
 //extern int errno;
 
-extern char *Pflags[];
-extern char *WizLevels[];
-
 static void boot_world (void);
 static int boot_players (void);
 static int boot_mobiles (FILE * f, char *fname);
@@ -37,7 +34,7 @@ static char *get_string (FILE * f);
 
 #define ID_CNT_START 200000L
 
-char *PFT[] =
+const char *PFT[] =
 {"PflagApprentice", "MaskApprentice",
  "PflagWizard", "MaskWizard",
  "PflagProphet", "MaskProphet",
@@ -659,7 +656,7 @@ boot_verbs (FILE * f, char *fname)
   mem_used = sizeof (char *) * (v + 1);
   mem_used = sizeof (int) * (v + 1);
 
-  verbtxt = NEW (char *, v + 1);
+  verbtxt = NEW (const char *, v + 1);
   verbnum = NEW (int, v + 1);
 
   for (ct = 0; ct < v; ct++) {
@@ -709,7 +706,7 @@ boot_zones (FILE * f, char *fname)
 }
 
 
-static char *
+static const char *
 id_counter_file (void)
 {
   return ID_COUNTER;

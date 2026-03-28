@@ -321,7 +321,7 @@ check_object (int plr, int flag)
 }
 
 void
-send_magic_msg (int dest, int caster, int victim, char *msg, int type)
+send_magic_msg (int dest, int caster, int victim, const char *msg, int type)
 {
   char xx[120];
   char c[30], v[30];
@@ -350,9 +350,10 @@ send_magic_msg (int dest, int caster, int victim, char *msg, int type)
 }
 
 char *
-make_magic_msg (char *b, char *s, char *c, char *v)
+make_magic_msg (char *b, const char *s, char *c, char *v)
 {
-  char *p, *q, *r;
+  char *p, *r;
+  const char *q;
 
   for (p = b, q = s; *q != 0;) {
     if (*q != '%')

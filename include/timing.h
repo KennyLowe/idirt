@@ -2,7 +2,7 @@
 #define _TIMING_H
 
 Boolean	mud_open(time_t *next_ev, time_t *now);
-char	*time2ascii(time_t t);
+const char	*time2ascii(time_t t);
 void	timecom(void);
 void	eltime(void);
 long	gametime(void);

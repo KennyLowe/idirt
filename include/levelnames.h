@@ -1,7 +1,7 @@
 #ifndef _LEVELNAMES_H
 #define _LEVELNAMES_H
 
-char *WizLevels[] = {
+const char *WizLevels[] = {
   NULL,
   "Apprentice",
   "Dorq",
@@ -15,7 +15,7 @@ char *WizLevels[] = {
   "Master User",
   TABLE_END};
 
-char *MLevels[] = {
+const char *MLevels[] = {
   "Guest",
   "Novice",
   "Adventurer",
@@ -31,7 +31,7 @@ char *MLevels[] = {
   "Apprentice",
   TABLE_END};
 
-char *FLevels[] = {
+const char *FLevels[] = {
   "Guest",
   "Novice",
   "Adventuress",

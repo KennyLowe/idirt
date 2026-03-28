@@ -19,7 +19,7 @@
 #include "fight.h"
 #include "uaf.h"
 
-static char *exittxt[] =
+static const char *exittxt[] =
 {
   "north", "east", "south", "west", "up", "down",
   "n", "e", "s", "w", "u", "d",

@@ -58,9 +58,9 @@ randperc (void)
  * (1996, Illusion)
  */
 int
-strtlookup (char *elem, char **table, int *begin, int *end)
+strtlookup (char *elem, const char **table, int *begin, int *end)
 {
-  char **t, *ptr;
+  const char **t, *ptr;
   int x;
 
   for (t = table, x = 0; *t != TABLE_END; ++t, ++x) {
@@ -107,7 +107,7 @@ match (char *p, char *q)
 }
 
 Boolean
-infile (char *file, char *line)
+infile (const char *file, char *line)
 {
   register char *p;
   register char *q;
@@ -229,10 +229,10 @@ strncasecmp (const char *s1, const char *s2, register size_t n)
 #endif
 
 int
-glookup (char *elem, int n, char **table,
+glookup (char *elem, int n, const char **table,
 	 int (*strcmpfun) (const char *s1, const char *s2, size_t n))
 {
-  char **t;
+  const char **t;
   int x;
 
   for (t = table, x = 0; *t != TABLE_END; ++t, ++x) {
@@ -245,7 +245,7 @@ glookup (char *elem, int n, char **table,
 }
 
 int
-tlookup (char *elem, char **table)
+tlookup (char *elem, const char **table)
 {
   return glookup (elem, strlen (elem), table, strncasecmp);
 }
@@ -262,7 +262,7 @@ xstrcasecmp (const char *s1, const char *s2, size_t n)
  * strncasecmp.
  */
 int
-xlookup (char *elem, char **table)
+xlookup (char *elem, const char **table)
 {
   return glookup (elem, 0, table, xstrcasecmp);
 }
@@ -349,7 +349,7 @@ write_date_stderr (void)
 }
 
 char *
-x_strcpy (char *d, char *s)
+x_strcpy (char *d, const char *s)
 {
   /* Like strcpy except it returns the pointer just past last char in d */
   while ((*d++ = *s++) != '\0') ;
@@ -749,7 +749,7 @@ dclr_bit (DLongInt * f, int b)
  * Ban File Utilities							*
  ************************************************************************/
 int
-addordel (char file_name[80], char check[80])
+addordel (const char *file_name, char check[80])
 {
   FILE *fl;
 
@@ -765,7 +765,7 @@ addordel (char file_name[80], char check[80])
 }
 
 int
-addname (char file_name[80], char name[80])
+addname (const char *file_name, char name[80])
 {
   FILE *fl;
 
@@ -779,7 +779,7 @@ addname (char file_name[80], char name[80])
 }
 
 int
-delname (char file_name[80], char name[80])
+delname (const char *file_name, char name[80])
 {
   FILE *a, *b;
   char name_in_file[80];
@@ -806,7 +806,7 @@ delname (char file_name[80], char name[80])
  * 1996, Illusion							*
  ************************************************************************/
 int
-fnumlines (char file[200])
+fnumlines (const char *file)
 {
   FILE *fp;
   char tmp[300];

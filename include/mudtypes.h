@@ -352,7 +352,7 @@ typedef struct _a_player {
   char		wd_her[MNAME_LEN+1];
   char		wd_him[MNAME_LEN+1];
   char		*wd_them;
-  char		*wd_it;
+  const char		*wd_it;
 
   char		ptitle[TITLE_LEN+1];
   char		hostname[MAXHOSTNAMELEN];

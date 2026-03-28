@@ -5,18 +5,18 @@
 **	Location flag names
 */
 
-char *L_Light[] =
+const char *L_Light[] =
 {
 	"Light",	"Dark",		"Real",		TABLE_END
 };
 
-char *L_Temp[] =
+const char *L_Temp[] =
 {
 	"TempOrdinary",	"Hot",		"Cold",		"TempReal",
 	TABLE_END
 };
 
-char *Lflags[] =
+const char *Lflags[] =
 {
 	"Light",	"Dark",		"Real",		"TempOrdinary",
 	"Hot",		"Cold",		"TempReal",	"Death",

@@ -1,7 +1,7 @@
 #ifndef _FLAGS_H
 #define _FLAGS_H
 
-void	show_bits(int *bits, int n, char **table);
+void	show_bits(int *bits, int n, const char **table);
 Boolean	dump_pflags(void);
 void	xshow_lflags(int loc);
 void	pflagscom(void);

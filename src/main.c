@@ -787,7 +787,7 @@ new_connection (int m_socket)
  ************************************************************************/
 void handle_packet (int fd) {
 
-    static char *sock_msg[] = {
+    static const char *sock_msg[] = {
         "Connection Reset by Peer (ECONNRESET)",
         "No Route to Host (EHOSTUNREACH)",
         "Connection Timed Out (ETIMEDOUT)",

@@ -26,9 +26,9 @@
 static Boolean login_ok (char *name);
 static void talker (void);
 
-char *pwait = "&+W(&+wPress &+C[Return] &+wto continue&+W)&*";
-char *qwait = "&+W(&+wPress &+C[Return] &+wto continue, &+C'q' &+wto quit&+W)&*";
-char *vismsg = "&+wEnter Vis Level (&+W0-%d&+w), '&+Wi&+w' for full invisibility,\n"
+const char *pwait = "&+W(&+wPress &+C[Return] &+wto continue&+W)&*";
+const char *qwait = "&+W(&+wPress &+C[Return] &+wto continue, &+C'q' &+wto quit&+W)&*";
+const char *vismsg = "&+wEnter Vis Level (&+W0-%d&+w), '&+Wi&+w' for full invisibility,\n"
 "or Press &+W[&+CEnter&+W]&+w To Keep Vis Level (Current:&+W %d&+w):";
 
 static int vislev[] =
@@ -50,8 +50,8 @@ bannedmsg (void)
 	      "&+C%s&+W]\n", cur_player->fil_des, cur_player->hostname);
 }
 
-static char *
-test1 (int plr, intptr_t vis, char *msg)
+static const char *
+test1 (int plr, intptr_t vis, const char *msg)
 {
   if (ptstflg (plr, PFL_SEESOCKET) && ptstflg (plr, PFL_SEEUSER) && vis < plev (plr))
     return msg;
@@ -59,8 +59,8 @@ test1 (int plr, intptr_t vis, char *msg)
     return NULL;
 }
 
-static char *
-test2 (int plr, intptr_t vis, char *msg)
+static const char *
+test2 (int plr, intptr_t vis, const char *msg)
 {
   if (ptstflg (plr, PFL_SEESOCKET) && !ptstflg (plr, PFL_SEEUSER) && vis < plev (plr))
     return msg;
@@ -69,7 +69,7 @@ test2 (int plr, intptr_t vis, char *msg)
 }
 
 void
-socketmsg (Boolean user, Boolean chkvis, char *format,...)
+socketmsg (Boolean user, Boolean chkvis, const char *format,...)
 {
   va_list pvar;
   char msg[200];

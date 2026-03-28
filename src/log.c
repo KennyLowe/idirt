@@ -12,7 +12,7 @@
 
 
 int
-open_logfile (char *logfile, Boolean clear_flag)
+open_logfile (const char *logfile, Boolean clear_flag)
 {
   int fd;
   int x = O_WRONLY | O_CREAT;
@@ -40,13 +40,13 @@ close_logfile (void)
 }
 
 void
-progerror (char *name)
+progerror (const char *name)
 {
   mudlog ("PERROR %s: [%d] %s", name, errno, strerror(errno));
 }
 
 void
-vmudlog (char *format, va_list pvar)
+vmudlog (const char *format, va_list pvar)
 {
   time_t tm_t;
   char *z, timestr[25];
@@ -71,7 +71,7 @@ vmudlog (char *format, va_list pvar)
 }
 
 void
-mudlog (char *format,...)
+mudlog (const char *format,...)
 {
   va_list pvar;
 
@@ -113,7 +113,7 @@ close_plr_log (void)
 }
 
 void
-vwrite_plr_log (char *format, va_list pvar)
+vwrite_plr_log (const char *format, va_list pvar)
 {
   time_t tm_t;
   char *z, timestr[25];
@@ -137,7 +137,7 @@ vwrite_plr_log (char *format, va_list pvar)
 }
 
 void
-write_plr_log (char *format,...)
+write_plr_log (const char *format,...)
 {
   va_list pvar;
 

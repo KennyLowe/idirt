@@ -1,7 +1,7 @@
 #ifndef _EFLAGNAMES_H
 #define _EFLAGNAMES_H
 
-char *Eflags[] = {
+const char *Eflags[] = {
 	"Fireball",	"FearFireball",	"ImmFireball",	"Missile",
 	"FearMissile",	"ImmMissile",	"Frost",	"FearFrost",
 	"ImmFrost",	"Shock",	"FearShock",	"ImmShock",

@@ -1,9 +1,9 @@
 #ifndef _COMM_H
 #define _COMM_H
 
-char	*make_com_text(char *b, char *s, char *t, int send_plr, int recv_plr);
-void	com_handler(char *format, char *linename, int lvl, int flg);
-void	nolinecom(int lvl, int flg, char txt[20]);
+char	*make_com_text(char *b, const char *s, char *t, int send_plr, int recv_plr);
+void	com_handler(const char *format, const char *linename, int lvl, int flg);
+void	nolinecom(int lvl, int flg, const char *txt);
 void	shoutcom(void);
 void	saycom(void);
 void	saytocom(void);

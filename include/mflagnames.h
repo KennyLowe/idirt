@@ -4,7 +4,7 @@
 /*
 ** Mflag names
 */
-char *Mflags[] =
+const char *Mflags[] =
 {
 	"CanFireball",	"CanMissile",	"CanFrost",	"CanShock",
 	"NegFireball",	"NegMissile",	"NegFrost",	"NegShock",

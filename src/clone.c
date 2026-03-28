@@ -746,7 +746,7 @@ storecom (void)
   FILE *f;
   int n_locs = 0, n_mobs = 0, n_objs = 0;
 
-  char *err_unsucc = "Store was unsuccessful.\n";
+  const char *err_unsucc = "Store was unsuccessful.\n";
 
   if (!ptstflg (mynum, PFL_LD_STORE)) {
     erreval ();

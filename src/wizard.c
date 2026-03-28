@@ -33,7 +33,7 @@
 #include "log.h"
 #include "logcolors.h"
 
-extern char *Oflags[];
+extern const char *Oflags[];
 
 /* The SYSTEM command
  */
@@ -441,7 +441,7 @@ emotetocom (void)
 
 /* Properties
  */
-static char *Props[] =
+static const char *Props[] =
 {"BaseValue", "Size", "Visibility", "Damage",
  "AC", "State", "Desc0", "Desc1",
  "Desc2", "Desc3", "Name", "AltName",
@@ -938,9 +938,7 @@ showitem (void)
 void
 wizlock (void)
 {
-  extern char *WizLevels[];
-  extern char *MLevels[];
-  extern char *FLevels[];
+  extern const char *WizLevels[];
 
   static int k[] =
   {0, LVL_WIZARD, LVL_DORQ, LVL_EMERITI, LVL_FULLWIZ,
@@ -1785,7 +1783,7 @@ nopuntcom (void)
 void
 fakequitcom (void)
 {
-  static char *QuitTable[] =
+  static const char *QuitTable[] =
   {
     "list", "quit", "cut", "net1", "net2", "net3", "net4",
     "net5", "net6", "net7", TABLE_END

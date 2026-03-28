@@ -17,9 +17,10 @@
 #include "uaf.h"
 
 char *
-make_com_text (char *b, char *s, char *t, int send_plr, int recv_plr)
+make_com_text (char *b, const char *s, char *t, int send_plr, int recv_plr)
 {
-  char *p, *q, *r;
+  char *p;
+  const char *r, *q;
 
   for (p = b, q = s; *q != 0;) {
     if (*q != '%')
@@ -56,7 +57,7 @@ make_com_text (char *b, char *s, char *t, int send_plr, int recv_plr)
 }
 
 void
-com_handler (char *format, char *linename, int lvl, int flg)
+com_handler (const char *format, const char *linename, int lvl, int flg)
 {
   char xx[MAX_COM_LEN], txt[MAX_COM_LEN];
   int plr, aplr;
@@ -88,7 +89,7 @@ com_handler (char *format, char *linename, int lvl, int flg)
 }
 
 void
-nolinecom (int lvl, int flg, char txt[20])
+nolinecom (int lvl, int flg, const char *txt)
 {
   if (plev (mynum) < lvl) {
     erreval ();
@@ -107,8 +108,8 @@ nolinecom (int lvl, int flg, char txt[20])
   }
 }
 
-static char *
-shout_test (int player, intptr_t sender, char *text)
+static const char *
+shout_test (int player, intptr_t sender, const char *text)
 {
   static char buff[MAX_COM_LEN];
 
@@ -360,8 +361,8 @@ tellcom (void)
     bprintf ("You tell &+W%s&*: %s\n", pname (b), txt2);
 }
 
-static char *
-anon_test (int plr, intptr_t snd, char *txt)
+static const char *
+anon_test (int plr, intptr_t snd, const char *txt)
 {
   static char buff[MAX_COM_LEN];
 

@@ -14,7 +14,7 @@ void	wloadcom (void);
 void	silentcom (void);
 void	ploccom (void);
 void	writelog (void);
-void	bancom (char filename[100], int type);
+void	bancom (const char *filename, int type);
 void	probationcom (void);
 void	levforcecom (void);
 void	reboot_actions (void);

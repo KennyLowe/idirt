@@ -31,7 +31,7 @@ test_bit (PFLAGS * f, int n)
 }
 
 static int
-lookup (char *e, char **t)
+lookup (const char *e, const char **t)
 {
   register int l = strlen (e);
   register int x = 0;

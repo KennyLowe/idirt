@@ -34,18 +34,18 @@ struct SPELL {
   int damage;			/* Amount of damage (or heal)		*/
   int duration;			/* Spell len in min (0=None, Special)	*/
 
-  char *spell_msg;		/* Msg to caster when spell is casted	*/
-  char *to_room;		/* Msg to people in the room upon cast	*/
-  char *spell_msg_vic;		/* Msg to victim when spell is cast	*/
-  char *to_victim;		/* Msg to the victim			*/
-  char *to_victimi;		/* Msg to the victim if immune		*/
-  char *to_victimm;		/* Msg to the victim if a miss		*/
-  char *to_caster;		/* Msg to caster when victim is hit	*/
-  char *to_casteri;		/* Msg to caster if victim is immune	*/
-  char *to_casterm;		/* Msg to caster if a miss		*/
-  char *to_others;		/* Msg to others when victim is hit	*/
-  char *to_othersi;		/* Msg to others if victim is immune	*/
-  char *to_othersm;		/* Msg to others is a miss		*/
+  const char *spell_msg;		/* Msg to caster when spell is casted	*/
+  const char *to_room;		/* Msg to people in the room upon cast	*/
+  const char *spell_msg_vic;		/* Msg to victim when spell is cast	*/
+  const char *to_victim;		/* Msg to the victim			*/
+  const char *to_victimi;		/* Msg to the victim if immune		*/
+  const char *to_victimm;		/* Msg to the victim if a miss		*/
+  const char *to_caster;		/* Msg to caster when victim is hit	*/
+  const char *to_casteri;		/* Msg to caster if victim is immune	*/
+  const char *to_casterm;		/* Msg to caster if a miss		*/
+  const char *to_others;		/* Msg to others when victim is hit	*/
+  const char *to_othersi;		/* Msg to others if victim is immune	*/
+  const char *to_othersm;		/* Msg to others is a miss		*/
 };
 
 struct SPELL spell_table[] =

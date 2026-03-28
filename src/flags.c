@@ -21,24 +21,24 @@
 #include "uaf.h"
 #include "log.h"
 
-char *TF[3] =
+const char *TF[3] =
 {"False", "True", TABLE_END};
-char *OO[3] =
+const char *OO[3] =
 {"Off", "On", TABLE_END};
 
 /* Prototype */
 void dump_lflags (int loc);
 
 void
-show_bits (int *bits, int n, char **table)
+show_bits (int *bits, int n, const char **table)
 {
   int *b;
   int bno;
   int xno;
   int cno;
   int c2;
-  char **t;
-  char *p;
+  const char **t;
+  const char *p;
   Boolean t_end;
   char buff[16];
 
@@ -77,7 +77,7 @@ show_bits (int *bits, int n, char **table)
 Boolean
 dump_pflags (void)
 {
-  static char *t[] =
+  static const char *t[] =
   {"Pflags", "Mask", TABLE_END};
   int k, k2;
 

@@ -192,7 +192,7 @@ XOBJ *obj_list_l = NULL;	/* last */
 #define TOBJ_LINKED 15
 #define TOBJ_VIS 16
 
-char *Mob_tab[] =
+const char *Mob_tab[] =
 {
   "Name", "Pname", "Location", "Description", "End",
   "Strength", "Damage", "Armor", "Aggression", "SFlags",
@@ -200,7 +200,7 @@ char *Mob_tab[] =
   "Wimpy", "NFlags", "EFlags", TABLE_END
 };
 
-char *Obj_tab[] =
+const char *Obj_tab[] =
 {
   "Name", "Pname", "Location", "Description", "End",
   "AltName", "Oflags", "Armor", "Damage",
@@ -210,7 +210,7 @@ char *Obj_tab[] =
 };
 
 
-char *Cflags[] =
+const char *Cflags[] =
 {
   "In room", "In container", "Carried by", "Worn by",
   "Wielded by", "Both worn and wielded by"
@@ -248,16 +248,16 @@ xexit (int code)
   exit (code);
 }
 
-void do_log (char t, XOBJ * O, XZON * Z, char *f,...);
+void do_log (char t, XOBJ * O, XZON * Z, const char *f,...);
 
 
 /*
  * **  Open file for read/write or die trying
  */
 static FILE *
-Do_fopen (char *name, char *mode)
+Do_fopen (const char *name, const char *mode)
 {
-  char *m;
+  const char *m;
   FILE *file;
   Boolean b;
 
@@ -420,7 +420,7 @@ get_description (FILE * a)
 }
 
 FILE *
-xopen (char *f, char *m)
+xopen (const char *f, const char *m)
 {
   FILE *x;
 
@@ -607,9 +607,9 @@ zone_open (char *fn, char *zn, Boolean * m, char *b, int bs)
 }
 
 int
-lookup (char *s, char **t)
+lookup (const char *s, const char **t)
 {
-  char **u;
+  const char **u;
   int l;
   int x;
 
@@ -785,7 +785,7 @@ get_int (FILE * F)
 }
 
 void
-get_flags (XZON * z, XMOB * m, char ty, int *f, int s, char **t, FILE * F)
+get_flags (XZON * z, XMOB * m, char ty, int *f, int s, const char **t, FILE * F)
 {
   char n[128];
   int c;
@@ -1795,7 +1795,7 @@ write_xobj (FILE * F, FILE * H, XOBJ * O, int obj_num)
   XMOB *M = NULL;
   XZON *Z = NULL;
   int x;
-  char *s;
+  const char *s;
   int obj_loc = 0;
   char n[64];
   char z[32];
@@ -2120,13 +2120,13 @@ make_data (int argc, char **argv)
 
 
 void
-do_log (char t, XOBJ * O, XZON * Z, char *f,...)
+do_log (char t, XOBJ * O, XZON * Z, const char *f,...)
 {
   va_list pvar;
   char *n;
   char *z;
   char *p;
-  char *q;
+  const char *q;
   char b[1024];
 
   va_start (pvar, f);

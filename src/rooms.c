@@ -24,7 +24,7 @@
 
 /* A room's short description (title)
  */
-char *
+const char *
 sdesc (int room)
 {
   return exists (room) ? lshort (room) : "Where no man has gone before";
@@ -32,7 +32,7 @@ sdesc (int room)
 
 /* A room's long description
  */
-char *
+const char *
 ldesc (int room)
 {
   return exists (room) ? llong (room) : "";

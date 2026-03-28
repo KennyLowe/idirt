@@ -10,7 +10,7 @@
 #include "bprintf.h"
 #include "parse.h"
 
-extern char *WizLevels[];
+extern const char *WizLevels[];
 
 struct _w {
   struct _w *next;
@@ -217,7 +217,7 @@ parse_wizlevel (char *s, intptr_t *low, intptr_t *high)
 void
 wizlistcom (void)
 {
-  static char *w[] =
+  static const char *w[] =
   {NULL,
    "Apprentice Wizards",
    "Dorqs",

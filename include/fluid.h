@@ -2,12 +2,12 @@
 #define _FLUID_H
 
 /* People invisible on the Wizlist */
-char *InvisList[] = {
+const char *InvisList[] = {
 	"Oracle",	"Tycoon",	TABLE_END
 };
 
 /* People listed as 'fluid' on the Wizlist */
-char *FluidList[] = {
+const char *FluidList[] = {
 	TABLE_END
 };
 

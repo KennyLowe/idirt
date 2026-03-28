@@ -26,27 +26,26 @@ struct _send_msg_box {
 /* Simple interfaces:
  */
 void
-broad (char *mesg)
+broad (const char *mesg)
 {
   sendf (DEST_ALL, "%s", mesg);
 }
 
 void
-sillycom (char *txt)
+sillycom (const char *txt)
 {
   send_msg (ploc (mynum), 0, pvis (mynum), LVL_MAX, mynum, NOBODY,
 	    txt, pname (mynum), pname (mynum));
 }
 
 void
-sillytp (int per, char *msg)
+sillytp (int per, const char *msg)
 {
   sendf (per, "\001p%s\003 %s\n", pname (mynum), msg);
 }
 
 static void
-___send_msg (int to,
-	     char *text)
+___send_msg (int to, const char *text)
 {
   /* send a message to 'to', supposedly from 'from'. 'from' doesn't have
    * to be an actual player or mobile in the game though.
@@ -138,11 +137,11 @@ test_rcv (int player,		/* Who to send to */
  */
 void
 send_g_msg (int destination,	/* Where to send to */
-	    char *func (int plx, intptr_t arg, char *t),	/* Test function */
-	    intptr_t arg,	/* Argument to test */
-	    char *text)
+	    const char *func (int plx, intptr_t arg, const char *t),	/* Test function */
+	    intptr_t arg,		/* Argument to test */
+	    const char *text)
 {				/* Text to send */
-  char *t;
+  const char *t;
   int p, q, me = real_mynum;
 
   if (destination >= numchars)
@@ -191,8 +190,8 @@ send_g_msg (int destination,	/* Where to send to */
   setup_globals (me);
 }
 
-char *
-check_send_msg (int plx, intptr_t a, char *t)
+const char *
+check_send_msg (int plx, intptr_t a, const char *t)
 {
   // struct _send_msg_box *b = (struct _send_msg_box *) a;
 
@@ -208,12 +207,12 @@ send_msg (int destination,	/* Where to send to */
 	  int max,		/* Maximum level of recipient */
 	  int x1,		/* Do not send to him */
 	  int x2,		/* Nor to him */
-	  char *format,...)
+	  const char *format,...)
 {				/* Format with args -> text to send */
   va_list pvar;
   char bf[2048];
   struct _send_msg_box b;
-  char *bb;
+  const char *bb;
 
   b.mode = mode;
   b.min = min;
@@ -230,7 +229,7 @@ send_msg (int destination,	/* Where to send to */
 
 
 void
-sendf (int destination, char *format,...)
+sendf (int destination, const char *format,...)
 {
   char b[2048];
   va_list pvar;
@@ -243,9 +242,9 @@ sendf (int destination, char *format,...)
 
 void
 gsendf (int destination,
-	char *func (int plx, intptr_t arg, char *text),
+	const char *func (int plx, intptr_t arg, const char *text),
 	intptr_t arg,
-	char *format,...)
+	const char *format,...)
 {
   char b[2048];
   va_list pvar;
@@ -267,12 +266,12 @@ lsend_msg (int destination,	/* Where to send to */
 	   int max,		/* Maximum level of recipient */
 	   int x1,		/* Do not send to him */
 	   int x2,		/* Nor to him */
-	   char *format,...)
+	   const char *format,...)
 {				/* Format with args -> text to send */
   va_list pvar;
   char bf[2048];
   struct _send_msg_box b;
-  char *bb;
+  const char *bb;
 
   b.mode = mode;
   b.min = min;

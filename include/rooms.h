@@ -4,8 +4,8 @@
 /* Flags for lookin(); */
 #define SHOW_LONG      0x01
 
-char	*sdesc(int room);
-char	*ldesc(int room);
+const char *sdesc(int room);
+const char *ldesc(int room);
 int	getexit(int room, int ex);
 void	setexit (int room, int dir, int dest);
 int	get_rand_exit_dir(int room);

@@ -4,7 +4,7 @@
 /*
 **	Object flag names
 */
-char *Oflags[] = {
+const char *Oflags[] = {
     "Destroyed",	"NoGet",	"Openable",	"Lockable",
     "Pushable",		"PushToggle",	"Food",		"Armor",
     "Wearable",		"Lightable",	"Extinguish",	"Key",

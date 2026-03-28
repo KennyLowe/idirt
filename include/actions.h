@@ -1,7 +1,7 @@
 #ifndef _ACTIONS_H
 #define _ACTIONS_H
 
-int	boot_extern(FILE *f, char *fname);
+int	boot_extern(FILE *f, const char *fname);
 int	fextern(char *verb);
 int	lisextern(void);
 void	flowercom(void);

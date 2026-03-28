@@ -456,7 +456,7 @@ usercom (void)
 /* Checks to see if we need to do a newline on the title line.
  */
 int
-do_who_newline (int total, char *message)
+do_who_newline (int total, const char *message)
 {
   char buffer[400];
   int len;
@@ -643,7 +643,7 @@ mwhocom (void)
 static void
 ustats (void)
 {
-  static char *WizLevs[] =
+  static const char *WizLevs[] =
   {
     NULL, "Appr", "Dorq", "Emrt", "Wiz", "Prpt",
     "AWiz", "Advr", "Avtr", "God", "MUsr"};
@@ -710,7 +710,6 @@ ustats (void)
 void
 showplayer (void)
 {
-  extern char *Mflags[];
   char buff[256];
   PERSONA d;
   int b;

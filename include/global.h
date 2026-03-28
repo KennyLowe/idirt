@@ -8,7 +8,7 @@ Object     *objects;
 UBLOCK_REC *ublock;
 
 ZONE	*zoname;
-char	**verbtxt;
+const char	**verbtxt;
 char	*txt1;
 char	*txt2;
 int	levels[LVL_WIZARD + 1];
@@ -18,7 +18,7 @@ char	item1[MAX_COM_LEN];
 char	item2[MAX_COM_LEN];
 
 char			*progname;
-char			*data_dir = DATA_DIR;
+const char		*data_dir = DATA_DIR;
 char			my_hostname[MAXHOSTNAMELEN];
 struct hostent		*my_hostent;
 struct sockaddr_in      s_in;

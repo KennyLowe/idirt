@@ -44,8 +44,8 @@ modify_weather (int loc)
 }
 
 /* The test function to see which users see the weather change. */
-char *
-test_func (int plr, intptr_t arg, char *msg)
+const char *
+test_func (int plr, intptr_t arg, const char *msg)
 {
   if (!ltstflg (ploc (plr), LFL_OUTDOORS) || ststflg (plr, SFL_QUIET) ||
       ststflg (plr, SFL_NOWET))
@@ -174,7 +174,7 @@ change_weather (void)
 }
 
 /* One word description of the weather */
-char *
+const char *
 weather_desc (weather_type type)
 {
   switch (type) {
@@ -200,7 +200,7 @@ weather_desc (weather_type type)
 }
 
 /* Quick description of the weather */
-char *
+const char *
 climate_desc (weather_type type)
 {
   switch (modify_weather (ploc (mynum))) {
@@ -228,7 +228,7 @@ climate_desc (weather_type type)
 void
 weathercom (void)
 {
-  static char *weather_table[] =
+  static const char *weather_table[] =
   {"clear", "showers", "rain", "stormy", "hailing",
    "drizzle", "snow", "blizzard", "list", TABLE_END};
 
@@ -470,7 +470,7 @@ climate_time (void)
 }
 
 /* Give the name of the current season. */
-char *
+const char *
 season_name (season_type type)
 {
   switch (type) {
@@ -491,7 +491,7 @@ season_name (season_type type)
 void
 climatetime (void)
 {
-  static char *Month[] =
+  static const char *Month[] =
   {NULL, "Jan", "Feb", "Mar", "Apr", "May", "Jun",
    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
 

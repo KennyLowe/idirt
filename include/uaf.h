@@ -17,7 +17,7 @@ Boolean	findsetins(char *name, SETIN_REC *s, int fd);
 Boolean	getsetins(char *name, SETIN_REC *s );
 void	putsetins(char *name, SETIN_REC *s);
 void	fetchprmpt(int plr);
-char	*build_setin(char *b, char *s, char *n, char *d, char *v);
+char	*build_setin(char *b, char *s, char *n, const char *d, const char *v);
 char	*ipname(int plr);
 int	make_kd_ratio(int kill, int death);
 

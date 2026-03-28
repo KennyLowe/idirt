@@ -467,9 +467,10 @@ fetchprmpt (int plr)
 }
 
 char *
-build_setin (char *b, char *s, char *n, char *d, char *v)
+build_setin (char *b, char *s, char *n, const char *d, const char *v)
 {
-  char *p, *q, *r;
+  char *p, *q;
+  const char *r;
 
   for (p = b, q = s; *q != 0;) {
     if (*q != '%')

@@ -28,7 +28,7 @@ void	zapcom(void);
 void	pzapcom(void);
 void	nowizcom(void);
 void	showtty(void);
-void	nolinecom(int lvl, int flg, char txt[20]);
+void	nolinecom(int lvl, int flg, const char *txt);
 void	ttycom(void);
 
 void	nowishcom(void);

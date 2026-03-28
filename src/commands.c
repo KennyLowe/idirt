@@ -37,10 +37,6 @@
 #include "mud.h"
 #include "timing.h"
 
-extern char *WizLevels[];
-extern char *MLevels[];
-extern char *FLevels[];
-
 void
 lookcom (void)
 {
@@ -153,7 +149,7 @@ wherecom (void)
 }
 
 static Boolean
-find_stuff (int s, int o, char *t)
+find_stuff (int s, int o, const char *t)
 {
   if (odamage (s) == 0) {
     osetdamage (s, 1);
@@ -785,7 +781,7 @@ posecom (void)
   int n;
   int m = 0;
 
-  char *POSE[] =
+  const char *POSE[] =
   {"gestures", "fireball", "hamster",
    "sizzle", "crackle", TABLE_END};
 
@@ -1031,7 +1027,7 @@ void
 pncom (void)
 {
   int plx = real_mynum;
-  char *p;
+  const char *p;
 
   if (brkword () == -1 || (plx = fpbn (wordbuf)) == -1 ||
       plx >= max_players || (plx != mynum && plev (mynum) < LVL_WIZARD)) {
@@ -1804,7 +1800,7 @@ losecom (void)
 }
 
 void
-togglecom (int flg, char on[80], char off[80])
+togglecom(int flg, const char *on, const char *off)
 {
   Boolean away = (flg == SFL_AWAY);
   char buffer[MAX_COM_LEN];

@@ -146,7 +146,7 @@ debug (void)
 void
 signalcom (void)
 {
-  static char *SigTable[] =
+  static const char *SigTable[] =
   {"list", "sigsegv", "sigterm", "sigbus",
    "sigint", "sigusr1", "sigusr2", TABLE_END};
 

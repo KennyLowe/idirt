@@ -19,7 +19,7 @@
 
 #include <stdarg.h>
 
-static void kiputs (char *s, FILE * file);
+static void kiputs (const char *s, FILE * file);
 static void dcprnt (char *ct, FILE * file);
 
 /*
@@ -93,7 +93,7 @@ start_line (FILE * file)
 }
 
 static void
-kiputs (char *s, FILE * file)
+kiputs (const char *s, FILE * file)
 {
   char *t, buff[32768], buff2[65536], cbuff[65536];
 
@@ -476,7 +476,7 @@ snoop_off (int plr)
 
 
 void
-bprintf (char *format,...)
+bprintf (const char *format,...)
 {
   va_list pvar;
   register int len;
@@ -543,7 +543,7 @@ char color_table[] =
 };
 
 void
-fix_color (char *dests, char *srcs)
+fix_color (char *dests, const char *srcs)
 {
 
   unsigned char *dest = (unsigned char *) dests;
@@ -663,7 +663,7 @@ fix_color (char *dests, char *srcs)
 }
 
 void
-strip_color (char *dests, char *srcs)
+strip_color (char *dests, const char *srcs)
 {
 
   unsigned char *dest = (unsigned char *) dests;
@@ -782,7 +782,7 @@ special_codes (char *dests, char *srcs)
  ****************************************/
 
 void
-file_pager (char filename[512])
+file_pager (const char *filename)
 {
   FILE *file;
 

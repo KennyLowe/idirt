@@ -27,15 +27,13 @@
 #include "clone.h"
 
 typedef struct {
-  char *class_name;
+  const char *class_name;
   long class_mask;
   short class_state;
-}
-
-CLASS_DATA;
+} CLASS_DATA;
 
 static int value_class (CLASS_DATA * cl, int plx, Boolean silent);
-static CLASS_DATA *findclass (char *n);
+static CLASS_DATA *findclass (const char *n);
 static Boolean classmatch (int ob, CLASS_DATA * cl);
 static void dropall (CLASS_DATA * cl);
 static void getall (CLASS_DATA * cl);
@@ -1157,10 +1155,10 @@ obj_loc (int obj)
  *                 or 2) <object-name>
  *                 or 3) <object-name><number-in-sequence-with-that-name>
  */
-static int fobnsys (char *name, int ctrl, int ct_inf, int_set * inv);
+static int fobnsys (const char *name, int ctrl, int ct_inf, int_set * inv);
 
 int
-fobn (char *word)
+fobn (const char *word)
 {
   int x;
 
@@ -1174,7 +1172,7 @@ fobn (char *word)
 
 /* Look for available objects */
 int
-fobna (char *word)
+fobna (const char *word)
 {
   int i;
 
@@ -1183,42 +1181,42 @@ fobna (char *word)
 
 /* Look for objects contained in ct */
 int
-fobnin (char *word, int ct)
+fobnin (const char *word, int ct)
 {
   return fobnsys (word, 5, ct, oinv (ct));
 }
 
 /* look for objects carried by me */
 int
-fobnc (char *word)
+fobnc (const char *word)
 {
   return fobncb (word, mynum);
 }
 
 /* look for objects carried by 'by' */
 int
-fobncb (char *word, int by)
+fobncb (const char *word, int by)
 {
   return fobnsys (word, 3, by, pinv (by));
 }
 
 /* Look for objects that's here */
 int
-fobnh (char *word)
+fobnh (const char *word)
 {
   return fobnsys (word, 4, ploc (mynum), linv (ploc (mynum)));
 }
 
 /* Look for a obj. that's here and not scenery (can be taken) */
 int
-fobn_can_take (char *word)
+fobn_can_take (const char *word)
 {
   return fobnsys (word, 6, ploc (mynum), linv (ploc (mynum)));
 }
 
 
 static int
-fobnsys (char *name, int ctrl, int ct_inf, int_set * inv)
+fobnsys (const char *name, int ctrl, int ct_inf, int_set * inv)
 {
   char b[ONAME_LEN + 1], *p = b;
   int i, obj, num;
@@ -1335,7 +1333,7 @@ int
 get1objfrom (int ob, int container)
 {
   int l;
-  char *s;
+  const char *s;
   char bf[81];
 
   /* FANTASY */
@@ -1989,7 +1987,7 @@ gotanything (int x)
 
 
 static CLASS_DATA *
-findclass (char *n)
+findclass (const char *n)
 {
   CLASS_DATA *cl;
 
@@ -2686,7 +2684,7 @@ closecom (void)
 void
 opencom (void)
 {
-  char *cant_open = "You can't open that!\n";
+  const char *cant_open = "You can't open that!\n";
 
   if (ob1 == -1) {
     bprintf ("What would you like to open?\n");

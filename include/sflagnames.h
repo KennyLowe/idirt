@@ -4,7 +4,7 @@
 /*
 ** Sflag names
 */
-char *Sflags[] = {
+const char *Sflags[] = {
 	"Female",	"FreaQ",	"Color",	"NoShout",
 	"Brief",	"Quiet",	"Possessed",	"Aloof",
 	"Blind",	"Deaf",		"Dumb",		"Crippled",

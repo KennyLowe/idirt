@@ -4,7 +4,7 @@
 /*
  * Quest names
  */
-char *Quests[] = {
+const char *Quests[] = {
 	"ElvenForest",	"SorcerorsTower",	"FindExcalibur",
 	"FindGrail",	"FieryKingsHall",	"Mana",
 	"SunDisc",	"Talon",		"Mithdan",

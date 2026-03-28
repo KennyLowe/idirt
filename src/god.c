@@ -72,8 +72,8 @@ shutdowncom (Boolean crash)
   char s[MAX_COM_LEN];
   char pidfile[50];
   int i;
-  char *t = "iDiRT is currently unavailable, please try again later.\n";
-  char *gt = "iDiRT Daemon is shutting down.\n";
+  const char *t = "iDiRT is currently unavailable, please try again later.\n";
+  const char *gt = "iDiRT Daemon is shutting down.\n";
 
   if (!ptstflg (mynum, PFL_SHUTDOWN)) {
     erreval ();
@@ -179,7 +179,7 @@ seeidlecom (void)
 void
 socketcom (void)
 {
-  static char *SockTable[] =
+  static const char *SockTable[] =
   {
     "view", "kill", "write", TABLE_END
   };
@@ -453,13 +453,13 @@ writelog (void)
 }
 
 void
-bancom (char filename[100], int type)
+bancom (const char *filename, int type)
 {
-  static char *log[] =
+  static const char *log[] =
   {
     "BANHOST", "BANUSER", "BANLOGIN", "BANCHECK"
   };
-  static char *info[] =
+  static const char *info[] =
   {
     "the host", "the user", "logins from", "login checks from"
   };

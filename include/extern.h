@@ -1,31 +1,31 @@
 #ifndef _EXTERN_H
 #define _EXTERN_H
 
-extern char     *pwait;
-extern char     *qwait;
+extern const char     *pwait;
+extern const char     *qwait;
 extern jmp_buf  to_main_loop;
 
-extern char    *Exits[];
-extern char    *exits[];
+extern const char    *Exits[];
+extern const char    *exits[];
 
 extern Location	   *room_data;
 extern Object	   *objects;
 extern UBLOCK_REC  *ublock;
 
 extern ZONE	*zoname;
-extern char	**verbtxt;
+extern const char	**verbtxt;
 extern char	*txt1;
 extern char	*txt2;
 extern char	item1[];
 extern char	item2[];
-extern char	*TF[];
-extern char	*OO[];
+extern const char	*TF[];
+extern const char	*OO[];
 extern int	levels[LVL_WIZARD + 1];
 extern char	strbuf[MAX_COM_LEN];
 extern char	wordbuf[MAX_COM_LEN];
 
 extern char     		*progname;
-extern char			*data_dir;
+extern const char		*data_dir;
 extern char			my_hostname[MAXHOSTNAMELEN];
 extern struct hostent		*my_hostent;
 extern struct sockaddr_in	s_in;
@@ -88,15 +88,15 @@ extern long	qdone;
 extern Boolean	breset;
 extern Boolean	norun;
 
-extern char *Pflags[];
-extern char *Sflags[];
-extern char *Mflags[];
-extern char *Nflags[];
-extern char *Eflags[];
-extern char *Iflags[];
-extern char *MLevels[]; /* Male mortal level names */
-extern char *FLevels[]; /* Female mortal level names */
-extern char *Quests[];
+extern const char *Pflags[];
+extern const char *Sflags[];
+extern const char *Mflags[];
+extern const char *Nflags[];
+extern const char *Eflags[];
+extern const char *Iflags[];
+extern const char *MLevels[]; /* Male mortal level names */
+extern const char *FLevels[]; /* Female mortal level names */
+extern const char *Quests[];
 
 extern int  DebugMode;
 extern int  DebugPlr;

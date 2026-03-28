@@ -1,13 +1,13 @@
 #ifndef _PARSE_H
 #define _PARSE_H
 
-int	gamecom(char *str,Boolean savecom);
+int	gamecom(const char *str,Boolean savecom);
 char	*getreinput(char *b);
 int	brkword(void);
 int	my_brkword(void);
 int	chkverb(void);
-int	chklist(char *word, char *lista[], int listb[]);
-int	Match(char *x, char *y);
+int	chklist(const char *word, const char *lista[], int listb[]);
+int	Match(const char *x, const char *y);
 void	doaction(int n);
 void	quit_game(void);
 void	erreval(void);

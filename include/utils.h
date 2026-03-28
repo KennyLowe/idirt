@@ -55,13 +55,13 @@ int	cmp_alpha(const void *a, const void *b);
 void	init_rand(void);
 int	randperc(void);
 Boolean	match (char *p, char *q);
-Boolean	infile(char *file, char *line);
+Boolean	infile(const char *file, char *line);
 
-int	strtlookup(char *elem, char **table, int *begin, int *end);
-int	glookup(char *elem,int n,char **table,
+int	strtlookup(char *elem, const char **table, int *begin, int *end);
+int	glookup(char *elem,int n,const char **table,
 		int (*strcmpfun)(const char *s1, const char *s2, size_t n));
-int	tlookup(char *elem,char **table);
-int	xlookup(char *elem,char **table);
+int	tlookup(char *elem, const char **table);
+int	xlookup(char *elem, const char **table);
 char	*lowercase(char *str);
 char	*uppercase(char *str);
 
@@ -69,11 +69,11 @@ void	xfree(void *ptr);
 void	*xmalloc(int nelem, int elem_size);
 void	*resize_array(void *start, int elem_size, int oldlen, int newlen);
 
-int	addordel(char file_name[80], char check[80]);
-int	addname(char file_name[80], char name[80]);
-int	delname(char file_name[80], char name[80]);
+int	addordel(const char *file_name, char check[80]);
+int	addname(const char *file_name, char name[80]);
+int	delname(const char *file_name, char name[80]);
 
-int	fnumlines(char file[200]);
+int	fnumlines(const char *file);
 void	fileseek(FILE *file, int lines);
 
 Boolean	tstbits(int w, int m);
@@ -87,7 +87,7 @@ void	dclr_bit(DLongInt *f,int b);
 void	insertch(char *s, char ch, int i);
 char	*my_crypt(char *buf,char *pw,int len);
 char	*mk_string(char *b,char *str,int k,int stopch);
-char	*x_strcpy(char *d, char *s);
+char	*x_strcpy(char *d, const char *s);
 
 /* int_set interface */
 void	init_intset(int_set *p, int len);

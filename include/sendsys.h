@@ -52,22 +52,21 @@
 #define MODE_L          0
 #define ML(x)           ((x)<<MODE_L)
 
-void broad(char *mesg);
-void sillycom(char *txt);
-void sillytp(int per, char *msg);
+void broad(const char *mesg);
+void sillycom(const char *txt);
+void sillytp(int per, const char *msg);
 
 void send_g_msg(int destination,
-		char *func(int plx, intptr_t arg, char *t),
+		const char *func(int plx, intptr_t arg, const char *t),
 		intptr_t arg,
-		char *text);
+		const char *text);
 
-#ifdef VARGS
-void sendf(int destination,char *format,...);
+void sendf(int destination, const char *format,...);
 
 void gsendf(int destination,
-	    char *func(int plx, intptr_t arg, char *text),
+	    const char *func(int plx, intptr_t arg, const char *text),
 	    intptr_t arg,
-	    char *format,...);
+	    const char *format,...);
 
 void send_msg(int destination,
 	      int mode,
@@ -75,12 +74,7 @@ void send_msg(int destination,
 	      int max,
 	      int x1,
 	      int x2,
-	      char *format,...);
-#else
-void sendf();  /* sendf(destination,format,arg1,arg2,...); */
-void gsendf(); /* gsendf(destination,func,args,format,arg1,arg2,...); */
-void send_msg(); /* send_msg(destintaion,mode,min,max,x1,x2,format,arg1...); */
-#endif
+	      const char *format,...);
 
 void lsend_msg(int destination,
 	       int lang,
@@ -89,6 +83,6 @@ void lsend_msg(int destination,
 	       int max,
 	       int x1,
 	       int x2,
-	       char *format,...);
+	       const char *format,...);
 
 #endif

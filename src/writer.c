@@ -7,7 +7,7 @@
 #include "mud.h"
 
 void
-start_writer (char *h, char *p, void *arg, int arglen,
+start_writer (const char *h, const char *p, void *arg, int arglen,
 	      void handler (void *x, void *arg, int arglen),
 	      int flags, int max_lines)
 {

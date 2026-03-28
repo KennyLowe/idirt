@@ -20,8 +20,8 @@ typedef struct {
   WrLine	*first, *last;
 } WrHead;
 
-void start_writer(char *h,        /* Header line */
-		  char *p,        /* Prompt string */
+void start_writer(const char *h,        /* Header line */
+		  const char *p,        /* Prompt string */
 		  void *arg,      /* Argument data to handler. */
 		  int  arglen,    /* Length of argument data */
 		  void handler(void *x,void *arg,int arglen), /* handler */

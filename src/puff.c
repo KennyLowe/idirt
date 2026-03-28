@@ -11,7 +11,7 @@
 #include "sflags.h"
 #include "mobile.h"
 
-static char *puff_speech[] =
+static const char *puff_speech[] =
 {
   "Illusion is my friend, he taught me how to speak.",
   "If I had a dollar for everytime I was punted, I'd be rich!",
@@ -35,7 +35,7 @@ static char *puff_speech[] =
   "You know, when I marry Jkenneth, I will share *wink*"
 };
 
-static char *puff_shout[] =
+static const char *puff_shout[] =
 {
   "I actually saw Moses running! Almost had a heart attack!",
   "Beavis kissed me once... EWW!!",

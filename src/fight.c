@@ -620,7 +620,7 @@ wound_player (int attacker, int victim, int damage, int hit_type)
 void
 combatmessage (int victim, int attacker, int wpn, int ddn)
 {
-  static char *form = "\001p%s\003";
+  static const char *form = "\001p%s\003";
 
   char vic_name[64];
   char att_name[64];

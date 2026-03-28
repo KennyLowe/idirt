@@ -45,12 +45,12 @@
 static void parse_1 (char *itemb, int *pl, int *ob, int *pre);
 static char *markpos (void);
 
-static char *preptable[] =
+static const char *preptable[] =
 {NULL, "at", "on", "with", "to", "in", "into",
  "from", "out", TABLE_END};
 
 static int
-xgamecom (char *str, Boolean savecom)
+xgamecom (const char *str, Boolean savecom)
 {
   int a;
 
@@ -81,7 +81,7 @@ xgamecom (char *str, Boolean savecom)
       } else {
 	sprintf (strbuf, "tell %s %s", pname (pconv (mynum)), str);
       }
-      strcpy (str, strbuf);
+//       strcpy (str, strbuf); XXX was this doing anything
     }
     /* Translate Macros */
     if (str[0] == '\"' || str[0] == '\'') {	/* Say          */
@@ -143,7 +143,7 @@ xgamecom (char *str, Boolean savecom)
 }
 
 int
-gamecom (char *str, Boolean savecom)
+gamecom (const char *str, Boolean savecom)
 {
   int x;
 
@@ -262,7 +262,7 @@ chkverb (void)
 }
 
 int
-chklist (char *word, char *lista[], int listb[])
+chklist (const char *word, const char *lista[], int listb[])
 {
   int a, b, c;
   int d = -1;
@@ -277,7 +277,7 @@ chklist (char *word, char *lista[], int listb[])
 }
 
 int
-Match (char *x, char *y)
+Match (const char *x, const char *y)
 {
   if (strncasecmp (x, y, strlen (x)) == 0)
     return 10000;

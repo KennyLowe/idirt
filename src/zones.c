@@ -273,7 +273,7 @@ load_zone (char *name, int *nlocs, int *nlocs_f, int *nmobs, int *nmobs_f,
 /* From a character name, get the filenames that will contain his zone.
  */
 static char *
-wiz_zone_filename (char *buff, char *name, char *contents)
+wiz_zone_filename (char *buff, char *name, const char *contents)
 {
   sprintf (buff, "%s/%s.%s", WIZ_ZONES, name, contents);
   return buff;

@@ -37,7 +37,7 @@
 #include "pflags.h"
 #include "pflagnames.h"
 
-extern int getopt (int argc, char **argv, char *optstr);
+extern int getopt (int argc, char **argv, const char *optstr);
 extern int optind;
 extern char *optarg;
 
@@ -49,7 +49,7 @@ main (int argc, char *argv[])
   PERSONA p;
   FILE *fl;
   int option;
-  char *filename;
+  const char *filename;
   time_t earliest = 0;
 
   const int secs_in_a_day = 86400;
