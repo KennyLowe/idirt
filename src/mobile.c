@@ -607,7 +607,7 @@ xname (char *n)
 void
 setname (int plx)
 {
-  register PLAYER_REC *p = cur_player;
+  PLAYER_REC *p = cur_player;
 
   if (psex (plx))
     p->wd_them = strcpy (p->wd_her, pname (plx));

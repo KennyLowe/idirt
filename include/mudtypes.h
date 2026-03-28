@@ -73,7 +73,7 @@ typedef struct _SETIN_REC {
 /* iDiRT Message System */
 typedef struct _MSGIDX {
   long		offset;
-  short		delete;
+  short		del;
 } MSGIDX;
 
 typedef struct _MAILMSG {
@@ -388,15 +388,23 @@ typedef struct _a_player {
   TRACE		Trace;
 } PLAYER_REC;
 
+typedef enum { 
+clear, showers, rain, stormy, hailing, drizzle, snow, blizzard
+} weather_type;
+
+typedef	enum { 
+winter, spring, summer, fall 
+} season_type;
+
 /* Weather and climate structure
  */
 typedef struct _climate {
-  int		weather;
+  weather_type		weather;
   Boolean	daytime;
   int		time;
   int		day;
   int		month;
-  int		season;
+  season_type		season;
 } CLIMATE_REC;
   
 /* The world. Contains some global variables 

@@ -37,7 +37,6 @@
 #include "pflags.h"
 #include "pflagnames.h"
 
-extern int getopt (int argc, char **argv, const char *optstr);
 extern int optind;
 extern char *optarg;
 

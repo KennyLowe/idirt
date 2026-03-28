@@ -948,7 +948,7 @@ scorecom (void)
     bprintf ("&+wScore:    &+W%d\n", pscore (plx));
 
     if (plev (plx) < LVL_WIZARD) {
-      if (pscore (plx) < levels[LVL_WIZARD]) {
+      if (int(pscore (plx)) < levels[LVL_WIZARD]) {
 	bprintf ("&+wNext Lvl: &+W%d\n", (levels[plev (plx) + 1] - pscore (plx)));
       } else {
 	bprintf ("&+wNext Lvl: &+WNo Points Needed\n");
@@ -1945,26 +1945,26 @@ fingercom (void)
 void
 setpager (void)
 {
-  int new;
+  int new_value;
 
   if (brkword () == -1) {
     bprintf ("&+wPager is currently set to &+C%d &+wlines.\n", ppager (mynum));
     return;
   }
-  new = atoi (wordbuf);
+  new_value = atoi (wordbuf);
 
-  if (new > 200) {
+  if (new_value > 200) {
     bprintf ("Do you really need the pager set that high?\n");
     return;
   }
-  if (new < 0) {
+  if (new_value < 0) {
     bprintf ("Do you really need the pager set that low?\n");
     return;
   }
-  setppager (mynum, new);
+  setppager (mynum, new_value);
 
-  if (new) {
-    bprintf ("&+wSetting pager to &+C%d &+wlines.\n", new);
+  if (new_value) {
+    bprintf ("&+wSetting pager to &+C%d &+wlines.\n", new_value);
   } else {
     bprintf ("&+wTurning pager &+COff&+w.\n");
   }

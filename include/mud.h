@@ -1,10 +1,12 @@
 #ifndef _MUD_H
 #define _MUD_H
 
+typedef void (*InputHandler)(char *str);
+
 void	socketmsg(Boolean user, Boolean chkvis, const char *format,...) __attribute__ ((format (printf, 3, 4)));
-void	push_input_handler(void (*h)(char *str));
+void	push_input_handler(InputHandler handler);
 void	pop_input_handler(void);
-void	replace_input_handler(void (*h)(char *str));
+void	replace_input_handler(InputHandler handler);
 Boolean	ask_yesno (char *prompt);
 void	ask_yesno_handler (char *answer);
 int	find_free_player_slot(void);

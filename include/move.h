@@ -1,5 +1,5 @@
-#ifndef _MOVE_H
-#define _MOVE_H
+#ifndef MOVE_H
+#define MOVE_H
 
 int	dodirn(int vb);
 int	dogocom(void);

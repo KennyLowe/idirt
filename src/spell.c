@@ -506,19 +506,19 @@ handle_duration (int plr)
 void
 push_duration (int plr, int spell, int duration, int tmp)
 {
-  SPELL_DURATION *new;
+  SPELL_DURATION *new_spell;
   SPELL_DURATION *curr = players[plr].duration;
 
-  new = NEW (SPELL_DURATION, 1);
-  new->spell = spell;
-  new->duration = duration;
-  new->tmp = tmp;
+  new_spell = NEW (SPELL_DURATION, 1);
+  new_spell->spell = spell;
+  new_spell->duration = duration;
+  new_spell->tmp = tmp;
 
   if (curr != NULL) {
-    new->next = curr->next;
-    curr->next = new;
+    new_spell->next = curr->next;
+    curr->next = new_spell;
   } else {
-    new->next = curr;
-    curr = new;
+    new_spell->next = curr;
+    curr = new_spell;
   }
 }

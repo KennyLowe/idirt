@@ -318,7 +318,7 @@ char *
 get_fname (FILE * a, char *d)
 {
   char *p;
-  register char *q;
+  char *q;
   int c, k;
 
   while ((c = getc (a)) == ' ' || c == '\t') ;
@@ -344,7 +344,7 @@ char *
 get_text (FILE * a)
 {
   char *p;
-  register char *q;
+  char *q;
   int c, d;
 
   q = (p = textsp);
@@ -373,7 +373,7 @@ char *
 get_exam (FILE * a)
 {
   char *p;
-  register char *q;
+  char *q;
   int c, d;
 
   q = (p = textsp);
@@ -396,7 +396,7 @@ char *
 get_description (FILE * a)
 {
   char *p;
-  register char *q;
+  char *q;
   int c;
 
   q = (p = textsp);

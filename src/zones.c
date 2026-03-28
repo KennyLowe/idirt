@@ -47,8 +47,8 @@ get_wizzone_by_name (char *name)
   if (numzon == zon_array_len) {
     zon_array_len += 20;
 
-    zoname = resize_array (zoname, sizeof (ZONE),
-			   numzon, zon_array_len);
+    zoname = reinterpret_cast<ZONE*>(resize_array (zoname, sizeof (ZONE),
+			   numzon, zon_array_len));
   }
   zname (numzon) = COPY (name);
   ztemporary (numzon) = True;

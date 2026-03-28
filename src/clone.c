@@ -1,4 +1,4 @@
-
+#include <algorithm>
 #include <unistd.h>
 #include <stdlib.h>
 #include "kernel.h"
@@ -46,10 +46,10 @@ clone_object (int obj, int new_zone, char *new_name)
 
   if (numobs == obj_array_len) {
 
-    obj_array_len = min (obj_array_len + 75, GLOBAL_MAX_OBJS);
+    obj_array_len = std::min (obj_array_len + 75, GLOBAL_MAX_OBJS);
 
-    objects = resize_array (objects, sizeof (Object),
-			    numobs, obj_array_len);
+    objects = static_cast<Object*>(resize_array (objects, sizeof (Object),
+			    numobs, obj_array_len));
   }
   objects[numobs] = objects[obj];
 
@@ -183,8 +183,8 @@ destruct_object (int obj, Boolean * index_reused)
 
     obj_array_len -= 75;
 
-    objects = resize_array (objects, sizeof (Object),
-			    numobs, obj_array_len);
+    objects = static_cast<Object*>(resize_array (objects, sizeof (Object),
+			    numobs, obj_array_len));
   }
   if (index_reused != NULL)
     *index_reused = reused;
@@ -206,10 +206,10 @@ clone_mobile (int mob, int new_zone, char *new_name)
   if (numchars == char_array_len) {
 
     char_array_len =
-      min (char_array_len + 75, GLOBAL_MAX_MOBS + max_players);
+      std::min (char_array_len + 75, GLOBAL_MAX_MOBS + max_players);
 
-    ublock = resize_array (ublock, sizeof (Mobile),
-			   numchars, char_array_len);
+    ublock = static_cast<Mobile*>(resize_array (ublock, sizeof (Mobile),
+			   numchars, char_array_len));
   }
   ublock[numchars] = ublock[mob];
 
@@ -340,8 +340,8 @@ destruct_mobile (int mob, Boolean * index_reused)
 
     char_array_len -= 75;
 
-    ublock = resize_array (ublock, sizeof (Mobile),
-			   numchars, char_array_len);
+    ublock = static_cast<Mobile*>(resize_array (ublock, sizeof (Mobile),
+			   numchars, char_array_len));
   }
   if (index_reused != NULL)
     *index_reused = reused;
@@ -366,10 +366,10 @@ clone_location (int l, int new_zone, char *new_name)
 
   if (numloc == loc_array_len) {
 
-    loc_array_len = min (loc_array_len + 100, GLOBAL_MAX_LOCS);
+    loc_array_len = std::min (loc_array_len + 100, GLOBAL_MAX_LOCS);
 
-    room_data = resize_array (room_data, sizeof (Location),
-			      numloc, loc_array_len);
+    room_data = static_cast<Location*>(resize_array (room_data, sizeof (Location),
+			      numloc, loc_array_len));
   }
   room_data[numloc] = room_data[loc_array_index];
   room_data[numloc].temporary = True;
@@ -499,8 +499,8 @@ destruct_location (int l, Boolean * index_reused)
 
     loc_array_len -= 75;
 
-    room_data = resize_array (room_data, sizeof (Location),
-			      numloc, loc_array_len);
+    room_data = static_cast<Location*>(resize_array (room_data, sizeof (Location),
+			      numloc, loc_array_len));
   }
   if (index_reused != NULL)
     *index_reused = reused;
@@ -1102,7 +1102,7 @@ maxstatecom (void)
     bprintf ("A new MaxState must be provided.\n");
     return;
   }
-  st = max (0, atoi (txt2));
+  st = std::max (0, atoi (txt2));
 
   if (st > 3) {
     bprintf ("MaxState too large: %d.\n", st);

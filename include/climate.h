@@ -1,19 +1,11 @@
 #ifndef _NEWCLIMATE_H
 #define _NEWCLIMATE_H
 
-typedef enum { 
-clear, showers, rain, stormy, hailing, drizzle, snow, blizzard
-} weather_type;
-
-typedef	enum { 
-winter, spring, summer, fall 
-} season_type;
-
 void	weathercom(void);
 int	modify_weather(int loc);
 char	*char_func(int plr, int arg, char *msg);
-void	adjust_weather(weather_type new);
-void	set_weather(weather_type new);
+void	adjust_weather(weather_type new_weather);
+void	set_weather(weather_type new_weather);
 void	show_weather(void);
 void	change_weather(void);
 const char	*weather_desc(weather_type type);

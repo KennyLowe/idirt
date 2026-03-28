@@ -90,7 +90,7 @@ write_handler (char *line)
 int
 wnum_lines (void *x)
 {
-  WrHead *w = x;
+  WrHead *w = reinterpret_cast<WrHead*>(x);
 
   return w == 0 ? 0 : w->num_lines;
 }
@@ -98,7 +98,7 @@ wnum_lines (void *x)
 int
 wnum_chars (void *x)
 {
-  WrHead *w = x;
+  WrHead *w = reinterpret_cast<WrHead*>(x);
   WrLine *n;
   int k = 0;
 
@@ -112,7 +112,7 @@ wnum_chars (void *x)
 int
 wgetc (void *x)
 {
-  WrHead *w = x;
+  WrHead *w = reinterpret_cast<WrHead*>(x);
   WrLine *l;
   WrLine *n;
   int k;
@@ -151,7 +151,7 @@ wungetc (int c, void *x)
   WrHead *w;
   WrLine *l;
 
-  if ((w = x) == NULL)
+  if ((w = reinterpret_cast<WrHead*>(x)) == NULL)
     return EOF;
   if (c == EOF) {
     while ((l = w->first) != NULL) {
@@ -209,9 +209,9 @@ terminate_all_writers (int plx)
   WrHead *x;
 
   if (plx >= 0 && plx < max_players) {
-    w = players[plx].writer;
+    w = reinterpret_cast<WrHead*>(players[plx].writer);
     while ((x = w) != NULL) {
-      w = w->previous;
+      w = reinterpret_cast<WrHead*>(w->previous);
       terminate_writer (x);
     }
   }

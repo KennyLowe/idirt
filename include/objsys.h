@@ -1,7 +1,7 @@
 #ifndef _OBJSYS_H
 #define _OBJSYS_H
 
-Boolean	ispit(register int o);
+Boolean	ispit(int o);
 void	givecom(void);
 void	dogive(int ob, int pl);
 void	stealcom(void);

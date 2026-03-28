@@ -95,10 +95,10 @@ test_func (int plr, intptr_t arg, const char *msg)
 
 /* Tells the users that are outside the new weather conditions. */
 void
-adjust_weather (weather_type new)
+adjust_weather (weather_type new_weather)
 {
-  if (the_climate->weather != new) {
-    the_climate->weather = new;
+  if (the_climate->weather != new_weather) {
+    the_climate->weather = new_weather;
     send_g_msg (DEST_ALL, test_func, 0, NULL);
   }
 }
@@ -251,11 +251,11 @@ weathercom (void)
 	     "Hailing, Drizzle, Snow, Blizzard.\n");
     return;
   }
-  adjust_weather (x);
-  bprintf ("Changed weather to &+W%s&+w.\n", weather_desc (x));
+  adjust_weather (static_cast<weather_type>(x));
+  bprintf ("Changed weather to &+W%s&+w.\n", weather_desc (static_cast<weather_type>(x)));
   send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), LVL_MIN, LVL_MAX, mynum,
 	    NOBODY, "&+B[&+WWeather &*by &+C\001p%s\003&*: &+W%s&+B]\n",
-	    pname (mynum), weather_desc (x));
+	    pname (mynum), weather_desc (static_cast<weather_type>(x)));
 }
 
 /************************************************************************

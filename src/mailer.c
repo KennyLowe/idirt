@@ -135,7 +135,7 @@ open_mailbox (char *name, short mode)
 void
 mail_headers (void)
 {
-  Boolean new;
+  Boolean new_mail;
   int loop;
 
   if (cur_player->Mailer.lastmsg <= 0) {
@@ -148,14 +148,14 @@ mail_headers (void)
   bprintf ("&+c-------------------------------------------------------------------------------\n");
 
   for (loop = 0; loop < cur_player->Mailer.lastmsg; loop++) {
-    new = False;
+    new_mail = False;
     fgets (cur_player->Mailer.buffer, 256, cur_player->Mailer.mailbox);
 
     if (feof (cur_player->Mailer.mailbox))
       return;
 
     if (cur_player->Mailer.buffer[0] == 'T')
-      new = True;
+      new_mail = True;
 
     fgets (cur_player->Mailer.buffer, 256, cur_player->Mailer.mailbox);
     sprintf (msg_from (mynum), "%.15s", cur_player->Mailer.buffer);
@@ -172,7 +172,7 @@ mail_headers (void)
       fgets (cur_player->Mailer.buffer, 256, cur_player->Mailer.mailbox);
 
     bprintf ("%s%s &+B[&*%3d&+B] &+G%-15.15s &+w%-12.12s  &+C%-38.38s\n",
-	     new ? "&+CN" : " ", msg_idx_delete (mynum, loop) ? "&+RD" : " ",
+	     new_mail ? "&+CN" : " ", msg_idx_delete (mynum, loop) ? "&+RD" : " ",
 	     loop + 1, msg_from (mynum), make_mailtime (msg_date (mynum)),
 	     msg_subject (mynum));
 
@@ -541,7 +541,7 @@ send_forward (char *param)
   int plr, num, pos = 0;
 
   while (param[pos] != ' ') {
-    if (param[pos] == '\0' || pos >= strlen (buffer)) {
+    if (param[pos] == '\0' || pos >= int(strlen (buffer))) {
       bprintf ("Usage: F <num> <plr>.  Enter '?' for more information.\n");
       mail_menu (NULL);
       return;
@@ -663,7 +663,7 @@ reindex_mail (int plr)
   msgidxtmp = NEW (MSGIDX, cur_player->Mailer.lastmsg);
   for (i = 0; i < cur_player->Mailer.lastmsg; i++) {
     msgidxtmp[i].offset = msg_idx_offset (mynum, i);
-    msgidxtmp[i].delete = msg_idx_delete (mynum, i);
+    msgidxtmp[i].del = msg_idx_delete (mynum, i);
   }
   FREE (cur_player->Mailer.msgidx);
   fclose (cur_player->Mailer.mailbox);

@@ -24,7 +24,7 @@ CONVERT	= convert
 # -DNOCATCH in DEFINES to prevent the AutoUpdater from running.
 # -lcrypt in LDFLAGS for most BSD systems.
 #
-CC	= gcc
+CC	= g++
 LDFLAGS	= -lcrypt
 DEFINES	= 
 DBFLAGS	= -g

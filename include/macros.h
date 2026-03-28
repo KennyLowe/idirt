@@ -1,8 +1,12 @@
 #ifndef _MACROS_H
 #define _MACROS_H
 
-#define min(x,y)                ((x)>(y)?(y):(x))
-#define max(x,y)                ((x)<(y)?(y):(x))
+#include <algorithm>
+
+using std::min, std::max;
+
+// #define min(x,y)                ((x)>(y)?(y):(x))
+// #define max(x,y)                ((x)<(y)?(y):(x))
 #define arraysize(a)            (sizeof(a)/sizeof(a[0]))
 #define EVEN(N)                 (((N)&1) == 0)
 #define ODD(N)                  (((N)&1) != 0)

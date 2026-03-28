@@ -159,7 +159,7 @@ boot_world (void)
   WORLD_REC *w = &the_world_rec;
   CLIMATE_REC *c = &the_climate_rec;
 
-  c->weather = 0;
+  c->weather = clear;
   w->w_lock = 0;
   w->w_mob_stop = 0;
   w->w_peace = 0;
@@ -246,8 +246,8 @@ load_mobiles (int zone, FILE * f, int *loaded, int *infile)
 
     char_array_len = numchars + 75 + num_infile;
 
-    ublock = resize_array (ublock, sizeof (Mobile),
-			   oldlen, char_array_len);
+    ublock = static_cast<Mobile*> (resize_array (ublock, sizeof (Mobile),
+			   oldlen, char_array_len));
 
     mem_used += sizeof (Mobile) * (char_array_len - oldlen);
   }
@@ -415,8 +415,8 @@ load_locations (int zone, FILE * f, int *loaded, int *infile)
 
     loc_array_len = 100 + numloc + num_infile;
 
-    room_data = resize_array (room_data, sizeof (Location),
-			      oldlen, loc_array_len);
+    room_data = static_cast<Location*>(resize_array (room_data, sizeof (Location),
+			      oldlen, loc_array_len));
 
     mem_used += sizeof (Location) * (loc_array_len - oldlen);
   }
@@ -531,8 +531,8 @@ load_objects (int zone, FILE * f, int *loaded, int *infile)
     }
     obj_array_len = 75 + numobs + num_infile;
 
-    objects = resize_array (objects, sizeof (Object),
-			    oldlen, obj_array_len);
+    objects = static_cast<Object*>(resize_array (objects, sizeof (Object),
+			    oldlen, obj_array_len));
 
     mem_used += sizeof (Object) * (obj_array_len - oldlen);
   }

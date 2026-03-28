@@ -17,19 +17,19 @@
 
 #include "MACHINE.H"				/* Get Machine Defines	*/
 
-#define _HEADER_	_ARCH_" ("_OS_")"	/* Machine/OS Header	*/
+#define _HEADER_	_ARCH_ " (" _OS_ ")"	/* Machine/OS Header	*/
 #define	_VERSION_	"1.82.00"		/* Version ID		*/
 
-#define	VERSION		"iDiRT "_VERSION_	/* Version for Display	*/
+#define	VERSION		"iDiRT " _VERSION_	/* Version for Display	*/
 
 #ifdef	IS_ALPHA
 #undef	VERSION
-#define	VERSION		"iDiRT "_VERSION_" (Alpha)"
+#define	VERSION		"iDiRT " _VERSION_" (Alpha)"
 #endif
 
 #ifdef	IS_BETA
 #undef	VERSION
-#define	VERSION		"iDiRT "_VERSION_" (Beta)"
+#define	VERSION		"iDiRT " _VERSION_" (Beta)"
 #endif
 
 #endif

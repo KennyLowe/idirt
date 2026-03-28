@@ -273,7 +273,7 @@ wizlistcom (void)
 	  if (p->wlev != x) {
 	    fprintf (fp, "\n\n&+C%s\n", w[x = p->wlev]);
 	    fprintf (fp, "&+c");
-	    for (i = 0; i < strlen (w[x = p->wlev]); ++i)
+	    for (i = 0; i < int(strlen (w[x = p->wlev])); ++i)
 	      fprintf (fp, "-");
 	    fprintf (fp, "\n");
 	    k = 6;

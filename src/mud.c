@@ -1,4 +1,5 @@
 
+#include <algorithm>
 #include "kernel.h"
 #include <sys/stat.h>
 #include <unistd.h>
@@ -180,7 +181,7 @@ find_free_player_slot (void)
 
     v = numchars;
     for (k = max_players; k < v; k++) {
-      if (alive (k) == -1 && pscore (k) == i) {
+      if (alive (k) == -1 && pscore (k) == unsigned(i)) {
 	/* Previous occupant of this slot has killed this mobile..not me */
 	setpscore (k, -1);	/* forget who it was, it was someone else */
       }
@@ -738,7 +739,7 @@ talker (void)
     mudlog ("SOCKET: %s connected from %s", pname (mynum), cur_player->hostname);
   }
   send_msg (DEST_ALL, MODE_QUIET | MP (PFL_SHUSER) | MODE_PFLAG,
-	    max (pvis (mynum), LVL_WIZARD), LVL_MAX, mynum, NOBODY,
+	    std::max (pvis (mynum), LVL_WIZARD), LVL_MAX, mynum, NOBODY,
 	    "&+B[&+W%s &+w(&+C%s&+w) has entered the game in &+W%s &*(%s: &+C%d&*)&+B]\n",
        pname (mynum), cur_player->hostname, xshowname (buff2, ploc (mynum)),
 	    plev (mynum) < LVL_WIZARD ? "Lev" : "Vis",

@@ -11,7 +11,7 @@
 
 #define	msg_idx(C, P)		(players[C].Mailer.msgidx[P])
 #define	msg_idx_offset(C, P)	(players[C].Mailer.msgidx[P].offset)
-#define	msg_idx_delete(C, P)	(players[C].Mailer.msgidx[P].delete)
+#define	msg_idx_delete(C, P)	(players[C].Mailer.msgidx[P].del)
 
 /** Defines *************************************************************
  *									*

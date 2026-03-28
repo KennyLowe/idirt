@@ -149,9 +149,9 @@ _code_cmp (const void *c, const void *code)
 static int
 tocontinue (char **ct)
 {
-  register char *s = *ct;
-  register int n = 1;
-  register int nest = 0;
+  char *s = *ct;
+  int n = 1;
+  int nest = 0;
   struct _code *code;
 
   for (; n; s++) {
@@ -479,7 +479,7 @@ void
 bprintf (const char *format,...)
 {
   va_list pvar;
-  register int len;
+  int len;
 
   if (!sysbuf)
     makebfr ();
@@ -807,7 +807,7 @@ void
 quit_pager (void)
 {
   cur_player->inpager = False;
-  replace_input_handler ((void *) cur_player->pager.old_handler);
+  replace_input_handler (reinterpret_cast<InputHandler>(cur_player->pager.old_handler));
   fclose (cur_player->pager.file);
   bprintf ("\n%s", cur_player->cprompt);
 

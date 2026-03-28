@@ -51,7 +51,6 @@ acctcom (void)
 {
   char text[80];
   int zone = -1;
-  int i;
 
   if (plev (mynum) < LVL_WIZARD) {
     bprintf ("You can't do that now.\n");
@@ -68,7 +67,7 @@ acctcom (void)
   else
     sprintf (text, "Current System Accounting (Zone: %s)", zname (zone));
 
-  for (i = 0; i < (60 - strlen (text)) / 2; ++i)
+  for (size_t i = 0; i < (60 - strlen (text)) / 2; ++i)
     bprintf (" ");
 
   bprintf ("&+W%s\n", text);

@@ -1316,7 +1316,7 @@ parse_1 (char *itemb, int *pl, int *ob, int *pre)
 static char *
 markpos (void)
 {
-  register int c;
+  int c;
 
   while ((c = strbuf[stp]) == ',' || isspace (c))
     ++stp;

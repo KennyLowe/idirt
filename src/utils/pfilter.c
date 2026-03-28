@@ -33,8 +33,8 @@ test_bit (PFLAGS * f, int n)
 static int
 lookup (const char *e, const char **t)
 {
-  register int l = strlen (e);
-  register int x = 0;
+  int l = strlen (e);
+  int x = 0;
 
   for (; *t != TABLE_END; ++t, ++x) {
     if (*t == NULL)

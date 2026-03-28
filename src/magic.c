@@ -334,21 +334,21 @@ sumcom (void)
 
 
 static void
-vis_proc (int new)
+vis_proc (int new_value)
 {
   char xx[SETIN_MAX + 200];
 
   int oldvis = pvis (mynum);
 
-  setpvis (mynum, new);
+  setpvis (mynum, new_value);
 
   bprintf ("Ok\n");
 
-  if (new < oldvis) {
-    send_msg (ploc (mynum), 0, new, oldvis, mynum, NOBODY,
+  if (new_value < oldvis) {
+    send_msg (ploc (mynum), 0, new_value, oldvis, mynum, NOBODY,
     "%s\n", build_setin (xx, cur_player->setvin, pname (mynum), NULL, NULL));
   } else {
-    send_msg (ploc (mynum), 0, oldvis, new, mynum, NOBODY,
+    send_msg (ploc (mynum), 0, oldvis, new_value, mynum, NOBODY,
 	      "%s\n", build_setin (xx, cur_player->setvout, pname (mynum), NULL, NULL));
   }
 }

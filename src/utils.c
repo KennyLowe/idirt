@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <crypt.h>
 #include <sys/time.h>
 #include <sys/stat.h>
@@ -25,7 +26,7 @@ cmp_player (const void *a, const void *b)
 int
 cmp_alpha (const void *a, const void *b)
 {
-  return (strcasecmp (a, b));
+  return (strcasecmp (static_cast<const char*>(a), static_cast<const char*>(b)));
 }
 
 /************************************************************************
@@ -78,10 +79,10 @@ strtlookup (char *elem, const char **table, int *begin, int *end)
 Boolean
 match (char *p, char *q)
 {
-  register char *s = p;
-  register char *t = q;
-  register char c;
-  register char d;
+  char *s = p;
+  char *t = q;
+  char c;
+  char d;
 
   for (;;) {
     if ((c = *s++) == 0)
@@ -109,8 +110,8 @@ match (char *p, char *q)
 Boolean
 infile (const char *file, char *line)
 {
-  register char *p;
-  register char *q;
+  char *p;
+  char *q;
   FILE *fl;
   Boolean invert;
   char a[80];
@@ -207,7 +208,7 @@ static u_char charmap[] =
 int
 strcasecmp (char *s1, char *s2)
 {
-  register u_char *cm = charmap, *us1 = (u_char *) s1, *us2 = (u_char *) s2;
+  u_char *cm = charmap, *us1 = (u_char *) s1, *us2 = (u_char *) s2;
 
   while (cm[*us1] == cm[*us2++])
     if (*us1++ == '\0')
@@ -216,9 +217,9 @@ strcasecmp (char *s1, char *s2)
 }
 
 int
-strncasecmp (const char *s1, const char *s2, register size_t n)
+strncasecmp (const char *s1, const char *s2, size_t n)
 {
-  register u_char *cm = charmap, *us1 = (u_char *) s1, *us2 = (u_char *) s2;
+  u_char *cm = charmap, *us1 = (u_char *) s1, *us2 = (u_char *) s2;
 
   while (--n >= 0 && cm[*us1] == cm[*us2++])
     if (*us1++ == '\0')
@@ -326,7 +327,7 @@ resize_array (void *start, int elem_size, int oldlen, int newlen)
   if (start != NULL) {
 
     if (newlen != 0) {
-      memcpy (p, start, min (oldlen, newlen) * elem_size);
+      memcpy (p, start, std::min (oldlen, newlen) * elem_size);
     }
     FREE (start);
   }
@@ -428,7 +429,7 @@ void
 init_intset (int_set * p, int len)
 {
   p->len = p->current = 0;
-  p->list = resize_array (NULL, sizeof (int), 0, p->maxlen = len);
+  p->list = static_cast<int*>(resize_array (NULL, sizeof (int), 0, p->maxlen = len));
 }
 
 void
@@ -543,7 +544,7 @@ check_for_possible_resize (int_set * p)
     return False;
   }
 
-  p->list = resize_array (p->list, sizeof (int), oldlen, p->maxlen);
+  p->list = static_cast<int*>(resize_array (p->list, sizeof (int), oldlen, p->maxlen));
 
   return True;
 }

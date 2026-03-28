@@ -151,7 +151,7 @@ colorlog (char param[300], FILE * fp)
   for (; i < end; i++)
     fprintf (fp, "%c", param[i]);
   fprintf (fp, "&*");
-  for (; i < strlen (param); i++)
+  for (; i < int(strlen (param)); i++)
     fprintf (fp, "%c", param[i]);
 }
 

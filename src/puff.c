@@ -121,7 +121,7 @@ puffcom (int mon)
   if (check >= 20 && check < 40) {
     chance = my_random () % (arraysize (puff_shout) + 1);
 
-    if (chance < arraysize (puff_shout)) {
+    if (chance < int(arraysize (puff_shout))) {
       send_msg (DEST_ALL, MODE_NSFLAG | MS (SFL_NOPUFF), LVL_MIN, LVL_MAX,
 		NOBODY, NOBODY, "&+BPuff &+wshouts &+W'&+w%s&+W'\n",
 		puff_shout[chance]);

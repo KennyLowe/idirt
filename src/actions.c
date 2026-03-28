@@ -500,7 +500,7 @@ boot_extern (FILE * f, const char *fname)
 {
   char buff[256];
   char *verb;
-  EXTERN_CMD_REC *first = NULL, *last = NULL, *this;
+  EXTERN_CMD_REC *first = NULL, *last = NULL, *thisact;
   int flags;
   int i, j, low, high;
 
@@ -617,27 +617,27 @@ boot_extern (FILE * f, const char *fname)
       continue;
     }
     if ((ext_flags & 0x0c) == 0x0c) {
-      this = (EXTERN_CMD_REC *) NEW (struct _ext2, 1);
+      thisact = (EXTERN_CMD_REC *) NEW (struct _ext2, 1);
       m_used += sizeof (struct _ext2);
 
-      ((struct _ext2 *) this)->msg_to_target = msgs[EXT_MSG_TARGET];
-      ((struct _ext2 *) this)->msg_to_sender = msgs[EXT_MSG_SENDER];
-      ((struct _ext2 *) this)->msg_to_others = msgs[EXT_MSG_OTHERS];
+      ((struct _ext2 *) thisact)->msg_to_target = msgs[EXT_MSG_TARGET];
+      ((struct _ext2 *) thisact)->msg_to_sender = msgs[EXT_MSG_SENDER];
+      ((struct _ext2 *) thisact)->msg_to_others = msgs[EXT_MSG_OTHERS];
     } else {
-      this = NEW (EXTERN_CMD_REC, 1);
+      thisact = NEW (EXTERN_CMD_REC, 1);
       m_used += sizeof (EXTERN_CMD_REC);
     }
-    this->next = NULL;
-    this->flags = flags;
-    this->verb = verb;
-    this->msg_to_all = msgs[EXT_MSG_ALL];
-    this->msg_to_me = msgs[EXT_MSG_ME];
+    thisact->next = NULL;
+    thisact->flags = flags;
+    thisact->verb = verb;
+    thisact->msg_to_all = msgs[EXT_MSG_ALL];
+    thisact->msg_to_me = msgs[EXT_MSG_ME];
 
     if (first == NULL) {
-      first = last = this;
+      first = last = thisact;
     } else {
-      last->next = this;
-      last = this;
+      last->next = thisact;
+      last = thisact;
     }
     mem_used += m_used;
   }

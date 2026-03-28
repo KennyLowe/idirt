@@ -1,6 +1,7 @@
 
 /*  The CHANGE command.
  */
+#include <algorithm>
 #include <stdlib.h>
 #include <stdint.h>
 #include "kernel.h"
@@ -132,7 +133,7 @@ change_sex (void)
     sendf (a, "Your sex has been magically changed!\nYou are now %s.\n",
 	   psex (a) ? "female" : "male");
 
-    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 	       LVL_WIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange &*(Sex: "
 	      "%s): &+W%s &*changed &+W%s&+B]\n",
 	      psex (a) ? "Female" : "Male", pname (mynum), pname (a));
@@ -170,7 +171,7 @@ change_speed (void)
   bprintf ("Setting speed for %s to %d.\n", pname (a), new_speed);
   setpspeed (a, new_speed);
 
-  send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+  send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 	     LVL_WIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange &*(Speed: "
 	    "%d->%d): &+W%s &*changed &+W%s&+B]\n",
 	    old_speed, new_speed, pname (mynum), pname (a));
@@ -219,14 +220,14 @@ change_score (void)
     old_score = p.p_score;
     p.p_score = new_score;
     putuaf (&p);
-    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 		   LVL_ARCHWIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange "
 	      "&*(Score: %d->%d): &+W%s &*changed &+W%s&+B]\n",
 	      old_score, new_score, pname (mynum), p.p_name);
   } else {
     old_score = pscore (a);
     setpscore (a, new_score);
-    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 		   LVL_ARCHWIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange "
 	      "&*(Score: %d->%d): &+W%s &*changed &+W%s&+B]\n",
 	      old_score, new_score, pname (mynum), pname (a));
@@ -257,7 +258,7 @@ change_strength (void)
     bprintf ("That is beyond your powers.\n");
     return;
   }
-  new_str = (brkword () < 0) ? p.p_strength : max (0, atoi (wordbuf));
+  new_str = (brkword () < 0) ? p.p_strength : std::max (0, atoi (wordbuf));
 
   if (new_str < 1 || new_str > max_str) {
     bprintf ("Out of Range!\n");
@@ -278,14 +279,14 @@ change_strength (void)
     old_str = p.p_strength;
     p.p_strength = new_str;
     putuaf (&p);
-    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 		   LVL_ARCHWIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange "
 	      "&*(Strength: %d->%d): &+W%s &*changed &+W%s&+B]\n",
 	      old_str, new_str, pname (mynum), p.p_name);
   } else {
     old_str = pstr (a);
     setpstr (a, new_str);
-    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 		   LVL_ARCHWIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange "
 	      "&*(Strength: %d->%d): &+W%s &*changed &+W%s&+B]\n",
 	      old_str, new_str, pname (mynum), pname (a));
@@ -343,7 +344,7 @@ change_level (void)
       old_lvl = p.p_level;
       p.p_level = new_lvl;
       putuaf (&p);
-      send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+      send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 		   LVL_ARCHWIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange "
 		"&*(Level: %d->%d): &+W%s &*changed &+W%s&+B]\n",
 		old_lvl, new_lvl, pname (mynum), p.p_name);
@@ -353,7 +354,7 @@ change_level (void)
       }
       old_lvl = plev (a);
       setplev (a, new_lvl);
-      send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+      send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 		   LVL_ARCHWIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange "
 		"&*(Level: %d->%d): &+W%s &*changed &+W%s&+B]\n",
 		old_lvl, new_lvl, pname (mynum), pname (a));
@@ -412,14 +413,14 @@ change_visibility (void)
     old_vis = p.p_vlevel;
     p.p_vlevel = new_vis;
     putuaf (&p);
-    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 		   LVL_ARCHWIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange "
 	      "&*(Vis: %d->%d): &+W%s &*changed &+W%s&+B]\n",
 	      old_vis, new_vis, pname (mynum), p.p_name);
   } else {
     old_vis = pvis (a);
     setpvis (a, new_vis);
-    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 		   LVL_ARCHWIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange "
 	      "&*(Vis: %d->%d): &+W%s &*changed &+W%s&+B]\n",
 	      old_vis, new_vis, pname (mynum), pname (a));
@@ -454,7 +455,7 @@ change_damage (void)
     bprintf ("Change damage on %s to what ?\n", p.p_name);
     return;
   }
-  new_damage = max (0, atoi (wordbuf));
+  new_damage = std::max (0, atoi (wordbuf));
 
   if (new_damage < 0 || new_damage > 100) {
     bprintf ("Out of Range!\n");
@@ -471,14 +472,14 @@ change_damage (void)
     old_damage = p.p_damage;
     p.p_damage = new_damage;
     putuaf (&p);
-    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 		   LVL_ARCHWIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange "
 	      "&*(Damage: %d->%d): &+W%s &*changed &+W%s&+B]\n",
 	      old_damage, new_damage, pname (mynum), p.p_name);
   } else {
     old_damage = pdam (a);
     setpdam (a, new_damage);
-    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 		   LVL_ARCHWIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange "
 	      "&*(Damage: %d->%d): &+W%s &*changed &+W%s&+B]\n",
 	      old_damage, new_damage, pname (mynum), pname (a));
@@ -513,7 +514,7 @@ change_armor (void)
     bprintf ("Change armor on %s to what ?\n", p.p_name);
     return;
   }
-  new_armor = max (0, atoi (wordbuf));
+  new_armor = std::max (0, atoi (wordbuf));
 
   if (!is_me) {
     mudlog ("CHANGE: %s changed armor on %s from %d to %d",
@@ -526,14 +527,14 @@ change_armor (void)
     old_armor = p.p_armor;
     p.p_armor = new_armor;
     putuaf (&p);
-    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 		   LVL_ARCHWIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange "
 	      "&*(Armor: %d->%d): &+W%s &*changed &+W%s&+B]\n",
 	      old_armor, new_armor, pname (mynum), p.p_name);
   } else {
     old_armor = parmor (a);
     setparmor (a, new_armor);
-    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 		   LVL_ARCHWIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange "
 	      "&*(Armor: %d->%d): &+W%s &*changed &+W%s&+B]\n",
 	      old_armor, new_armor, pname (mynum), pname (a));
@@ -568,7 +569,7 @@ change_aggression (void)
   old_agg = pagg (a);
   setpagg (a, new_agg);
 
-  send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+  send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 		       LVL_WIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange "
 	    "&*(Aggression: %d->%d): &+W%s &*changed &+W%s&+B]\n",
 	    old_agg, new_agg, pname (mynum), pname (a));
@@ -642,7 +643,7 @@ change_title (void)
     else {
       strcpy (p.p_title, buff);
       putuaf (&p);
-      send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+      send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 		       LVL_WIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange "
 		"&*(Title): &+W%s &*changed &+W%s&+B]\n",
 		pname (mynum), p.p_name);
@@ -651,7 +652,7 @@ change_title (void)
 
   if (!disp_title) {
     bprintf ("Title changed on %s.\n", is_mobile ? pname (a) : p.p_name);
-    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 	    LVL_WIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange &*(Title): "
 	      "&+W%s &*changed &+W%s&+B]\n",
 	      pname (mynum), is_mobile ? pname (a) : p.p_name);
@@ -694,7 +695,7 @@ change_name (void)
     bprintf ("Change name on %s to what ?\n", old_name);
     return;
   }
-  if (strlen (wordbuf) > max_len) {
+  if (strlen (wordbuf) > size_t(max_len)) {
     bprintf ("Name too long, Maximum: %d.\n", max_len);
     return;
   }
@@ -775,7 +776,7 @@ change_name (void)
     mudlog ("CHANGE: %s changed name on %s to %s",
 	    pname (mynum), old_name, new_name);
 
-    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 		   LVL_ARCHWIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange "
 	      "&*(Name: %s->%s): &+W\001p%s\003 &*changed it&+B]\n",
 	      old_name, new_name, pname (mynum));
@@ -1222,13 +1223,13 @@ change_wimpy (void)
   if (f) {
     p.p_wimpy = new_wimpy;
     putuaf (&p);
-    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 		   LVL_ARCHWIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange "
 	      "&*(Wimpy: %d->%d): &+W%s &*changed &+W%s&+B]\n",
 	      old_wimpy, new_wimpy, pname (mynum), p.p_name);
   } else {
     setpwimpy (a, new_wimpy);
-    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 		   LVL_ARCHWIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange "
 	      "&*(Wimpy: %d->%d): &+W%s &*changed &+W%s&+B]\n",
 	      old_wimpy, new_wimpy, pname (mynum), pname (a));
@@ -1268,7 +1269,7 @@ change_magic (void)
     bprintf ("That is beyond your powers.\n");
     return;
   }
-  new_mag = (brkword () < 0) ? p.p_magic : max (0, atoi (wordbuf));
+  new_mag = (brkword () < 0) ? p.p_magic : std::max (0, atoi (wordbuf));
 
   if (new_mag < 0 || new_mag > maxmagic (a)) {
     bprintf ("Out of Range!\n");
@@ -1286,7 +1287,7 @@ change_magic (void)
     old_mag = p.p_magic;
     p.p_magic = new_mag;
     putuaf (&p);
-    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 		   LVL_ARCHWIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange "
 	      "&*(Magic: %d->%d): &+W%s &*changed &+W%s&+B]\n",
 	      old_mag, new_mag, pname (mynum), p.p_name);
@@ -1294,7 +1295,7 @@ change_magic (void)
   } else {
     old_mag = pmagic (a);
     setpmagic (a, new_mag);
-    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), max (pvis (mynum),
+    send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), std::max (pvis (mynum),
 		   LVL_ARCHWIZARD), LVL_MAX, mynum, NOBODY, "&+B[&+WChange "
 	      "&*(Magic: %d->%d): &+W%s &*changed &+W%s&+B]\n",
 	      old_mag, new_mag, pname (mynum), pname (a));

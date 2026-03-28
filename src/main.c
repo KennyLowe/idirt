@@ -1249,7 +1249,7 @@ updatecom (void)
 void
 run_reboot (Boolean crash, Boolean will_update)
 {
-  int i, plx, nwiz_zones, new, nplayers;
+  int i, plx, nwiz_zones, is_new, nplayers;
   char exec_path[256], new_path[256], filename[256];
   char port[10], max[10], pid[10], *intest;
   REBOOT_REC reboot_rec;
@@ -1267,9 +1267,9 @@ run_reboot (Boolean crash, Boolean will_update)
   }
 
   if (access (new_path, F_OK) != -1)
-    new = 1;
+    is_new = 1;
   else if (access (exec_path, F_OK) != -1)
-    new = 0;
+    is_new = 0;
   else {
     bprintf ("Could not find an executable to reboot the MUD.\n");
     mudlog ("REBOOT: Error: Could not find executable");
@@ -1293,32 +1293,32 @@ run_reboot (Boolean crash, Boolean will_update)
   } else if (will_update) {
     send_msg (DEST_ALL, 0, LVL_WIZARD, LVL_MAX, NOBODY, NOBODY,
 	      "&+W[&+wUpdate %sby &+C\001p%s\003&+W]\n",
-	      new ? "&+WNew &+w" : "", pname (mynum));
+	      is_new ? "&+WNew &+w" : "", pname (mynum));
 
     send_msg (DEST_ALL, 0, LVL_MIN, LVL_MAX, NOBODY, NOBODY,
 	      "The %s begin to move and shift violently around you. "
 	      "You\nclose your eyes tight, hoping that this will all "
 	      "end soon..\n", MUD_NAME);
 
-    mudlog ("UPDATE: Update %sby %s", new ? "New " : "", pname (mynum));
+    mudlog ("UPDATE: Update %sby %s", is_new ? "New " : "", pname (mynum));
   } else if (breset) {
     send_msg (DEST_ALL, 0, LVL_MIN, LVL_MAX, NOBODY, NOBODY,
 	      "The %s begin to move and shift violently around you. "
 	      "You\nclose your eyes tight, hoping that this will all "
 	      "end soon..\n", MUD_NAME);
 
-    mudlog ("REBOOT: Rebooted %sby BootReset", new ? "New " : "");
+    mudlog ("REBOOT: Rebooted %sby BootReset", is_new ? "New " : "");
   } else {
     send_msg (DEST_ALL, 0, LVL_WIZARD, LVL_MAX, NOBODY, NOBODY,
 	      "&+W[&+wReboot %sby &+C\001p%s\003&+W]\n",
-	      new ? "&+WNew &+w" : "", pname (mynum));
+	      is_new ? "&+WNew &+w" : "", pname (mynum));
 
     send_msg (DEST_ALL, 0, LVL_MIN, LVL_MAX, NOBODY, NOBODY,
 	      "The %s begin to move and shift violently around you. "
 	      "You\nclose your eyes tight, hoping that this will all "
 	      "end soon..\n", MUD_NAME);
 
-    mudlog ("REBOOT: Rebooted %sby %s", new ? "New " : "", pname (mynum));
+    mudlog ("REBOOT: Rebooted %sby %s", is_new ? "New " : "", pname (mynum));
   }
 
   if (crash)
@@ -1407,7 +1407,7 @@ run_reboot (Boolean crash, Boolean will_update)
   if (will_update) {
     run_update ();
   }
-  if (new) {
+  if (is_new) {
     unlink (exec_path);
     link (new_path, exec_path);
     unlink (new_path);
@@ -1440,7 +1440,7 @@ run_reboot (Boolean crash, Boolean will_update)
 void
 process_data (char data[300], char *ip, char *host)
 {
-  int i = 0, j = 0;
+  size_t i = 0, j;
 
   while (!isspace (data[i])) {
     ip[i] = data[i];

@@ -58,10 +58,10 @@ int pits[] =
   -1};
 
 Boolean
-ispit (register int o)
+ispit (int o)
 {
-  register int i = 0;
-  register int j;
+  int i = 0;
+  int j;
 
   while ((j = pits[i++]) != o && j != -1) ;
   return (j >= 0);
@@ -1799,7 +1799,7 @@ dropinpit (int o)
     mudlog ("CHEAT: Object from Zone: %s, Pitted By: %s",
 	    zname (ozone (o)), pname (mynum));
     bprintf ("&+WYou were just caught pitting a cloned item!\n");
-    if (pscore (mynum) >= ovalue (o)) {
+    if (int(pscore (mynum)) >= ovalue (o)) {
       bprintf ("&+WYou lose &+C%d &+Wpoints from your score!\n",
 	       ovalue (o) / 2);
       setpscore (mynum, pscore (mynum) - (ovalue (o) / 2));
@@ -1819,7 +1819,7 @@ dropinpit (int o)
 #ifdef LOCMIN_TALON
   if (o == OBJ_TALON_CLAW) {
     if (alive (i = max_players + MOB_TALON_TALON) == -1 &&
-	pscore (i) == mynum) {
+	int(pscore (i)) == mynum) {
       set_quest (mynum, Q_TALON);
     }
   }
@@ -1827,12 +1827,12 @@ dropinpit (int o)
 
   if (o == OBJ_WASTE_THRONE) {
     if (alive (i = max_players + MOB_WASTE_DJINNI) == -1 &&
-	pscore (i) == mynum) {
+	int(pscore (i)) == mynum) {
       set_quest (mynum, Q_FIERY_KING);
     }
   } else if (o == OBJ_TOWER_CROWN) {
     if (alive (i = max_players + MOB_TOWER_SHAZARETH) == -1 &&
-	pscore (i) == mynum) {
+	int(pscore (i)) == mynum) {
       set_quest (mynum, Q_TOWER);
     }
   }
@@ -2002,7 +2002,7 @@ findclass (const char *n)
 static Boolean
 classmatch (int ob, CLASS_DATA * cl)
 {
-  register short st;
+  short st;
 
   return (cl == NULL ||
 	  (((st = cl->class_state) < 0 || st == state (ob)) &&
