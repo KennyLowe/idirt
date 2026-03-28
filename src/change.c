@@ -1093,7 +1093,6 @@ void
 change_passwd (void)
 {
   PERSONA *p;
-  char b[60];
 
   if (brkword () != -1 && !EQ (wordbuf, pname (mynum))) {
 
@@ -1112,9 +1111,7 @@ change_passwd (void)
     cur_player->work = (intptr_t) p;
     cur_player->no_echo = True;
 
-    sprintf (b, "\n\377\373\001\001New Password for %s: ", wordbuf);
-
-    bprintf (b);
+    bprintf ("\n\377\373\001\001New Password for %s: ", wordbuf);
     replace_input_handler (ask_new_passwd);
   } else {
     strcpy (cur_player->cprompt, "Old Password: ");

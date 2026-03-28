@@ -673,7 +673,7 @@ do_issue (char *cont)
     bprintf ("\n\001f" ISSUE "\003");
     if (plev (mynum) < LVL_WIZARD) {
       strcpy (cur_player->cprompt, "Hit return: ");
-      bprintf (pwait);
+      bprintf ("%s", pwait);
       replace_input_handler (do_issue);
     } else {
       strcpy (cur_player->cprompt, "Enter vis: ");
@@ -691,7 +691,7 @@ do_motd (char *cont)
   if (cont == NULL) {
     bprintf ("\n\001f" MOTD "\003");
     strcpy (cur_player->cprompt, "Hit return: ");
-    bprintf (pwait);
+    bprintf ("%s", pwait);
     replace_input_handler (do_motd);
   } else {
     talker ();

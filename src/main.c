@@ -866,7 +866,7 @@ void handle_packet (int fd) {
 	                send_msg (DEST_ALL, MODE_PFLAG | MP (PFL_SEESOCKET), LVL_WIZARD,
 		                LVL_MAX, mynum, NOBODY, "&+W[&+CSocket (%d): &*Connecting "
 		                "socket has lost link &+B(&+W%s&+B)&+W]\n",
-		                cur_player->fil_des, pname (mynum), sock_msg[msg]);
+		                cur_player->fil_des, pname (mynum));
 	                mudlog ("SOCKET: Connecting socket has lost link (%s)", sock_msg[msg]);
 	            }
 	            crapup (NULL, CRAP_SAVE | CRAP_UNALIAS | CRAP_RETURN);
@@ -884,13 +884,13 @@ void handle_packet (int fd) {
 	            send_msg (DEST_ALL, MODE_QUIET, max (pvis (mynum), LVL_WIZARD),
 		            LVL_MAX, mynum, NOBODY, "&+W[&+CSocket (%d): &+C%s "
 		            "&+whas lost (cut) connection&+W]\n", cur_player->fil_des,
-		            pname (mynum), sock_msg[msg]);
+		            pname (mynum));
 	            mudlog ("SOCKET: %s has lost (cut) connection", pname (mynum));
             } else {
 	            send_msg (DEST_ALL, MODE_PFLAG | MP (PFL_SEESOCKET),
 		            max (pvis (mynum), LVL_WIZARD), LVL_MAX, mynum, NOBODY,
 		            "&+W[&+CSocket (%d): &*Connecting socket has lost (cut) "
-		            "connection&+W]\n", cur_player->fil_des, pname (mynum));
+		            "connection&+W]\n", cur_player->fil_des);
 	            mudlog ("SOCKET: Connecting socket has lost (cut) connection");
             }
             crapup (NULL, CRAP_SAVE | CRAP_UNALIAS | CRAP_RETURN);

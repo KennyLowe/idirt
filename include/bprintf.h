@@ -12,7 +12,7 @@ void	strip_color(char *dests, const char *srcs);
 
 void	special_codes(char *dests, char *srcs);
 
-void	bprintf(const char *format, ...);
+void	bprintf(const char *format, ...) __attribute__ ((format (printf, 1, 2)));
 
 void	file_pager(const char *filename);
 void	quit_pager(void);

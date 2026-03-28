@@ -8,12 +8,12 @@ void	close_logfile(void);
 void	progerror(const char *name);
 
 void	vmudlog(const char *format, va_list pvar);
-void	mudlog(const char *format, ...);
+void	mudlog(const char *format, ...) __attribute__ ((format (printf, 1, 2)));
 
 void    open_plr_log(void);
 void    close_plr_log(void);
 
 void    vwrite_plr_log(const char *format, va_list pvar);
-void    write_plr_log(const char *format, ...);
+void    write_plr_log(const char *format, ...) __attribute__ ((format (printf, 1, 2)));
 
 #endif

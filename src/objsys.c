@@ -777,8 +777,8 @@ putcom (void)
     if (onum (a) == OBJ_TOWER_SCEPTRE && state (OBJ_TOWER_DOOR_SHAZARETH) == 1) {
       setobjstate (OBJ_TOWER_DOOR_TREASURE, 0);
       strcpy (ar, "The door clicks open!\n");
-      sendf (oloc (OBJ_TOWER_DOOR_TREASURE), ar);
-      sendf (oloc (OBJ_TOWER_DOOR_SHAZARETH), ar);
+      sendf (oloc (OBJ_TOWER_DOOR_TREASURE), "%s", ar);
+      sendf (oloc (OBJ_TOWER_DOOR_SHAZARETH), "%s", ar);
       return;
     }
     bprintf ("Nothing happens.\n");
@@ -835,8 +835,8 @@ putcom (void)
       && ishere (a)) {
     setobjstate (OBJ_TOWER_DOOR_TREASURE, 1);
     strcpy (ar, "The door clicks shut....\n");
-    sendf (LOC_TOWER_TREASURE, ar);
-    sendf (oloc (OBJ_TOWER_DOOR_SHAZARETH), ar);
+    sendf (LOC_TOWER_TREASURE, "%s", ar);
+    sendf (oloc (OBJ_TOWER_DOOR_SHAZARETH), "%s", ar);
   }
 }
 
@@ -1440,8 +1440,9 @@ get1objfrom (int ob, int container)
   if ((ploc (mynum) == LOC_TOWER_TREASURE) &&
       (state (OBJ_TOWER_DOOR_TREASURE) == 0)) {
     setobjstate (OBJ_TOWER_DOOR_TREASURE, 1);
-    sendf (LOC_TOWER_TREASURE, s = "The door clicks shut...\n");
-    sendf (obj_loc (olinked (OBJ_TOWER_DOOR_TREASURE)), s);	/*Other side of door */
+    s = "The door clicks shut...\n";
+    sendf (LOC_TOWER_TREASURE, "%s", s);
+    sendf (obj_loc (olinked (OBJ_TOWER_DOOR_TREASURE)), "%s", s);	/*Other side of door */
   }
   if (ob == OBJ_CATACOMB_CUPSERAPH &&
       (l = alive ((max_players + MOB_CATACOMB_SERAPH))) != -1 &&
@@ -2716,7 +2717,7 @@ opencom (void)
     break;
   default:
     if (!otstbit (ob1, OFL_OPENABLE)) {
-      bprintf (cant_open);
+      bprintf ("%s", cant_open);
     } else { 
       if (state (ob1) == 0) {
         bprintf ("It's already open.\n");
@@ -3025,8 +3026,8 @@ lightcom (void)
     bprintf ("Behind them you can see the entrance to a cave.\n");
     sprintf (s, "%s burns the wall of thorns away!\n", pname (mynum));
 
-    send_msg (LOC_EFOREST_THORNY, 0, LVL_MIN, LVL_MAX, mynum, NOBODY, s);
-    send_msg (LOC_EFOREST_CAVE, 0, LVL_MIN, LVL_MAX, mynum, NOBODY, s);
+    send_msg (LOC_EFOREST_THORNY, 0, LVL_MIN, LVL_MAX, mynum, NOBODY, "%s", s);
+    send_msg (LOC_EFOREST_CAVE, 0, LVL_MIN, LVL_MAX, mynum, NOBODY, "%s", s);
 
     return;
   }
@@ -3117,8 +3118,8 @@ pushcom (void)
     sprintf (s, "You hear a grinding sound as a mysterious force moves "
 	     "the throne!\n");
 
-    sendf (LOC_EFOREST_EASTEND, s);
-    sendf (LOC_EFOREST_BOTTOM, s);
+    sendf (LOC_EFOREST_EASTEND, "%s", s);
+    sendf (LOC_EFOREST_BOTTOM, "%s", s);
     break;
 #endif
 
