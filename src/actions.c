@@ -1206,7 +1206,7 @@ wipecom (void)
     return;
   }
   bprintf ("You wipe %s.\n", pname (plr));
-  sendf (plr, "%s wipes you.\n");
+  sendf (plr, "%s wipes you.\n", pname(mynum));
   send_msg (ploc (mynum), 0, pvis (mynum), LVL_MAX, mynum, plr,
 	    "%s wipes \001p%s\003.\n", pname (mynum), pname (plr));
 }
