@@ -251,11 +251,11 @@ weathercom (void)
 	     "Hailing, Drizzle, Snow, Blizzard.\n");
     return;
   }
-  adjust_weather (static_cast<weather_type>(x));
-  bprintf ("Changed weather to &+W%s&+w.\n", weather_desc (static_cast<weather_type>(x)));
+  adjust_weather ((weather_type)x);
+  bprintf ("Changed weather to &+W%s&+w.\n", weather_desc((weather_type)x));
   send_msg (DEST_ALL, MODE_SFLAG | MS (SFL_SEEEXT), LVL_MIN, LVL_MAX, mynum,
 	    NOBODY, "&+B[&+WWeather &*by &+C\001p%s\003&*: &+W%s&+B]\n",
-	    pname (mynum), weather_desc (static_cast<weather_type>(x)));
+	    pname (mynum), weather_desc(((weather_type)x)));
 }
 
 /************************************************************************

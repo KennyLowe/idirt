@@ -27,6 +27,7 @@
  * Illusion, January 1995
  */
 
+#include <getopt.h>
 #include <stdlib.h>
 #include <sys/types.h>
 #include <time.h>

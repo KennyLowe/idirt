@@ -1799,7 +1799,7 @@ dropinpit (int o)
     mudlog ("CHEAT: Object from Zone: %s, Pitted By: %s",
 	    zname (ozone (o)), pname (mynum));
     bprintf ("&+WYou were just caught pitting a cloned item!\n");
-    if (int(pscore (mynum)) >= ovalue (o)) {
+    if ((int)(pscore (mynum)) >= ovalue (o)) {
       bprintf ("&+WYou lose &+C%d &+Wpoints from your score!\n",
 	       ovalue (o) / 2);
       setpscore (mynum, pscore (mynum) - (ovalue (o) / 2));
@@ -1819,7 +1819,7 @@ dropinpit (int o)
 #ifdef LOCMIN_TALON
   if (o == OBJ_TALON_CLAW) {
     if (alive (i = max_players + MOB_TALON_TALON) == -1 &&
-	int(pscore (i)) == mynum) {
+	(int)(pscore (i)) == mynum) {
       set_quest (mynum, Q_TALON);
     }
   }
@@ -1827,12 +1827,12 @@ dropinpit (int o)
 
   if (o == OBJ_WASTE_THRONE) {
     if (alive (i = max_players + MOB_WASTE_DJINNI) == -1 &&
-	int(pscore (i)) == mynum) {
+	(int)(pscore (i)) == mynum) {
       set_quest (mynum, Q_FIERY_KING);
     }
   } else if (o == OBJ_TOWER_CROWN) {
     if (alive (i = max_players + MOB_TOWER_SHAZARETH) == -1 &&
-	int(pscore (i)) == mynum) {
+	(int)(pscore (i)) == mynum) {
       set_quest (mynum, Q_TOWER);
     }
   }

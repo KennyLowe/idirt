@@ -97,12 +97,12 @@ nolinecom (int lvl, int flg, const char *txt)
   }
   if (!ststflg (mynum, flg)) {
     ssetflg (mynum, flg);
-    send_msg (DEST_ALL, 0, std::max (lvl, pvis (mynum)), LVL_MAX, mynum, NOBODY,
+    send_msg (DEST_ALL, 0, max (lvl, pvis (mynum)), LVL_MAX, mynum, NOBODY,
 	    "&+C[&+W%s &*has left the %s &*line&+C]\n", pname (mynum), txt);
     bprintf ("You are no longer listening to the %s &*line.\n", txt);
   } else {
     sclrflg (mynum, flg);
-    send_msg (DEST_ALL, 0, std::max (lvl, pvis (mynum)), LVL_MAX, mynum, NOBODY,
+    send_msg (DEST_ALL, 0, max (lvl, pvis (mynum)), LVL_MAX, mynum, NOBODY,
 	  "&+C[&+W%s &*has joined the %s &*line&+C]\n", pname (mynum), txt);
     bprintf ("You are once again listening to the %s &*line.\n", txt);
   }

@@ -1,5 +1,3 @@
-
-#include <algorithm>
 #include "kernel.h"
 #include <sys/stat.h>
 #include <unistd.h>
@@ -7,6 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 
+#include "macros.h"
 #include "sendsys.h"
 #include "pflags.h"
 #include "sflags.h"
@@ -181,7 +180,7 @@ find_free_player_slot (void)
 
     v = numchars;
     for (k = max_players; k < v; k++) {
-      if (alive (k) == -1 && pscore (k) == unsigned(i)) {
+      if (alive (k) == -1 && pscore (k) == (unsigned)(i)) {
 	/* Previous occupant of this slot has killed this mobile..not me */
 	setpscore (k, -1);	/* forget who it was, it was someone else */
       }
@@ -739,14 +738,14 @@ talker (void)
     mudlog ("SOCKET: %s connected from %s", pname (mynum), cur_player->hostname);
   }
   send_msg (DEST_ALL, MODE_QUIET | MP (PFL_SHUSER) | MODE_PFLAG,
-	    std::max (pvis (mynum), LVL_WIZARD), LVL_MAX, mynum, NOBODY,
+	    mudmax (pvis (mynum), LVL_WIZARD), LVL_MAX, mynum, NOBODY,
 	    "&+B[&+W%s &+w(&+C%s&+w) has entered the game in &+W%s &*(%s: &+C%d&*)&+B]\n",
        pname (mynum), cur_player->hostname, xshowname (buff2, ploc (mynum)),
 	    plev (mynum) < LVL_WIZARD ? "Lev" : "Vis",
 	    plev (mynum) < LVL_WIZARD ? plev (mynum) : pvis (mynum));
 
   send_msg (DEST_ALL, MODE_QUIET | MP (PFL_SHUSER) | MODE_NPFLAG,
-	    max (pvis (mynum), LVL_WIZARD), LVL_MAX, mynum, NOBODY,
+	    mudmax (pvis (mynum), LVL_WIZARD), LVL_MAX, mynum, NOBODY,
 	    "&+B[&+W%s has entered the game in &+W%s &*(%s: &+C%d&*)&+B]\n",
 	    pname (mynum), xshowname (buff2, ploc (mynum)),
 	    plev (mynum) < LVL_WIZARD ? "Lev" : "Vis",

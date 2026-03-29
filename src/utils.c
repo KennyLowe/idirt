@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <crypt.h>
 #include <sys/time.h>
 #include <sys/stat.h>
@@ -26,7 +25,7 @@ cmp_player (const void *a, const void *b)
 int
 cmp_alpha (const void *a, const void *b)
 {
-  return (strcasecmp (static_cast<const char*>(a), static_cast<const char*>(b)));
+  return (strcasecmp ((const char*)(a), (const char*)(b)));
 }
 
 /************************************************************************
@@ -317,7 +316,7 @@ xmalloc (int nelem, int elem_size)
 }
 
 void *
-resize_array (void *start, int elem_size, int oldlen, int newlen)
+real_resize_array (void *start, int elem_size, int oldlen, int newlen)
 {
   void *p = NULL;
 
@@ -327,7 +326,7 @@ resize_array (void *start, int elem_size, int oldlen, int newlen)
   if (start != NULL) {
 
     if (newlen != 0) {
-      memcpy (p, start, std::min (oldlen, newlen) * elem_size);
+      memcpy (p, start, min (oldlen, newlen) * elem_size);
     }
     FREE (start);
   }
@@ -429,7 +428,7 @@ void
 init_intset (int_set * p, int len)
 {
   p->len = p->current = 0;
-  p->list = static_cast<int*>(resize_array (NULL, sizeof (int), 0, p->maxlen = len));
+  p->list = resize_array (int, NULL, 0, p->maxlen = len);
 }
 
 void
@@ -544,7 +543,7 @@ check_for_possible_resize (int_set * p)
     return False;
   }
 
-  p->list = static_cast<int*>(resize_array (p->list, sizeof (int), oldlen, p->maxlen));
+  p->list = resize_array (int, p->list, oldlen, p->maxlen);
 
   return True;
 }

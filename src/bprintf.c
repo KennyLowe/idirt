@@ -807,7 +807,7 @@ void
 quit_pager (void)
 {
   cur_player->inpager = False;
-  replace_input_handler (reinterpret_cast<InputHandler>(cur_player->pager.old_handler));
+  replace_input_handler ((InputHandler)(cur_player->pager.old_handler));
   fclose (cur_player->pager.file);
   bprintf ("\n%s", cur_player->cprompt);
 

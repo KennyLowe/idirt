@@ -246,8 +246,7 @@ load_mobiles (int zone, FILE * f, int *loaded, int *infile)
 
     char_array_len = numchars + 75 + num_infile;
 
-    ublock = static_cast<Mobile*> (resize_array (ublock, sizeof (Mobile),
-			   oldlen, char_array_len));
+    ublock = resize_array (Mobile, ublock, oldlen, char_array_len);
 
     mem_used += sizeof (Mobile) * (char_array_len - oldlen);
   }
@@ -415,8 +414,7 @@ load_locations (int zone, FILE * f, int *loaded, int *infile)
 
     loc_array_len = 100 + numloc + num_infile;
 
-    room_data = static_cast<Location*>(resize_array (room_data, sizeof (Location),
-			      oldlen, loc_array_len));
+    room_data = resize_array (Location, room_data, oldlen, loc_array_len);
 
     mem_used += sizeof (Location) * (loc_array_len - oldlen);
   }
@@ -531,8 +529,7 @@ load_objects (int zone, FILE * f, int *loaded, int *infile)
     }
     obj_array_len = 75 + numobs + num_infile;
 
-    objects = static_cast<Object*>(resize_array (objects, sizeof (Object),
-			    oldlen, obj_array_len));
+    objects = resize_array (Object, objects, oldlen, obj_array_len);
 
     mem_used += sizeof (Object) * (obj_array_len - oldlen);
   }

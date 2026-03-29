@@ -541,7 +541,7 @@ send_forward (char *param)
   int plr, num, pos = 0;
 
   while (param[pos] != ' ') {
-    if (param[pos] == '\0' || pos >= int(strlen (buffer))) {
+    if (param[pos] == '\0' || pos >= (int)(strlen (buffer))) {
       bprintf ("Usage: F <num> <plr>.  Enter '?' for more information.\n");
       mail_menu (NULL);
       return;

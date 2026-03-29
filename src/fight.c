@@ -574,7 +574,7 @@ wound_player (int attacker, int victim, int damage, int hit_type)
       if (alive (x) == -1) {
 	send_msg (DEST_ALL, MODE_NODEAF, LVL_MIN, LVL_MAX, NOBODY, NOBODY,
 		  "A Great Evil has departed from the land.\n");
-	if (int(pscore (x)) == attacker) {
+	if ((int)(pscore (x)) == attacker) {
 	  sendf (attacker, "You have avenged the Elven Forest!\n");
 	  set_quest (attacker, Q_EFOREST);
 	}

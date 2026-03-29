@@ -948,7 +948,7 @@ scorecom (void)
     bprintf ("&+wScore:    &+W%d\n", pscore (plx));
 
     if (plev (plx) < LVL_WIZARD) {
-      if (int(pscore (plx)) < levels[LVL_WIZARD]) {
+      if ((int)(pscore (plx)) < levels[LVL_WIZARD]) {
 	bprintf ("&+wNext Lvl: &+W%d\n", (levels[plev (plx) + 1] - pscore (plx)));
       } else {
 	bprintf ("&+wNext Lvl: &+WNo Points Needed\n");
