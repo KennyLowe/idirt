@@ -1,5 +1,5 @@
-#ifndef _EXITNAMES_H
-#define _EXITNAMES_H
+#ifndef IDIRT_EXITNAMES_H
+#define IDIRT_EXITNAMES_H
 
 const char *Exits[] = {"North", "East",
 	         "South", "West",

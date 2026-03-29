@@ -1,5 +1,5 @@
-#ifndef _MFLAGS_H
-#define _MFLAGS_H
+#ifndef IDIRT_MFLAGS_H
+#define IDIRT_MFLAGS_H
 
 /*
 **  Mflag defines

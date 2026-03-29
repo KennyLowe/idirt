@@ -1,5 +1,5 @@
-#ifndef _COMMANDS_H
-#define _COMMANDS_H
+#ifndef IDIRT_COMMANDS_H
+#define IDIRT_COMMANDS_H
 
 /* commands.c */
 void	oraclecom(char com[10]);

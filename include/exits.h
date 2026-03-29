@@ -1,5 +1,5 @@
-#ifndef _EXITS_H
-#define _EXITS_H
+#ifndef IDIRT_EXITS_H
+#define IDIRT_EXITS_H
 
 /* Exit numbers DOOR...EDOOR - 1 are doors
  */

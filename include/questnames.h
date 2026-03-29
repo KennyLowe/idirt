@@ -1,5 +1,5 @@
-#ifndef _QUESTNAMES_H
-#define _QUESTNAMES_H
+#ifndef IDIRT_QUESTNAMES_H
+#define IDIRT_QUESTNAMES_H
 
 /*
  * Quest names

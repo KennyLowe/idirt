@@ -1,5 +1,5 @@
-#ifndef _IFLAGNAMES_H
-#define _IFLAGNAMES_H
+#ifndef IDIRT_IFLAGNAMES_H
+#define IDIRT_IFLAGNAMES_H
 
 char *Iflags[] = {
     "FireballSpell",    "MissileSpell", "FrostSpell",   "ShockSpell",

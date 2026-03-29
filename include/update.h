@@ -1,5 +1,5 @@
-#ifndef _UPDATE_H
-#define _UPDATE_H
+#ifndef IDIRT_UPDATE_H
+#define IDIRT_UPDATE_H
 
 typedef struct _update_index {
   long  qdone;

@@ -1,5 +1,5 @@
-#ifndef _TIMING_H
-#define _TIMING_H
+#ifndef IDIRT_TIMING_H
+#define IDIRT_TIMING_H
 
 Boolean	mud_open(time_t *next_ev, time_t *now);
 const char	*time2ascii(time_t t);

@@ -1,5 +1,5 @@
-#ifndef _MAGIC_H
-#define _MAGIC_H
+#ifndef IDIRT_MAGIC_H
+#define IDIRT_MAGIC_H
 
 void	healcom(void);
 void	healallcom(void);

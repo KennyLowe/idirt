@@ -1,5 +1,5 @@
-#ifndef _EFLAGNAMES_H
-#define _EFLAGNAMES_H
+#ifndef IDIRT_EFLAGNAMES_H
+#define IDIRT_EFLAGNAMES_H
 
 const char *Eflags[] = {
 	"Fireball",	"FearFireball",	"ImmFireball",	"Missile",

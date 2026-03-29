@@ -4,8 +4,8 @@
  * what extra things not to log.				*
  ****************************************************************/
 
-#ifndef _LOGCONFIG_H
-#define _LOGCONFIG_H
+#ifndef IDIRT_LOGCONFIG_H
+#define IDIRT_LOGCONFIG_H
 
 /* COMPACT_LOG: Define this to make the syslog more compact.
  */

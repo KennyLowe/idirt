@@ -1,5 +1,5 @@
-#ifndef _COMM_H
-#define _COMM_H
+#ifndef IDIRT_COMM_H
+#define IDIRT_COMM_H
 
 char	*make_com_text(char *b, const char *s, char *t, int send_plr, int recv_plr);
 void	com_handler(const char *format, const char *linename, int lvl, int flg);

@@ -1,5 +1,5 @@
-#ifndef _MOBILE_H
-#define _MOBILE_H
+#ifndef IDIRT_MOBILE_H
+#define IDIRT_MOBILE_H
 
 char	*make_prompt(char *b, char *s, char *h, char *c, 
 		     char *l, char *n, char *m);

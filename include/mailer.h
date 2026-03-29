@@ -1,5 +1,5 @@
-#ifndef _MAILER_H
-#define _MAILER_H
+#ifndef IDIRT_MAILER_H
+#define IDIRT_MAILER_H
 
 /** Macros **************************************************************
  *									*

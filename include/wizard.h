@@ -1,5 +1,5 @@
-#ifndef _WIZARD_H
-#define _WIZARD_H
+#ifndef IDIRT_WIZARD_H
+#define IDIRT_WIZARD_H
 
 void	rawcom(void);
 void	systemcom(void);

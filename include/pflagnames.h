@@ -1,5 +1,5 @@
-#ifndef _PFLAGNAMES_H
-#define _PFLAGNAMES_H
+#ifndef IDIRT_PFLAGNAMES_H
+#define IDIRT_PFLAGNAMES_H
 
 /*
 ** Pflag names

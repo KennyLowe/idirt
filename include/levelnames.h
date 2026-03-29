@@ -1,5 +1,5 @@
-#ifndef _LEVELNAMES_H
-#define _LEVELNAMES_H
+#ifndef IDIRT_LEVELNAMES_H
+#define IDIRT_LEVELNAMES_H
 
 const char *WizLevels[] = {
   NULL,

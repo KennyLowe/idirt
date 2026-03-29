@@ -1,5 +1,5 @@
-#ifndef _NEWCLIMATE_H
-#define _NEWCLIMATE_H
+#ifndef IDIRT_NEWCLIMATE_H
+#define IDIRT_NEWCLIMATE_H
 
 void	weathercom(void);
 int	modify_weather(int loc);

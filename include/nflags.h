@@ -1,5 +1,5 @@
-#ifndef _NFLAGS_H
-#define _NFLAGS_H
+#ifndef IDIRT_NFLAGS_H
+#define IDIRT_NFLAGS_H
 
 /* Language Flags (NFLAGS) */
 

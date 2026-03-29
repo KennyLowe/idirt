@@ -1,5 +1,5 @@
-#ifndef _CFLAGS_H
-#define _CFLAGS_H
+#ifndef IDIRT_CFLAGS_H
+#define IDIRT_CFLAGS_H
 
 #define	IN_ROOM 	0	/* In room (room) */
 #define	IN_CONTAINER	1	/* In container (object) */

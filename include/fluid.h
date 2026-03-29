@@ -1,5 +1,5 @@
-#ifndef _FLUID_H
-#define _FLUID_H
+#ifndef IDIRT_FLUID_H
+#define IDIRT_FLUID_H
 
 /* People invisible on the Wizlist */
 const char *InvisList[] = {

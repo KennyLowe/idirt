@@ -1,5 +1,5 @@
-#ifndef _CLONE_H
-#define _CLONE_H
+#ifndef IDIRT_CLONE_H
+#define IDIRT_CLONE_H
 
 int	clone_object(int obj, int new_zone, char *new_name);
 Boolean	destruct_object(int obj, Boolean *index_reused);

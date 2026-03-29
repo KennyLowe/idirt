@@ -1,5 +1,5 @@
-#ifndef _MUD_H
-#define _MUD_H
+#ifndef IDIRT_MUD_H
+#define IDIRT_MUD_H
 
 typedef void (*InputHandler)(char *str);
 

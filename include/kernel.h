@@ -1,5 +1,5 @@
-#ifndef _KERNEL_H
-#define _KERNEL_H
+#ifndef IDIRT_KERNEL_H
+#define IDIRT_KERNEL_H
 
 #include <sys/types.h>
 #include <sys/param.h>

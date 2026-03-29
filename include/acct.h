@@ -1,5 +1,5 @@
-#ifndef _ACCT_H
-#define _ACCT_H
+#ifndef IDIRT_ACCT_H
+#define IDIRT_ACCT_H
 
 void	acctcom(void);
 int	dopc(int max, int exist);

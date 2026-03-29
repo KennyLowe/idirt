@@ -1,5 +1,5 @@
-#ifndef _UTILS_H_
-#define _UTILS_H_
+#ifndef IDIRT_UTILS_H
+#define IDIRT_UTILS_H
 
 /************************************************************************
  * Structures								*
@@ -67,7 +67,9 @@ char	*uppercase(char *str);
 
 void	xfree(void *ptr);
 void	*xmalloc(int nelem, int elem_size);
-void	*resize_array(void *start, int elem_size, int oldlen, int newlen);
+void	*real_resize_array(void *start, int elem_size, int oldlen, int newlen);
+
+#define resize_array(type, start, oldlen, newlen) (type *)real_resize_array(start, sizeof(type), oldlen, newlen)
 
 int	addordel(const char *file_name, char check[80]);
 int	addname(const char *file_name, char name[80]);

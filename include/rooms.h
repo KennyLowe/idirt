@@ -1,5 +1,5 @@
-#ifndef _ROOMS_H
-#define _ROOMS_H
+#ifndef IDIRT_ROOMS_H
+#define IDIRT_ROOMS_H
 
 /* Flags for lookin(); */
 #define SHOW_LONG      0x01

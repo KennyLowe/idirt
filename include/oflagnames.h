@@ -1,5 +1,5 @@
-#ifndef _OFLAGNAMES_H
-#define _OFLAGNAMES_H
+#ifndef IDIRT_OFLAGNAMES_H
+#define IDIRT_OFLAGNAMES_H
 
 /*
 **	Object flag names

@@ -1,5 +1,5 @@
-#ifndef _QUESTS_H
-#define _QUESTS_H
+#ifndef IDIRT_QUESTS_H
+#define IDIRT_QUESTS_H
 
 #define Q_EFOREST	0
 #define Q_TOWER		1

@@ -1,5 +1,5 @@
-#ifndef _MFLAGNAMES_H
-#define _MFLAGNAMES_H
+#ifndef IDIRT_MFLAGNAMES_H
+#define IDIRT_MFLAGNAMES_H
 
 /*
 ** Mflag names

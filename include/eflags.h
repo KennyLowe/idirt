@@ -1,5 +1,5 @@
-#ifndef _EFLAGS_H
-#define _EFLAGS_H
+#ifndef IDIRT_EFLAGS_H
+#define IDIRT_EFLAGS_H
 
 /* iDiRT
  * Spell Flag Definitions (eflags)

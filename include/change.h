@@ -1,5 +1,5 @@
-#ifndef _CHANGE_H
-#define _CHANGE_H
+#ifndef IDIRT_CHANGE_H
+#define IDIRT_CHANGE_H
 
 void	changecom(void);
 void	change_title(void);

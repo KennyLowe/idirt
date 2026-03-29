@@ -1,5 +1,5 @@
-#ifndef _FIGHT_H
-#define _FIGHT_H
+#ifndef IDIRT_FIGHT_H
+#define IDIRT_FIGHT_H
 
 Boolean	wound_player (int attacker, int victim, int damage, int hit_type);
 int	dambyitem(int pl, int it);

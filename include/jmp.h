@@ -1,5 +1,5 @@
-#ifndef _JMP_H
-#define _JMP_H
+#ifndef IDIRT_JMP_H
+#define IDIRT_JMP_H
 
 #define JMP_QUITTING 1
 

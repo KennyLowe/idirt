@@ -1,5 +1,5 @@
-#ifndef _SENDSYS_H
-#define _SENDSYS_H
+#ifndef IDIRT_SENDSYS_H
+#define IDIRT_SENDSYS_H
 
 #include <stdint.h>
 

@@ -1,5 +1,5 @@
-#ifndef _GOD_H
-#define _GOD_H
+#ifndef IDIRT_GOD_H
+#define IDIRT_GOD_H
 
 void	deletecom (void);
 void	opengamecom (void);

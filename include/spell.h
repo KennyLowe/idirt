@@ -1,5 +1,5 @@
-#ifndef _SPELL_H
-#define _SPELL_H
+#ifndef IDIRT_SPELL_H
+#define IDIRT_SPELL_H
 
 void	spellscom(void);
 void	spellcom(int spell);

@@ -1,5 +1,5 @@
-#ifndef _LFLAGNAMES_H
-#define _LFLAGNAMES_H
+#ifndef IDIRT_LFLAGNAMES_H
+#define IDIRT_LFLAGNAMES_H
 
 /*
 **	Location flag names

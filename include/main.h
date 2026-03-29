@@ -1,5 +1,5 @@
-#ifndef _MAIN_H
-#define _MAIN_H
+#ifndef IDIRT_MAIN_H
+#define IDIRT_MAIN_H
 
 int	main (int argc, char **argv, char **ep);
 char	*read_hosts (char search[20]);

@@ -1,5 +1,5 @@
-#ifndef _PUFF_H
-#define _PUFF_H
+#ifndef IDIRT_PUFF_H
+#define IDIRT_PUFF_H
 
 int	randplr(void);
 void	puffcom(int mon);

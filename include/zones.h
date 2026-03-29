@@ -1,5 +1,5 @@
-#ifndef _ZONES_H
-#define _ZONES_H
+#ifndef IDIRT_ZONES_H
+#define IDIRT_ZONES_H
 
 int	get_zone_by_name(char *zname);
 int	get_wizzone_by_name(char *name);

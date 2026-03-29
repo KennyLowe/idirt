@@ -1,5 +1,5 @@
-#ifndef _REBOOT_H
-#define _REBOOT_H
+#ifndef IDIRT_REBOOT_H
+#define IDIRT_REBOOT_H
 
 /* The reboot record is read in first, and then the variable nwiz_zones
  * is used to find out how many times a read (char[50]) must occur for

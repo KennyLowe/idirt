@@ -1,5 +1,5 @@
-#ifndef _WIZLIST_H
-#define _WIZLIST_H
+#ifndef IDIRT_WIZLIST_H
+#define IDIRT_WIZLIST_H
 
 void	set_wizfile(char *f);
 int	boot_wizlist(FILE *f, char *fname);

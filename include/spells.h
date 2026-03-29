@@ -1,5 +1,5 @@
-#ifndef _SPELLS_H
-#define _SPELLS_H
+#ifndef IDIRT_SPELLS_H
+#define IDIRT_SPELLS_H
 
 #include "eflags.h"
 #include "oflags.h"

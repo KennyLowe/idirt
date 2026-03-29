@@ -1,5 +1,5 @@
-#ifndef _OBJSYS_H
-#define _OBJSYS_H
+#ifndef IDIRT_OBJSYS_H
+#define IDIRT_OBJSYS_H
 
 Boolean	ispit(int o);
 void	givecom(void);

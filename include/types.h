@@ -1,9 +1,11 @@
-#ifndef _TYPES_H
-#define _TYPES_H
+#ifndef IDIRT_TYPES_H
+#define IDIRT_TYPES_H
 
-using Boolean = bool;
-const inline bool False = false;
-const inline bool True = true;
+#include <stdbool.h>
+
+typedef bool Boolean;
+#define False false
+#define True true
 
 typedef struct {long int h, l; } LongInt;
 typedef struct {long int u, h, l; } DLongInt;

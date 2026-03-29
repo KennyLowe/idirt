@@ -1,5 +1,5 @@
-#ifndef _GLOBAL_H
-#define _GLOBAL_H
+#ifndef IDIRT_GLOBAL_H
+#define IDIRT_GLOBAL_H
 
 jmp_buf to_main_loop;
 

@@ -1,5 +1,5 @@
-#ifndef _LFLAGS_H
-#define _LFLAGS_H
+#ifndef IDIRT_LFLAGS_H
+#define IDIRT_LFLAGS_H
 
 /* iDiRT
  * Location Flag Definitions (lflags)

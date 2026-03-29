@@ -1,7 +1,7 @@
 /* iDiRT Exit Handler */
 
 #ifndef	_EXIT_H
-#define _EXIT_H
+#define IDIRT_EXIT_H
 
 void	__exit(int status);
 void	sig_exit(char *sig, int signal);

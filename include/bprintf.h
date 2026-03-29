@@ -1,5 +1,5 @@
-#ifndef _BPRINTF_H
-#define _BPRINTF_H
+#ifndef IDIRT_BPRINTF_H
+#define IDIRT_BPRINTF_H
 
 void	pbfr(void);
 void	bflush(void);

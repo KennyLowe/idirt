@@ -1,5 +1,5 @@
-#ifndef _IFLAGS_H
-#define _IFLAGS_H
+#ifndef IDIRT_IFLAGS_H
+#define IDIRT_IFLAGS_H
 
 /* iDiRT
  * Magical Object Flag Definitions (iflags)

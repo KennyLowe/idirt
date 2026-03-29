@@ -1,5 +1,5 @@
-#ifndef _NFLAGNAMES_H
-#define _NFLAGNAMES_H
+#ifndef IDIRT_NFLAGNAMES_H
+#define IDIRT_NFLAGNAMES_H
 
 const char *Nflags[] = {
         "English",      "Xara",         "Hyeel",        "Draken",

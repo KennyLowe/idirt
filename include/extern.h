@@ -1,5 +1,5 @@
-#ifndef _EXTERN_H
-#define _EXTERN_H
+#ifndef IDIRT_EXTERN_H
+#define IDIRT_EXTERN_H
 
 extern const char     *pwait;
 extern const char     *qwait;

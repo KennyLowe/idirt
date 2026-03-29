@@ -1,5 +1,5 @@
-#ifndef _MUDTYPES_H
-#define _MUDTYPES_H
+#ifndef IDIRT_MUDTYPES_H
+#define IDIRT_MUDTYPES_H
 
 #include <stdint.h>
 

@@ -1,5 +1,5 @@
-#ifndef _PARSE_H
-#define _PARSE_H
+#ifndef IDIRT_PARSE_H
+#define IDIRT_PARSE_H
 
 int	gamecom(const char *str,Boolean savecom);
 char	*getreinput(char *b);

@@ -1,5 +1,5 @@
-#ifndef _FILES_H
-#define _FILES_H
+#ifndef IDIRT_FILES_H
+#define IDIRT_FILES_H
 
 #define DATA_DIR        "../data/"      /* Directory for data files	*/
 #define DESC_DIR	"DESC"		/* Character descriptions	*/

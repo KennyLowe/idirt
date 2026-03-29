@@ -1,5 +1,5 @@
-#ifndef _OFLAGS_H
-#define _OFLAGS_H
+#ifndef IDIRT_OFLAGS_H
+#define IDIRT_OFLAGS_H
 
 /* iDiRT
  * Object Flag Definitions (oflags)

@@ -1,5 +1,5 @@
-#ifndef _LEVELS_H
-#define _LEVELS_H
+#ifndef IDIRT_LEVELS_H
+#define IDIRT_LEVELS_H
 
 #define LVL_MIN		-1
 #define LVL_GUEST	0

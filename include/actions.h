@@ -1,5 +1,5 @@
-#ifndef _ACTIONS_H
-#define _ACTIONS_H
+#ifndef IDIRT_ACTIONS_H
+#define IDIRT_ACTIONS_H
 
 int	boot_extern(FILE *f, const char *fname);
 int	fextern(char *verb);

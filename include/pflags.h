@@ -1,5 +1,5 @@
-#ifndef _PFLAGS_H
-#define _PFLAGS_H
+#ifndef IDIRT_PFLAGS_H
+#define IDIRT_PFLAGS_H
 
 /* iDiRT
  * Privelige Flag Definitions (pflags)

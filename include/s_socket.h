@@ -1,5 +1,5 @@
-#ifndef _S_SOCKET_H
-#define _S_SOCKET_H
+#ifndef IDIRT_S_SOCKET_H
+#define IDIRT_S_SOCKET_H
 
 int make_service(short unsigned int port, char *my_hostname,
 		 int my_hostnamelen, struct hostent **hp,

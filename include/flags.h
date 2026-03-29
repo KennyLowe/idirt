@@ -1,5 +1,5 @@
-#ifndef _FLAGS_H
-#define _FLAGS_H
+#ifndef IDIRT_FLAGS_H
+#define IDIRT_FLAGS_H
 
 void	show_bits(int *bits, int n, const char **table);
 Boolean	dump_pflags(void);

@@ -1,5 +1,5 @@
-#ifndef _SFLAGS_H
-#define _SFLAGS_H
+#ifndef IDIRT_SFLAGS_H
+#define IDIRT_SFLAGS_H
 
 /* iDiRT
  * Special Flag Definitions (sflags)

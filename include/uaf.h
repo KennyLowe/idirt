@@ -1,5 +1,5 @@
-#ifndef _UAF_H
-#define _UAF_H
+#ifndef IDIRT_UAF_H
+#define IDIRT_UAF_H
 
 void	get_gender(char *gen);
 void	pers2player(PERSONA *d,int plr);

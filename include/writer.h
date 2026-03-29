@@ -1,5 +1,5 @@
-#ifndef _WRITER_H
-#define _WRITER_H
+#ifndef IDIRT_WRITER_H
+#define IDIRT_WRITER_H
 
 typedef struct _wr_line {
   struct _wr_line *next;

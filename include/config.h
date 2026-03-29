@@ -3,8 +3,8 @@
  * Configuration File						*
  ****************************************************************/
 
-#ifndef _CONFIG_H
-#define _CONFIG_H
+#ifndef IDIRT_CONFIG_H
+#define IDIRT_CONFIG_H
 
 #include "logconfig.h"
 

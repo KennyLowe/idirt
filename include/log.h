@@ -1,5 +1,5 @@
-#ifndef _LOG_H
-#define _LOG_H
+#ifndef IDIRT_LOG_H
+#define IDIRT_LOG_H
 
 #include <stdarg.h>
 

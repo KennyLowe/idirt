@@ -1,5 +1,5 @@
-#ifndef _LOGCOLORS_H
-#define _LOGCOLORS_H
+#ifndef IDIRT_LOGCOLORS_H
+#define IDIRT_LOGCOLORS_H
 
 const char *LogTable[] = {
 	"ERROR",	"SIGNAL",	"PERROR",	"PARSER",

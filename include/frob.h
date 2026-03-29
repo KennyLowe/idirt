@@ -1,5 +1,5 @@
-#ifndef _FROB_H
-#define _FROB_H
+#ifndef IDIRT_FROB_H
+#define IDIRT_FROB_H
 
 void	frobcom(char *line);
 

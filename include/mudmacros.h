@@ -1,5 +1,5 @@
-#ifndef _MUDMACROS_H
-#define _MUDMACROS_H
+#ifndef IDIRT_MUDMACROS_H
+#define IDIRT_MUDMACROS_H
 
 #include "macros.h"
 

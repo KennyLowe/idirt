@@ -1,5 +1,5 @@
-#ifndef _CONDACT_H
-#define _CONDACT_H
+#ifndef IDIRT_CONDACT_H
+#define IDIRT_CONDACT_H
 
 #define PL_CODE		10000
 #define FL_PL1		20000

@@ -1,5 +1,5 @@
-#ifndef _BOOTSTRAP_H
-#define _BOOTSTRAP_H
+#ifndef IDIRT_BOOTSTRAP_H
+#define IDIRT_BOOTSTRAP_H
 
 int	bootstrap(void);
 int	load_objects(int zone, FILE *f, int *num_ld, int *num_infile);
