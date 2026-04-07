@@ -1,6 +1,7 @@
 
 
 #include <stdlib.h>
+#include <stdint.h>
 #include "kernel.h"
 #include "levels.h"
 #include "sendsys.h"
@@ -26,7 +27,7 @@ cant_fr(plev(mynum),lev,LVL_WIZARD,LVL_ARCHWIZARD,LVL_AVATAR,LVL_GOD)
 
 struct _f {
   int state;
-  int oldwork;
+  intptr_t oldwork;
   int oldlev;
   int level;
   int strength;
@@ -95,7 +96,7 @@ frobcom (char *line)
     f->oldprompt = COPY (cur_player->cprompt);
     strcpy (cur_player->cprompt, "New Level: ");
     f->oldwork = cur_player->work;
-    cur_player->work = (int) f;
+    cur_player->work = (intptr_t) f;
     bprintf ("\001f" FROBCHT "\003");
     bprintf ("Level is: %d\n", f->level);
     push_input_handler (frobcom);

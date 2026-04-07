@@ -42,7 +42,7 @@ main (int argc, char *argv[])
 	++errors;
       } else {
 	errors += convert (f, stdout);
-	pclose (f);
+	fclose (f);
       }
     }
 

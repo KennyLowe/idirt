@@ -51,7 +51,7 @@ bannedmsg (void)
 }
 
 static char *
-test1 (int plr, int vis, char *msg)
+test1 (int plr, intptr_t vis, char *msg)
 {
   if (ptstflg (plr, PFL_SEESOCKET) && ptstflg (plr, PFL_SEEUSER) && vis < plev (plr))
     return msg;
@@ -60,7 +60,7 @@ test1 (int plr, int vis, char *msg)
 }
 
 static char *
-test2 (int plr, int vis, char *msg)
+test2 (int plr, intptr_t vis, char *msg)
 {
   if (ptstflg (plr, PFL_SEESOCKET) && !ptstflg (plr, PFL_SEEUSER) && vis < plev (plr))
     return msg;
@@ -341,7 +341,7 @@ login_ok (char *name)
   } else {
     bprintf ("\nAberMUD opens in %s  (on %s)\n",
 	     sec_to_str (round_to_min (next_event -
-				       time ((time_t) NULL))),
+				       time (NULL))),
 	     my_ctime (&next_event));
     bprintf ("Please come back then.\n\n");
   }
@@ -823,7 +823,8 @@ check_files (void)
   PERSONA p;
   char mailfile[100];
 
-  getuaf (pname (mynum), &p);
+  if (!getuaf (pname (mynum), &p))
+    return;
   last_login = p.p_last_on;
   sprintf (mailfile, "%s/%s", MAIL_DIR, pname (mynum));
 

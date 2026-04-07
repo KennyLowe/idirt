@@ -180,6 +180,7 @@ syslogcom (void)
   if ((sysfp = fopen (LOG_FILE, "rt")) == NULL) {
     bprintf ("Error: Cannot read syslog file.");
     mudlog ("ERROR: Cannot read syslog file.");
+    fclose (pagefp);
     return;
   }
   if (EMPTY (txt1)) {

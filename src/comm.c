@@ -108,7 +108,7 @@ nolinecom (int lvl, int flg, char txt[20])
 }
 
 static char *
-shout_test (int player, int sender, char *text)
+shout_test (int player, intptr_t sender, char *text)
 {
   static char buff[MAX_COM_LEN];
 
@@ -361,7 +361,7 @@ tellcom (void)
 }
 
 static char *
-anon_test (int plr, int snd, char *txt)
+anon_test (int plr, intptr_t snd, char *txt)
 {
   static char buff[MAX_COM_LEN];
 

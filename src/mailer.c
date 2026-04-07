@@ -314,6 +314,10 @@ quit_mailer (void)
   int loop;
 
   sprintf (cur_player->Mailer.outputname, "%s/%s.tmp", MAIL_DIR, pname (mynum));
+  if (cur_player->Mailer.mailbox == NULL) {
+    cur_player->inmailer = False;
+    return;
+  }
   if ((cur_player->Mailer.output = fopen (cur_player->Mailer.outputname, "w")) == NULL) {
     fclose (cur_player->Mailer.mailbox);
     bprintf ("Error making temporary file.\n");

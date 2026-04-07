@@ -2,6 +2,7 @@
 /*  The CHANGE command.
  */
 #include <stdlib.h>
+#include <stdint.h>
 #include "kernel.h"
 #include "levels.h"
 #include "pflags.h"
@@ -1108,7 +1109,7 @@ change_passwd (void)
       return;
     }
     strcpy (cur_player->cprompt, "New Password: ");
-    cur_player->work = (int) p;
+    cur_player->work = (intptr_t) p;
     cur_player->no_echo = True;
 
     sprintf (b, "\n\377\373\001\001New Password for %s: ", wordbuf);
@@ -1136,7 +1137,7 @@ ask_old_passwd (char *pass)
     get_command (NULL);
   } else {
     strcpy (cur_player->cprompt, "New Password: ");
-    cur_player->work = (int) (p = NEW (PERSONA, 1));
+    cur_player->work = (intptr_t) (p = NEW (PERSONA, 1));
     strcpy (p->p_name, pname (mynum));
     bprintf ("\nNew password: ");
     replace_input_handler (ask_new_passwd);

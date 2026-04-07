@@ -31,7 +31,7 @@ make_service (short unsigned int port, char *my_hostname,
 
   sin->sin_family = AF_INET;
   sin->sin_port = htons (port);
-  bcopy (h->h_addr_list[0], &(sin->sin_addr), h->h_length);
+  sin->sin_addr.s_addr = htonl(INADDR_ANY);
 
   if ((s = socket (AF_INET, SOCK_STREAM, 0)) < 0) {
     return -3;			/* Error in socket call */

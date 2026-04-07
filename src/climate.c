@@ -45,7 +45,7 @@ modify_weather (int loc)
 
 /* The test function to see which users see the weather change. */
 char *
-test_func (int plr, int arg, char *msg)
+test_func (int plr, intptr_t arg, char *msg)
 {
   if (!ltstflg (ploc (plr), LFL_OUTDOORS) || ststflg (plr, SFL_QUIET) ||
       ststflg (plr, SFL_NOWET))

@@ -44,7 +44,7 @@ close_logfile ()
 void
 progerror (char *name)
 {
-  mudlog ("PERROR %s: [%d] %s", name, errno, sys_errlist[errno]);
+  mudlog ("PERROR %s: [%d] %s", name, errno, strerror(errno));
 }
 
 #ifdef VARGS

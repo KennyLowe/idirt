@@ -456,6 +456,7 @@ get_options (int argc, char **argv)
       break;
     case 'u':
       update = 1;
+      break;
     case 'r':
       if (*s != '\0' || (--argc > 0 && *(s = *++argv) != '\0'))
 	old_proc_num = atoi (s);
