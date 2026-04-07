@@ -260,7 +260,7 @@ xboot_times (FILE * f, char *fname)
     return -1;
   }
   if (!feof (fl)) {
-    printf ("%s:%d [%d]%s\n", fname, lineno, errno, sys_errlist[errno]);
+    printf ("%s:%d [%d]%s\n", fname, lineno, errno, strerror(errno));
     fclose (fl);
     return -1;
   }

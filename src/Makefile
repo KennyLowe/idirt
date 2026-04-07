@@ -9,6 +9,7 @@ BIN	= /mud/bin/
 DATA	= /mud/data/
 ZONE	= $(DATA)ZONES
 UTIL	= /mud/utils/
+HDIR	= ../include/
 
 # Target Executables
 #
@@ -27,9 +28,9 @@ CC	= gcc
 LDFLAGS	= -lcrypt
 DEFINES	=
 DBFLAGS	= -g
-OPFLAGS	= -pipe -m64 -O3
+OPFLAGS	= -pipe -m64 -O3 -fcommon
 WFLAGS	= -Wall
-CFLAGS	= $(DEFINES) $(DBFLAGS) $(OPFLAGS) $(WFLAGS) $(HDIR)
+CFLAGS	= $(DEFINES) $(DBFLAGS) $(OPFLAGS) $(WFLAGS) -I$(HDIR)
 
 # Extra Defines
 #

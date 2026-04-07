@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <stdint.h>
 
 /* Include user-specified configuration constants and defines. */
 #include "VERSION.H"

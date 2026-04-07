@@ -69,7 +69,7 @@ bootstrap (void)
 
   if ((bootf = fopen (BOOTSTRAP, "r")) == NULL) {
     printf ("fopen: Bootstrap failed for \"" BOOTSTRAP "\".\n");
-    printf ("fopen: %s.\n", sys_errlist[errno]);
+    printf ("fopen: %s.\n", strerror(errno));
     return -1;
   }
   while (fgets (x, sizeof x, bootf)) {
@@ -92,6 +92,11 @@ bootstrap (void)
       not_loaded = True;
     }
 #endif
+
+    if (f == NULL) {
+      printf ("\t: *** Failed to load.\n");
+      continue;
+    }
 
     switch (x[0]) {
     case 'A':

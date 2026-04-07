@@ -178,7 +178,7 @@
 #define setpchannel(C, V)       (pchannel(C) = (V))
 
 #define pmagic(C)               (players[C].pmagic)
-#define pmaxmagic(L)            L > 0 ? (12 + 11*(L)) : 30
+#define pmaxmagic(L)            ((L) > 0 ? (12 + 11*(L)) : 30)
 #define setpmagic(C, V)         (pmagic(C) = (V))
 
 #define pspeech(C, V)           ublock[C].pspeech[V]

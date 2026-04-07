@@ -192,8 +192,8 @@ parse_wizlevel (char *s, int *low, int *high)
   } else {
     for (p = wizlist; p != NULL && !EQ (s, p->name); p = p->next) ;
     if (p != NULL) {
-      *low = (int) p;
-      *high = 0;
+      *low = p->wlev;
+      *high = -1;
       return -2;
     }
     if ((x = tlookup (s, WizLevels)) < 0)
@@ -255,9 +255,7 @@ wizlistcom (void)
     if (t == -3) {
       bprintf ("&+wNo such wizard level or player: &+W%s\n", wordbuf);
     } else if (t == -2) {
-      p = (struct _w *) low;
-      low = p->wlev;
-      bprintf ("&+W%s &+wis %s &+C%s&+w.\n", p->name,
+      bprintf ("&+W%s &+wis %s &+C%s&+w.\n", wordbuf,
 	       (low == LEV_APPRENTICE || low == LEV_ARCHWIZARD) ?
 	       "an" : "a",
 	       WizLevels[low]);

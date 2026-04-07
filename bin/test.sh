@@ -13,7 +13,7 @@ while sleep 60; do
   PROCESS_1_STATUS=$?
   # If the greps above find anything, they exit with 0 status
   # If they are not both 0, then something is wrong
-  if [ $PROCESS_1_STATUS -ne 0]; then
+  if [ $PROCESS_1_STATUS -ne 0 ]; then
     echo "aberd process has already exited."
     exit 1
   fi
