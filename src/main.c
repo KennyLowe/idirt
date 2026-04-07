@@ -282,7 +282,7 @@ go_background (int fd)
       }
       close (tty);
 
-#ifdef _LINUX_			/* Linux made it alot simpler */
+#ifdef __linux			/* Linux made it alot simpler */
       setpgrp ();		/* Make our own process group */
 #else
       setpgrp (pid, pid);	/* Make our own process group */

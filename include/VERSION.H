@@ -15,8 +15,6 @@
  * information about the machine that the MUD is running on.		*
  ************************************************************************/
 
-#include "MACHINE.H"				/* Get Machine Defines	*/
-
 #define _HEADER_	_ARCH_ " (" _OS_ ")"	/* Machine/OS Header	*/
 #define	_VERSION_	"1.82.00"		/* Version ID		*/
 

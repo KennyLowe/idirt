@@ -112,7 +112,7 @@
  * GCC should automatically define your operating system type, and
  * you shouldn't have to edit this define.
  */
-#ifdef _LINUX_
+#ifdef __linux
 #ifndef SIGSYS
 #define SIGSYS SIGUSR2
 #endif
