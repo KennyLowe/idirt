@@ -1,5 +1,5 @@
-#ifndef _VERSION_H
-#define _VERSION_H
+#ifndef VERSION_H
+#define VERSION_H
 
 /************************************************************************
  * iDiRT 1.x								*
@@ -15,19 +15,32 @@
  * information about the machine that the MUD is running on.		*
  ************************************************************************/
 
-#define _HEADER_	_ARCH_ " (" _OS_ ")"	/* Machine/OS Header	*/
-#define	_VERSION_	"1.82.00"		/* Version ID		*/
+#ifdef __linux__
+#undef OS
+#define OS "linux"
+#ifdef __amd64__
+#define ARCH "x64"
+#else
+#ifdef __linux__
+#define ARCH "x86"
+#endif
+#endif
+#endif
 
-#define	VERSION		"iDiRT " _VERSION_	/* Version for Display	*/
+
+#define HEADER		ARCH  "(" OS ")"	/* Machine/OS Header	*/
+#define	DIRT_VERSION	"1.82.00"		/* Version ID		*/
+
+#define	VERSION		"iDiRT " DIRT_VERSION	/* Version for Display	*/
 
 #ifdef	IS_ALPHA
 #undef	VERSION
-#define	VERSION		"iDiRT " _VERSION_" (Alpha)"
+#define	VERSION		"iDiRT " DIRT_VERSION " (Alpha)"
 #endif
 
 #ifdef	IS_BETA
 #undef	VERSION
-#define	VERSION		"iDiRT " _VERSION_" (Beta)"
+#define	VERSION		"iDiRT " DIRT_VERSION_" (Beta)"
 #endif
 
 #endif

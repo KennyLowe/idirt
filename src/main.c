@@ -437,13 +437,13 @@ get_options (int argc, char **argv)
       auto_open = True;
       break;
     case 'v':
-      printf ("%s #%d (%s)\n", VERSION, linknumber (), _HEADER_);
+      printf ("%s #%d (%s)\n", VERSION, linknumber (), HEADER);
       exit (0);
       break;
     case 'V':
       printf ("\niDiRT Version Information\n");
       printf ("-------------------------\n");
-      printf ("%s #%d (%s)\n", VERSION, linknumber (), _HEADER_);
+      printf ("%s #%d (%s)\n", VERSION, linknumber (), HEADER);
       printf ("1994-1996 by Illusion\n\n");
       printf ("Derived from AberMUD DIRT (3.1.2)\n");
       printf ("1990, 1993 by Alf and Nicknack\n\n");
@@ -523,7 +523,7 @@ main_loop (int m_socket)
   norun = False;
 
   if (!old_proc_num)
-    mudlog ("SYSTEM: iDiRT %s Daemon Started (PID: %d)", _VERSION_, getpid ());
+    mudlog ("SYSTEM: iDiRT %s Daemon Started (PID: %d)", DIRT_VERSION, getpid ());
   else
     mudlog ("SYSTEM: %s Successful, iDiRT Daemon Restarted",
 	    update ? "Update" : "Reboot");
@@ -1111,8 +1111,8 @@ xmain_reboot (int fd)
   }
   fread (&r_rec, sizeof (r_rec), 1, fp);
 
-  if (!EQ (r_rec.version, _VERSION_))
-    mudlog ("UPGRADE: Old Ver: %s; New Ver: %s", r_rec.version, _VERSION_);
+  if (!EQ (r_rec.version, DIRT_VERSION))
+    mudlog ("UPGRADE: Old Ver: %s; New Ver: %s", r_rec.version, DIRT_VERSION);
 
   s = r_rec.main_socket;
   last_startup = r_rec.last_startup;
@@ -1336,7 +1336,7 @@ run_reboot (Boolean crash, Boolean will_update)
     if (players[i].iamon)
       nplayers++;
 
-  strcpy (reboot_rec.version, _VERSION_);
+  strcpy (reboot_rec.version, DIRT_VERSION);
   reboot_rec.main_socket = main_socket;
   reboot_rec.last_startup = last_startup;
   reboot_rec.numresets = numresets;

@@ -751,7 +751,7 @@ special_codes (char *dests, char *srcs)
 
 	/* Display Version Number */
       case 'V':
-	strcpy ((char *) dest, _VERSION_);
+	strcpy ((char *) dest, DIRT_VERSION);
 	dest += strlen ((char *) dest);
 	src += 2;
 	continue;
