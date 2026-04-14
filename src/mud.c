@@ -311,40 +311,22 @@ static Boolean
 login_ok (char *name)
 {
   Boolean priv = False;
-  Boolean ok = False;
-
-  if (mud_open (&next_event, &global_clock))
-    ok = True;
-  if (OPERATOR (name))
-    ok = priv = True;
-  else if (privileged_user (name))
-    ok = priv = True;
 
   cur_player->isawiz = priv;
 
-  if (ok) {
-    if (!priv && access (NOLOGIN, R_OK) == 0) {
-      bprintf ("\n\n\001f%s\003\n", NOLOGIN);
-      bflush ();
-      quit_player ();
-      return False;
-    }
-    if (!priv && cur_player->host_ban) {
-      bprintf ("\nSorry, your host has been banned from this game.\n");
-      quit_player ();
-      return False;
-    }
-    cur_player->ismonitored = is_monitored (name);
-    return True;
-  } else if (next_event == TIME_NEVER) {
-    bprintf ("\nMUD is closed now, please try again later.\n");
-  } else {
-    bprintf ("\nAberMUD opens in %s  (on %s)\n",
-	     sec_to_str (round_to_min (next_event -
-				       time (NULL))),
-	     my_ctime (&next_event));
-    bprintf ("Please come back then.\n\n");
+  if (!priv && access (NOLOGIN, R_OK) == 0) {
+    bprintf ("\n\n\001f%s\003\n", NOLOGIN);
+    bflush ();
+   quit_player ();
+    return False;
   }
+  if (!priv && cur_player->host_ban) {
+   bprintf ("\nSorry, your host has been banned from this game.\n");
+    quit_player ();
+    return False;
+  }
+  cur_player->ismonitored = is_monitored (name);
+  return True;
   quit_player ();
   return False;
 }

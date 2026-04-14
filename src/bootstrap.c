@@ -105,9 +105,6 @@ bootstrap (void)
     case 'E':
       mem_used = boot_levels (f, y);
       break;
-    case 'H':
-      mem_used = boot_hours (f, y);
-      break;
     case 'L':
       mem_used = boot_locations (f, y);
       break;

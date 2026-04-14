@@ -75,7 +75,6 @@ extern int	prep;
 
 extern int	stp;
 extern int	verbcode;
-extern time_t   next_event;     /* check mud.c */
 extern time_t   last_reset;
 extern time_t   global_clock;
 extern time_t   last_startup;
