@@ -1,9 +1,9 @@
 #include <stdlib.h>
-#include "../kernel.h"
-#include "../macros.h"
-#include "../pflags.h"
-#include "../pflagnames.h"
-#include "../levelnames.h"
+#include "kernel.h"
+#include "macros.h"
+#include "pflags.h"
+#include "pflagnames.h"
+#include "levelnames.h"
 
 int num_levels[] =
 {1, LVL_WIZARD, LVL_DORQ, LVL_EMERITI, LVL_FULLWIZ,

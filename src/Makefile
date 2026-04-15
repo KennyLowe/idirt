@@ -225,188 +225,407 @@ strip:
 
 #############################################################
 # Do not delete this line, the makedep program requires it. #
-# Last Updated: Sat Jan 5 10:37:29 STD 2019                 #
+# Last Updated: Wed 15 Apr 18:17:40 BST 2026                 #
 #############################################################
 
 # Dependencies for the MUD source code
 #
-acct.o: acct.c kernel.h VERSION.H MACHINE.H config.h logconfig.h levels.h \
- exits.h types.h utils.h mudtypes.h mudmacros.h macros.h extern.h files.h \
- locations.h objects.h mobiles.h pflags.h oflags.h lflags.h cflags.h \
- sflags.h bprintf.h parse.h acct.h zones.h mobile.h objsys.h rooms.h \
- timing.h uaf.h flags.h
-actions.o: actions.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h locations.h sendsys.h bprintf.h objects.h mobiles.h \
- actions.h mobile.h sflags.h mflags.h objsys.h zones.h parse.h rooms.h \
- fight.h log.h
-bootstrap.o: bootstrap.c kernel.h VERSION.H MACHINE.H config.h \
- logconfig.h levels.h exits.h types.h utils.h mudtypes.h mudmacros.h \
- macros.h extern.h files.h bootstrap.h wizlist.h actions.h timing.h \
- oflags.h nflags.h eflags.h log.h
-bprintf.o: bprintf.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h sflags.h pflags.h lflags.h bprintf.h mud.h mobile.h \
- exit.h log.h rooms.h parse.h
-change.o: change.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h pflags.h sflags.h uaf.h mobile.h flags.h sendsys.h \
- writer.h change.h parse.h zones.h bprintf.h log.h wizlist.h rooms.h \
- objsys.h mud.h
-climate.o: climate.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h sendsys.h climate.h pflags.h sflags.h lflags.h \
- bprintf.h parse.h
-clone.o: clone.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h bootstrap.h mobile.h pflags.h cflags.h sendsys.h \
- objsys.h oflags.h zones.h parse.h fight.h clone.h eflags.h commands.h \
- rooms.h bprintf.h uaf.h log.h
-comm.o: comm.c kernel.h VERSION.H MACHINE.H config.h logconfig.h levels.h \
- exits.h types.h utils.h mudtypes.h mudmacros.h macros.h extern.h files.h \
- mobiles.h sendsys.h bprintf.h mobile.h pflags.h sflags.h eflags.h \
- nflags.h lflags.h parse.h flags.h comm.h uaf.h
-commands.o: commands.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h locations.h objects.h mobiles.h sflags.h pflags.h \
- oflags.h lflags.h cflags.h eflags.h mflags.h quests.h sendsys.h \
- commands.h rooms.h objsys.h mobile.h flags.h bprintf.h parse.h uaf.h \
- clone.h acct.h mud.h nflags.h fight.h zones.h log.h reboot.h wizlist.h \
- climate.h mailer.h timing.h
+acct.o: acct.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/mudmacros.h ../include/locations.h ../include/objects.h \
+ ../include/mobiles.h ../include/pflags.h ../include/oflags.h \
+ ../include/lflags.h ../include/cflags.h ../include/sflags.h \
+ ../include/bprintf.h ../include/parse.h ../include/acct.h \
+ ../include/zones.h ../include/mobile.h ../include/objsys.h \
+ ../include/rooms.h ../include/timing.h ../include/uaf.h \
+ ../include/flags.h
+actions.o: actions.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/locations.h ../include/sendsys.h ../include/bprintf.h \
+ ../include/objects.h ../include/mobiles.h ../include/actions.h \
+ ../include/mobile.h ../include/sflags.h ../include/mflags.h \
+ ../include/objsys.h ../include/zones.h ../include/parse.h \
+ ../include/rooms.h ../include/fight.h ../include/log.h
+bootstrap.o: bootstrap.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/bootstrap.h ../include/wizlist.h ../include/actions.h \
+ ../include/timing.h ../include/oflags.h ../include/nflags.h \
+ ../include/eflags.h ../include/log.h
+bprintf.o: bprintf.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/sflags.h ../include/pflags.h ../include/lflags.h \
+ ../include/bprintf.h ../include/mud.h ../include/mobile.h \
+ ../include/exit.h ../include/log.h ../include/rooms.h ../include/parse.h
+change.o: change.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/levels.h ../include/pflags.h ../include/sflags.h \
+ ../include/uaf.h ../include/mobile.h ../include/flags.h \
+ ../include/sendsys.h ../include/writer.h ../include/change.h \
+ ../include/parse.h ../include/zones.h ../include/bprintf.h \
+ ../include/log.h ../include/wizlist.h ../include/rooms.h \
+ ../include/objsys.h ../include/mud.h
+climate.o: climate.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/sendsys.h ../include/climate.h ../include/pflags.h \
+ ../include/sflags.h ../include/lflags.h ../include/bprintf.h \
+ ../include/parse.h
+clone.o: clone.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/bootstrap.h ../include/mobile.h ../include/pflags.h \
+ ../include/cflags.h ../include/sendsys.h ../include/objsys.h \
+ ../include/oflags.h ../include/zones.h ../include/parse.h \
+ ../include/fight.h ../include/exits.h ../include/clone.h \
+ ../include/eflags.h ../include/commands.h ../include/rooms.h \
+ ../include/bprintf.h ../include/uaf.h ../include/log.h
+comm.o: comm.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/mobiles.h ../include/sendsys.h ../include/bprintf.h \
+ ../include/mobile.h ../include/pflags.h ../include/sflags.h \
+ ../include/eflags.h ../include/nflags.h ../include/lflags.h \
+ ../include/parse.h ../include/flags.h ../include/comm.h ../include/uaf.h
+commands.o: commands.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/locations.h ../include/objects.h ../include/mobiles.h \
+ ../include/sflags.h ../include/pflags.h ../include/oflags.h \
+ ../include/lflags.h ../include/cflags.h ../include/eflags.h \
+ ../include/mflags.h ../include/quests.h ../include/sendsys.h \
+ ../include/levels.h ../include/commands.h ../include/rooms.h \
+ ../include/objsys.h ../include/mobile.h ../include/flags.h \
+ ../include/bprintf.h ../include/parse.h ../include/uaf.h \
+ ../include/clone.h ../include/acct.h ../include/mud.h \
+ ../include/nflags.h ../include/fight.h ../include/zones.h \
+ ../include/log.h ../include/reboot.h ../include/wizlist.h \
+ ../include/climate.h ../include/mailer.h ../include/timing.h
 crypt.o: crypt.c
-exit.o: exit.c kernel.h VERSION.H MACHINE.H config.h logconfig.h levels.h \
- exits.h types.h utils.h mudtypes.h mudmacros.h macros.h extern.h files.h \
- mobile.h sendsys.h timing.h exit.h pflags.h log.h reboot.h commands.h \
- bprintf.h mud.h uaf.h parse.h
-fight.o: fight.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h cflags.h oflags.h lflags.h mflags.h sflags.h pflags.h \
- quests.h sendsys.h verbs.h bprintf.h commands.h move.h mud.h rooms.h \
- log.h clone.h mobiles.h objects.h locations.h spell.h fight.h mobile.h \
- objsys.h
-flags.o: flags.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h pflags.h lflags.h mflagnames.h pflagnames.h \
- sflagnames.h lflagnames.h nflagnames.h eflagnames.h levelnames.h \
- questnames.h sflags.h nflags.h eflags.h sendsys.h bprintf.h parse.h \
- rooms.h mobile.h uaf.h log.h
-frob.o: frob.c kernel.h VERSION.H MACHINE.H config.h logconfig.h levels.h \
- exits.h types.h utils.h mudtypes.h mudmacros.h macros.h extern.h files.h \
- sendsys.h pflags.h sflags.h frob.h uaf.h mobile.h log.h parse.h \
- bprintf.h mud.h flags.h wizlist.h
-generate.o: generate.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h
-god.o: god.c kernel.h VERSION.H MACHINE.H config.h logconfig.h levels.h \
- exits.h types.h utils.h mudtypes.h mudmacros.h macros.h extern.h files.h \
- locations.h sendsys.h wizlist.h bprintf.h actions.h pflags.h sflags.h \
- mobile.h timing.h fight.h rooms.h verbs.h parse.h log.h god.h uaf.h \
- mud.h
-log.o: log.c kernel.h VERSION.H MACHINE.H config.h logconfig.h levels.h \
- exits.h types.h utils.h mudtypes.h mudmacros.h macros.h extern.h files.h \
- log.h
-magic.o: magic.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h sendsys.h magic.h pflags.h sflags.h cflags.h lflags.h \
- oflags.h objects.h bprintf.h parse.h mobile.h mud.h uaf.h objsys.h \
- rooms.h
-mailer.o: mailer.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h sendsys.h bprintf.h mobile.h mailer.h parse.h log.h \
- mud.h uaf.h
-main.o: main.c kernel.h VERSION.H MACHINE.H config.h logconfig.h levels.h \
- exits.h types.h utils.h mudtypes.h mudmacros.h macros.h extern.h files.h \
- jmp.h mud.h log.h bootstrap.h sendsys.h mobile.h commands.h timing.h \
- exit.h s_socket.h locations.h pflags.h update.h climate.h reboot.h \
- objsys.h bprintf.h zones.h uaf.h fight.h rooms.h ver.h main.h
-mkdata.o: mkdata.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h cflags.h mflagnames.h pflagnames.h sflagnames.h \
- lflagnames.h oflagnames.h nflagnames.h eflagnames.h exitnames.h lflags.h \
- nflags.h
-mobile.o: mobile.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h locations.h commands.h wizlist.h sendsys.h objects.h \
- mobiles.h bprintf.h objsys.h pflags.h mflags.h sflags.h oflags.h \
- lflags.h nflags.h eflags.h quests.h cflags.h timing.h spell.h verbs.h \
- rooms.h fight.h parse.h zones.h flags.h puff.h move.h uaf.h mud.h log.h \
- jmp.h mobile.h
-move.o: move.c kernel.h VERSION.H MACHINE.H config.h logconfig.h levels.h \
- exits.h types.h utils.h mudtypes.h mudmacros.h macros.h extern.h files.h \
- parse.h objects.h mobiles.h locations.h lflags.h mflags.h sendsys.h \
- move.h bprintf.h objsys.h mobile.h rooms.h fight.h uaf.h
-mud.o: mud.c kernel.h VERSION.H MACHINE.H config.h logconfig.h levels.h \
- exits.h types.h utils.h mudtypes.h mudmacros.h macros.h extern.h files.h \
- sendsys.h pflags.h sflags.h mud.h uaf.h mobile.h timing.h locations.h \
- bprintf.h fight.h zones.h rooms.h mailer.h log.h parse.h acct.h
-objsys.o: objsys.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h objects.h mobiles.h mobile.h locations.h sflags.h \
- pflags.h mflags.h oflags.h lflags.h cflags.h eflags.h quests.h sendsys.h \
- parse.h objsys.h oflagnames.h rooms.h bprintf.h fight.h commands.h log.h \
- clone.h
-parse.o: parse.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h condact.h verbs.h sflags.h sendsys.h locations.h \
- objects.h parse.h mobile.h move.h commands.h climate.h wizard.h change.h \
- clone.h pflags.h objsys.h bprintf.h uaf.h actions.h spell.h flags.h \
- viewcom.h log.h exit.h wizlist.h timing.h frob.h acct.h zones.h magic.h \
- reboot.h mailer.h fight.h rooms.h comm.h main.h ver.h god.h
-puff.o: puff.c kernel.h VERSION.H MACHINE.H config.h logconfig.h levels.h \
- exits.h types.h utils.h mudtypes.h mudmacros.h macros.h extern.h files.h \
- sendsys.h mobiles.h puff.h sflags.h mobile.h
-rooms.o: rooms.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h locations.h objects.h pflags.h oflags.h lflags.h \
- cflags.h sflags.h sendsys.h rooms.h climate.h parse.h mobile.h objsys.h \
- zones.h exitnames.h bprintf.h fight.h uaf.h log.h
-s_socket.o: s_socket.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h s_socket.h
-sendsys.o: sendsys.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h sflags.h pflags.h lflags.h sendsys.h mobile.h nflags.h \
- bprintf.h mud.h commands.h log.h
-spell.o: spell.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h oflags.h eflags.h pflags.h lflags.h sendsys.h verbs.h \
- mobiles.h objects.h locations.h objsys.h spell.h spells.h bprintf.h \
- parse.h fight.h mobile.h sflags.h
-timing.o: timing.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h locations.h climate.h bprintf.h sendsys.h timing.h \
- mobile.h cflags.h objsys.h spell.h rooms.h log.h mud.h
-uaf.o: uaf.c pflags.h kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h sflags.h mflags.h nflags.h eflags.h uaf.h mobile.h \
- flags.h exit.h sendsys.h mud.h bprintf.h wizlist.h bootstrap.h log.h \
- parse.h
-update.o: update.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h objsys.h mobile.h update.h log.h
-utils.o: utils.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h global.h crypt.h
-ver.o: ver.c LINKCOUNT.H kernel.h VERSION.H MACHINE.H config.h \
- logconfig.h levels.h exits.h types.h utils.h mudtypes.h mudmacros.h \
- macros.h extern.h files.h bprintf.h ver.h
-viewcom.o: viewcom.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h viewcom.h commands.h wizard.h mud.h uaf.h writer.h \
- mailer.h change.h frob.h bprintf.h timing.h pflags.h mobile.h
-wizard.o: wizard.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h timing.h log.h uaf.h bprintf.h verbs.h wizard.h parse.h \
- sendsys.h mobile.h objsys.h rooms.h flags.h pflags.h lflags.h sflags.h \
- cflags.h locations.h fight.h wizlist.h commands.h clone.h mud.h \
- logcolors.h
-wizlist.o: wizlist.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h fluid.h log.h bprintf.h parse.h
-writer.o: writer.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h writer.h bprintf.h parse.h mud.h
-zones.o: zones.c kernel.h VERSION.H MACHINE.H config.h logconfig.h \
- levels.h exits.h types.h utils.h mudtypes.h mudmacros.h macros.h \
- extern.h files.h zones.h mobile.h rooms.h objsys.h clone.h bootstrap.h \
- bprintf.h log.h parse.h uaf.h
+exit.o: exit.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/mobile.h ../include/sendsys.h ../include/timing.h \
+ ../include/exit.h ../include/mudmacros.h ../include/pflags.h \
+ ../include/log.h ../include/reboot.h ../include/commands.h \
+ ../include/bprintf.h ../include/mud.h ../include/uaf.h \
+ ../include/parse.h
+fight.o: fight.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/cflags.h ../include/oflags.h ../include/lflags.h \
+ ../include/mflags.h ../include/sflags.h ../include/pflags.h \
+ ../include/quests.h ../include/sendsys.h ../include/verbs.h \
+ ../include/bprintf.h ../include/commands.h ../include/move.h \
+ ../include/mud.h ../include/rooms.h ../include/log.h ../include/clone.h \
+ ../include/mobiles.h ../include/objects.h ../include/locations.h \
+ ../include/spell.h ../include/fight.h ../include/mobile.h \
+ ../include/objsys.h
+flags.o: flags.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/pflags.h ../include/lflags.h ../include/mflagnames.h \
+ ../include/pflagnames.h ../include/sflagnames.h ../include/lflagnames.h \
+ ../include/nflagnames.h ../include/eflagnames.h ../include/levelnames.h \
+ ../include/questnames.h ../include/sflags.h ../include/nflags.h \
+ ../include/eflags.h ../include/sendsys.h ../include/bprintf.h \
+ ../include/parse.h ../include/rooms.h ../include/mobile.h \
+ ../include/uaf.h ../include/log.h
+frob.o: frob.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/levels.h ../include/sendsys.h ../include/pflags.h \
+ ../include/sflags.h ../include/frob.h ../include/uaf.h \
+ ../include/mobile.h ../include/log.h ../include/parse.h \
+ ../include/bprintf.h ../include/mud.h ../include/flags.h \
+ ../include/wizlist.h
+generate.o: generate.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h
+god.o: god.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/locations.h ../include/sendsys.h ../include/wizlist.h \
+ ../include/bprintf.h ../include/actions.h ../include/pflags.h \
+ ../include/sflags.h ../include/mobile.h ../include/timing.h \
+ ../include/fight.h ../include/rooms.h ../include/verbs.h \
+ ../include/parse.h ../include/log.h ../include/god.h ../include/uaf.h \
+ ../include/mud.h
+log.o: log.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/log.h
+magic.o: magic.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/sendsys.h ../include/magic.h ../include/pflags.h \
+ ../include/sflags.h ../include/cflags.h ../include/lflags.h \
+ ../include/oflags.h ../include/objects.h ../include/bprintf.h \
+ ../include/parse.h ../include/mobile.h ../include/mud.h ../include/uaf.h \
+ ../include/objsys.h ../include/rooms.h
+mailer.o: mailer.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/sendsys.h ../include/bprintf.h ../include/mobile.h \
+ ../include/mailer.h ../include/parse.h ../include/log.h ../include/mud.h \
+ ../include/uaf.h
+main.o: main.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/jmp.h ../include/mud.h ../include/log.h \
+ ../include/bootstrap.h ../include/sendsys.h ../include/mobile.h \
+ ../include/commands.h ../include/timing.h ../include/exit.h \
+ ../include/s_socket.h ../include/locations.h ../include/pflags.h \
+ ../include/update.h ../include/climate.h ../include/reboot.h \
+ ../include/objsys.h ../include/bprintf.h ../include/zones.h \
+ ../include/uaf.h ../include/fight.h ../include/rooms.h ../include/ver.h \
+ ../include/main.h
+mkdata.o: mkdata.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/cflags.h ../include/mflagnames.h ../include/pflagnames.h \
+ ../include/sflagnames.h ../include/lflagnames.h ../include/oflagnames.h \
+ ../include/nflagnames.h ../include/eflagnames.h ../include/exitnames.h \
+ ../include/lflags.h ../include/nflags.h
+mobile.o: mobile.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/locations.h ../include/commands.h ../include/wizlist.h \
+ ../include/sendsys.h ../include/objects.h ../include/mobiles.h \
+ ../include/bprintf.h ../include/objsys.h ../include/pflags.h \
+ ../include/mflags.h ../include/sflags.h ../include/oflags.h \
+ ../include/lflags.h ../include/nflags.h ../include/eflags.h \
+ ../include/quests.h ../include/cflags.h ../include/levels.h \
+ ../include/timing.h ../include/spell.h ../include/verbs.h \
+ ../include/rooms.h ../include/fight.h ../include/parse.h \
+ ../include/zones.h ../include/flags.h ../include/puff.h \
+ ../include/move.h ../include/uaf.h ../include/mud.h ../include/log.h \
+ ../include/jmp.h ../include/mobile.h
+move.o: move.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/parse.h ../include/objects.h ../include/mobiles.h \
+ ../include/locations.h ../include/lflags.h ../include/levels.h \
+ ../include/mflags.h ../include/sendsys.h ../include/move.h \
+ ../include/bprintf.h ../include/objsys.h ../include/mobile.h \
+ ../include/rooms.h ../include/fight.h ../include/uaf.h
+mud.o: mud.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/sendsys.h ../include/pflags.h ../include/sflags.h \
+ ../include/mud.h ../include/uaf.h ../include/mobile.h \
+ ../include/timing.h ../include/locations.h ../include/bprintf.h \
+ ../include/fight.h ../include/zones.h ../include/rooms.h \
+ ../include/mailer.h ../include/log.h ../include/parse.h \
+ ../include/acct.h
+objsys.o: objsys.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/objects.h ../include/mobiles.h ../include/mobile.h \
+ ../include/locations.h ../include/sflags.h ../include/pflags.h \
+ ../include/mflags.h ../include/oflags.h ../include/lflags.h \
+ ../include/cflags.h ../include/eflags.h ../include/quests.h \
+ ../include/sendsys.h ../include/levels.h ../include/parse.h \
+ ../include/objsys.h ../include/oflagnames.h ../include/rooms.h \
+ ../include/bprintf.h ../include/fight.h ../include/commands.h \
+ ../include/log.h ../include/clone.h
+parse.o: parse.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/condact.h ../include/verbs.h ../include/sflags.h \
+ ../include/sendsys.h ../include/locations.h ../include/objects.h \
+ ../include/parse.h ../include/mobile.h ../include/move.h \
+ ../include/commands.h ../include/climate.h ../include/wizard.h \
+ ../include/change.h ../include/clone.h ../include/pflags.h \
+ ../include/objsys.h ../include/bprintf.h ../include/uaf.h \
+ ../include/actions.h ../include/spell.h ../include/flags.h \
+ ../include/viewcom.h ../include/log.h ../include/exit.h \
+ ../include/wizlist.h ../include/timing.h ../include/frob.h \
+ ../include/acct.h ../include/zones.h ../include/magic.h \
+ ../include/reboot.h ../include/mailer.h ../include/fight.h \
+ ../include/rooms.h ../include/comm.h ../include/main.h ../include/ver.h \
+ ../include/god.h
+puff.o: puff.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/sendsys.h ../include/mobiles.h ../include/puff.h \
+ ../include/sflags.h ../include/mobile.h
+rooms.o: rooms.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/locations.h ../include/objects.h ../include/pflags.h \
+ ../include/oflags.h ../include/lflags.h ../include/cflags.h \
+ ../include/sflags.h ../include/sendsys.h ../include/rooms.h \
+ ../include/climate.h ../include/parse.h ../include/mobile.h \
+ ../include/objsys.h ../include/zones.h ../include/exitnames.h \
+ ../include/bprintf.h ../include/fight.h ../include/uaf.h \
+ ../include/log.h
+s_socket.o: s_socket.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/s_socket.h
+sendsys.o: sendsys.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/sflags.h ../include/pflags.h ../include/lflags.h \
+ ../include/sendsys.h ../include/mobile.h ../include/nflags.h \
+ ../include/bprintf.h ../include/mud.h ../include/commands.h \
+ ../include/log.h
+spell.o: spell.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/oflags.h ../include/eflags.h ../include/pflags.h \
+ ../include/lflags.h ../include/sendsys.h ../include/verbs.h \
+ ../include/mobiles.h ../include/objects.h ../include/locations.h \
+ ../include/objsys.h ../include/spell.h ../include/spells.h \
+ ../include/eflags.h ../include/oflags.h ../include/bprintf.h \
+ ../include/parse.h ../include/fight.h ../include/mobile.h \
+ ../include/sflags.h
+timing.o: timing.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/locations.h ../include/climate.h ../include/bprintf.h \
+ ../include/sendsys.h ../include/timing.h ../include/mobile.h \
+ ../include/cflags.h ../include/objsys.h ../include/spell.h \
+ ../include/rooms.h ../include/log.h ../include/mud.h
+uaf.o: uaf.c ../include/pflags.h ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/sflags.h ../include/mflags.h ../include/nflags.h \
+ ../include/eflags.h ../include/uaf.h ../include/mobile.h \
+ ../include/flags.h ../include/exit.h ../include/sendsys.h \
+ ../include/mud.h ../include/bprintf.h ../include/wizlist.h \
+ ../include/bootstrap.h ../include/log.h ../include/parse.h
+update.o: update.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/objsys.h ../include/mobile.h ../include/update.h \
+ ../include/log.h
+utils.o: utils.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/global.h ../include/utils.h ../include/crypt.h
+ver.o: ver.c LINKCOUNT.H ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/bprintf.h ../include/ver.h
+viewcom.o: viewcom.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/viewcom.h ../include/commands.h ../include/wizard.h \
+ ../include/mud.h ../include/uaf.h ../include/writer.h \
+ ../include/mailer.h ../include/change.h ../include/frob.h \
+ ../include/bprintf.h ../include/timing.h ../include/pflags.h \
+ ../include/mobile.h
+wizard.o: wizard.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/levels.h ../include/timing.h ../include/log.h \
+ ../include/uaf.h ../include/bprintf.h ../include/verbs.h \
+ ../include/wizard.h ../include/parse.h ../include/sendsys.h \
+ ../include/mobile.h ../include/objsys.h ../include/rooms.h \
+ ../include/flags.h ../include/pflags.h ../include/lflags.h \
+ ../include/sflags.h ../include/cflags.h ../include/locations.h \
+ ../include/fight.h ../include/wizlist.h ../include/commands.h \
+ ../include/clone.h ../include/mud.h ../include/logcolors.h
+wizlist.o: wizlist.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/fluid.h ../include/log.h ../include/bprintf.h \
+ ../include/parse.h
+writer.o: writer.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/writer.h ../include/bprintf.h ../include/parse.h \
+ ../include/mud.h
+zones.o: zones.c ../include/kernel.h ../include/VERSION.H \
+ ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
+ ../include/levels.h ../include/exits.h ../include/types.h \
+ ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
+ ../include/macros.h ../include/extern.h ../include/files.h \
+ ../include/zones.h ../include/levels.h ../include/mobile.h \
+ ../include/rooms.h ../include/objsys.h ../include/clone.h \
+ ../include/bootstrap.h ../include/bprintf.h ../include/log.h \
+ ../include/parse.h ../include/uaf.h
