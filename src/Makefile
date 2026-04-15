@@ -5,10 +5,10 @@
 
 # Directory Definitions
 #
-BIN	= /mud/bin/
-DATA	= /mud/data/
+BIN	= ../bin/
+DATA	= ../data/
 ZONE	= $(DATA)ZONES
-UTIL	= /mud/utils/
+UTIL	= ../utils/
 HDIR	= ../include/
 
 # Target Executables
