@@ -29,7 +29,7 @@ LDFLAGS	= -lcrypt
 DEFINES	=
 DBFLAGS	= -g
 OPFLAGS	= -pipe -m64 -O3 -fcommon
-WFLAGS	= -Wall
+WFLAGS	= -Wall -Werror=format -Wno-error=format-overflow -Wno-error=format-security
 CFLAGS	= $(DEFINES) $(DBFLAGS) $(OPFLAGS) $(WFLAGS) -I$(HDIR)
 
 # Extra Defines

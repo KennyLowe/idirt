@@ -1,7 +1,7 @@
 #ifndef _MUD_H
 #define _MUD_H
 
-void	socketmsg(Boolean user, Boolean chkvis, char *format,...);
+void	socketmsg(Boolean user, Boolean chkvis, char *format,...) __attribute__((format(printf, 3, 4)));
 void	push_input_handler(void (*h)(char *str));
 void	pop_input_handler(void);
 void	replace_input_handler(void (*h)(char *str));
