@@ -323,6 +323,7 @@ hit_player (int attacker, int victim, int weapon)
 		    "Li'l Lusie goes to work on his\ncomputer. Moments "
 		    "later Li'l Lusie looks up and grins at %s.\nThe world "
 		    "then opens up and swallows up %s!\n", pname (attacker),
+        pname (attacker),
 		    pname (attacker));
 	  p_crapup (attacker, "\t\tDon't mess with the boy!\n",
 		    CRAP_SAVE | CRAP_RETURN);

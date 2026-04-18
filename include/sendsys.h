@@ -62,12 +62,12 @@ void send_g_msg(int destination,
 		char *text);
 
 #ifdef VARGS
-void sendf(int destination,char *format,...);
+void sendf(int destination,char *format,...) __attribute__((format(printf, 2, 3)));
 
 void gsendf(int destination,
 	    char *func(int plx, intptr_t arg, char *text),
 	    intptr_t arg,
-	    char *format,...);
+	    char *format,...) __attribute__((format(printf, 4, 5)));
 
 void send_msg(int destination,
 	      int mode,
@@ -75,7 +75,7 @@ void send_msg(int destination,
 	      int max,
 	      int x1,
 	      int x2,
-	      char *format,...);
+	      char *format,...) __attribute__((format(printf, 7, 8)));
 #else
 void sendf();  /* sendf(destination,format,arg1,arg2,...); */
 void gsendf(); /* gsendf(destination,func,args,format,arg1,arg2,...); */
@@ -89,6 +89,6 @@ void lsend_msg(int destination,
 	       int max,
 	       int x1,
 	       int x2,
-	       char *format,...);
+	       char *format,...) __attribute__((format(printf, 8, 9)));
 
 #endif

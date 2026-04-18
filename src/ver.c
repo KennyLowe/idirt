@@ -7,7 +7,7 @@
 void
 versioncom (void)
 {
-  bprintf ("&+C%s &+B(&*#%d&+B) [&*%s&+B]\n");
+  // bprintf ("&+C%s &+B(&*#%d&+B) [&*%s&+B]\n");
   bprintf ("&+CBuild Date: &*%s %s\n", __DATE__, __TIME__);
   bprintf ("&+C1994-1996&*, &+cIllusion &+B(&*shill@nyx.net&+B)\n");
 

@@ -2094,7 +2094,7 @@ make_data (int argc, char **argv)
 	  "  (Linked: %d)\n", numz, numl, numm, numo, numlo);
 
   printf ("Text Space Statistics:\n");
-  printf ("  Total: %d  Used: %d  Free: %d\n", sizeof (texts),
+  printf ("  Total: %zu  Used: %zd  Free: %zd\n", sizeof (texts),
 	  textsp - texts, sizeof (texts) - (textsp - texts));
 
   if (n_logs > 0) {
@@ -2108,7 +2108,7 @@ make_data (int argc, char **argv)
   fprintf (LogFile, "  Zones: %d  Locations: %d  Mobiles: %d  Objects: %d"
 	   "  (Linked: %d)\n", numz, numl, numm, numo, numlo);
   fprintf (LogFile, "Text Space Statistics:\n");
-  fprintf (LogFile, "  Total: %d  Used: %d  Free: %d\n", sizeof (texts),
+  fprintf (LogFile, "  Total: %zd  Used: %zd  Free: %zd\n", sizeof (texts),
 	   textsp - texts, sizeof (texts) - (textsp - texts));
 
 #ifdef USE_ZOPEN

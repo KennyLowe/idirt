@@ -236,7 +236,7 @@ countobjects (int zone)
     bprintf ("&+w%-18s: %8d\t%-18s: %8d\n", "Total Objects", znumobs (zone), "Remaining", znumobs (zone) - destroyed);
 
   bprintf ("&+w%-18s: %8d\t%-18s: %8d\n", "Destroyed", destroyed, "Percent Left", proc);
-  bprintf ("&+w%-18s: %8d\t%-18s: %8d\n\n", "NoGet", noget, "Value of Objects", totalval);
+  bprintf ("&+w%-18s: %8d\t%-18s: %8ld\n\n", "NoGet", noget, "Value of Objects", totalval);
   bprintf ("&+W         Detail List of Objects Available to Mortals\n");
   bprintf ("&+C%s\n", Line2);
   bprintf ("&+w%-18s: %8d\t%-18s: %8d\n", "Weapons", weapons, "Destroyed", destweap);
@@ -440,7 +440,7 @@ usercom (void)
 	     plev (me) >= LVL_WIZARD ? occ : " ",
 	     plev (me) >= LVL_WIZARD ? wiznam : "",
 	     plev (me) >= LVL_WIZARD ? '(' : ' ',
-      plev (me) >= LVL_WIZARD ? 79 - (PNAME_LEN + 35 + strlen (wiznam)) : 0,
+       (int)(plev (me) >= LVL_WIZARD ? 79 - (PNAME_LEN + 35 + strlen (wiznam)) : 0),
 	     plev (me) >= LVL_WIZARD ? locnam : "",
 	     plev (me) >= LVL_WIZARD ? ')' : ' ');
   }

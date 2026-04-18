@@ -1,0 +1,11 @@
+*.o
+data/locations
+data/mkdata.log
+data/objects
+data/zonedata
+bin/Dump
+bin/aberd
+bin/pfilter
+include/locations.h
+include/mobiles.h
+include/objects.h
