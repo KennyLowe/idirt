@@ -256,7 +256,7 @@ brkword (void)
 
 
 int
-chkverb ()
+chkverb (void)
 {
   return chklist (wordbuf, verbtxt, verbnum);
 }

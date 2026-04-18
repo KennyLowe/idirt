@@ -1904,7 +1904,7 @@ list_objects (int n, Boolean f)
 #endif
 
 void
-dumpitems ()
+dumpitems (void)
 {
   dumpstuff (mynum, ploc (mynum));
 }
@@ -2618,7 +2618,7 @@ wearall (void)
 }
 
 void
-lockcom ()
+lockcom (void)
 {
   if (ob1 == -1) {
     bprintf ("Lock what?\n");
@@ -2640,7 +2640,7 @@ lockcom ()
 }
 
 void
-unlockcom ()
+unlockcom (void)
 {
   if (ob1 == -1) {
     bprintf ("What do you want to unlock?\n");
@@ -2660,7 +2660,7 @@ unlockcom ()
 }
 
 void
-closecom ()
+closecom (void)
 {
   if (ob1 == -1) {
     bprintf ("What would you like to close?\n");
@@ -2684,7 +2684,7 @@ closecom ()
 }
 
 void
-opencom ()
+opencom (void)
 {
   char *cant_open = "You can't open that!\n";
 

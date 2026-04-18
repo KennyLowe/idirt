@@ -1434,7 +1434,7 @@ calib_player (int pl)
 }
 
 void
-calibme ()
+calibme (void)
 {
   calib_player (mynum);
 }
@@ -1670,7 +1670,7 @@ doorthru (int x)
 }
 
 void
-do_follow ()
+do_follow (void)
 {
   int ct;
   int i;
@@ -1840,7 +1840,7 @@ vicbase (void)
 /* The JUMP command
  */
 void
-jumpcom ()
+jumpcom (void)
 {
   int a, b, i, j, x;
   char ms[128];

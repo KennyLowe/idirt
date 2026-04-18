@@ -209,7 +209,7 @@ exists (int room)
 /* The EXITS command
  */
 void
-exitcom ()
+exitcom (void)
 {
   int a, v, newch;
   int drnum, droff;
@@ -335,7 +335,7 @@ r_isdark (int room, int plr)
 }
 
 Boolean
-isdark ()
+isdark (void)
 {
   return r_isdark (ploc (mynum), mynum);
 }
@@ -520,7 +520,7 @@ findroomnum (char *w)
 /* Same as findroomnum(), but use brkword() and wordbuf.
  */
 int
-getroomnum ()
+getroomnum (void)
 {
   return (brkword () == -1) ? 0 : findroomnum (wordbuf);
 }

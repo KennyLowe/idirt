@@ -29,7 +29,7 @@ LDFLAGS	= -lcrypt
 DEFINES	=
 DBFLAGS	= -g
 OPFLAGS	= -pipe -m64 -O3 -fcommon
-WFLAGS	= -Wall -Werror=format -Wno-error=format-overflow -Wno-error=format-security
+WFLAGS	= -Wall -Werror=strict-prototypes -Werror=old-style-definition -Werror=format -Wno-error=format-overflow -Wno-error=format-security
 CFLAGS	= $(DEFINES) $(DBFLAGS) $(OPFLAGS) $(WFLAGS) -I$(HDIR)
 
 # Extra Defines
@@ -225,7 +225,7 @@ strip:
 
 #############################################################
 # Do not delete this line, the makedep program requires it. #
-# Last Updated: Wed 15 Apr 18:17:40 BST 2026                 #
+# Last Updated: Sat 18 Apr 19:25:55 BST 2026                 #
 #############################################################
 
 # Dependencies for the MUD source code
