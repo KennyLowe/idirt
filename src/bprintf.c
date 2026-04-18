@@ -17,9 +17,7 @@
 #include "rooms.h"
 #include "parse.h"
 
-#ifdef VARGS
 #include <stdarg.h>
-#endif
 
 static void kiputs (char *s, FILE * file);
 static void dcprnt (char *ct, FILE * file);
@@ -477,8 +475,6 @@ snoop_off (int plr)
 }
 
 
-#ifdef VARGS
-
 void
 bprintf (char *format,...)
 {
@@ -509,31 +505,6 @@ bprintf (char *format,...)
   }
 }
 
-#else
-
-void
-bprintf (char *format, char *a1, char *a2, char *a3, char *a4, char *a5,
-	 char *a6, char *a7, char *a8, char *a9)
-{
-  register int len;
-
-  if (!sysbuf)
-    makebfr ();
-
-  if (cur_player == NULL) {
-    printf (format, a1, a2, a3, a4, a5, a6, a7, a8, a9);
-  } else {
-    sprintf (bufptr, format, a1, a2, a3, a4, a5, a6, a7, a8, a9);
-    len = strlen (bufptr);
-    buflen += len;
-    if (buflen >= SYSBUFSIZE)
-      pbfr ();
-    else
-      bufptr += len;
-  }
-}
-
-#endif
 
 /****************************************************************
  * iDiRT Color Parser						*

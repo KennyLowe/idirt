@@ -22,9 +22,7 @@
 
 #include "jmp.h"
 
-#ifdef VARGS
 #include <stdarg.h>
-#endif
 
 #include "mud.h"
 #include "log.h"

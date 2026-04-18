@@ -61,7 +61,6 @@ void send_g_msg(int destination,
 		intptr_t arg,
 		char *text);
 
-#ifdef VARGS
 void sendf(int destination,char *format,...) __attribute__((format(printf, 2, 3)));
 
 void gsendf(int destination,
@@ -76,11 +75,6 @@ void send_msg(int destination,
 	      int x1,
 	      int x2,
 	      char *format,...) __attribute__((format(printf, 7, 8)));
-#else
-void sendf();  /* sendf(destination,format,arg1,arg2,...); */
-void gsendf(); /* gsendf(destination,func,args,format,arg1,arg2,...); */
-void send_msg(); /* send_msg(destintaion,mode,min,max,x1,x2,format,arg1...); */
-#endif
 
 void lsend_msg(int destination,
 	       int lang,

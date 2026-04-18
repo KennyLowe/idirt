@@ -12,11 +12,7 @@ void	strip_color(char *dests, char *srcs);
 
 void	special_codes(char *dests, char *srcs);
 
-#ifdef VARGS
 void	bprintf(char *format, ...) __attribute__((format(printf, 1, 2)));
-#else
-void	bprintf();
-#endif
 
 void	file_pager(char filename[512]);
 void	quit_pager(void);
