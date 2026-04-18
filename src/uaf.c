@@ -174,7 +174,7 @@ get_gender (char *gen)
     do_motd (NULL);
   } else {
     bprintf ("\n");
-    bprintf (strcpy (cur_player->cprompt, "Sex (M/F) : >"));
+    bprintf ("%s", strcpy (cur_player->cprompt, "Sex (M/F) : >"));
   }
 }
 

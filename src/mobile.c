@@ -1993,7 +1993,7 @@ jumpcom (void)
     sprintf (ms, "%s makes a perfect swan dive off the ledge.\n",
 	     pname (mynum));
     if (b != LOC_PIT_PIT) {
-      send_msg (ploc (mynum), 0, pvis (mynum), LVL_MAX, mynum, NOBODY, ms);
+      send_msg (ploc (mynum), 0, pvis (mynum), LVL_MAX, mynum, NOBODY, "%s", ms);
       setploc (mynum, b);
       bprintf ("Wheeeeeeeeeeeeeeeee       <<<<SPLAT>>>>\n");
       bprintf ("You seem to be splattered all over the place.\n");
@@ -2005,7 +2005,7 @@ jumpcom (void)
     sprintf (ms, "%s dives off the ledge and floats down.\n", pname (mynum));
 
 
-  send_msg (ploc (mynum), 0, pvis (mynum), LVL_MAX, mynum, NOBODY, ms);
+  send_msg (ploc (mynum), 0, pvis (mynum), LVL_MAX, mynum, NOBODY, "%s", ms);
 
   setploc (mynum, b);
 
@@ -2014,7 +2014,7 @@ jumpcom (void)
   else
     sprintf (ms, "%s has just dropped in.\n", pname (mynum));
 
-  send_msg (ploc (mynum), 0, pvis (mynum), LVL_MAX, mynum, NOBODY, ms);
+  send_msg (ploc (mynum), 0, pvis (mynum), LVL_MAX, mynum, NOBODY, "%s", ms);
 
   trapch (b);
 }

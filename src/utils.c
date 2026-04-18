@@ -772,7 +772,7 @@ addname (char file_name[80], char name[80])
   if ((fl = (fopen (file_name, "a"))) == NULL) {
     return 0;
   }
-  fprintf (fl, name);
+  fprintf (fl, "%s", name);
   fprintf (fl, "\n");
   fclose (fl);
   return ADDED;

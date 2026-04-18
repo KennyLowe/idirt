@@ -892,7 +892,7 @@ fextern (char *verb)
     sprintf (b, b2, b3);
     m = b + strlen (b);
     strcpy (m, "\n");
-    send_msg (p, 0, LVL_MIN, LVL_MAX, NOBODY, NOBODY, b);
+    send_msg (p, 0, LVL_MIN, LVL_MAX, NOBODY, NOBODY, "%s", b);
     if ((m = ((struct _ext2 *) v)->msg_to_others) != NULL) {
       ext_copy (b2, m);
       sprintf (b, b2, b3);

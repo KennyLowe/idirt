@@ -1114,7 +1114,7 @@ change_passwd (void)
 
     sprintf (b, "\n\377\373\001\001New Password for %s: ", wordbuf);
 
-    bprintf (b);
+    bprintf ("%s", b);
     replace_input_handler (ask_new_passwd);
   } else {
     strcpy (cur_player->cprompt, "Old Password: ");

@@ -157,7 +157,7 @@ find_stuff (int s, int o, char *t)
 {
   if (odamage (s) == 0) {
     osetdamage (s, 1);
-    bprintf (t);
+    bprintf ("%s", t);
     create (o);
     setoloc (o, ploc (mynum), IN_ROOM);
     return True;
@@ -1105,7 +1105,7 @@ helpcom (void)
   if (plev (mynum) < LVL_WIZARD) {
     return;
   }
-  bprintf (qwait);
+  bprintf ("%s", qwait);
   replace_input_handler (help2);
 }
 
@@ -1120,7 +1120,7 @@ help2 (char *cont)
     if (plev (mynum) < LVL_PROPHET) {
       get_command (NULL);
     } else {
-      bprintf (qwait);
+      bprintf ("%s", qwait);
       replace_input_handler (help3);
     }
   }
@@ -1137,7 +1137,7 @@ help3 (char *cont)
     if (plev (mynum) < LVL_ARCHWIZARD) {
       get_command (NULL);
     } else {
-      bprintf (qwait);
+      bprintf ("%s", qwait);
       replace_input_handler (help4);
     }
   }
@@ -1154,7 +1154,7 @@ help4 (char *cont)
     if (plev (mynum) < LVL_ADVISOR) {
       get_command (NULL);
     } else {
-      bprintf (qwait);
+      bprintf ("%s", qwait);
       replace_input_handler (help5);
     }
   }
@@ -1171,7 +1171,7 @@ help5 (char *cont)
     if (plev (mynum) < LVL_AVATAR) {
       get_command (NULL);
     } else {
-      bprintf (qwait);
+      bprintf ("%s", qwait);
       replace_input_handler (help6);
     }
   }
@@ -1188,7 +1188,7 @@ help6 (char *cont)
     if (plev (mynum) < LVL_GOD) {
       get_command (NULL);
     } else {
-      bprintf (qwait);
+      bprintf ("%s", qwait);
       replace_input_handler (help7);
     }
   }
