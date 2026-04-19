@@ -8,9 +8,7 @@
 
 #include "kernel.h"
 
-#ifdef VARGS
 #include <stdarg.h>
-#endif
 
 #include <stdlib.h>
 
@@ -244,18 +242,13 @@ compress_file (char *name, char *file)
 }
 
 void
-xexit (code)
-     int code;
+xexit (int code)
 {
   printf ("\n\n");
   exit (code);
 }
 
-#ifdef VARGS
 void log (char t, XOBJ * O, XZON * Z, char *f,...);
-
-#endif
-
 
 /*
  * **  Open file for read/write or die trying
@@ -2125,8 +2118,6 @@ make_data (int argc, char **argv)
 
 
 
-#ifdef VARGS
-
 void
 log (char t, XOBJ * O, XZON * Z, char *f,...)
 {
@@ -2163,44 +2154,3 @@ log (char t, XOBJ * O, XZON * Z, char *f,...)
   }
   fprintf (LogFile, "%s: %s@%s[%s] %s\n", q, n, z, p, b);
 }
-
-#else
-
-void
-log (char t, XOBJ * O, XZON * Z, char *f,
-     char *arg1, char *arg2, char *arg3, char *arg4)
-{
-  char *n;
-  char *z;
-  char *p;
-  char *q;
-  char b[1024];
-
-  sprintf (b, f, arg1, arg2, arg3, arg4);
-
-  z = Z->name;
-  ++n_logs;
-  switch (t) {
-  case 'L':
-    n = ((XLOC *) O)->name;
-    p = ((XLOC *) O)->pname;
-    q = "Loc";
-    break;
-  case 'M':
-    n = ((XMOB *) O)->name;
-    p = ((XMOB *) O)->pname;
-    q = "Mob";
-    break;
-  case 'O':
-    n = O->name;
-    p = O->pname;
-    q = "Obj";
-    break;
-  default:
-    fprintf (stderr, "\nIllegal type %c.\n", t);
-    exit (1);
-  }
-  fprintf (LogFile, "%s: %s@%s[%s] %s\n", q, n, z, p, b);
-}
-
-#endif

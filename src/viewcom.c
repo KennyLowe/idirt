@@ -38,9 +38,9 @@ viewcom (void)
     if (see_player (mynum, i) && is_conn (i)) {
 
       if (ptstflg (mynum, PFL_SEEIDLE))
-	sprintf (idle, sec_to_hhmmss (global_clock - prlast_cmd (i)));
+	sprintf (idle, "%s", sec_to_hhmmss (global_clock - prlast_cmd (i)));
       else
-	sprintf (idle, sec_to_hhmmss (global_clock - plast_cmd (i)));
+	sprintf (idle, "%s", sec_to_hhmmss (global_clock - plast_cmd (i)));
 
       bprintf ("&+w%-14.14s %8.8s  ", pname (i), idle);
 

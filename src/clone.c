@@ -737,7 +737,7 @@ destructcom (char *args)
 /* The STORE command.
  */
 void
-storecom ()
+storecom (void)
 {
   char filename[128];
   char *p;

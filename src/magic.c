@@ -368,7 +368,7 @@ viscom (void)
 }
 
 void
-inviscom ()
+inviscom (void)
 {
   int x, y;
 

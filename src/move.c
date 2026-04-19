@@ -340,7 +340,7 @@ dodirn (int vb)
 }
 
 int
-dogocom ()
+dogocom (void)
 {
   int a = (brkword () == -1) ? get_rand_exit_dir (ploc (mynum))
   : chklist (wordbuf, exittxt, exitnum) - 1;

@@ -22,7 +22,7 @@
 #include "mud.h"
 
 void
-deletecom ()
+deletecom (void)
 {
   if (plev (mynum) < LVL_AVATAR) {
     erreval ();
@@ -47,7 +47,7 @@ deletecom ()
 /* The OPENGAME command.
  */
 void
-opengamecom ()
+opengamecom (void)
 {
   if (!ptstflg (mynum, PFL_SHUTDOWN)) {
     erreval ();
@@ -177,7 +177,7 @@ seeidlecom (void)
 
 /* Socket handler */
 void
-socketcom ()
+socketcom (void)
 {
   static char *SockTable[] =
   {
@@ -338,7 +338,7 @@ togglecoding (void)
 }
 
 void
-wloadcom ()
+wloadcom (void)
 {
   char work[100];
   char ps1[100];

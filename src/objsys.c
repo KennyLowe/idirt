@@ -779,8 +779,8 @@ putcom (void)
     if (onum (a) == OBJ_TOWER_SCEPTRE && state (OBJ_TOWER_DOOR_SHAZARETH) == 1) {
       setobjstate (OBJ_TOWER_DOOR_TREASURE, 0);
       strcpy (ar, "The door clicks open!\n");
-      sendf (oloc (OBJ_TOWER_DOOR_TREASURE), ar);
-      sendf (oloc (OBJ_TOWER_DOOR_SHAZARETH), ar);
+      sendf (oloc (OBJ_TOWER_DOOR_TREASURE), "%s", ar);
+      sendf (oloc (OBJ_TOWER_DOOR_SHAZARETH), "%s", ar);
       return;
     }
     bprintf ("Nothing happens.\n");
@@ -837,8 +837,8 @@ putcom (void)
       && ishere (a)) {
     setobjstate (OBJ_TOWER_DOOR_TREASURE, 1);
     strcpy (ar, "The door clicks shut....\n");
-    sendf (LOC_TOWER_TREASURE, ar);
-    sendf (oloc (OBJ_TOWER_DOOR_SHAZARETH), ar);
+    sendf (LOC_TOWER_TREASURE, "%s", ar);
+    sendf (oloc (OBJ_TOWER_DOOR_SHAZARETH), "%s", ar);
   }
 }
 
@@ -1442,8 +1442,8 @@ get1objfrom (int ob, int container)
   if ((ploc (mynum) == LOC_TOWER_TREASURE) &&
       (state (OBJ_TOWER_DOOR_TREASURE) == 0)) {
     setobjstate (OBJ_TOWER_DOOR_TREASURE, 1);
-    sendf (LOC_TOWER_TREASURE, s = "The door clicks shut...\n");
-    sendf (obj_loc (olinked (OBJ_TOWER_DOOR_TREASURE)), s);	/*Other side of door */
+    sendf (LOC_TOWER_TREASURE, "%s", s = "The door clicks shut...\n");
+    sendf (obj_loc (olinked (OBJ_TOWER_DOOR_TREASURE)), "%s", s);	/*Other side of door */
   }
   if (ob == OBJ_CATACOMB_CUPSERAPH &&
       (l = alive ((max_players + MOB_CATACOMB_SERAPH))) != -1 &&
@@ -1904,7 +1904,7 @@ list_objects (int n, Boolean f)
 #endif
 
 void
-dumpitems ()
+dumpitems (void)
 {
   dumpstuff (mynum, ploc (mynum));
 }
@@ -2618,7 +2618,7 @@ wearall (void)
 }
 
 void
-lockcom ()
+lockcom (void)
 {
   if (ob1 == -1) {
     bprintf ("Lock what?\n");
@@ -2640,7 +2640,7 @@ lockcom ()
 }
 
 void
-unlockcom ()
+unlockcom (void)
 {
   if (ob1 == -1) {
     bprintf ("What do you want to unlock?\n");
@@ -2660,7 +2660,7 @@ unlockcom ()
 }
 
 void
-closecom ()
+closecom (void)
 {
   if (ob1 == -1) {
     bprintf ("What would you like to close?\n");
@@ -2684,7 +2684,7 @@ closecom ()
 }
 
 void
-opencom ()
+opencom (void)
 {
   char *cant_open = "You can't open that!\n";
 
@@ -2718,7 +2718,7 @@ opencom ()
     break;
   default:
     if (!otstbit (ob1, OFL_OPENABLE)) {
-      bprintf (cant_open);
+      bprintf ("%s", cant_open);
     } else { 
       if (state (ob1) == 0) {
         bprintf ("It's already open.\n");
@@ -3027,8 +3027,8 @@ lightcom (void)
     bprintf ("Behind them you can see the entrance to a cave.\n");
     sprintf (s, "%s burns the wall of thorns away!\n", pname (mynum));
 
-    send_msg (LOC_EFOREST_THORNY, 0, LVL_MIN, LVL_MAX, mynum, NOBODY, s);
-    send_msg (LOC_EFOREST_CAVE, 0, LVL_MIN, LVL_MAX, mynum, NOBODY, s);
+    send_msg (LOC_EFOREST_THORNY, 0, LVL_MIN, LVL_MAX, mynum, NOBODY, "%s", s);
+    send_msg (LOC_EFOREST_CAVE, 0, LVL_MIN, LVL_MAX, mynum, NOBODY, "%s", s);
 
     return;
   }
@@ -3119,8 +3119,8 @@ pushcom (void)
     sprintf (s, "You hear a grinding sound as a mysterious force moves "
 	     "the throne!\n");
 
-    sendf (LOC_EFOREST_EASTEND, s);
-    sendf (LOC_EFOREST_BOTTOM, s);
+    sendf (LOC_EFOREST_EASTEND, "%s", s);
+    sendf (LOC_EFOREST_BOTTOM, "%s", s);
     break;
 #endif
 
