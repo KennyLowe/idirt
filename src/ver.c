@@ -25,5 +25,5 @@ versioncom (void)
 int
 linknumber (void)
 {
-  return LINKCOUNT;
+  return 1;
 }
