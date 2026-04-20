@@ -48,10 +48,6 @@
 #include "ver.h"
 #include "main.h"
 
-#if USE_IDENT
-#include "ident.h"
-#endif
-
 static int xmain (int fd);
 static int xmain_reboot (int fd);
 static int go_background (int pid_fd);
@@ -781,11 +777,7 @@ new_connection (int m_socket)
       width = fd + 1;
     FD_SET (fd, &sockets_fds);
 
-#if USE_IDENT
-    new_player (ident_id (fd, 0));
-#else
     new_player (NULL);
-#endif
 
   }
 }

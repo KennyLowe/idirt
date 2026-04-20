@@ -74,9 +74,6 @@
 /* Amount of time to pass between autosaves (in seconds). */
 #define AUTOSAVE_TIME	600	/* 10 minutes */
 
-/* Define to use the Ident protocol or not */
-/*#define USE_IDENT*/
-
 /**********************************
  * Some system dependent defines: *
  **********************************/
