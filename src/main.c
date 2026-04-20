@@ -19,6 +19,7 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <fcntl.h>
+#include <time.h>
 
 #include "jmp.h"
 
@@ -696,7 +697,7 @@ new_connection (int m_socket)
   struct hostent *h;
   int plx;
   int fd;
-  int sin_len;
+  socklen_t sin_len;
   Boolean host_banned = False, host_b2 = False;
   Boolean user_banned = False, user_b2 = False;
   Boolean login_banned = False, login_b2 = False;
