@@ -629,6 +629,8 @@ trace_handler (int plr)
       if (ocarrf (obj) >= CARRIED_BY)
 	sprintf (buffer2, "%s&+B(&+w%s%s&+B)", output, Carry[ocarrf (obj)],
 		 pname (oloc (obj)));
+      else
+        strcpy (buffer2, output);
 
       sendf (plr, "&+G(&+WTrace: &+C%s &+B[&+w%d&+B]&+w; Loc: %s &+C%s&+G)\n",
 	     oname (Trace->trace), Trace->trace, buffer2,
