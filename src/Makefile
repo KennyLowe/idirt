@@ -29,7 +29,7 @@ LDFLAGS	= -lcrypt
 DEFINES	=
 DBFLAGS	= -g
 OPFLAGS	= -pipe -m64 -O3 -fcommon
-WFLAGS	= -Wall -Werror=strict-prototypes -Werror=old-style-definition -Werror=format -Wno-error=format-overflow
+WFLAGS	= -Wall -Werror -Werror=strict-prototypes -Werror=old-style-definition -Werror=format -Wno-error=format-overflow -Werror=int-to-pointer-cast -Werror=pointer-to-int-cast -Wno-error=builtin-declaration-mismatch -Wno-error=unused-but-set-variable -Wno-error=unused-result -Wno-error=stringop-overflow -Wno-error=unused-variable -Wno-error=unused-function
 CFLAGS	= $(DEFINES) $(DBFLAGS) $(OPFLAGS) $(WFLAGS) -I$(HDIR)
 
 # Extra Defines

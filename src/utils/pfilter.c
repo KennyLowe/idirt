@@ -18,7 +18,7 @@ char b[256];
 char g[256];
 char n[256];
 
-static Boolean or_ok ();
+static Boolean or_ok (void);
 
 static Boolean
 test_bit (PFLAGS * f, int n)
@@ -46,7 +46,7 @@ lookup (char *e, char **t)
 }
 
 static Boolean
-ok ()
+ok (void)
 {
   Boolean j;
   int k;
@@ -128,7 +128,7 @@ ok ()
 }
 
 static Boolean
-and_ok ()
+and_ok (void)
 {
   Boolean j = True;
 
@@ -145,7 +145,7 @@ and_ok ()
 }
 
 static Boolean
-or_ok ()
+or_ok (void)
 {
   Boolean j = False;
 

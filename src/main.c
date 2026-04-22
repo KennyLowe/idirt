@@ -19,6 +19,7 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <fcntl.h>
+#include <time.h>
 
 #include "jmp.h"
 
@@ -46,10 +47,6 @@
 #include "rooms.h"
 #include "ver.h"
 #include "main.h"
-
-#if USE_IDENT
-#include "ident.h"
-#endif
 
 static int xmain (int fd);
 static int xmain_reboot (int fd);
@@ -696,7 +693,7 @@ new_connection (int m_socket)
   struct hostent *h;
   int plx;
   int fd;
-  int sin_len;
+  socklen_t sin_len;
   Boolean host_banned = False, host_b2 = False;
   Boolean user_banned = False, user_b2 = False;
   Boolean login_banned = False, login_b2 = False;
@@ -780,11 +777,7 @@ new_connection (int m_socket)
       width = fd + 1;
     FD_SET (fd, &sockets_fds);
 
-#if USE_IDENT
-    new_player (ident_id (fd, 0));
-#else
     new_player (NULL);
-#endif
 
   }
 }

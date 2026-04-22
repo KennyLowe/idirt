@@ -759,10 +759,10 @@ get_ref (char t, XZON * zo, FILE * F)
   return 0;
 }
 
-int
-get_int (FILE * F)
+intptr_t
+get_int(FILE * F)
 {
-  int i;
+  intptr_t i;
   int c;
   Boolean neg;
 
@@ -1991,7 +1991,7 @@ write_loc (XZON * ZON, int numz, int l)
 	  y = DOOR + ((XOBJ *) L->exits[x])->obj;
 	  break;
 	case '#':
-	  y = (int) (L->exits[x]);
+	  y = (intptr_t) (L->exits[x]);
 	  break;
 	case ' ':
 	  y = -(L->exits[x]->loc);

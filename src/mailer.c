@@ -542,7 +542,8 @@ send_forward (char *param)
       mail_menu (NULL);
       return;
     } else {
-      buffer[pos] = param[pos++];
+      buffer[pos] = param[pos];
+      pos++;
     }
   }
 

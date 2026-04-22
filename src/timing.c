@@ -597,7 +597,7 @@ trace_handler (int plr)
   };
 
   TRACE *Trace = &players[plr].Trace;
-  char output[256], buffer[256];
+  char output[256], buffer[256], buffer2[256];
   int obj, loc;
 
   if (Trace->trace == -1)
@@ -627,11 +627,13 @@ trace_handler (int plr)
 	output[0] = '\0';
       }
       if (ocarrf (obj) >= CARRIED_BY)
-	sprintf (output, "%s&+B(&+w%s%s&+B)", output, Carry[ocarrf (obj)],
+	sprintf (buffer2, "%s&+B(&+w%s%s&+B)", output, Carry[ocarrf (obj)],
 		 pname (oloc (obj)));
+      else
+        strcpy (buffer2, output);
 
       sendf (plr, "&+G(&+WTrace: &+C%s &+B[&+w%d&+B]&+w; Loc: %s &+C%s&+G)\n",
-	     oname (Trace->trace), Trace->trace, output,
+	     oname (Trace->trace), Trace->trace, buffer2,
 	     xshowname (buffer, Trace->oloc));
     }
   }

@@ -404,9 +404,8 @@ settimecom (void)
     bprintf ("Minute setting out of range.\n");
     return;
   }
-  sprintf (temp, "%s:%s", temp, wordbuf);
 
-  bprintf ("Setting time to %s.\n", temp);
+  bprintf ("Setting time to %s:%s.\n", temp, wordbuf);
   _set_time (the_climate->month, the_climate->day, hr, min);
 }
 
